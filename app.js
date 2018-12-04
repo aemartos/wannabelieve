@@ -107,10 +107,5 @@ app.use('/', index);
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
 
-const pepi = require('./routes/pepi');
-app.use('/pepi', pepi);
-const pacoRoutes = require('./routes/paco');
-app.use('/paco', pacoRoutes);
-
 
 module.exports = app;
