@@ -107,5 +107,8 @@ app.use('/', index);
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
 
+const pacoRoutes = require('./routes/paco');
+app.use('/paco', pacoRoutes);
+
 
 module.exports = app;
