@@ -1,0 +1,11 @@
+{
+	"version": 3,
+	"file": "style.css",
+	"sources": [
+		"style.sass",
+		"sass/partials/_mixins.sass",
+		"sass/_main-page.sass"
+	],
+	"names": [],
+	"mappings": "AEAA,AAAA,IAAI,CAAC;EDGJ,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,UAAU;EACrB,WAAW,EAAE,MAAM;ECHlB,OAAO,EAAE,IAAI;EACb,IAAI,EAAE,kDAAkD,GAAG;;AAE7D,AAAA,CAAC,CAAC;EACA,KAAK,EAAE,OAAO,GAAG"
+}
