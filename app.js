@@ -107,5 +107,7 @@ app.use('/', index);
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
 
+const pepi = require('./routes/pepi');
+app.use('/pepi', pepi);
 
 module.exports = app;
