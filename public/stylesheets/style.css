@@ -2354,7 +2354,7 @@ html, body {
   width: 100%;
   color: white;
   background-color: #0c0e14;
-  font-family: helvetica;
+  font-family: helvetica, monospace;
   padding: 0;
   margin: 0; }
 
@@ -2363,6 +2363,32 @@ body {
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center; }
+
+.container {
+  width: 100%;
+  height: max-content;
+  min-height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center; }
+  .container .content {
+    width: 80%; }
+
+.btn {
+  border: 2px solid #39FF14;
+  padding: .6em;
+  border-radius: 3em; }
+  .btn.btnSignup {
+    color: #0c0e14;
+    background-color: #39FF14; }
+  .btn.btnFcb {
+    color: #0c0e14;
+    border: 2px solid #3b5998;
+    background-color: #3b5998; }
+  .btn.btnGgl {
+    color: #0c0e14;
+    border: 2px solid #dd4b39;
+    background-color: #dd4b39; }
 
 a {
   display: inline-block;
@@ -2420,5 +2446,32 @@ p {
   background-color: #39FF14;
   outline: 1px solid slategrey;
   border-radius: 5em; }
+
+.container {
+  position: relative;
+  justify-content: space-around; }
+  .container .mainTitle {
+    z-index: 1; }
+  .container .initialMenu {
+    z-index: 1;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold; }
+    .container .initialMenu a {
+      display: block;
+      margin-top: .5em; }
+    .container .initialMenu .groupMenu {
+      margin-top: .1em; }
+      .container .initialMenu .groupMenu a {
+        width: 48%;
+        display: inline-block; }
+  .container #initialVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 0; }
 
 /*# sourceMappingURL=style.css.map */

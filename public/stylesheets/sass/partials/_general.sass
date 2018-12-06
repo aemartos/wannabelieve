@@ -13,7 +13,7 @@ html, body
 	width: 100%
 	color: white
 	background-color: $background
-	font-family: helvetica
+	font-family: helvetica, monospace
 	//font-weight: bold
 	padding: 0
 	margin: 0
@@ -22,6 +22,31 @@ html, body
 body
 	+column-flex
 	justify-content: center
+
+.container
+	width: 100%
+	height: max-content
+	min-height: 100%
+	+column-flex
+	.content
+		width: 80%
+
+.btn
+	border: 2px solid $secondarycolor
+	padding: .6em
+	border-radius: 3em
+	&.btnLogin
+	&.btnSignup
+		color: $background
+		background-color: $secondarycolor
+	&.btnFcb
+		color: $background
+		border: 2px solid $facebook
+		background-color: $facebook
+	&.btnGgl
+		color: $background
+		border: 2px solid $google
+		background-color: $google
 
 a
 	display: inline-block
