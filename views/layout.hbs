@@ -11,9 +11,21 @@
 
 <body>
 
-  {{> menu}}
+  {{#if user}}
+    <header>
+      {{> top_menu}}
+    </header>
+  {{/if}}
 
-  {{{body}}}
+  <div class="container">
+    {{{body}}}
+  </div>
+
+  {{#if user}}
+    <footer>
+      {{> bottom_menu}}
+    </footer>
+  {{/if}}
 
   <script src="/javascripts/script.js"></script>
 </body>
