@@ -7,7 +7,7 @@ const phenomenonSchema = new Schema(
     description: String,
     type: { type: String, enum: ["cat1", "cat2"] },
     location: { type: { type: String }, coordinates: [Number] },
-    imgsMain: { type: Array, default: [] },
+    imgsMainUrls: { type: Array, default: [] },
     reviews: { type: Array, default: [] },
     creatorId: Object,
     visitorsId: { type: Array, default: [] }
