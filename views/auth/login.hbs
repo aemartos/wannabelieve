@@ -1,23 +1,21 @@
-<h2>Login</h2>
+<h2>login</h2>
 
 <form action="/auth/login" method="POST" id="form-container">
 
-  <label for="username">Username</label>
+  <label for="username">username</label>
   <input id="username" type="text" name="username" placeholder="DanaScully">
 
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password" readonly onfocus="if (this.hasAttribute('readonly')) {this.removeAttribute('readonly'); this.blur(); this.focus();}"/>
+  <label for="password">password</label>
+  <input id="password" type="password" name="password" placeholder="••••••••••••" readonly onfocus="if (this.hasAttribute('readonly')) {this.removeAttribute('readonly'); this.blur(); this.focus();}"/>
 
+  <div class="messages">
+    {{#if message}}
+      <div class="error-message">{{message}}</div>
+    {{/if}}
+  </div>
 
-  {{#if message}}
-    <div class="error-message">{{message}}</div>
-  {{/if}}
-  {{!-- {{#each messages}}
-    <div class="error-message">{{this}}</div>
-  {{/each}} --}}
-  
-  <button class="btn">Login</button>
+  <button class="btn loginBtn">login</button>
 
-  <p class="account-message">Don't have an account yet? <a href="/auth/signup">Signup</a></p>
+  <p class="account-message">don't have an account yet? <a href="/auth/signup">signup</a></p>
 
 </form>

@@ -33,19 +33,20 @@ router.post("/signup",  isLoggedOut('/map'), (req, res, next) => {
   const password = req.body.password;
   if (username === "" || password === "" || email === "") {
     res.render("auth/signup", {
-      message: "Indicate username, password and email"
+      message: "indicate username, password and email",
+      actual_page: 'signup'
     });
     return;
   }
 
   User.findOne({username}, "username", (err, user) => {
     if (user !== null) {
-      res.render("auth/signup", {message: "The username already exists"});
+      res.render("auth/signup", {message: "the username already exists", actual_page: 'signup'});
       return;
     } else {
       User.findOne({email}, "email", (err, user) => {
         if (user !== null) {
-          res.render("auth/signup", {message: "The email already exists"});
+          res.render("auth/signup", {message: "the email already exists", actual_page: 'signup'});
           return;
         }
 
@@ -60,7 +61,7 @@ router.post("/signup",  isLoggedOut('/map'), (req, res, next) => {
 
         newUser.save()
           .then(() => {res.redirect("/")})
-          .catch(err => {res.render("auth/signup", {message: "Something went wrong"})})
+          .catch(err => {res.render("auth/signup", {message: "something went wrong", actual_page: 'signup'})})
       });
     }
   });
