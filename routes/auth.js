@@ -74,6 +74,15 @@ router.get("/facebook/callback",
   })
 );
 
+router.get("/google", passport.authenticate("google", {
+  scope: ["https://www.googleapis.com/auth/plus.login",
+          "https://www.googleapis.com/auth/plus.profile.emails.read"]
+}));
+router.get("/google/callback", passport.authenticate("google", {
+  successRedirect: "/map",
+  failureRedirect: "/auth/login"
+}));
+
 router.get("/logout", isLoggedIn('/auth/login'), (req, res) => {
   req.logout();
   res.redirect("/");
