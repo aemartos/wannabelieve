@@ -2453,7 +2453,11 @@ header, footer {
   left: 0;
   height: 3em;
   width: 100%;
-  background-color: #01211a; }
+  background-color: #01211a;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-around; }
   header a, footer a {
     color: #fff; }
 
