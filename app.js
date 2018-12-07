@@ -78,7 +78,7 @@ hbs.registerHelper('ifUndefined', (value, options) => {
 
 
 // default value for title local
-app.locals.title = 'Project02 - Ironhack';
+app.locals.title = 'Project02';
 
 
 // Enable authentication using session + passport
@@ -87,7 +87,8 @@ app.use(session({
   resave: true,
   saveUninitialized: true,
   store: new MongoStore({
-    mongooseConnection: mongoose.connection
+    mongooseConnection: mongoose.connection,
+    ttl: 24 * 60 * 60 // 1 day
   })
 }))
 app.use(flash());

@@ -5,8 +5,8 @@ const userSchema = new Schema({
   username: String,
   email: {type: String, unique: true},
   password: String,
-  facebookID: String,
-  googleID: String,
+  facebookID: {type: String, default: null},
+  googleID: {type: String, default: null},
   photoProfile: {type: String, default: ''},
   status: {type: String, enum: ['Pending Confirmation','Active'], default: 'Pending Confirmation'},
   confirmationCode: {type: String, unique: true},
@@ -17,3 +17,5 @@ const userSchema = new Schema({
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;
+
+//{type: Schema.Types.ObjectId, ref:'Phenomenon'}

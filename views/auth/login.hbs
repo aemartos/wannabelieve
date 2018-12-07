@@ -1,24 +1,23 @@
 <h2>Login</h2>
 
 <form action="/auth/login" method="POST" id="form-container">
-  <label for="username">Username</label>
-  <input id="username" type="text" name="username" placeholder="JonSnow">
 
-  <br><br>
+  <label for="username">Username</label>
+  <input id="username" type="text" name="username" placeholder="DanaScully">
 
   <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password">
-  <br>
+  <input id="password" type="password" name="password" placeholder="Your password" readonly onfocus="if (this.hasAttribute('readonly')) {this.removeAttribute('readonly'); this.blur(); this.focus();}"/>
+
+
   {{#if message}}
-  <div class="error-message">{{message}}</div>
+    <div class="error-message">{{message}}</div>
   {{/if}}
+  {{!-- {{#each messages}}
+    <div class="error-message">{{this}}</div>
+  {{/each}} --}}
+  
+  <button class="btn">Login</button>
 
-  <br><br>
+  <p class="account-message">Don't have an account yet? <a href="/auth/signup">Signup</a></p>
 
-  <button>Login</button>
-
-  <p class="account-message">
-    Don't have an account yet?
-    <a href="/auth/signup">Signup</a>
-  </p>
 </form>

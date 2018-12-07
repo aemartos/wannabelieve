@@ -1,24 +1,25 @@
-<h2>Signup</h2>
+<h2>new account</h2>
 
 <form action="/auth/signup" method="POST" id="form-container">
-  <label for="username">Username</label>
-  <input id="username" type="text" name="username" placeholder="JonSnow">
 
-  <br><br>
+  <label for="username">Username</label>
+  <input id="username" type="text" name="username" placeholder="DanaScully">
+
+  <label for="email">Email</label>
+  <input id="email" type="email" name="email" placeholder="icequeen@gmail.com">
 
   <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password">
-  <br>
+  <input id="password" type="password" name="password" placeholder="Your password" readonly onfocus="if (this.hasAttribute('readonly')) {this.removeAttribute('readonly'); this.blur(); this.focus();}"/>
+
   {{#if message}}
-  <div class="error-message">{{message}}</div>
+    <div class="error-message">{{message}}</div>
   {{/if}}
+  {{!-- {{#each messages}}
+    <div class="error-message">{{this}}</div>
+  {{/each}} --}}
 
-  <br><br>
+  <button class="btn">signup</button>
 
-  <button>Create account</button>
+  <p class="account-message">Do you already have an account?<a href="/auth/login">Login</a></p>
 
-  <p class="account-message">
-    Do you already have an account?
-    <a href="/auth/login">Login</a>
-  </p>
 </form>

@@ -11,17 +11,15 @@
 
 <body>
 
-  {{#if user}}
-    <header>
-      {{> top_menu}}
-    </header>
-  {{/if}}
 
-  <div class="container">
+  <div class="container cont_{{actual_page}}">
     {{{body}}}
   </div>
 
   {{#if user}}
+    <header>
+      {{> top_menu}}
+    </header>
     <footer>
       {{> bottom_menu}}
     </footer>

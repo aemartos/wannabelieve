@@ -1,26 +1,38 @@
 .container
-  position: relative
-  justify-content: space-around
-  .mainTitle
-    z-index: 1
-  .initialMenu
-    z-index: 1
-    width: 70%
-    margin: 0 auto
-    text-align: center
-    font-weight: bold
-    a
-      display: block
-      margin-top: .5em
-    .groupMenu
-      margin-top: .1em
+  min-height: 100%
+  &.cont_initial_page, &.cont_signup, &.cont_login
+    padding: 4em 0
+  &.cont_initial_page
+    position: relative
+    justify-content: space-between
+    .mainTitle
+      z-index: 1
+    .initialMenu
+      z-index: 1
+      width: 70%
+      margin: 0 auto
+      text-align: center
+      font-weight: bold
       a
-        width: 48%
-        display: inline-block
-  #initialVideo
-    position: absolute
-    right: 0
-    bottom: 0
-    min-width: 100%
-    min-height: 100%
-    z-index: 0
+        display: block
+        margin-top: .5em
+      .groupMenu
+        +row-flex
+        justify-content: space-between
+        margin-top: .1em
+        a
+          width: 48%
+          display: inline-block
+    .backImg
+      background-image: url("../../images/iwtb_bg.gif")
+      background-position: center
+      background-size: cover
+      //background-position: 75% 105%
+      //background-size: 150%
+      background-repeat: no-repeat
+      position: absolute
+      right: 0
+      bottom: 0
+      min-width: 100%
+      min-height: 100%
+      z-index: 0

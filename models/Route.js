@@ -11,3 +11,5 @@ const routeSchema = new Schema({
 
 const Route = mongoose.model('Route', routeSchema);
 module.exports = Route;
+
+//{type: Schema.Types.ObjectId, ref:'User'}

@@ -1,0 +1,118 @@
+// form
+//   width: 70%
+//   input, button
+//     box-sizing: border-box
+//     outline: none !important
+//     padding: .5em 1em
+//     margin-bottom: 1em
+//     border: 2px solid #eee
+//     -webkit-border-radius: 2em
+//     -moz-border-radius: 2em
+//     border-radius: 2em
+//   input
+//     background: transparent
+//     &:focus
+//       border-color: 0 !important
+//       box-shadow: 0 !important
+//   select
+//     background: transparent
+//     border: 0
+//     width: 100%
+//     outline: none !important
+
+//   .roundedSelect
+//     display: inline-block
+//     -webkit-border-radius: 2em
+//     -moz-border-radius: 2em
+//     border-radius: 2em
+//     padding: .25em 1em
+//     margin-bottom: 1em
+//     border: 2px solid #eee
+
+//   input.button
+//     border-radius: 2em
+//     color: #fff
+//     cursor: pointer
+//     display: inline-block
+//     font-weight: bold
+//     padding: .5em 1.5em
+//     margin: 0 1em
+//     text-decoration: none
+//     text-transform: uppercase
+//     transition: .3s ease background
+//     &:hover
+//       transition: .3s ease background
+//     &.but
+//       background: green
+//       border: 2px solid green
+//       &:hover
+//         background: #fff
+//         color: green
+
+form
+    margin-top: 2.5em
+    width: 20em
+    label
+      opacity: .3
+      display: inline-block
+      margin-bottom: 10px
+      text-align: center
+      font-weight: bold
+      //width: 100%
+      margin-top: 1em
+      &:first-child
+        margin-top: 0
+    input, button, textarea, select
+      font-family: Courier New, Courier, monospace
+      font-weight: bold
+      color: $maincolor
+      background: transparent
+      font-size: .9em
+      outline: 0
+      padding: .5em 1.2em
+      margin-bottom: 1em
+      width: 100%
+      border: 2px solid $maincolor
+      border-radius: 2em
+      &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus
+        -webkit-text-fill-color: $maincolor
+        -webkit-box-shadow: 0 0 0px 1000px $background inset
+    ::-webkit-input-placeholder /* Chrome/Opera/Safari */
+      color: $maincolor
+      opacity: .5
+    ::-moz-placeholder /* Firefox 19+ */
+      color: $maincolor
+      opacity: .5
+    :-ms-input-placeholder /* IE 10+ */
+      color: $maincolor
+      opacity: .5
+    :-moz-placeholder /* Firefox 18- */
+      color: $maincolor
+      opacity: .5
+
+    button
+      border-radius: 2em
+      color: $maincolor
+      cursor: pointer
+      display: block
+      font-size: 1em
+      font-weight: bold
+      padding: .5em
+      margin: 0 auto
+      margin-top: .5em
+      text-decoration: none
+      text-transform: uppercase
+      width: 9em
+      +transition_default
+      &:hover
+        +hover_scale
+        +transition_default
+      &.sendBtn, &.stopBtn
+        background: $maincolor
+        color: $background
+        border: 2px solid $maincolor
+        box-shadow: 0 0 0 $secondarycolor
+        &:hover
+          background: $secondarycolor
+          border: 2px solid $secondarycolor
+          box-shadow: 0 0 30px $secondarycolor
