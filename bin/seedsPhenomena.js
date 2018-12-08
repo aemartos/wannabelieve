@@ -14,7 +14,7 @@ const Phenomenon = require("../models/Phenomenon");
 
 mongoose
   .connect(
-    process.env.DBURL,
+    "mongodb://localhost/project-02-ironhack",
     {
       useNewUrlParser: true
     }
@@ -39,11 +39,20 @@ let phenomena = [
       coordinates: [52.1996362, -116.5086792]
     },
     imgsMainUrls: [
+      "https://i.pinimg.com/originals/08/02/02/0802020181b082b6d7128bc5a67031e5.jpg", 
       "https://i.pinimg.com/originals/08/02/02/0802020181b082b6d7128bc5a67031e5.jpg"
     ],
-    reviews: [],
-    creatorId: {},
-    visitorsId: []
+    reviews: [
+      {
+        title: "Great Experience",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu erat quis ligula tristique rutrum eu ac quam. Duis cursus augue justo, eu pharetra lectus laoreet ac. Donec ut blandit urna. Mauris hendrerit varius diam, nec posuere purus accumsan et. Nunc rutrum venenatis arcu ut malesuada. Morbi at nunc sed risus ultrices fermentum. Suspendisse ut orci placerat augue suscipit finibus ut vel turpis. Nam dictum nibh sed sodales tempor. Proin ac iaculis lacus, non convallis quam. Fusce sagittis sit amet erat ut congue.",
+      },
+
+      {
+        title: "Great Experience",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu erat quis ligula tristique rutrum eu ac quam. Duis cursus augue justo, eu pharetra lectus laoreet ac. Donec ut blandit urna. Mauris hendrerit varius diam, nec posuere purus accumsan et. Nunc rutrum venenatis arcu ut malesuada. Morbi at nunc sed risus ultrices fermentum. Suspendisse ut orci placerat augue suscipit finibus ut vel turpis. Nam dictum nibh sed sodales tempor. Proin ac iaculis lacus, non convallis quam. Fusce sagittis sit amet erat ut congue.",
+      }
+    ]
   },
 
   {
@@ -58,9 +67,18 @@ let phenomena = [
     imgsMainUrls: [
       "https://thumbor.forbes.com/thumbor/1280x868/https%3A%2F%2Fblogs-images.forbes.com%2Ftrevornace%2Ffiles%2F2017%2F04%2Fblood-falls-1200x585.jpg"
     ],
-    reviews: [],
-    creatorId: {},
-    visitorsId: []
+    reviews: [
+      {
+        title: "Great Experience",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu erat quis ligula tristique rutrum eu ac quam. Duis cursus augue justo, eu pharetra lectus laoreet ac. Donec ut blandit urna. Mauris hendrerit varius diam, nec posuere purus accumsan et. Nunc rutrum venenatis arcu ut malesuada. Morbi at nunc sed risus ultrices fermentum. Suspendisse ut orci placerat augue suscipit finibus ut vel turpis. Nam dictum nibh sed sodales tempor. Proin ac iaculis lacus, non convallis quam. Fusce sagittis sit amet erat ut congue.",
+      },
+
+      {
+        title: "Great Experience",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu erat quis ligula tristique rutrum eu ac quam. Duis cursus augue justo, eu pharetra lectus laoreet ac. Donec ut blandit urna. Mauris hendrerit varius diam, nec posuere purus accumsan et. Nunc rutrum venenatis arcu ut malesuada. Morbi at nunc sed risus ultrices fermentum. Suspendisse ut orci placerat augue suscipit finibus ut vel turpis. Nam dictum nibh sed sodales tempor. Proin ac iaculis lacus, non convallis quam. Fusce sagittis sit amet erat ut congue.",
+      }
+    ],
+    
   },
 
   {
@@ -75,9 +93,17 @@ let phenomena = [
     imgsMainUrls: [
       "http://ichef.bbci.co.uk/wwfeatures/wm/live/1600_900/images/live/p0/42/l6/p042l6q8.jpg"
     ],
-    reviews: [],
-    creatorId: {},
-    visitorsId: []
+    reviews: [
+      {
+        title: "Great Experience",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu erat quis ligula tristique rutrum eu ac quam. Duis cursus augue justo, eu pharetra lectus laoreet ac. Donec ut blandit urna. Mauris hendrerit varius diam, nec posuere purus accumsan et. Nunc rutrum venenatis arcu ut malesuada. Morbi at nunc sed risus ultrices fermentum. Suspendisse ut orci placerat augue suscipit finibus ut vel turpis. Nam dictum nibh sed sodales tempor. Proin ac iaculis lacus, non convallis quam. Fusce sagittis sit amet erat ut congue.",
+      },
+
+      {
+        title: "Great Experience",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu erat quis ligula tristique rutrum eu ac quam. Duis cursus augue justo, eu pharetra lectus laoreet ac. Donec ut blandit urna. Mauris hendrerit varius diam, nec posuere purus accumsan et. Nunc rutrum venenatis arcu ut malesuada. Morbi at nunc sed risus ultrices fermentum. Suspendisse ut orci placerat augue suscipit finibus ut vel turpis. Nam dictum nibh sed sodales tempor. Proin ac iaculis lacus, non convallis quam. Fusce sagittis sit amet erat ut congue.",
+      }
+    ]
   },
 
   {
@@ -91,9 +117,17 @@ let phenomena = [
     imgsMainUrls: [
       "http://ichef.bbci.co.uk/wwfeatures/wm/live/1600_900/images/live/p0/42/l6/p042l6q8.jpg"
     ],
-    reviews: [],
-    creatorId: {},
-    visitorsId: []
+    reviews: [
+      {
+        title: "Great Experience",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu erat quis ligula tristique rutrum eu ac quam. Duis cursus augue justo, eu pharetra lectus laoreet ac. Donec ut blandit urna. Mauris hendrerit varius diam, nec posuere purus accumsan et. Nunc rutrum venenatis arcu ut malesuada. Morbi at nunc sed risus ultrices fermentum. Suspendisse ut orci placerat augue suscipit finibus ut vel turpis. Nam dictum nibh sed sodales tempor. Proin ac iaculis lacus, non convallis quam. Fusce sagittis sit amet erat ut congue.",
+      },
+
+      {
+        title: "Great Experience",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu erat quis ligula tristique rutrum eu ac quam. Duis cursus augue justo, eu pharetra lectus laoreet ac. Donec ut blandit urna. Mauris hendrerit varius diam, nec posuere purus accumsan et. Nunc rutrum venenatis arcu ut malesuada. Morbi at nunc sed risus ultrices fermentum. Suspendisse ut orci placerat augue suscipit finibus ut vel turpis. Nam dictum nibh sed sodales tempor. Proin ac iaculis lacus, non convallis quam. Fusce sagittis sit amet erat ut congue.",
+      }
+    ]
   }
 ];
 
@@ -103,7 +137,7 @@ Phenomenon.deleteMany()
   })
   .then(phenomenaCreated => {
     console.log(
-      `${phenomenaCreated.length} users created with the following id:`
+      `${phenomenaCreated.length} phenomena created with the following id:`
     );
     console.log(phenomenaCreated.map(u => u._id));
   })

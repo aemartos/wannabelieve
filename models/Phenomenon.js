@@ -20,7 +20,7 @@ const phenomenonSchema = new Schema(
   }
 );
 
-schema.index({ location: "2dsphere" });
+phenomenonSchema.index({ location: "2dsphere" });
 
 const Phenomenon = mongoose.model("Phenomenon", phenomenonSchema);
 

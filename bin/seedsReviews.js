@@ -32,20 +32,14 @@ let reviews = [
   {
     title: "Great Experience",
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu erat quis ligula tristique rutrum eu ac quam. Duis cursus augue justo, eu pharetra lectus laoreet ac. Donec ut blandit urna. Mauris hendrerit varius diam, nec posuere purus accumsan et. Nunc rutrum venenatis arcu ut malesuada. Morbi at nunc sed risus ultrices fermentum. Suspendisse ut orci placerat augue suscipit finibus ut vel turpis. Nam dictum nibh sed sodales tempor. Proin ac iaculis lacus, non convallis quam. Fusce sagittis sit amet erat ut congue.",
-    authorId: {},
-    imgReviewUrl: "Url"
   },
   {
     title: "Wow Experience",
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu erat quis ligula tristique rutrum eu ac quam. Duis cursus augue justo, eu pharetra lectus laoreet ac. Donec ut blandit urna. Mauris hendrerit varius diam, nec posuere purus accumsan et. Nunc rutrum venenatis arcu ut malesuada. Morbi at nunc sed risus ultrices fermentum. Suspendisse ut orci placerat augue suscipit finibus ut vel turpis. Nam dictum nibh sed sodales tempor. Proin ac iaculis lacus, non convallis quam. Fusce sagittis sit amet erat ut congue.",
-    authorId: {},
-    imgReviewUrl: "Url"
   },
   {
     title: "Magnificent Experience",
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu erat quis ligula tristique rutrum eu ac quam. Duis cursus augue justo, eu pharetra lectus laoreet ac. Donec ut blandit urna. Mauris hendrerit varius diam, nec posuere purus accumsan et. Nunc rutrum venenatis arcu ut malesuada. Morbi at nunc sed risus ultrices fermentum. Suspendisse ut orci placerat augue suscipit finibus ut vel turpis. Nam dictum nibh sed sodales tempor. Proin ac iaculis lacus, non convallis quam. Fusce sagittis sit amet erat ut congue.",
-    authorId: {},
-    imgReviewUrl: "Url"
   }
 ];
 
