@@ -10,6 +10,6 @@
     }
   );
 
-  loadData(map);
+  //loadData(map);
 
 //}, false);
