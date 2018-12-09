@@ -1,17 +1,51 @@
 header, footer
-  +row-flex
-  justify-content: space-around
   position: fixed
   left: 0
   height: 3em
   width: 100%
   background-color: $background
   border: 4px solid $maincolor
-  a
-    color: $maincolor
+  nav
+    +row-flex
+    justify-content: space-between
+    height: -webkit-fill-available
+    a
+      color: $maincolor
+    span[class*='x-']
+      -webkit-text-stroke: .2px $maincolor
 
 header
   top: 0
+  nav
+    padding: 0 1em 0 .5em
+    font-size: 1.3em
+    form
+      &.search
+        +row-flex
+        justify-content: space-between
+        margin: 0
+        width: 70%
+        font-size: .8em
+        border: 2px solid $maincolor
+        .mGlass
+          margin: .15em 0 .15em .4em
+          span[class*='x-']
+            -webkit-text-stroke: .4px $maincolor
+        input
+          border: 0
+          width: 87%
+          font-family: 'Share Tech Mono'
+          //font-family: 'Enter'
+          //font-family: monospace
+          padding: 0
+          margin: 0
 
 footer
   bottom: 0
+  nav
+    padding: 0 1.5em
+    font-size: 1.5em
+    a
+      span
+        &.x-sighting:before
+          font-size: 1.2em

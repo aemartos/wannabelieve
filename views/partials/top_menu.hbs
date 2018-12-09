@@ -1,5 +1,10 @@
 <nav>
-  <a href="#">search</a>
-  <a href="#">filters</a>
-  <a href="/auth/logout">logout</a>
+  <form class="search">
+    <a class="mGlass" href="#"><span class="x-search">{{!-- search --}}</span></a>
+    <input type="text" placeholder="search...">
+  </form>
+  <div class="actions">
+    <a href="#"><span class="x-filters">{{!-- filters --}}</span></a>
+    <a href="/auth/logout"><span class="x-logout">{{!-- logout --}}</span></a>
+  </div>
 </nav>
