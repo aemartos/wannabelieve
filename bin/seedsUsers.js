@@ -1,12 +1,7 @@
-const path = require('path');
-const dotenv = require('dotenv');
-dotenv.config({path: path.join(__dirname, '.private.env')});
-
-
 const mongoose = require('mongoose');
 const User = require('../models/User');
-
 const bcrypt = require("bcryptjs");
+
 
 mongoose.connect("mongodb://localhost/project-02-ironhack", {useNewUrlParser: true})
   .then(x => {console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)})

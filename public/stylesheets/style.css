@@ -2555,14 +2555,14 @@ header, footer {
     height: -webkit-fill-available; }
     header nav a, footer nav a {
       color: #fff; }
-    header nav span[class*='x-'], footer nav span[class*='x-'] {
-      -webkit-text-stroke: 0.2px #fff; }
 
 header {
   top: 0; }
   header nav {
     padding: 0 1em 0 .5em;
     font-size: 1.3em; }
+    header nav span[class*='x-'] {
+      -webkit-text-stroke: 0.3px #fff; }
     header nav form.search {
       display: flex;
       flex-flow: row nowrap;
@@ -2575,7 +2575,7 @@ header {
       header nav form.search .mGlass {
         margin: .15em 0 .15em .4em; }
         header nav form.search .mGlass span[class*='x-'] {
-          -webkit-text-stroke: 0.4px #fff; }
+          -webkit-text-stroke: 0.5px #fff; }
       header nav form.search input {
         border: 0;
         width: 87%;
@@ -2588,6 +2588,8 @@ footer {
   footer nav {
     padding: 0 1.5em;
     font-size: 1.5em; }
+    footer nav a span[class*='x-'] {
+      -webkit-text-stroke: 0.2px #fff; }
     footer nav a span.x-sighting:before {
       font-size: 1.2em; }
 
