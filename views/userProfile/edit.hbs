@@ -1,0 +1,15 @@
+<div class="containerForm">
+  <h2>Edit Profile</h2>
+  <form action="" method="post">
+    <div class="rowForm">
+      <label for="username">Username</label>
+      <input type="text" name="username" value="{{user.username}}">
+    </div>
+    <div class="rowForm">
+      <label for="email">Email</label>
+      <input type="email" name="email" value="{{user.email}}">
+    </div>
+    <input type="hidden" name="userId" value="{{user.id}}">
+    <button type="submit">Edit</button>
+  </form>
+</div>
