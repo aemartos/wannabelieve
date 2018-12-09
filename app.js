@@ -111,4 +111,7 @@ app.use('/auth', authRoutes);
 const userRoutes = require('./routes/userProfile');
 app.use('/', userRoutes);
 
+const phenomRoutes = require('./routes/phenomena');
+app.use('/', phenomRoutes);
+
 module.exports = app;
