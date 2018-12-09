@@ -1,14 +1,3 @@
-// Seeds file that remove all users and create 2 new users
-
-// To execute this seed, run from the root of the project
-// $ node bin/seeds.js
-
-const path = require("path");
-const dotenv = require("dotenv");
-dotenv.config({
-  path: path.join(__dirname, ".private.env")
-});
-
 const mongoose = require("mongoose");
 const Review = require("../models/Review");
 

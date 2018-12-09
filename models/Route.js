@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const routeSchema = new Schema({
-  rutetitle: String,
+  routetitle: String,
   description: String,
   creator: {type: Schema.Types.ObjectId, ref:'User'},
   phenomsId: {type: Array, default: []}

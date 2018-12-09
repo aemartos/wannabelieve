@@ -1,14 +1,3 @@
-// Seeds file that remove all users and create 2 new users
-
-// To execute this seed, run from the root of the project
-// $ node bin/seeds.js
-
-const path = require("path");
-const dotenv = require("dotenv");
-dotenv.config({
-  path: path.join(__dirname, ".private.env")
-});
-
 const mongoose = require("mongoose");
 const Phenomenon = require("../models/Phenomenon");
 
@@ -39,7 +28,7 @@ let phenomena = [
       coordinates: [52.1996362, -116.5086792]
     },
     imgsMainUrls: [
-      "https://i.pinimg.com/originals/08/02/02/0802020181b082b6d7128bc5a67031e5.jpg", 
+      "https://i.pinimg.com/originals/08/02/02/0802020181b082b6d7128bc5a67031e5.jpg",
       "https://i.pinimg.com/originals/08/02/02/0802020181b082b6d7128bc5a67031e5.jpg"
     ]
   },

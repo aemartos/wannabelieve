@@ -9,8 +9,8 @@
     font-style: normal;
 }
 
-[class*='x-']:before {
-    display: inline-block;
+[class*='x-']:before{
+	display: inline-block;
     font-family: 'retro-icons';
     font-style: normal;
     font-weight: normal;
@@ -18,71 +18,24 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
-.x-create:before {
-    content: '\0043';
-}
-
-.x-delete:before {
-    content: '\0044';
-}
-
-.x-events:before {
-    content: '\0045';
-}
-
-.x-filters:before {
-    content: '\0046';
-}
-
-.x-favorite:before {
-    content: '\0048';
-}
-
-.x-instagram:before {
-    content: '\0049';
-}
-
-.x-facebook:before {
-    content: '\004c';
-}
-
-.x-map:before {
-    content: '\004d';
-}
-
-.x-logout:before {
-    content: '\004f';
-}
-
-.x-profile:before {
-    content: '\0050';
-}
-
-.x-routes:before {
-    content: '\0052';
-}
-
-.x-sighting:before {
-    content: '\0053';
-}
-
-.x-twitter:before {
-    content: '\0054';
-}
-
-.x-update:before {
-    content: '\0055';
-}
-
-.x-save:before {
-    content: '\0056';
-}
-
-.x-whatsapp:before {
-    content: '\0057';
-}
-
-.x-search:before {
-    content: '\005a';
-}
+.x-plus:before{content:'\0041';}
+.x-back:before{content:'\0042';}
+.x-delete:before{content:'\0044';}
+.x-events:before{content:'\0045';}
+.x-filters:before{content:'\0046';}
+.x-geolocation:before{content:'\0047';}
+.x-favorite:before{content:'\0048';}
+.x-instagram:before{content:'\0049';}
+.x-facebook:before{content:'\004b';}
+.x-layers:before{content:'\004c';}
+.x-map:before{content:'\004d';}
+.x-minus:before{content:'\004e';}
+.x-logout:before{content:'\004f';}
+.x-profile:before{content:'\0050';}
+.x-routes:before{content:'\0052';}
+.x-sighting:before{content:'\0053';}
+.x-twitter:before{content:'\0054';}
+.x-update:before{content:'\0055';}
+.x-save:before{content:'\0056';}
+.x-whatsapp:before{content:'\0057';}
+.x-search:before{content:'\005a';}

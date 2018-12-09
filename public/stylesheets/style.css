@@ -2358,7 +2358,7 @@
   font-style: normal; }
 
 @font-face {
-  font-family: 'retro-icons';
+  font-family: 'retro icons';
   src: url("../../../../fonts/retro-icons/retro-icons.eot");
   src: url("../../../../fonts/retro-icons/retro-icons.eot?#iefix") format("embedded-opentype"), url("../../../../fonts/retro-icons/retro-icons.woff") format("woff"), url("../../../../fonts/retro-icons/retro-icons.ttf") format("truetype"), url("../../../../fonts/retro-icons/retro-icons.svg#retro-icons") format("svg");
   font-weight: normal;
@@ -2366,12 +2366,15 @@
 
 [class*='x-']:before {
   display: inline-block;
-  font-family: 'retro-icons';
+  font-family: 'retro icons';
   font-style: normal;
   font-weight: normal;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+.x-back:before {
+  content: '\0042'; }
 
 .x-create:before {
   content: '\0043'; }
@@ -2555,14 +2558,14 @@ header, footer {
     height: -webkit-fill-available; }
     header nav a, footer nav a {
       color: #fff; }
-    header nav span[class*='x-'], footer nav span[class*='x-'] {
-      -webkit-text-stroke: 0.2px #fff; }
 
 header {
   top: 0; }
   header nav {
     padding: 0 1em 0 .5em;
     font-size: 1.3em; }
+    header nav span[class*='x-'] {
+      -webkit-text-stroke: 0.3px #fff; }
     header nav form.search {
       display: flex;
       flex-flow: row nowrap;
@@ -2575,7 +2578,7 @@ header {
       header nav form.search .mGlass {
         margin: .15em 0 .15em .4em; }
         header nav form.search .mGlass span[class*='x-'] {
-          -webkit-text-stroke: 0.4px #fff; }
+          -webkit-text-stroke: 0.5px #fff; }
       header nav form.search input {
         border: 0;
         width: 87%;
@@ -2588,6 +2591,8 @@ footer {
   footer nav {
     padding: 0 1.5em;
     font-size: 1.5em; }
+    footer nav a span[class*='x-'] {
+      -webkit-text-stroke: 0.2px #fff; }
     footer nav a span.x-sighting:before {
       font-size: 1.2em; }
 
