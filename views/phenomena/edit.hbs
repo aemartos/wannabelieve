@@ -1,0 +1,28 @@
+
+<h1>Edit Phenomenon</h1>
+
+<div>
+  <form action="/phenomena/{{phenomenon.id}}/edit/" method="post">
+    
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" rows="3" name="name" value="{{phenomenon.name}}"></input>
+    </div>
+
+    <div class="form-group">
+      <label for="type">Type</label>
+      <select name="type" class="form-control" value="{{phenomenon.type}}">
+        <option>cat1</option>
+        <option>cat2</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" rows="3" name="description" value="{{phenomenon.description}}"></textarea>
+    </div>
+
+    <button type="submit">Edit</button>
+  </form>
+
+</div>

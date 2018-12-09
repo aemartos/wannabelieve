@@ -12,17 +12,24 @@ router.get("/phenomena/new", isLoggedIn("/auth/login"), (req, res) => {
 });
 
 router.post("/addPhenomenon", uploadPhenomPicture.array("file"), (req, res) => {
-  let imgPhenomUrls= [];
-  for(let i=0; i<req.files.length;i++){
-    imgPhenomUrls.push(req.files[i].url);
+  var imgPhenomUrls = [];
+
+  if (req.files.length !== 0) {
+    console.log("hola")
+    for (let i = 0; i < req.files.length; i++) {
+      imgPhenomUrls.push(req.files[i].url);
+    }
   }
-  const {name,description,type}= req.body;
+
+  const { name, description, type } = req.body;
   const creatorId = req.user;
-  
-  Phenomenon.create({ imgPhenomUrls, name, description, type, creatorId }).then(phenomenon => {
-    console.log(`Se ha publicado el fenomeno`);
-    res.redirect("/phenomena");
-  });
+
+  Phenomenon.create({ imgPhenomUrls, name, description, type, creatorId }).then(
+    phenomenon => {
+      console.log(`Se ha publicado el fenomeno`);
+      res.redirect("/phenomena");
+    }
+  );
 });
 
 router.get("/phenomena", isLoggedIn("/auth/login"), (req, res, next) => {
@@ -39,14 +46,32 @@ router.get("/phenomena", isLoggedIn("/auth/login"), (req, res, next) => {
     });
 });
 
-router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
-  let phenomenaId = req.params.id;
-  Phenomenon.findById(phenomenaId).then(phenomenon => {
-    console.log(phenomenon)
-    res.render("phenomena/detail", { phenomenon });
+router.get("/phenomena/:id/edit/", (req, res) => {
+  Phenomenon.findById(req.params.id).then(phenomenon => {
+    res.render("phenomena/edit", { phenomenon });
   });
 });
 
+router.post("/phenomena/:id/edit/", (req, res) => {
+  const { name, type, description } = req.body;
+  const id = req.params.id;
+  Phenomenon.findByIdAndUpdate(id, { name, type, description }).then(() =>
+    res.redirect("/profile")
+  );
+});
 
+router.get("/phenomena/:id/delete", (req, res) => {
+  Phenomenon.findByIdAndDelete(req.params.id).then(() => {
+    res.redirect("/profile");
+  });
+});
+
+router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
+  let phenomenaId = req.params.id;
+  Phenomenon.findById(phenomenaId).then(phenomenon => {
+    console.log(phenomenon);
+    res.render("phenomena/detail", { phenomenon });
+  });
+});
 
 module.exports = router;
