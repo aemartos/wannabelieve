@@ -6,8 +6,9 @@ dotenv.config({path: path.join(__dirname, '.private.env')});
 const mongoose = require('mongoose');
 const User = require('../models/User');
 
+const bcrypt = require("bcryptjs");
 
-mongoose.connect(process.env.DBURL, {useNewUrlParser: true})
+mongoose.connect("mongodb://localhost/project-02-ironhack", {useNewUrlParser: true})
   .then(x => {console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)})
   .catch(err => {console.error("Error connecting to mongo", err)});
 
