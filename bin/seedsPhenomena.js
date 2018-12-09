@@ -27,10 +27,8 @@ let phenomena = [
       type: "Point",
       coordinates: [52.1996362, -116.5086792]
     },
-    imgsMainUrls: [
-      "https://i.pinimg.com/originals/08/02/02/0802020181b082b6d7128bc5a67031e5.jpg",
-      "https://i.pinimg.com/originals/08/02/02/0802020181b082b6d7128bc5a67031e5.jpg"
-    ]
+    imgPhenomUrl: "https://i.pinimg.com/originals/08/02/02/0802020181b082b6d7128bc5a67031e5.jpg"
+    
   },
 
   {
@@ -42,9 +40,8 @@ let phenomena = [
       type: "Point",
       coordinates: [77.7166571, 162.2491146]
     },
-    imgsMainUrls: [
-      "https://thumbor.forbes.com/thumbor/1280x868/https%3A%2F%2Fblogs-images.forbes.com%2Ftrevornace%2Ffiles%2F2017%2F04%2Fblood-falls-1200x585.jpg"
-    ]
+    imgPhenomUrl:"https://thumbor.forbes.com/thumbor/1280x868/https%3A%2F%2Fblogs-images.forbes.com%2Ftrevornace%2Ffiles%2F2017%2F04%2Fblood-falls-1200x585.jpg"
+  
   },
 
   {
@@ -56,9 +53,7 @@ let phenomena = [
       type: "Point",
       coordinates: [20.7038168, -105.5672228]
     },
-    imgsMainUrls: [
-      "http://ichef.bbci.co.uk/wwfeatures/wm/live/1600_900/images/live/p0/42/l6/p042l6q8.jpg"
-    ]
+    imgPhenomUrl: "http://ichef.bbci.co.uk/wwfeatures/wm/live/1600_900/images/live/p0/42/l6/p042l6q8.jpg"
   },
 
   {
@@ -69,9 +64,7 @@ let phenomena = [
       type: "Point",
       coordinates: [33.8423896, 121.8277925]
     },
-    imgsMainUrls: [
-      "http://ichef.bbci.co.uk/wwfeatures/wm/live/1600_900/images/live/p0/42/l6/p042l6q8.jpg"
-    ]
+    imgPhenomUrl: "http://ichef.bbci.co.uk/wwfeatures/wm/live/1600_900/images/live/p0/42/l6/p042l6q8.jpg"
   }
 ];
 

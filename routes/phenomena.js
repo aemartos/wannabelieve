@@ -4,16 +4,19 @@ const { isLoggedOut, isLoggedIn } = require("../middlewares/isLogged");
 
 const Phenomenon = require("../models/Phenomenon");
 
+const uploadMethods = require("../config/cloudinary.js");
+const uploadPhenomPicture = uploadMethods.uploadPhenomPicture;
+
 router.get("/phenomena/new", isLoggedIn("/auth/login"), (req, res) => {
   res.render("phenomena/new");
 });
 
-router.post("/addPhenomenon", (req, res) => {
+router.post("/addPhenomenon", uploadPhenomPicture.single("file"), (req, res) => {
+  const imgPhenomUrl= req.file.url;
   const {name,description,type}= req.body;
   const creatorId = req.user;
-console.log(req.body)
 
-  Phenomenon.create({ name, description, type, creatorId }).then(phenomenon => {
+  Phenomenon.create({ imgPhenomUrl, name, description, type, creatorId }).then(phenomenon => {
     console.log(`Se ha publicado el fenomeno`);
     res.redirect("/phenomena");
   });

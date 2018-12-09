@@ -2,11 +2,12 @@
 
 
 <div class="container">
-  <form action="/addPhenomenon" method="post">
-    {{!-- <div class="custom-file">
-      <input type="file" class="custom-file-input" name="imgPhenomenon">
-      <label class="custom-file-label" for="imgPhenomenon">Select Image</label>
-    </div> --}}
+  <form action="/addPhenomenon" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
+    <label class="custom-file-label" for="file"><img src="https://imgplaceholder.com/220x120/cccccc/757575/fa-image"
+        alt="">
+      <p></p>
+    </label>
 
     <div class="form-group">
       <label for="name">Name</label>
@@ -30,3 +31,5 @@
   </form>
 
 </div>
+
+<script src="../javascripts/fileUpload.js"></script>
