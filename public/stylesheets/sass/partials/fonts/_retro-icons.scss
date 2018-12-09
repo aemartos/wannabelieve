@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'retro-icons';
+    font-family: 'retro icons';
     src: url('../../../../fonts/retro-icons/retro-icons.eot');
     src: url('../../../../fonts/retro-icons/retro-icons.eot?#iefix') format('embedded-opentype'),
         url('../../../../fonts/retro-icons/retro-icons.woff') format('woff'),
@@ -11,12 +11,16 @@
 
 [class*='x-']:before {
     display: inline-block;
-    font-family: 'retro-icons';
+    font-family: 'retro icons';
     font-style: normal;
     font-weight: normal;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.x-back:before {
+    content: '\0042';
 }
 
 .x-create:before {
