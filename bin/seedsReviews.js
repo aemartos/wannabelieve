@@ -10,11 +10,11 @@ dotenv.config({
 });
 
 const mongoose = require("mongoose");
-const Phenomenon = require("../models/Phenomenon");
+const Review = require("../models/Review");
 
 mongoose
   .connect(
-    process.env.DBURL,
+    "mongodb://localhost/project-02-ironhack",
     {
       useNewUrlParser: true
     }
@@ -49,7 +49,7 @@ Review.deleteMany()
   })
   .then(reviewsCreated => {
     console.log(
-      `${reviewsCreated.length} users created with the following id:`
+      `${reviewsCreated.length} reviews created with the following id:`
     );
     console.log(reviewsCreated.map(u => u._id));
   })

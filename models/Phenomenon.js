@@ -9,7 +9,7 @@ const phenomenonSchema = new Schema(
     location: { type: { type: String }, coordinates: [Number] },
     imgsMainUrls: { type: Array, default: [] },
     reviews: { type: Array, default: [] },
-    creatorId: Object,
+    creatorId: { type: Object, default: {} },
     visitorsId: { type: Array, default: [] }
   },
   {

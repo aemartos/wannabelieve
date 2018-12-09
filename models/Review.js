@@ -4,12 +4,12 @@ const Schema   = mongoose.Schema;
 const reviewSchema = Schema({
   title:String,
   content: String,
-  authorId: Object,
+  authorId: { type: Object, default: {} },
   imgReviewUrl: String,
 }, {
   timestamps: { createdAt: "createdAt", updatedAt: "updatedAt" }
 });
 
-const Review = mongoose.model('Comment', reviewSchema);
+const Review = mongoose.model('Review', reviewSchema);
 
 module.exports = Review;
