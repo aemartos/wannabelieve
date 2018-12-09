@@ -11,12 +11,15 @@ router.get("/phenomena/new", isLoggedIn("/auth/login"), (req, res) => {
   res.render("phenomena/new");
 });
 
-router.post("/addPhenomenon", uploadPhenomPicture.single("file"), (req, res) => {
-  const imgPhenomUrl= req.file.url;
+router.post("/addPhenomenon", uploadPhenomPicture.array("file"), (req, res) => {
+  let imgPhenomUrls= [];
+  for(let i=0; i<req.files.length;i++){
+    imgPhenomUrls.push(req.files[i].url);
+  }
   const {name,description,type}= req.body;
   const creatorId = req.user;
-
-  Phenomenon.create({ imgPhenomUrl, name, description, type, creatorId }).then(phenomenon => {
+  
+  Phenomenon.create({ imgPhenomUrls, name, description, type, creatorId }).then(phenomenon => {
     console.log(`Se ha publicado el fenomeno`);
     res.redirect("/phenomena");
   });
@@ -39,6 +42,7 @@ router.get("/phenomena", isLoggedIn("/auth/login"), (req, res, next) => {
 router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
   let phenomenaId = req.params.id;
   Phenomenon.findById(phenomenaId).then(phenomenon => {
+    console.log(phenomenon)
     res.render("phenomena/detail", { phenomenon });
   });
 });

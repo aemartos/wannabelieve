@@ -1,6 +1,19 @@
 <div class="containerForm">
   <h2>Edit Profile</h2>
-  <form action="" method="post">
+  <form action="/editProfile" method="post" enctype="multipart/form-data">
+{{#if user.photoProfile}}
+ <input type="file" name="file" id="file" class="inputfile"/>
+    <label class="custom-file-label" for="file"><img width="50%"src="{{user.photoProfile}}"
+        alt="">
+      <p></p>
+    </label>
+{{else}}
+    <input type="file" name="file" id="file" class="inputfile"/>
+    <label class="custom-file-label" for="file"><img src="https://imgplaceholder.com/100x100/cccccc/757575/fa-camera-retro"
+        alt="">
+      <p></p>
+    </label>
+{{/if}}
     <div class="rowForm">
       <label for="username">Username</label>
       <input type="text" name="username" value="{{user.username}}">
@@ -13,3 +26,5 @@
     <button type="submit">Edit</button>
   </form>
 </div>
+
+<script src="../javascripts/fileUpload.js"></script>

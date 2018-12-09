@@ -1,4 +1,7 @@
 <div>
   <h1>{{phenomenon.name}}</h1>
   <p>{{phenomenon.description}}</p>
+  {{#each phenomenon.imgPhenomUrls}}
+  <img src={{this}} alt="" width="80%">
+  {{/each}}
 </div>
