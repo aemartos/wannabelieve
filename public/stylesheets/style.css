@@ -2458,7 +2458,7 @@ html, body {
   height: 100%;
   width: 100%;
   color: white;
-  background-color: #010f0c;
+  background-color: #a8a8a8;
   font-family: 'Press Start 2P';
   padding: 0;
   margin: 0; }
@@ -2697,7 +2697,8 @@ form {
 
 .container.cont_initial_page, .container.cont_signup, .container.cont_login {
   min-height: 100%;
-  padding: 4em 0; }
+  padding: 4em 0;
+  background-color: #010f0c; }
 
 .container.cont_initial_page {
   position: relative;
@@ -2735,7 +2736,7 @@ form {
     z-index: 0; }
 
 .container.cont_map_page .mainMap {
-  background-color: #39FF14;
+  background-color: #8f8f8f;
   height: 100%;
   width: 100%; }
 
