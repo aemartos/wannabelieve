@@ -1,15 +1,26 @@
-//document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
   const map = new google.maps.Map(
     document.getElementById('mainMap'), {
-      zoom: 14,
-      center: {
-        lat: 40.4169473,
-        lng: -3.7035285
-      }
+      zoom: 14
     }
   );
 
-  //loadData(map);
+  loadData(map)
 
-//}, false);
+  geolocateMe()
+  .then(center => {
+    const marker = new google.maps.Marker({
+      position: center,
+      title: "You are here",
+      icon: {
+        url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+      }
+    })
+    map.setCenter(center);
+    marker.setMap(map);
+    
+  })
+  .catch(e => console.log(e))
+
+}, false);

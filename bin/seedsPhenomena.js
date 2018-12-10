@@ -25,7 +25,7 @@ let phenomena = [
     type: "cat1",
     location: {
       type: "Point",
-      coordinates: [52.1996362, -116.5086792]
+      coordinates: [52.2236233,-116.4359982]
     },
     imgPhenomUrls: ["https://i.pinimg.com/originals/08/02/02/0802020181b082b6d7128bc5a67031e5.jpg"]
     
@@ -38,7 +38,7 @@ let phenomena = [
     type: "cat1",
     location: {
       type: "Point",
-      coordinates: [77.7166571, 162.2491146]
+      coordinates: [-77.7166621,162.2578908]
     },
     imgPhenomUrls:["https://thumbor.forbes.com/thumbor/1280x868/https%3A%2F%2Fblogs-images.forbes.com%2Ftrevornace%2Ffiles%2F2017%2F04%2Fblood-falls-1200x585.jpg"]
   
@@ -51,7 +51,7 @@ let phenomena = [
     type: "cat1",
     location: {
       type: "Point",
-      coordinates: [20.7038168, -105.5672228]
+      coordinates: [20.7039553,-105.5690147]
     },
     imgPhenomUrls: ["http://ichef.bbci.co.uk/wwfeatures/wm/live/1600_900/images/live/p0/42/l6/p042l6q8.jpg"]
   },
@@ -62,7 +62,7 @@ let phenomena = [
     type: "cat1",
     location: {
       type: "Point",
-      coordinates: [33.8423896, 121.8277925]
+      coordinates: [-33.8411118,121.807766]
     },
     imgPhenomUrls: ["http://ichef.bbci.co.uk/wwfeatures/wm/live/1600_900/images/live/p0/42/l6/p042l6q8.jpg"]
   }

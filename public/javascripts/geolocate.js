@@ -15,14 +15,14 @@ const geolocateMe = () => {
 
 
 
-document.querySelector(".findMe").onclick = (e) => {
-  //Update position each second after btn click
-  //setInterval(()=>{
-  geolocateMe()
-    .then(location => {
-      console.log('position updated');
-      console.log(location);
-    })
-    .catch(e => console.log(e));
-  //}, 1000);
-};
+// document.querySelector(".findMe").onclick = (e) => {
+//   //Update position each second after btn click
+//   //setInterval(()=>{
+//   geolocateMe()
+//     .then(location => {
+//       console.log('position updated');
+//       console.log(location);
+//     })
+//     .catch(e => console.log(e));
+//   //}, 1000);
+// };
