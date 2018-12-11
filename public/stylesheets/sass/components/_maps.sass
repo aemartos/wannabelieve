@@ -1,6 +1,35 @@
 .container
   &.cont_map_page
+    position: relative
     .mainMap
       background-color: $darkbg
       height: 100%
       width: 100%
+    .mapOptions, .mapZoom
+      position: absolute
+      background: $menubg
+      border: 4px solid $maincolor
+      padding: .5em
+      button
+        background: transparent
+        color: $maincolor
+        font-size: 1.5em
+        outline: 0
+        border: 0
+        padding: 0
+        cursor: pointer
+        &.findMe
+          margin: .15em 0 .3em 0
+        &.zoomIn
+          margin-right: .5em
+    .mapOptions
+      top: 1em
+      left: 1em
+      +column-flex
+      justify-content: space-between
+    .mapZoom
+      bottom: 1em
+      right: 1em
+      +row-flex
+      justify-content: space-between
+      padding-bottom: .3em

@@ -13,7 +13,6 @@ router.get("/profile", isLoggedIn("/auth/login"), (req, res, next) => {
   let query = { "creatorId._id": req.user._id };
 
   Phenomenon.find(query).then(phenomenaUser => {
-
     console.log(phenomenaUser)
     res.render("userProfile", {
       phenomenaUser,
@@ -23,7 +22,7 @@ router.get("/profile", isLoggedIn("/auth/login"), (req, res, next) => {
 });
 
 router.get("/profile/edit", isLoggedIn("/auth/login"), (req, res, next) => {
-  res.render("userProfile/edit", { actual_page: "editUserProfile_page" });
+  res.render("userProfile/edit", {actual_page: "editUserProfile_page"});
 });
 
 router.post("/editProfile", uploadProfilePicture.single("file"), (req, res) => {
@@ -32,10 +31,10 @@ router.post("/editProfile", uploadProfilePicture.single("file"), (req, res) => {
   } else {
     photoProfile = req.file.url;
   }
-  
+
   const { username, email, userId } = req.body;
 
-  User.findByIdAndUpdate(userId, { username, email, photoProfile }).then(() =>
+  User.findByIdAndUpdate(userId, {username, email, photoProfile}).then(() =>
     res.redirect(`/profile`)
   );
 });

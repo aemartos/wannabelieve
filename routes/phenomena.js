@@ -8,7 +8,7 @@ const uploadMethods = require("../config/cloudinary.js");
 const uploadPhenomPicture = uploadMethods.uploadPhenomPicture;
 
 router.get("/phenomena/new", isLoggedIn("/auth/login"), (req, res) => {
-  res.render("phenomena/new");
+  res.render("phenomena/new", {actual_page: "addPhenom_page"});
 });
 
 router.post("/addPhenomenon", uploadPhenomPicture.array("file"), (req, res) => {

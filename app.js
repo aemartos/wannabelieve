@@ -114,4 +114,7 @@ app.use('/', userRoutes);
 const phenomRoutes = require('./routes/phenomena');
 app.use('/', phenomRoutes);
 
+const mapRoutes = require('./routes/mapRoutes');
+app.use('/', mapRoutes);
+
 module.exports = app;

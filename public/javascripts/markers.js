@@ -1,19 +1,20 @@
-const singleMarker = (title, position, map, color) => {
-  let url = "http://maps.google.com/mapfiles/ms/icons/";
-  url += color + "-dot.png";
+const singleMarker = (title, position, map, cat) => {
+  let url = 'images/markers/';
+  url += cat + ".png";
   let marker = new google.maps.Marker({
     title,
     position,
     map,
     icon: {
+      //size: new google.maps.Size(40, 40),
       url
     }
   });
   return marker;
 };
 
-const addMarker = (title, description, position, map, color) => {
-  let marker = singleMarker(title, position, map, color);
+const addMarker = (title, description, position, map, cat) => {
+  let marker = singleMarker(title, position, map, cat);
   addWindow(title, description, map, marker);
   return marker;
 };

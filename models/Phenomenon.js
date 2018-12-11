@@ -20,18 +20,21 @@ const phenomenonSchema = new Schema(
   }
 );
 
-phenomenonSchema.index({ location: "2dsphere" });
+phenomenonSchema.index({ location: '2dsphere' });
 
 const Phenomenon = mongoose.model("Phenomenon", phenomenonSchema);
 
-// Phenomenon.add = function(name, description, type, lat, lng, creator_id, imgsMain){
-//   return Phenomenon.create({
-//     name, type,
-//     location:{
-//       type:"Point",
-//       coordinates:[lat,lng]
-//     }
-//   })
-// }
+Phenomenon.add = function(name, description, type, lat, lng, creator_id, imgsMain){
+  return Phenomenon.create({
+    name,
+    type,
+    location:{
+      type: 'Point',
+      coordinates:[lat,lng]
+    },
+    creator_id,
+    imgsMain
+  })
+}
 
 module.exports = Phenomenon;
