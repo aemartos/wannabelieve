@@ -8,8 +8,8 @@ const phenomenonSchema = new Schema(
     type: { type: String, enum: ["cat1", "cat2"] },
     imgPhenomUrls: { type: Array, default: [] },
     reviews: { type: Array, default: [] },
-    creatorId: { type: Object, default: {} },
-    visitorsId: { type: Array, default: [] },
+    creatorId: { type: Schema.Types.ObjectId, ref:'User' },
+    visitorsId: [{ type: Schema.Types.ObjectId, ref:'User' }],
     location: {type: {type: String,default: 'Point'}, coordinates: [Number]}
   },
   {

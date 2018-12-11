@@ -6,7 +6,7 @@
       height: 100%
       width: 100%
       //color: $menubg
-      .gmnoprint
+      .gmnoprint, .gm-style-cc
         display: none
       .gm-style-iw
         background-image: url("../../images/windows/infowbg.png")
@@ -24,11 +24,13 @@
           > *
             width: 50em
       .gm-ui-hover-effect
-        color: $maincolor !important
         top: 2em !important
-        right: -2em !important
+        right: -2.5em !important
         z-index: 1000 !important
-    .mapOptions, .mapZoom
+        img
+          filter: invert(100%)
+          opacity: 1
+    .mapOptions, .mapZoom, .addPhenom
       position: absolute
       background: $menubg
       border: 4px solid $maincolor
@@ -56,3 +58,9 @@
       +row-flex
       justify-content: space-between
       padding-bottom: .3em
+    .addPhenom
+      bottom: 1em
+      left: 1em
+      border-radius: 5em
+      a
+        color: $maincolor
