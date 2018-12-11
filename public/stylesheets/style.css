@@ -2744,10 +2744,28 @@ form {
   .container.cont_map_page .mainMap {
     background-color: #8f8f8f;
     height: 100%;
-    width: 100%;
-    color: #010f0c; }
+    width: 100%; }
     .container.cont_map_page .mainMap .gmnoprint {
       display: none; }
+    .container.cont_map_page .mainMap .gm-style-iw {
+      background-image: url("../../images/windows/infowbg.png");
+      background-position: center;
+      background-size: contain;
+      font-size: 0.6em;
+      width: 50em !important;
+      height: 9.3em !important;
+      left: -6.7em !important;
+      top: 4em !important; }
+      .container.cont_map_page .mainMap .gm-style-iw .infoPhenom {
+        width: 50em;
+        padding: 1em; }
+        .container.cont_map_page .mainMap .gm-style-iw .infoPhenom > * {
+          width: 50em; }
+    .container.cont_map_page .mainMap .gm-ui-hover-effect {
+      color: #fff !important;
+      top: 2em !important;
+      right: -2em !important;
+      z-index: 1000 !important; }
   .container.cont_map_page .mapOptions, .container.cont_map_page .mapZoom {
     position: absolute;
     background: #010f0c;

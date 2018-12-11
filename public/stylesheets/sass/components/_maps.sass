@@ -5,9 +5,29 @@
       background-color: $darkbg
       height: 100%
       width: 100%
-      color: $menubg
+      //color: $menubg
       .gmnoprint
         display: none
+      .gm-style-iw
+        background-image: url("../../images/windows/infowbg.png")
+        background-position: center
+        //background-size: cover
+        background-size: contain
+        font-size: 0.6em
+        width: 50em !important
+        height: 9.3em !important
+        left: -6.7em !important
+        top: 4em !important
+        .infoPhenom
+          width: 50em
+          padding: 1em
+          > *
+            width: 50em
+      .gm-ui-hover-effect
+        color: $maincolor !important
+        top: 2em !important
+        right: -2em !important
+        z-index: 1000 !important
     .mapOptions, .mapZoom
       position: absolute
       background: $menubg

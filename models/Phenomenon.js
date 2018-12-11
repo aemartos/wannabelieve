@@ -6,11 +6,11 @@ const phenomenonSchema = new Schema(
     name: String,
     description: String,
     type: { type: String, enum: ["cat1", "cat2"] },
-    location: { type: { type: String }, coordinates: [Number] },
     imgPhenomUrls: { type: Array, default: [] },
     reviews: { type: Array, default: [] },
     creatorId: { type: Object, default: {} },
-    visitorsId: { type: Array, default: [] }
+    visitorsId: { type: Array, default: [] },
+    location: {type: {type: String,default: 'Point'}, coordinates: [Number]}
   },
   {
     timestamps: {
@@ -20,7 +20,7 @@ const phenomenonSchema = new Schema(
   }
 );
 
-phenomenonSchema.index({ location: '2dsphere' });
+phenomenonSchema.index({location: '2dsphere' });
 
 const Phenomenon = mongoose.model("Phenomenon", phenomenonSchema);
 

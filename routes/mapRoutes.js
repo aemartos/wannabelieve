@@ -32,7 +32,7 @@ router.post('/nearPhenomena', (req, res, next) => {
   }).then(nearPhenomena => {
     console.log(nearPhenomena);
     res.json(nearPhenomena);
-  })
+  }).catch((e)=>{console.log(e)})
 });
 module.exports = router;
 
