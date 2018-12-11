@@ -2684,6 +2684,8 @@ form {
         background: #39FF14;
         border: 2px solid #39FF14;
         box-shadow: 0 0 30px #39FF14; }
+    form button.addBtn {
+      background-color: #00a388; }
   form .messages {
     height: 1.5em; }
   form .account-message, form .error-message {
