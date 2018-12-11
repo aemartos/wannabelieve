@@ -2566,8 +2566,7 @@ header, footer {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    justify-content: space-between;
-    height: -webkit-fill-available; }
+    justify-content: space-between; }
     header nav a, footer nav a {
       color: #fff; }
 
@@ -2575,7 +2574,8 @@ header {
   top: 0; }
   header nav {
     padding: 0 1em 0 .5em;
-    font-size: 1.3em; }
+    font-size: 1.3em;
+    height: 1.9em; }
     header nav span[class*='x-'] {
       -webkit-text-stroke: 0.3px #fff; }
     header nav form.search {
@@ -2602,7 +2602,8 @@ footer {
   bottom: 0; }
   footer nav {
     padding: 0 1.5em;
-    font-size: 1.5em; }
+    font-size: 1.5em;
+    height: 1.6em; }
     footer nav a span[class*='x-'] {
       -webkit-text-stroke: 0.2px #fff; }
     footer nav a span.x-sighting:before {
@@ -2745,6 +2746,8 @@ form {
     height: 100%;
     width: 100%;
     color: #010f0c; }
+    .container.cont_map_page .mainMap .gmnoprint {
+      display: none; }
   .container.cont_map_page .mapOptions, .container.cont_map_page .mapZoom {
     position: absolute;
     background: #010f0c;
