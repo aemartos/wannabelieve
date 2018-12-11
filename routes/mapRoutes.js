@@ -9,7 +9,8 @@ router.get('/map', isLoggedIn('/auth/login'), (req, res, next) => {
     res.render('map',{
       phenomena: JSON.stringify(phenomena),
       //phenomenaList: phenomena,
-      actual_page: 'map_page'
+      actual_page: 'map_page',
+      map: true
     });
   });
 });

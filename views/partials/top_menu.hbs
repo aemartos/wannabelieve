@@ -1,10 +1,15 @@
-<nav>
-  <form class="search">
-    <a class="mGlass" href="#"><span class="x-search">{{!-- search --}}</span></a>
-    <input type="text" placeholder="search...">
-  </form>
-  <div class="actions">
-    <a href="#"><span class="x-filters">{{!-- filters --}}</span></a>
-    <a href="/auth/logout"><span class="x-logout">{{!-- logout --}}</span></a>
-  </div>
-</nav>
+
+  {{#if map}}
+    <nav>
+      <form class="search">
+        <a class="mGlass" href="#"><span class="x-search">{{!-- search --}}</span></a>
+        <input type="text" placeholder="search...">
+      </form>
+  {{else}}
+    <nav class="right">
+  {{/if}}
+    <div class="actions">
+      <a href="#"><span class="x-filters">{{!-- filters --}}</span></a>
+      <a href="/auth/logout"><span class="x-logout">{{!-- logout --}}</span></a>
+    </div>
+  </nav>

@@ -11,7 +11,7 @@ const userSchema = new Schema({
   status: {type: String, enum: ['Pending Confirmation','Active'], default: 'Pending Confirmation'},
   confirmationCode: {type: String, unique: true},
   role: {type: String, enum: ['Admin', 'User'], default: 'User'},
-  favPhenoms: {type: Array, default: []}
+  favPhenoms: [{ type: Schema.Types.ObjectId, ref:'Phenomenom' }]
 }, {timestamps: true}
 );
 

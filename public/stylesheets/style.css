@@ -2543,17 +2543,8 @@ p {
     width: 100%;
     height: 100%; }
 
-::-webkit-scrollbar {
-  width: .45em;
-  height: .45em; }
-
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
-
-::-webkit-scrollbar-thumb {
-  background-color: #39FF14;
-  outline: 1px solid slategrey;
-  border-radius: 5em; }
+::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb {
+  display: none; }
 
 header, footer {
   position: fixed;
@@ -2576,6 +2567,8 @@ header {
     padding: 0 1em 0 .5em;
     font-size: 1.3em;
     height: 1.9em; }
+    header nav.right {
+      justify-content: flex-end; }
     header nav span[class*='x-'] {
       -webkit-text-stroke: 0.3px #fff; }
     header nav form.search {
@@ -2747,7 +2740,7 @@ form {
     background-color: #8f8f8f;
     height: 100%;
     width: 100%; }
-    .container.cont_map_page .mainMap .gmnoprint {
+    .container.cont_map_page .mainMap .gmnoprint, .container.cont_map_page .mainMap .gm-style-cc {
       display: none; }
     .container.cont_map_page .mainMap .gm-style-iw {
       background-image: url("../../images/windows/infowbg.png");
