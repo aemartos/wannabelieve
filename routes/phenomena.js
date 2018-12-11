@@ -61,7 +61,7 @@ router.get("/phenomena", isLoggedIn("/auth/login"), (req, res, next) => {
 
 router.get("/phenomena/:id/edit/", (req, res) => {
   Phenomenon.findById(req.params.id).then(phenomenon => {
-    res.render("phenomena/edit", { phenomenon });
+    res.render("phenomena/edit", { phenomenon, actual_page: "phenomena_editPage" });
   });
 });
 
@@ -83,7 +83,7 @@ router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
   let phenomenaId = req.params.id;
   Phenomenon.findById(phenomenaId).then(phenomenon => {
     console.log(phenomenon);
-    res.render("phenomena/detail", { phenomenon });
+    res.render("phenomena/detail", { phenomenon , actual_page: "phenomena_detailPage"});
   });
 });
 
