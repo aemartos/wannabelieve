@@ -47,32 +47,3 @@ document.querySelector(".findMe").onclick = (e) => {
     .catch(e => console.log(e));
   //}, 1000);
 };
-
-
-// document.querySelector(".findMe").onclick = (e) => {
-//   //Update position each second after btn click
-//   //setInterval(()=>{
-//   geolocateMe()
-//     .then(location => {
-//       console.log('position updated');
-//       console.log(location);
-//     })
-//     .catch(e => console.log(e));
-//   //}, 1000);
-// };
-
-
-  // geolocateMe()
-  // .then(center => {
-  //   const marker = new google.maps.Marker({
-  //     position: center,
-  //     title: "You are here",
-  //     icon: {
-  //       url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-  //     }
-  //   })
-  //   map.setCenter(center);
-  //   marker.setMap(map);
-
-  // })
-  // .catch(e => console.log(e))

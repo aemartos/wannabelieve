@@ -6,7 +6,8 @@ const map = new google.maps.Map(
       lat: 40.4169473,
       lng: -3.7035285
     },
-    disableDefaultUI: true
+    disableDefaultUI: true,
+    styles: style15_4
   }
 );
 
