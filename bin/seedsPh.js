@@ -52,7 +52,7 @@ let phenomena = [
   },
   {
     name: "UPM01 phenomeno",
-    description: "",
+    description: "Lorem fistrum se calle ustée te voy a borrar el cerito condemor. Va usté muy cargadoo al ataquerl ese que llega al ataquerl caballo blanco caballo negroorl condemor jarl papaar papaar ese pedazo de.",
     type: "cat1",
     location: {
       type: "Point",
@@ -62,7 +62,7 @@ let phenomena = [
   },
   {
     name: "UPM02 phenomeno",
-    description: "",
+    description: "Lorem fistrum se calle ustée te voy a borrar el cerito condemor. Va usté muy cargadoo al ataquerl ese que llega al ataquerl caballo blanco caballo negroorl condemor jarl papaar papaar ese pedazo de.",
     type: "cat2",
     location: {
       type: "Point",

@@ -2743,7 +2743,8 @@ form {
   .container.cont_map_page .mainMap {
     background-color: #8f8f8f;
     height: 100%;
-    width: 100%; }
+    width: 100%;
+    color: #010f0c; }
   .container.cont_map_page .mapOptions, .container.cont_map_page .mapZoom {
     position: absolute;
     background: #010f0c;
