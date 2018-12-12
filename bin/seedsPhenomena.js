@@ -11,7 +11,7 @@ let phenomena = [
     name: "Frozen methane bubbles",
     description:
       "Found in winter in high northern latitude lakes like Lake Abraham in Alberta, Canada, these gas bubbles are created when dead leaves, grass and animals fall into the water, sink and are eaten by bacteria that excrete methane. The gas is released as bubbles that transform into tens of thousands of icy white disks when they come into contact with frozen water",
-    type: "cat2",
+    type: "religiousApparitions",
     location: {
       type: "Point",
       coordinates: [52.2236233, -116.4359982]
@@ -22,7 +22,7 @@ let phenomena = [
     name: "Blood Falls",
     description:
       "The name says it all. Blood Falls, in East Antarctica’s McMurdo Dry Valleys, looks like slowly pouring scarlet-red blood, staining snowy white Taylor Glacier and Lake Bonney below. It’s a surprising – and creepy – sight to behold. The trickling crimson liquid isn’t blood, however. Nor is it water dyed by red algae, as early Antarctica pioneers first speculated. In fact, the brilliant ochre tint comes from an extremely salty sub-glacial lake",
-    type: "cat1",
+    type: "signals",
     location: {
       type: "Point",
       coordinates: [-77.7166621, 162.2578908]
@@ -33,7 +33,7 @@ let phenomena = [
     name: "Hidden Beachs",
     description:
       "Mexico began testing bombs in the uninhabited Marieta Islands in the early 1900s, resulting in a gaping hole in the surface of one of the islands. Over time, tides filled the hole with sand and water, creating a secluded watery Eden where determined beach bums can swim, sunbathe and kayak largely out of sight.",
-    type: "cat2",
+    type: "weirdStuff",
     location: {
       type: "Point",
       coordinates: [20.7039553, -105.5690147]
@@ -43,7 +43,7 @@ let phenomena = [
   {
     name: "Pink Lake Hillier",
     description: "",
-    type: "cat1",
+    type: "seaCreatures",
     location: {
       type: "Point",
       coordinates: [-33.8411118, 121.807766]
@@ -53,7 +53,7 @@ let phenomena = [
   {
     name: "UPM01 phenomeno",
     description: "Lorem fistrum se calle ustée te voy a borrar el cerito condemor. Va usté muy cargadoo al ataquerl ese que llega al ataquerl caballo blanco caballo negroorl condemor jarl papaar papaar ese pedazo de.",
-    type: "cat1",
+    type: "fantasticAnimals",
     location: {
       type: "Point",
       coordinates: [40.4523082, -3.7265464]
@@ -63,7 +63,7 @@ let phenomena = [
   {
     name: "UPM02 phenomeno",
     description: "Lorem fistrum se calle ustée te voy a borrar el cerito condemor. Va usté muy cargadoo al ataquerl ese que llega al ataquerl caballo blanco caballo negroorl condemor jarl papaar papaar ese pedazo de.",
-    type: "cat2",
+    type: "ghosts",
     location: {
       type: "Point",
       coordinates: [40.4509571, -3.7321667]
@@ -77,5 +77,5 @@ let phenomena = [
 Phenomenon.collection.drop();
 
 Phenomenon.create(phenomena)
-  .then(phenoms => {console.log(`Created phenoms!`)})
+  .then(phenoms => {console.log(`Created phenomena!`)})
   .then(() => {mongoose.disconnect()});

@@ -2740,6 +2740,8 @@ form {
     background-color: #8f8f8f;
     height: 100%;
     width: 100%; }
+    .container.cont_map_page .mainMap a[rel='noopener'] {
+      display: none !important; }
     .container.cont_map_page .mainMap .gmnoprint, .container.cont_map_page .mainMap .gm-style-cc {
       display: none; }
     .container.cont_map_page .mainMap .gm-style-iw {
@@ -2796,9 +2798,18 @@ form {
     justify-content: space-between;
     padding-bottom: .3em; }
   .container.cont_map_page .addPhenom {
-    bottom: 1em;
-    left: 1em;
-    border-radius: 5em; }
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: .92em;
+    height: .92em;
+    bottom: .36em;
+    left: 0.4em;
+    border-radius: 5em;
+    border: none;
+    padding: 0;
+    font-size: 3.1em; }
     .container.cont_map_page .addPhenom a {
       color: #fff; }
 

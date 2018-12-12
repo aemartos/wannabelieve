@@ -14,7 +14,6 @@ const map = new google.maps.Map(
 const markers = [];
 const loadData = (map) => {
   phenomena.forEach(p => {
-    let cat = p.type === "cat1" ? 'cat1' : 'cat2';
     let markerPhenom = addMarker(
       p.name,
       p.description,
@@ -23,7 +22,7 @@ const loadData = (map) => {
         lng: p.location.coordinates[1]
       },
       map,
-      cat
+      p.type
     );
     markers.push(markerPhenom);
   })

@@ -1,6 +1,6 @@
-const singleMarker = (title, position, map, cat) => {
-  let url = 'images/markers/';
-  url += cat + ".png";
+const singleMarker = (title, position, map, type) => {
+  let url = 'images/markers/small/';
+  url += type + ".png";
   let marker = new google.maps.Marker({
     title,
     position,
@@ -13,8 +13,8 @@ const singleMarker = (title, position, map, cat) => {
   return marker;
 };
 
-const addMarker = (title, description, position, map, cat) => {
-  let marker = singleMarker(title, position, map, cat);
+const addMarker = (title, description, position, map, type) => {
+  let marker = singleMarker(title, position, map, type);
   addWindow(title, description, map, marker);
   return marker;
 };
