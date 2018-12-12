@@ -10,10 +10,8 @@ const bcryptSalt = 10;
 
 
 router.get("/login", isLoggedOut('/map'), (req, res, next) => {
-  res.render("auth/login", {
-    message: req.flash("error"),
-    actual_page: 'login'
-  });
+  req.flash("error");
+  res.render("auth/login", {actual_page: 'login'});
 });
 
 router.post("/login",  isLoggedOut('/map'), passport.authenticate("local", {
@@ -32,21 +30,21 @@ router.post("/signup",  isLoggedOut('/map'), (req, res, next) => {
   const email = req.body.email;
   const password = req.body.password;
   if (username === "" || password === "" || email === "") {
-    res.render("auth/signup", {
-      message: "indicate username, password and email",
-      actual_page: 'signup'
-    });
+    req.flash("error", "indicate username, password and email");
+    res.render("auth/signup", {actual_page: 'signup'});
     return;
   }
 
   User.findOne({username}, "username", (err, user) => {
     if (user !== null) {
-      res.render("auth/signup", {message: "the username already exists", actual_page: 'signup'});
+      req.flash("error", "the username already exists");
+      res.render("auth/signup", {actual_page: 'signup'});
       return;
     } else {
       User.findOne({email}, "email", (err, user) => {
         if (user !== null) {
-          res.render("auth/signup", {message: "the email already exists", actual_page: 'signup'});
+          req.flash("error", "the email already exists");
+          res.render("auth/signup", {actual_page: 'signup'});
           return;
         }
 
@@ -61,7 +59,10 @@ router.post("/signup",  isLoggedOut('/map'), (req, res, next) => {
 
         newUser.save()
           .then(() => {res.redirect("/")})
-          .catch(err => {res.render("auth/signup", {message: "something went wrong", actual_page: 'signup'})})
+          .catch(err => {
+            req.flash("error", "something went wrong");
+            res.render("auth/signup", {actual_page: 'signup'})
+          });
       });
     }
   });

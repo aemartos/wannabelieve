@@ -9,9 +9,9 @@
   <input id="password" type="password" name="password" placeholder="••••••••••••" readonly onfocus="if (this.hasAttribute('readonly')) {this.removeAttribute('readonly'); this.blur(); this.focus();}"/>
 
   <div class="messages">
-    {{#if message}}
-      <div class="error-message">{{message}}</div>
-    {{/if}}
+    {{#each messages}}
+      <div class="error-message">{{this}}</div>
+    {{/each}}
   </div>
 
   <button class="btn loginBtn">login</button>

@@ -8,7 +8,6 @@ router.get('/map', isLoggedIn('/auth/login'), (req, res, next) => {
   Phenomenon.find().then(phenomena => {
     res.render('map',{
       phenomena: JSON.stringify(phenomena),
-      //phenomenaList: phenomena,
       actual_page: 'map_page',
       map: true
     });
@@ -36,14 +35,3 @@ router.post('/nearPhenomena', (req, res, next) => {
   }).catch((e)=>{console.log(e)})
 });
 module.exports = router;
-
-
-
-// Phenomenon.find().where("location").near({
-//   center: {
-//     type: "Point",
-//     coordinates: [lat, lng]
-//   },
-//       maxDistance: 1000,
-//       spherical: true
-//   }
