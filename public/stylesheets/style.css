@@ -2820,4 +2820,14 @@ form {
   .inputfile:focus + label, .inputfile + label:hover {
     background-color: red; }
 
+.container.cont_addPhenom_page {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center; }
+
+.container.addFileLabel {
+  width: 100%; }
+  .container.addFileLabel.addFilePh {
+    width: 100%; }
+
 /*# sourceMappingURL=style.css.map */
