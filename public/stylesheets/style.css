@@ -2475,8 +2475,8 @@ body {
 
 .container {
   width: 100%;
-  height: max-content;
-  min-height: calc(100% - 5.5em);
+  height: calc(100% - 5.5em);
+  overflow-y: scroll;
   display: flex;
   flex-flow: column nowrap;
   align-items: center; }
@@ -2603,12 +2603,13 @@ footer {
       font-size: 1.2em; }
 
 form {
-  margin-top: 2.5em;
   width: 20em;
   -ms-input-placeholder-color: #fff;
   -ms-input-placeholder-opacity: .5;
   -moz-placeholder-color: #fff;
   -moz-placeholder-opacity: .5; }
+  form.loginF, form.signupF {
+    margin-top: 2.5em; }
   form label {
     opacity: .3;
     display: inline-block;
