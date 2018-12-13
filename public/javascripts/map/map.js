@@ -24,7 +24,8 @@ const loadData = (map,lat,lng) => {
         lng: lng || p.location.coordinates[1]
       },
       map,
-      p.type
+      p.type,
+      p._id
     );
     markers.push(markerPhenom);
   })
