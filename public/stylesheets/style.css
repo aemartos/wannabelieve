@@ -2656,6 +2656,10 @@ footer {
       -webkit-text-stroke: 0.2px #fff; }
     footer nav a span.x-sighting:before {
       font-size: 1.2em; }
+    footer nav a.active {
+      color: #39FF14; }
+      footer nav a.active span[class*='x-'] {
+        -webkit-text-stroke: 0.2px #39FF14; }
 
 form {
   width: 20em;

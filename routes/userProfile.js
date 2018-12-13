@@ -16,7 +16,8 @@ router.get("/profile", isLoggedIn("/auth/login"), (req, res, next) => {
     console.log(phenomenaUser)
     res.render("userProfile", {
       phenomenaUser,
-      actual_page: "userProfile_page"
+      actual_page: "userProfile_page",
+      profile: true
     });
   });
 });

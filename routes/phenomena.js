@@ -54,7 +54,8 @@ router.get("/phenomena", isLoggedIn("/auth/login"), (req, res, next) => {
     .then(phenomena => {
       res.render("phenomena/main", {
         phenomena,
-        actual_page: "phenomena_page"
+        actual_page: "phenomena_page",
+        phenomenon: true
       });
     });
 });
