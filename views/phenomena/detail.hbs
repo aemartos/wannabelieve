@@ -1,5 +1,7 @@
 <div class="slider">
-
+  {{#each phenomenon.imgPhenomUrls}}
+  <img src={{this}} alt="" width="80%">
+  {{/each}}
 </div>
 
 
@@ -23,13 +25,19 @@
 </div>
 
 <div class="phBody">
-<div class="phCreator">
-  <p>{{phenomenon.created_at}}</p>
-</div>
+  <div class="phCreator">
+    <p>{{phenomenon.creatorId}}</p>
+  </div>
+  <div class="phDescription">
+    <p>{{phenomenon.description}}</p>
+  </div>
+  <div class="phReviews">
+    <p>Reviews</p>
+  </div>
+  <div class="phGallery">
 
-</div>
-<p>{{phenomenon.description}}</p>
-{{#each phenomenon.imgPhenomUrls}}
-<img src={{this}} alt="" width="80%">
-{{/each}}
+  </div>
+  <div class="phRoutes">
+
+  </div>
 </div>
