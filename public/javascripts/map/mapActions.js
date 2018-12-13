@@ -50,9 +50,12 @@ document.addEventListener("DOMContentLoaded", function() {
   let searchBox = new google.maps.places.SearchBox(searchInput);
 
   document.getElementById('mGlass').onclick = (e) => {
+    e.preventDefault();
     let searchVal = searchInput.value;
     let places = searchBox.getPlaces();
-    let lat, lng;
+    // let lat = map.getCenter().lat();
+    // let lng = map.getCenter().lng();
+    let lat,lng;
     if (places && places.length > 0) {
       let geom = places[0].geometry.location;
       lat =  Math.round(geom.lat() * 100000)/100000;
@@ -67,8 +70,8 @@ document.addEventListener("DOMContentLoaded", function() {
       window.phenomena = searchPhenomena.phenomena;
       console.log(searchPhenomena.phenomena)
       removeMarkers(markers);
-      loadData(map);
       if (searchPhenomena.phenomena && searchPhenomena.phenomena.length > 0) {
+        loadData(map);
         var bounds = new google.maps.LatLngBounds();
         for (var i = 0; i < searchPhenomena.phenomena.length; i++) {
           let markerLoc = searchPhenomena.phenomena[i].location.coordinates;
@@ -79,6 +82,10 @@ document.addEventListener("DOMContentLoaded", function() {
         if (map.getZoom() > MAX_ZOOM) {
           map.setZoom(MAX_ZOOM);
         }
+      } else {
+        // loadData(map,lat,lng);
+        map.fitBounds(places[0].geometry.viewport);
+        map.setCenter({lat,lng});
       }
 
     })

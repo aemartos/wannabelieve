@@ -14,14 +14,14 @@ const map = new google.maps.Map(
 );
 
 const markers = [];
-const loadData = (map) => {
+const loadData = (map,lat,lng) => {
   phenomena.forEach(p => {
     let markerPhenom = addMarker(
       p.name,
       p.description,
       {
-        lat: p.location.coordinates[0],
-        lng: p.location.coordinates[1]
+        lat: lat || p.location.coordinates[0],
+        lng: lng || p.location.coordinates[1]
       },
       map,
       p.type

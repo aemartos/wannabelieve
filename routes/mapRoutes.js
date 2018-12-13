@@ -30,10 +30,10 @@ router.get('/mapsearch', isLoggedIn('/auth/login'), (req, res, next) => {
     {"type": regex},
     /* {"creatorId.username": regex}, */
     { location: {
-      $geoWithin: {
-        $center: [[lat, lng], 0.25]
+        $geoWithin: {
+          $center: (lat && lng) ?  [[lat, lng],0.25] : [[0,0], 360]
+        }
       }
-    }
     }]})
   .then(phenomena => {
     res.json({phenomena});
@@ -45,20 +45,13 @@ router.get('/mapsearch', isLoggedIn('/auth/login'), (req, res, next) => {
 router.post('/nearPhenomena', (req, res, next) => {
   let {lat,lng} = req.body.location;
   //console.log(`Searching locations with(${lat},${lng})`);
-  Phenomenon.find({ "location.coordinates": {$near : [lat,lng]}
-    // location: {
-    //   $near: {
-    //     $geometry: {
-    //       type: "Point",
-    //       coordinates: [lat,lng]
-    //     },
-    //     // $maxDistance: 10000
-    //   }
-    //   // $geoWithin: {
-    //   //   $center: [[lat, lng], 1]
-    //   // }
-    //   }
-  }).limit(2).then(nearPhenomena => {
+  Phenomenon.find({
+    location: {
+      $geoWithin: {
+        $center: [[lat, lng], 0.25]
+      }
+    }
+  }).limit(10).then(nearPhenomena => {
     //console.log(nearPhenomena);
     res.json(nearPhenomena);
   }).catch((e)=>{console.log(e)})
