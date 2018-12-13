@@ -7,6 +7,8 @@ const map = new google.maps.Map(
       lng: -3.7035285
     },
     disableDefaultUI: true,
+    clickableIcons: false,
+    clickableLabels: false,
     styles: style15_4
   }
 );
@@ -27,6 +29,5 @@ const loadData = (map) => {
     markers.push(markerPhenom);
   })
 };
-
 
 loadData(map);

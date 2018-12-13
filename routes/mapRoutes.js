@@ -19,18 +19,21 @@ router.get('/map', isLoggedIn('/auth/login'), (req, res, next) => {
 router.post('/nearPhenomena', (req, res, next) => {
   let {lat,lng} = req.body.location;
   //console.log(`Searching locations with(${lat},${lng})`);
-  Phenomenon.find({
-    location: {
-      $near: {
-        $geometry: {
-          type: "Point",
-          coordinates: [40.4169473,-3.7035285]
-        },
-        $maxDistance: 10000
-      }
-    }
-  }).then(nearPhenomena => {
-    console.log(nearPhenomena);
+  Phenomenon.find({ "location.coordinates": {$near : [lat,lng]}
+    // location: {
+    //   $near: {
+    //     $geometry: {
+    //       type: "Point",
+    //       coordinates: [lat,lng]
+    //     },
+    //     // $maxDistance: 10000
+    //   }
+    //   // $geoWithin: {
+    //   //   $center: [[lat, lng], 1]
+    //   // }
+    //   }
+  }).limit(2).then(nearPhenomena => {
+    //console.log(nearPhenomena);
     res.json(nearPhenomena);
   }).catch((e)=>{console.log(e)})
 });

@@ -2759,6 +2759,8 @@ form {
         padding: 1em; }
         .container.cont_map_page .mainMap .gm-style-iw .infoPhenom > * {
           width: 50em; }
+      .container.cont_map_page .mainMap .gm-style-iw .arrowBg {
+        position: absolute; }
     .container.cont_map_page .mainMap .gm-ui-hover-effect {
       top: 2em !important;
       right: -2.5em !important;
@@ -2790,6 +2792,8 @@ form {
     flex-flow: column nowrap;
     align-items: center;
     justify-content: space-between; }
+    .container.cont_map_page .mapOptions .findMe.active, .container.cont_map_page .mapOptions .layers.active {
+      color: #39FF14; }
   .container.cont_map_page .mapZoom {
     bottom: 1em;
     right: 1em;

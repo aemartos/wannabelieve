@@ -25,6 +25,8 @@
           padding: 1em
           > *
             width: 50em
+        .arrowBg
+          position: absolute
       .gm-ui-hover-effect
         top: 2em !important
         right: -2.5em !important
@@ -54,6 +56,9 @@
       left: 1em
       +column-flex
       justify-content: space-between
+      .findMe, .layers
+        &.active
+          color: $secondarycolor
     .mapZoom
       bottom: 1em
       right: 1em
