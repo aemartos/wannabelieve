@@ -2857,9 +2857,14 @@ form {
   flex-flow: column nowrap;
   align-items: center; }
 
-.container.addFileLabel {
+.container .addFileLabel {
   width: 100%; }
-  .container.addFileLabel.addFilePh {
+  .container .addFileLabel .addFilePh {
     width: 100%; }
+
+.container.cont_phenomena_detailPage {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center; }
 
 /*# sourceMappingURL=style.css.map */
