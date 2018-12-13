@@ -2792,7 +2792,7 @@ form {
     flex-flow: column nowrap;
     align-items: center;
     justify-content: space-between; }
-    .container.cont_map_page .mapOptions .findMe.active, .container.cont_map_page .mapOptions .layers.active {
+    .container.cont_map_page .mapOptions #findMeBtn.active, .container.cont_map_page .mapOptions #layersBtn.active {
       color: #39FF14; }
   .container.cont_map_page .mapZoom {
     bottom: 1em;
@@ -2802,6 +2802,8 @@ form {
     align-items: center;
     justify-content: space-between;
     padding-bottom: .3em; }
+    .container.cont_map_page .mapZoom #zoomInBtn:active, .container.cont_map_page .mapZoom #zoomOutBtn:active {
+      color: #39FF14; }
   .container.cont_map_page .addPhenom {
     display: flex;
     flex-flow: column nowrap;
