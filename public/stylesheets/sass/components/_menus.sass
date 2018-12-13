@@ -18,10 +18,25 @@ header
     padding: 0 1em 0 .5em
     font-size: 1.3em
     height: 1.9em
+    &.topMenu
+      position: relative
     &.right
       justify-content: flex-end
     span[class*='x-']
       -webkit-text-stroke: .3px $maincolor
+    .actions
+      .logoutBtn
+        opacity: 1
+        &:active
+          color: $secondarycolor
+          span[class*='x-']
+            -webkit-text-stroke: .5px $secondarycolor
+      .filtersBtn
+        opacity: 1
+        &.active
+          color: $secondarycolor
+          span[class*='x-']
+            -webkit-text-stroke: .5px $secondarycolor
     form
       &.search
         +row-flex
@@ -55,6 +70,33 @@ header
           //font-family: monospace
           padding: 0
           margin: 0
+    .filtersBox
+      display: none
+      position: absolute
+      top: 2.2em
+      right: .8em
+      background-image: url("../../images/windows/filtersbox.png")
+      background-position: center
+      background-size: contain
+      width: 13em
+      height: 20em
+      form
+        &.filtersForm
+          padding: 1em
+          width: inherit
+          h3
+            margin-top: 1.5em
+            font-size: .6em
+          p
+            +row-flex
+            justify-content: space-between
+            font-family: 'Share Tech Mono'
+            font-size: .7em
+            margin-bottom: .1em
+            input
+              display: inline-block
+              margin: 0
+              width: unset
 
 footer
   bottom: 0

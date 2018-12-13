@@ -1,18 +1,36 @@
 
 {{#if map}}
-  <nav>
+  <nav class="topMenu">
     <form class="search">
       <button class="mGlass" id="mGlass" href="#"><span class="x-search">{{!-- search --}}</span></button>
       <input id="searchInput" type="text" placeholder="search...">
     </form>
     <div class="actions">
-      <a href="#"><span class="x-filters">{{!-- filters --}}</span></a>
-      <a href="/auth/logout"><span class="x-logout">{{!-- logout --}}</span></a>
+      <a class="filtersBtn" id="filtersBtn" href="#"><span class="x-filters">{{!-- filters --}}</span></a>
+      <a class="logoutBtn" href="/auth/logout"><span class="x-logout">{{!-- logout --}}</span></a>
+    </div>
+    <div class="filtersBox" id="filtersBox">
+      <form class="filtersForm" action="#" method="get">
+        <h3 class="filtersTitle">phenomena filters</h3>
+        <p class="class">🦄 fantastic animals <input type="checkbox" name="type" value="fantasticAnimals"></p>
+        <p class="class">🦑 sea creatures <input type="checkbox" name="type" value="seaCreatures"></p>
+        <p class="class">👾 extraterrestrials <input type="checkbox" name="type" value="extraterrestrials"></p>
+        <p class="class">👽 ufos <input type="checkbox" name="type" value="ufos"></p>
+        <p class="class">👻 ghosts <input type="checkbox" name="type" value="ghosts"></p>
+        <p class="class">💩 weird stuff <input type="checkbox" name="type" value="weirdStuff"></p>
+        <p class="class">👂🏻 psychophonies <input type="checkbox" name="type" value="psychophonies"></p>
+        <p class="class">🧠 paranormal <input type="checkbox" name="type" value="paranormal"></p>
+        <p class="class">🌾 signals <input type="checkbox" name="type" value="signals"></p>
+        <p class="class">🧟‍♂️ half-human <input type="checkbox" name="type" value="half-human"></p>
+        <p class="class">⛪️ religious apparitions <input type="checkbox" name="type" value="religiousApparitions"></p>
+        <p class="class">🌈 natural phenomena <input type="checkbox" name="type" value="naturalPhenomena"></p>
+        <p class="class">🙈 unclassified <input type="checkbox" name="type" value="unclassified"></p>
+      </form>
     </div>
 {{else}}
   <nav class="right">
     <div class="actions">
-      <a href="/auth/logout"><span class="x-logout">{{!-- logout --}}</span></a>
+      <a class="logoutBtn" href="/auth/logout"><span class="x-logout">{{!-- logout --}}</span></a>
     </div>
   </nav>
 {{/if}}

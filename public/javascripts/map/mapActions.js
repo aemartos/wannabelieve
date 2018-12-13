@@ -92,4 +92,21 @@ document.addEventListener("DOMContentLoaded", function() {
     .catch(e => console.error('Error:', e));
   };
 
+
+  /*---------------- FILTERS ---------------*/
+
+  let filers = false;
+  document.getElementById('filtersBtn').onclick = (e) => {
+    document.getElementById('filtersBtn').classList.toggle("active");
+    if(!filers) {
+      document.getElementById('filtersBox').style.display = 'block';
+    } else {
+      document.getElementById('filtersBox').style.display = 'none';
+    }
+    filers = !filers;
+  };
+
+
+
+
 });

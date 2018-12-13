@@ -2567,10 +2567,24 @@ header {
     padding: 0 1em 0 .5em;
     font-size: 1.3em;
     height: 1.9em; }
+    header nav.topMenu {
+      position: relative; }
     header nav.right {
       justify-content: flex-end; }
     header nav span[class*='x-'] {
       -webkit-text-stroke: 0.3px #fff; }
+    header nav .actions .logoutBtn {
+      opacity: 1; }
+      header nav .actions .logoutBtn:active {
+        color: #39FF14; }
+        header nav .actions .logoutBtn:active span[class*='x-'] {
+          -webkit-text-stroke: 0.5px #39FF14; }
+    header nav .actions .filtersBtn {
+      opacity: 1; }
+      header nav .actions .filtersBtn.active {
+        color: #39FF14; }
+        header nav .actions .filtersBtn.active span[class*='x-'] {
+          -webkit-text-stroke: 0.5px #39FF14; }
     header nav form.search {
       display: flex;
       flex-flow: row nowrap;
@@ -2603,6 +2617,34 @@ header {
         font-family: 'Share Tech Mono';
         padding: 0;
         margin: 0; }
+    header nav .filtersBox {
+      display: none;
+      position: absolute;
+      top: 2.2em;
+      right: .8em;
+      background-image: url("../../images/windows/filtersbox.png");
+      background-position: center;
+      background-size: contain;
+      width: 13em;
+      height: 20em; }
+      header nav .filtersBox form.filtersForm {
+        padding: 1em;
+        width: inherit; }
+        header nav .filtersBox form.filtersForm h3 {
+          margin-top: 1.5em;
+          font-size: .6em; }
+        header nav .filtersBox form.filtersForm p {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: space-between;
+          font-family: 'Share Tech Mono';
+          font-size: .7em;
+          margin-bottom: .1em; }
+          header nav .filtersBox form.filtersForm p input {
+            display: inline-block;
+            margin: 0;
+            width: unset; }
 
 footer {
   bottom: 0; }
@@ -2859,6 +2901,9 @@ form {
     font-size: 3.1em; }
     .container.cont_map_page .addPhenom a {
       color: #fff; }
+      .container.cont_map_page .addPhenom a:active {
+        color: #39FF14;
+        opacity: 1; }
 
 .inputfile {
   width: 0.1px;
