@@ -78,7 +78,7 @@ hbs.registerHelper('ifUndefined', (value, options) => {
 
 
 // default value for title local
-app.locals.title = 'project02';
+app.locals.title = 'wannabelieve';
 
 
 // Enable authentication using session + passport

@@ -1,9 +1,14 @@
 const mongoose = require('mongoose');
 const Route = require('../models/Route');
 
-mongoose.connect("mongodb://localhost/project-02-ironhack", {useNewUrlParser: true})
+const path = require('path');
+const dotenv = require('dotenv');
+dotenv.config({path: path.join(__dirname, '../.private.env')});
+
+mongoose.connect(process.env.DBURL, {useNewUrlParser: true})
   .then(x => {console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)})
   .catch(err => {console.error("Error connecting to mongo", err)});
+
 
 
 let routes = [
