@@ -13,32 +13,25 @@ const geolocateMe = () => {
   })
 };
 
+let meMarker;
 
 const realTimeLocation = () => {
   geolocateMe()
     .then(location => {
       console.log('Position updated');
       console.log(location);
-      let meMarker;
       map.setCenter(location);
       if (meMarker) meMarker.setMap(null);
-      meMarker = new google.maps.Marker({position: location, map});
+      meMarker = new google.maps.Marker({
+        position: location,
+        map,
+        icon: "images/markers/small/geolocation2.png"
+      });
       loadData(map);
     })
     .catch(e => console.log(e));
 };
 
-let RTL = false;
-let RTLinterval = null;
-document.querySelector(".findMe").onclick = (e) => {
-  e.target.parentElement.classList.toggle("active");
-  if(RTL && RTLinterval) {
-    clearInterval(RTLinterval);
-  } else {
-    RTLinterval = setInterval(realTimeLocation, 1000);
-  }
-  RTL = !RTL;
-};
 
 // document.querySelector(".findMe").onclick = (e) => {
 //   //Update position each second after btn click
