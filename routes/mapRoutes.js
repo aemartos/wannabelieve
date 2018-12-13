@@ -41,19 +41,4 @@ router.get('/mapsearch', isLoggedIn('/auth/login'), (req, res, next) => {
 });
 
 
-/*GET near phenomena*/
-router.post('/nearPhenomena', (req, res, next) => {
-  let {lat,lng} = req.body.location;
-  //console.log(`Searching locations with(${lat},${lng})`);
-  Phenomenon.find({
-    location: {
-      $geoWithin: {
-        $center: [[lat, lng], 0.25]
-      }
-    }
-  }).limit(10).then(nearPhenomena => {
-    //console.log(nearPhenomena);
-    res.json(nearPhenomena);
-  }).catch((e)=>{console.log(e)})
-});
 module.exports = router;

@@ -31,37 +31,3 @@ const realTimeLocation = () => {
     })
     .catch(e => console.log(e));
 };
-
-
-// document.querySelector(".findMe").onclick = (e) => {
-//   //Update position each second after btn click
-//   //setInterval(()=>{
-//   geolocateMe()
-//     .then(location => {
-//       console.log('Position updated');
-//       console.log(location);
-//       let meMarker;
-//         map.setCenter(location);
-//         if (meMarker) meMarker.setMap(null);
-//         meMarker = new google.maps.Marker({position: location, map});
-//         loadData(map);
-//       // fetch("/nearPhenomena", {
-//       //     method: 'POST',
-//       //     body: JSON.stringify({location}),
-//       //     headers: {
-//       //       "Content-Type": "application/json"
-//       //     }
-//       //   }).then(res => res.json()).then(nearPhenomena => {
-//       //     window.phenomena = nearPhenomena;
-//       //     removeMarkers(markers);
-//       //     let meMarker;
-//       //     map.setCenter(location);
-//       //     if (meMarker) meMarker.setMap(null);
-//       //     meMarker = new google.maps.Marker({position: location, map});
-//       //     loadData(map);
-//       //   })
-//       //   .catch(e => console.error('Error:', e));
-//     })
-//     .catch(e => console.log(e));
-//   //}, 1000);
-// };
