@@ -30,10 +30,23 @@ header
         width: 70%
         font-size: .8em
         border: 2px solid $maincolor
-        .mGlass
-          margin: .15em 0 .15em .4em
-          span[class*='x-']
-            -webkit-text-stroke: .5px $maincolor
+        button
+          background: transparent
+          color: $maincolor
+          width: unset
+          outline: 0
+          border: 0
+          padding: 0
+          cursor: pointer
+          &.mGlass
+            margin: .15em 0 .15em .4em
+            span[class*='x-']
+              -webkit-text-stroke: .5px $maincolor
+            &:active
+              color: $secondarycolor
+              opacity: 1
+              span[class*='x-']
+                -webkit-text-stroke: .5px $secondarycolor
         input
           border: 0
           width: 87%
