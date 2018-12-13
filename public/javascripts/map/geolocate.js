@@ -25,7 +25,7 @@ const realTimeLocation = () => {
       meMarker = new google.maps.Marker({
         position: location,
         map,
-        icon: "images/markers/small/geolocation2.png"
+        icon: "images/markers/small/geolocation.png"
       });
       loadData(map);
     })
