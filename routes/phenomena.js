@@ -3,6 +3,7 @@ const router = express.Router();
 const { isLoggedOut, isLoggedIn } = require("../middlewares/isLogged");
 
 const Phenomenon = require("../models/Phenomenon");
+const User = require("../models/User");
 
 const uploadMethods = require("../config/cloudinary.js");
 const uploadPhenomPicture = uploadMethods.uploadPhenomPicture;
@@ -83,8 +84,19 @@ router.get("/phenomena/:id/delete", (req, res) => {
 router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
   let phenomenaId = req.params.id;
   Phenomenon.findById(phenomenaId).then(phenomenon => {
-    console.log(phenomenon);
-    res.render("phenomena/detail", { phenomenon , actual_page: "phenomena_detailPage"});
+    let numberVisitors=phenomenon.visitorsId.length;
+    let numberReviews=phenomenon.reviews.length;
+    User.findById(phenomenon.creatorId).then(creator=>{
+      var editUser=false;
+      console.log(req.user._id)
+      console.log(phenomenon.creatorId)
+      if(JSON.stringify(phenomenon.creatorId)===JSON.stringify(req.user._id)){
+        editUser=true;
+      }
+      console.log(editUser)
+      res.render("phenomena/detail", { phenomenon , creator, numberVisitors, numberReviews, editUser, actual_page: "phenomena_detailPage"});
+
+    })
   });
 });
 

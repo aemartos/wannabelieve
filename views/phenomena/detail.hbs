@@ -1,6 +1,6 @@
 <div class="slider">
   {{#each phenomenon.imgPhenomUrls}}
-  <img src={{this}} alt="" width="80%">
+  <img src={{this}} alt="">
   {{/each}}
 </div>
 
@@ -8,8 +8,13 @@
 <div class="phHeader">
   <div class="phTitle">
     <h2>{{phenomenon.name}}</h2>
+    {{#if userEdit}}
+    <i class="fa-edit"></i>
+    <i class="x-delete"></i>
+    {{/if}}
   </div>
   <div class="phTypeDate">
+    <img src="/images/markers/small/{{phenomenon.type}}.png" alt="">
     <p>{{phenomenon.type}}</p>
     <p>|</p>
     <p>{{phenomenon.created_at}}</p>
@@ -17,22 +22,25 @@
 </div>
 <div class="phFavReg">
   <div class="phFavourite">
-    <a href="#">Favourite</a>
+    <a href="#"><i class="x-favorite"></i></a>
+    <span>{{numberFavourites}}</span>
   </div>
   <div class="phRegister">
-    <a href="#">Register</a>
+    <a href="#"><i class="x-registered"></i></a>
+    <span>{{numberVisitors}}</span>
   </div>
 </div>
 
 <div class="phBody">
   <div class="phCreator">
-    <p>{{phenomenon.creatorId}}</p>
+    <p>Discoverer: </p>
+    <p>{{creator.username}}</p>
   </div>
   <div class="phDescription">
     <p>{{phenomenon.description}}</p>
   </div>
   <div class="phReviews">
-    <p>Reviews</p>
+    <p>Reviews: {{numberReviews}}</p>
   </div>
   <div class="phGallery">
 
