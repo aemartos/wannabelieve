@@ -71,13 +71,13 @@ router.post("/phenomena/:id/edit/", (req, res) => {
   const { name, type, description } = req.body;
   const id = req.params.id;
   Phenomenon.findByIdAndUpdate(id, { name, type, description }).then(() =>
-    res.redirect("/profile")
+    res.redirect("/phenomena")
   );
 });
 
 router.get("/phenomena/:id/delete", (req, res) => {
   Phenomenon.findByIdAndDelete(req.params.id).then(() => {
-    res.redirect("/profile");
+    res.redirect("/phenomena");
   });
 });
 

@@ -8,9 +8,9 @@
 <div class="phHeader">
   <div class="phTitle">
     <h2>{{phenomenon.name}}</h2>
-    {{#if userEdit}}
-    <i class="fa-edit"></i>
-    <i class="x-delete"></i>
+    {{#if editUser}}
+    <a href="/phenomena/{{phenomenon._id}}/edit/"><i class="fa-edit"></i></a>
+    <a href="/phenomena/{{phenomenon._id}}/delete/"><i class="x-delete"></i></a>
     {{/if}}
   </div>
   <div class="phTypeDate">
