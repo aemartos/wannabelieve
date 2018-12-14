@@ -3013,4 +3013,56 @@ form {
     flex-flow: column nowrap;
     align-items: center; }
 
+.container.cont_userProfile_page {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center; }
+  .container.cont_userProfile_page .proHeader {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 2% 5%;
+    align-items: flex-start;
+    font-size: 1.5em; }
+  .container.cont_userProfile_page .proPicture {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 10% 5% 5% 5%; }
+    .container.cont_userProfile_page .proPicture img {
+      max-width: 100%; }
+  .container.cont_userProfile_page .proUserInfo {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center; }
+    .container.cont_userProfile_page .proUserInfo h2 {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      align-items: center; }
+    .container.cont_userProfile_page .proUserInfo p {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      font-size: 0.8em; }
+  .container.cont_userProfile_page .proCaption {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start; }
+  .container.cont_userProfile_page .proMetrics {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center; }
+    .container.cont_userProfile_page .proMetrics i {
+      font-size: 2.5em; }
+    .container.cont_userProfile_page .proMetrics .proBox {
+      border: 1px solid white;
+      background-color: black;
+      padding: 10px 10px;
+      margin: 0 10px; }
+
 /*# sourceMappingURL=style.css.map */

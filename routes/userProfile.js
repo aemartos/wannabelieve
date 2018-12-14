@@ -10,15 +10,20 @@ const uploadProfilePicture = uploadMethods.uploadProfilePicture;
 
 /* GET home page */
 router.get("/profile", isLoggedIn("/auth/login"), (req, res, next) => {
-  let query = { "creatorId._id": req.user._id };
+  let queryRegistr = { "creatorId._id": req.user._id };
+  let queryVisits = {"visitorsId":req.user._id};
 
-  Phenomenon.find(query).then(phenomenaUser => {
-    console.log(phenomenaUser)
-    res.render("userProfile", {
-      phenomenaUser,
-      actual_page: "userProfile_page",
-      profile: true
-    });
+  Phenomenon.find(queryRegistr).then(phenomenaUser => {
+    return numberRegistr=phenomenaUser.length
+  })
+  Phenomenon.find(queryVisits).then(phenomenaUser => {
+    return numberVisits=phenomenaUser.length
+  })
+  res.render("userProfile", {
+    numberRegistr,
+    numberVisits,
+    actual_page: "userProfile_page",
+    profile: true
   });
 });
 

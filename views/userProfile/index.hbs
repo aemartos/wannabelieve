@@ -1,23 +1,38 @@
-<div class="exit">
-  <a href="/">x</i></a>
-  <a href="/profile/edit">Edit</a>
+<div class="proHeader">
+  <a href="/profile/edit"><i class="x-update"></i></a>
 </div>
 
-<div>
-  <h2>Profile</h2>
+<div class="proPicture">
+  {{#if user.photoProfile }}
   <img src="{{user.photoProfile}}" width="50%" alt="">
-  <p>{{user.username}}</p>
-  <p>{{user.email}}</p>
+  {{else}}
+  <img src="../images/avatars/neutral.png" width="50%" alt="">
+  {{/if}}
 </div>
 
-<div class="phenomCreated">
-  <h2>My Phenomena</h2>
-  <ul>
-    {{#each phenomenaUser}}
-    <li>{{this.name}}</li>
-    <li>{{this.description}}</p>
-      <a href="/phenomena/{{this.id}}/edit">Edit</a>
-      <a href="/phenomena/{{this.id}}/delete">Delete</a>
-    {{/each}}
-  </ul>
+<div class="proUserInfo">
+  <h2>{{user.username}}</h2>
+  <div class="proEmailDate">
+    <p>{{user.email}}</p>
+    <p>|</p>
+    <p>Member since: {{user.createdAt}}</p>
+  </div>
+</div>
+
+<div class="proCaption">
+  <h3>Caption</h3>
+  <p>{{user.caption}}</p>
+</div>
+
+<div class="proDescr">
+  <h3>Description</h3>
+  <p>{{user.description}}</p>
+</div>
+
+<div class="proMetrics">
+  <div class="proBox userSignings">
+    <i class="x-sighting"></i>
+  </div>
+  <div class="proBox userRegisters"><i class="x-registered"></i></div>
+  <div class="proBox userFavs"><i class="x-favorite"></i></div>
 </div>
