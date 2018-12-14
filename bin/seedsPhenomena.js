@@ -9,7 +9,7 @@ mongoose.connect(process.env.DBURL, {useNewUrlParser: true})
   .then(x => {console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)})
   .catch(err => {console.error("Error connecting to mongo", err)});
 
-
+//lng, lat
 let phenomena = [
   {
     name: "Frozen methane bubbles",
@@ -17,7 +17,7 @@ let phenomena = [
     type: "religiousApparitions",
     location: {
       type: "Point",
-      coordinates: [52.2236092, -116.4447316]
+      coordinates: [-116.4447316, 52.2236092]
     },
     imgPhenomUrls: ["https://i.pinimg.com/originals/08/02/02/0802020181b082b6d7128bc5a67031e5.jpg"]
   },
@@ -27,7 +27,7 @@ let phenomena = [
     type: "naturalPhenomena",
     location: {
       type: "Point",
-      coordinates: [-77.7166662, 162.2491575]
+      coordinates: [162.2491575, -77.7166662]
     },
     imgPhenomUrls:["https://thumbor.forbes.com/thumbor/1280x868/https%3A%2F%2Fblogs-images.forbes.com%2Ftrevornace%2Ffiles%2F2017%2F04%2Fblood-falls-1200x585.jpg"]
   },
@@ -37,7 +37,7 @@ let phenomena = [
     type: "weirdStuff",
     location: {
       type: "Point",
-      coordinates: [20.699692, -105.569769]
+      coordinates: [-105.569769, 20.699692]
     },
     imgPhenomUrls: ["http://ichef.bbci.co.uk/wwfeatures/wm/live/1600_900/images/live/p0/42/l6/p042l6q8.jpg"]
   },
@@ -47,7 +47,7 @@ let phenomena = [
     type: "seaCreatures",
     location: {
       type: "Point",
-      coordinates: [-34.0949983, 123.1852682]
+      coordinates: [123.1852682, -34.0949983]
     },
     imgPhenomUrls: ["http://ichef.bbci.co.uk/wwfeatures/wm/live/1600_900/images/live/p0/42/l6/p042l6q8.jpg"]
   },
@@ -57,7 +57,7 @@ let phenomena = [
     type: "fantasticAnimals",
     location: {
       type: "Point",
-      coordinates: [40.4523082, -3.7265464]
+      coordinates: [-3.7265464, 40.4523082]
     },
     imgPhenomUrls: ["https://cdn.petcarerx.com/LPPE/images/articlethumbs/Cat-Scratch-Fever-Small.jpg"]
   },
@@ -67,7 +67,7 @@ let phenomena = [
     type: "ghosts",
     location: {
       type: "Point",
-      coordinates: [40.4509571, -3.7321667]
+      coordinates: [-3.7321667, 40.4509571]
     },
     imgPhenomUrls: ["https://thenypost.files.wordpress.com/2018/05/180516-woman-mauled-by-angry-wiener-dogs-feature.jpg?quality=90&strip=all&w=618&h=410&crop=1"]
   }

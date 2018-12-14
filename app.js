@@ -15,6 +15,7 @@ const favicon = require('serve-favicon');
 const hbs = require('hbs');
 const mongoose = require('mongoose');
 const logger = require('morgan');
+const cors = require('cors');
 
 const session = require("express-session");
 const MongoStore = require('connect-mongo')(session);
@@ -37,7 +38,9 @@ mongoose.connect(process.env.DBURL, {
 const app = express();
 
 
+
 // Middleware Setup
+app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -116,5 +119,8 @@ app.use('/', phenomRoutes);
 
 const mapRoutes = require('./routes/mapRoutes');
 app.use('/', mapRoutes);
+
+const apiRoutes = require('./routes/apiRoutes');
+app.use('/api', apiRoutes);
 
 module.exports = app;

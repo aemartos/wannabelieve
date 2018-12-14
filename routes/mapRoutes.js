@@ -18,20 +18,28 @@ router.get('/map', isLoggedIn('/auth/login'), (req, res, next) => {
 /*------ MAP SEARCH ----*/
 
 router.get('/mapsearch', isLoggedIn('/auth/login'), (req, res, next) => {
-  let search = req.query.query;
-  let regex = new RegExp(search, "gi");
-  let lat = req.query.lat;
-  let lng = req.query.lng;
-  let dist = 10000;
+  let {t,r,b,l,query} = req.query;
+  let regex = new RegExp(query, "gi");
+  //default minimum coordinates
+  let coordinates =  [[[0, 0.01], [0, 0], [0.01, 0], [0, 0.01]]];
+  //take coordinates from client request
+  if (t && r && b && l) {
+    coordinates =  [[[l, t], [r, t], [r, b], [l, b], [l, t]]];
+  }
+  //find by literal search (query) or location by Google Places API
   Phenomenon.find({$or: [
     {"type": regex},
     {"name": regex},
     {"description": regex},
     {"type": regex},
     /* {"creatorId.username": regex}, */
-    { location: {
+    {
+      location: {
         $geoWithin: {
-          $center: (lat && lng) ?  [[lat, lng],0.25] : [[0,0], 360]
+          $geometry: {
+            type : "Polygon",
+            coordinates
+          }
         }
       }
     }]})

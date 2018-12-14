@@ -1,27 +1,41 @@
+const createMap = ({lat,lng}) => {
+  return new google.maps.Map(
+    document.getElementById('mainMap'), {
+      zoom: 14,
+      center: {
+        lat: lat || 40.4169473,
+        lng: lng || -3.7035285
+      },
+      disableDefaultUI: true,
+      clickableIcons: false,
+      clickableLabels: false,
+      styles: style15_4
+    }
+  );
+}
 
-const map = new google.maps.Map(
-  document.getElementById('mainMap'), {
-    zoom: 14,
-    center: {
-      lat: 40.4169473,
-      lng: -3.7035285
-    },
-    disableDefaultUI: true,
-    clickableIcons: false,
-    clickableLabels: false,
-    styles: style15_4
-  }
-);
+
+let map;
+const {lat,lng} = geolocateMe().then(({lat,lng})=>{
+  console.log(lat,lng)
+  map = createMap({lat,lng});
+  meMarker = newMeMarker({lat,lng});
+  loadData(map);
+}).catch(err=>{
+  map = createMap({});
+  loadData(map);
+});
+
 
 const markers = [];
-const loadData = (map,lat,lng) => {
-  phenomena.forEach(p => {
+const loadData = (map, extra = {}) => {
+  (extra.phenomena || phenomena).forEach(p => {
     let markerPhenom = addMarker(
       p.name,
       p.description,
       {
-        lat: lat || p.location.coordinates[0],
-        lng: lng || p.location.coordinates[1]
+        lng: extra.lng || p.location.coordinates[0],
+        lat: extra.lat || p.location.coordinates[1]
       },
       map,
       p.type,
@@ -30,5 +44,3 @@ const loadData = (map,lat,lng) => {
     markers.push(markerPhenom);
   })
 };
-
-loadData(map);

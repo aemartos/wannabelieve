@@ -22,11 +22,7 @@ const realTimeLocation = () => {
       console.log(location);
       map.setCenter(location);
       if (meMarker) meMarker.setMap(null);
-      meMarker = new google.maps.Marker({
-        position: location,
-        map,
-        icon: "images/markers/small/geolocation.png"
-      });
+      meMarker = newMeMarker(location);
       loadData(map);
     })
     .catch(e => console.log(e));

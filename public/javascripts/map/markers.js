@@ -15,7 +15,16 @@ const addMarker = (title, description, position, map, type, id) => {
   addWindow(title, description, map, type, marker, id);
   return marker;
 };
-let infowindow  = null;
+
+const newMeMarker = (position) => {
+  return new google.maps.Marker({
+    position,
+    map,
+    icon: "/images/markers/small/geolocation.png"
+  });
+};
+
+let infowindow = null;
 const addWindow = (title, description, map, type, marker, id) => {
   let content = `<div class="infoPhenom">
                   <div class="infoPhenomDetails">
@@ -37,23 +46,45 @@ const addWindow = (title, description, map, type, marker, id) => {
                   <a class="goPhenom" href="/phenomena/${id}"><span class="x-back"></span></a>
                 </div>`;
 
-  infowindow= new google.maps.InfoWindow({content, maxWidth: 200});
+  infowindow = new google.maps.InfoWindow({content, maxWidth: 200});
   marker.addListener('click', function() {
     infowindow.open(map, marker);
     google.maps.event.addListener(infowindow,'domready',()=>{
       [...document.getElementsByClassName('gm-style-iw')].forEach(el=>{
         el.previousElementSibling.style.display = "none";
       });
-      // [...document.getElementsByClassName('gm-style-pbc')].nextSibling.addEventListener('click', (e) => {
-      //   if (infowindow) infowindow.close();
-      // });
     });
   });
   return infowindow;
 };
 
+//Close infoWindow and filtersBox when clicking the map
+const closeInfoWindow = () => {
+  document.getElementById('mainMap').onclick = e => {
+    if (e.target && e.target.tagName === 'DIV' && !e.target.getAttribute('id')&& !e.target.getAttribute('class')) {
+      if (infowindow) { infowindow.close(); }
+      //Close filterBox
+      document.getElementById('filtersBox').style.display = 'none';
+      filters = false;
+    }
+  }
+};
+closeInfoWindow();
+
 const removeMarkers = (markers) => {
   markers.forEach(m => {
     m.setMap(null);
   });
+};
+
+const calculateBoundsToFitAllMarkers = (phenomena) => {
+  let bounds = new google.maps.LatLngBounds();
+  //I need to iterate over all the places in my search to fit the bounds
+  for (let i = 0; i < phenomena.length; i++) {
+    //search all coordinates
+    let coorLoc = phenomena[i].location.coordinates;
+    //create geographic area to fit all the markers in the search
+    bounds.extend({lng: coorLoc[0], lat: coorLoc[1]});
+  }
+  return bounds;
 };
