@@ -54,11 +54,18 @@ body
 a
 	display: inline-block
 	text-decoration: none
-	color: $secondarycolor
+	//color: $secondarycolor
+	color: $maincolor
 	cursor: pointer
 	+transition_default
+	[class*='x-']
+    -webkit-text-stroke: .3px $maincolor
 	&:hover
-		+hover_opacity
+		//+hover_opacity
+	&:active
+		color: $secondarycolor
+		[class*='x-']
+			-webkit-text-stroke: .5px $secondarycolor
 
 ul
 	padding: 0
