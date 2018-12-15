@@ -1,0 +1,24 @@
+<h1 class="routesListTitle">last routes</h1>
+<form class="addRoute"  method="POST" action="/routes/addRoute">
+  <div class="inputBox">
+    <input type="text" name="routetitle" placeholder="add route title">
+    <button type="submit" class="addRouteBtn"><span class="x-plus"></span></button>
+  </div>
+  <div class="messages">
+    {{#each messages}}
+      <div class="error-message">{{this}}</div>
+    {{/each}}
+  </div>
+</form>
+
+{{#if noRoutes}}
+  <div class="noRoutes">
+    there are no routes yet, you can add one, by typing a name above
+  </div>
+{{/if}}
+
+<div class="routestList">
+  {{#each routesList}}
+    {{> routeFeedCard}}
+  {{/each}}
+</div>

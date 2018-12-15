@@ -40,6 +40,17 @@
                 margin-right: .7em
                 font-family: 'Share Tech Mono'
                 font-size: 1.4em
+            .phenomText
+              +row-flex
+              justify-content: flex-start
+              line-height: 0
+              .favorites
+                +row-flex
+                display: inline-flex
+                justify-content: center
+                margin-left: 1em
+                .heart
+                  margin-right: .3em
           a.goPhenom
             font-size: 4em
             color: $maincolor
@@ -47,8 +58,6 @@
               +transform(rotate(180deg))
             &:active
               color: $secondarycolor
-        .arrowBg
-          position: absolute
       .gm-ui-hover-effect
         display: none !important
         top: 3em !important

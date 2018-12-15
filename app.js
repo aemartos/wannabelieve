@@ -119,7 +119,7 @@ const phenomRoutes = require('./routes/phenomena');
 app.use('/', phenomRoutes);
 
 const mapRoutes = require('./routes/mapRoutes');
-app.use('/', mapRoutes);
+app.use('/map', mapRoutes);
 
 const apiRoutes = require('./routes/apiRoutes');
 app.use('/api', apiRoutes);

@@ -1,0 +1,101 @@
+.container
+  &.cont_routes_page
+    min-height: 100%
+    padding: 4em 0
+    word-spacing: -.5em
+    .routesListTitle
+      margin-top: 0
+      padding-bottom: .6em
+      width: 100%
+      text-align: center
+      border-bottom: 4px solid $maincolor
+    form
+      width: 85%
+      margin-top: .5em
+      &.addRoute
+        .inputBox
+          +row-flex
+          justify-content: space-between
+        input
+          border: 0
+          border-bottom: 2px solid $maincolor
+          padding: 0 .5em .5em .5em
+          margin: 0
+          margin-top: .5em
+          width: 85%
+          //text-align: center
+          &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus
+            -webkit-box-shadow: 0 0 0px 1000px $background inset
+        button
+          border: 0
+          padding: 0
+          margin: 0
+          width: unset
+          span
+            font-size: 2em
+            &[class*='x-']
+              -webkit-text-stroke: .3px $maincolor
+            &:active
+              color: $secondarycolor
+              &[class*='x-']
+                -webkit-text-stroke: .3px $secondarycolor
+        .messages
+          width: 85%
+          word-spacing: 0
+          .error-message
+            padding: .5em 0 0
+    .noRoutes
+      width: 85%
+      margin-top: 1em
+      line-height: 1.2em
+    .routestList
+      width: 85%
+      margin-top: 1em
+      .routeCard
+        +row-flex
+        justify-content: space-between
+        border-bottom: 2px solid $maincolor
+        padding-bottom: 1em
+        margin: 1em 0
+        &:last-child
+          border-bottom: 0
+        .routeImg
+          width: 25%
+          margin-right: 1em
+        .infoRouteDetails
+          width: 70%
+          h4
+            &.routeTitle
+              font-family: 'Press Start 2P'
+              text-transform: lowercase
+              margin: .5em 0 0 0
+              width: 12em
+              white-space: nowrap
+              overflow: hidden
+              text-overflow: ellipsis
+          .routeText, .routeDetails
+            p
+              display: inline-block
+              font-family: 'Share Tech Mono'
+              font-size: .6em
+          .routeText
+            +row-flex
+            justify-content: flex-start
+            line-height: 0
+            .favorites
+              +row-flex
+              display: inline-flex
+              justify-content: center
+              margin-left: 1em
+              .heart
+                margin-right: .3em
+          .routeDetails
+            .separator
+              margin: 0 .5em
+        a.goRoute
+          font-size: 2em
+          color: $maincolor
+          span:before
+            +transform(rotate(180deg))
+          &:active
+            color: $secondarycolor

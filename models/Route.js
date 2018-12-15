@@ -11,4 +11,12 @@ const routeSchema = new Schema({
 );
 
 const Route = mongoose.model('Route', routeSchema);
+
+Route.add = function(routetitle, creatorId){
+  return Route.create({
+    routetitle,
+    creatorId
+  });
+};
+
 module.exports = Route;

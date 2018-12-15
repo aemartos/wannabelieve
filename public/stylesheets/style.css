@@ -2858,6 +2858,21 @@ form {
           margin-right: .7em;
           font-family: 'Share Tech Mono';
           font-size: 1.4em; }
+        .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: flex-start;
+          line-height: 0; }
+          .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            display: inline-flex;
+            justify-content: center;
+            margin-left: 1em; }
+            .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites .heart {
+              margin-right: .3em; }
         .container.cont_map_page .mainMap .gm-style-iw .infoPhenom a.goPhenom {
           font-size: 4em;
           color: #fff; }
@@ -2869,8 +2884,6 @@ form {
             transform: rotate(180deg); }
           .container.cont_map_page .mainMap .gm-style-iw .infoPhenom a.goPhenom:active {
             color: #39FF14; }
-      .container.cont_map_page .mainMap .gm-style-iw .arrowBg {
-        position: absolute; }
     .container.cont_map_page .mainMap .gm-ui-hover-effect {
       display: none !important;
       top: 3em !important;
@@ -3123,5 +3136,113 @@ form {
   justify-content: center; }
   .container .cancelLink a {
     color: red; }
+
+.container.cont_routes_page {
+  min-height: 100%;
+  padding: 4em 0;
+  word-spacing: -.5em; }
+  .container.cont_routes_page .routesListTitle {
+    margin-top: 0;
+    padding-bottom: .6em;
+    width: 100%;
+    text-align: center;
+    border-bottom: 4px solid #fff; }
+  .container.cont_routes_page form {
+    width: 85%;
+    margin-top: .5em; }
+    .container.cont_routes_page form.addRoute .inputBox {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between; }
+    .container.cont_routes_page form.addRoute input {
+      border: 0;
+      border-bottom: 2px solid #fff;
+      padding: 0 .5em .5em .5em;
+      margin: 0;
+      margin-top: .5em;
+      width: 85%; }
+      .container.cont_routes_page form.addRoute input:-webkit-autofill, .container.cont_routes_page form.addRoute input:-webkit-autofill:hover, .container.cont_routes_page form.addRoute input:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0px 1000px #a8a8a8 inset; }
+    .container.cont_routes_page form.addRoute button {
+      border: 0;
+      padding: 0;
+      margin: 0;
+      width: unset; }
+      .container.cont_routes_page form.addRoute button span {
+        font-size: 2em; }
+        .container.cont_routes_page form.addRoute button span[class*='x-'] {
+          -webkit-text-stroke: 0.3px #fff; }
+        .container.cont_routes_page form.addRoute button span:active {
+          color: #39FF14; }
+          .container.cont_routes_page form.addRoute button span:active[class*='x-'] {
+            -webkit-text-stroke: 0.3px #39FF14; }
+    .container.cont_routes_page form.addRoute .messages {
+      width: 85%;
+      word-spacing: 0; }
+      .container.cont_routes_page form.addRoute .messages .error-message {
+        padding: .5em 0 0; }
+  .container.cont_routes_page .noRoutes {
+    width: 85%;
+    margin-top: 1em;
+    line-height: 1.2em; }
+  .container.cont_routes_page .routestList {
+    width: 85%;
+    margin-top: 1em; }
+    .container.cont_routes_page .routestList .routeCard {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 1em;
+      margin: 1em 0; }
+      .container.cont_routes_page .routestList .routeCard:last-child {
+        border-bottom: 0; }
+      .container.cont_routes_page .routestList .routeCard .routeImg {
+        width: 25%;
+        margin-right: 1em; }
+      .container.cont_routes_page .routestList .routeCard .infoRouteDetails {
+        width: 70%; }
+        .container.cont_routes_page .routestList .routeCard .infoRouteDetails h4.routeTitle {
+          font-family: 'Press Start 2P';
+          text-transform: lowercase;
+          margin: .5em 0 0 0;
+          width: 12em;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+        .container.cont_routes_page .routestList .routeCard .infoRouteDetails .routeText p, .container.cont_routes_page .routestList .routeCard .infoRouteDetails .routeDetails p {
+          display: inline-block;
+          font-family: 'Share Tech Mono';
+          font-size: .6em; }
+        .container.cont_routes_page .routestList .routeCard .infoRouteDetails .routeText {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: flex-start;
+          line-height: 0; }
+          .container.cont_routes_page .routestList .routeCard .infoRouteDetails .routeText .favorites {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            display: inline-flex;
+            justify-content: center;
+            margin-left: 1em; }
+            .container.cont_routes_page .routestList .routeCard .infoRouteDetails .routeText .favorites .heart {
+              margin-right: .3em; }
+        .container.cont_routes_page .routestList .routeCard .infoRouteDetails .routeDetails .separator {
+          margin: 0 .5em; }
+      .container.cont_routes_page .routestList .routeCard a.goRoute {
+        font-size: 2em;
+        color: #fff; }
+        .container.cont_routes_page .routestList .routeCard a.goRoute span:before {
+          -webkit-transform: rotate(180deg);
+          -moz-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+          -o-transform: rotate(180deg);
+          transform: rotate(180deg); }
+        .container.cont_routes_page .routestList .routeCard a.goRoute:active {
+          color: #39FF14; }
 
 /*# sourceMappingURL=style.css.map */

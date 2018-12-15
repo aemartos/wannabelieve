@@ -4,7 +4,7 @@ const {isLoggedOut, isLoggedIn} = require('../middlewares/isLogged');
 const Phenomenon = require("../models/Phenomenon");
 
 
-router.get('/map', isLoggedIn('/auth/login'), (req, res, next) => {
+router.get('/', isLoggedIn('/auth/login'), (req, res, next) => {
   Phenomenon.find().then(phenomena => {
     res.render('map',{
       phenomena: JSON.stringify(phenomena),

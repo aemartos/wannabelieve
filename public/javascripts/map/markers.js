@@ -30,7 +30,7 @@ const addWindow = (title, description, map, type, marker, id) => {
                   <div class="infoPhenomDetails">
                     <div class="phenomText">
                       <p class="phenomId">${id}</p>
-                      <p class="favorites"><span class="x-favorite"></span><span class="favNum"> 14</span></p>
+                      <p class="favorites"><span class="x-favorite heart"></span><span class="favNum"> 14</span></p>
                     </div>
                     <div class="phenomTitle">
                       <h1>${title}</h1>
