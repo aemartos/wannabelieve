@@ -58,14 +58,18 @@ router.post("/signup",  isLoggedOut('/map'), (req, res, next) => {
         });
 
         newUser.save()
-          .then(() => {res.redirect("/")})
+          .then(() => {res.redirect("/auth/signupOK")})
           .catch(err => {
             req.flash("error", "something went wrong");
-            res.render("auth/signup", {actual_page: 'signup'})
+            res.render("auth/signup", {actual_page: 'signupOK'})
           });
       });
     }
   });
+});
+
+router.get("/signupOK",  isLoggedOut('/map'), (req, res, next) => {
+  res.render("auth/signupOK", {actual_page: 'signupOK'});
 });
 
 router.get("/facebook",  isLoggedOut('/map'), passport.authenticate("facebook"));
