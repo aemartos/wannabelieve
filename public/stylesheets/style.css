@@ -2486,6 +2486,8 @@ body {
 .btn {
   border: 2px solid #39FF14;
   padding: .6em; }
+  .btn.btnLogin {
+    color: #39FF14; }
   .btn.btnSignup {
     color: #01211a;
     background-color: #39FF14; }
