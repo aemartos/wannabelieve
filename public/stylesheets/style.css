@@ -3024,22 +3024,26 @@ form {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    width: 100%;
     padding: 2% 5%;
-    align-items: flex-start;
+    justify-content: flex-end;
     font-size: 1.5em; }
   .container.cont_userProfile_page .proPicture {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    width: 100%;
     justify-content: center;
-    padding: 10% 5% 5% 5%; }
+    padding: 5% 5% 0% 5%; }
     .container.cont_userProfile_page .proPicture img {
-      max-width: 100%; }
+      max-width: 50%; }
   .container.cont_userProfile_page .proUserInfo {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    justify-content: center; }
+    width: 100%;
+    justify-content: center;
+    padding: 0 5%; }
     .container.cont_userProfile_page .proUserInfo h2 {
       display: flex;
       flex-flow: row nowrap;
@@ -3055,18 +3059,55 @@ form {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    justify-content: flex-start; }
+    width: 100%;
+    padding: 0 5%;
+    align-items: flex-start; }
+    .container.cont_userProfile_page .proCaption p {
+      font-family: 'Share Tech Mono', monospace; }
+  .container.cont_userProfile_page .proDescr {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+    padding: 0 5% 5% 5%;
+    align-items: flex-start; }
+    .container.cont_userProfile_page .proDescr p {
+      font-family: 'Share Tech Mono', monospace; }
   .container.cont_userProfile_page .proMetrics {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    width: 100%;
+    padding: 5% 5%;
     justify-content: center; }
-    .container.cont_userProfile_page .proMetrics i {
-      font-size: 2.5em; }
-    .container.cont_userProfile_page .proMetrics .proBox {
-      border: 1px solid white;
-      background-color: black;
-      padding: 10px 10px;
-      margin: 0 10px; }
+  .container.cont_userProfile_page .proBox {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 5%;
+    font-family: 'Share Tech Mono', monospace;
+    background-color: black;
+    margin: 0 1%; }
+    .container.cont_userProfile_page .proBox i {
+      margin: 0 10%;
+      font-size: 1.5em; }
+
+.container.cont_editUserProfile_page .rowForm input, .container.cont_editUserProfile_page .rowForm textarea {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1em; }
+
+.container img {
+  width: 100%; }
+
+.container .cancelLink {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 100%;
+  padding: 5% 5%;
+  justify-content: center; }
+  .container .cancelLink a {
+    color: red; }
 
 /*# sourceMappingURL=style.css.map */

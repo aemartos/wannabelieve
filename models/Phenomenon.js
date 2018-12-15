@@ -7,7 +7,7 @@ const phenomenonSchema = new Schema(
     description: String,
     type: { type: String, enum: ["fantasticAnimals", "seaCreatures", "extraterrestrials", "ufos", "ghosts", "weirdStuff", "psychophonies", "paranormal", "signals", "half-human", "religiousApparitions", "naturalPhenomena", "unclassified"] },
     imgPhenomUrls: { type: Array, default: [] },
-    reviews: { type: Array, default: [] },
+    reviewsId: [{ type: Schema.Types.ObjectId, ref:'Review' }],
     creatorId: { type: Schema.Types.ObjectId, ref:'User' },
     visitorsId: [{ type: Schema.Types.ObjectId, ref:'User' }],
     location: {type: {type: String,default: 'Point'}, coordinates: [Number]}

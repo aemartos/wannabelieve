@@ -12,9 +12,24 @@ Array.prototype.forEach.call( inputs, function( input )
 		else
 			fileName = e.target.value.split( '\\' ).pop();
 
-		if( fileName )
-			label.querySelector( 'p' ).innerHTML = fileName;
-		else
-			label.innerHTML = labelVal;
 	});
+});
+
+
+
+function readURL(input) {
+
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+      $('#imgUpl').attr('src', e.target.result);
+    }
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+$("#file").change(function() {
+  readURL(this);
 });

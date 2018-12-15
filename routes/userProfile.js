@@ -13,7 +13,7 @@ const uploadProfilePicture = uploadMethods.uploadProfilePicture;
 router.get("/profile", isLoggedIn("/auth/login"), (req, res, next) => {
   let queryReg = { creatorId: new ObjectId(`${req.user._id}`) };
   let queryVisits = { visitorsId: new ObjectId(`${req.user._id}`) };
-  let queryFavs ={}
+  let numFavs = req.user.favPhenoms.length
   let userCreationDate = `${req.user.createdAt.getDay()}/${req.user.createdAt.getMonth()}/${req.user.createdAt.getFullYear()}`;
 
   Promise.all([Phenomenon.find(queryReg), Phenomenon.find(queryVisits)]).then(
@@ -22,6 +22,7 @@ router.get("/profile", isLoggedIn("/auth/login"), (req, res, next) => {
       let numberVisits = phenVisits.length;
 
       res.render("userProfile", {
+        numFavs,
         numberReg,
         numberVisits,
         userCreationDate,
@@ -43,9 +44,9 @@ router.post("/editProfile", uploadProfilePicture.single("file"), (req, res) => {
     photoProfile = req.file.url;
   }
 
-  const { username, email, userId } = req.body;
+  const { username, email, userId, caption, description } = req.body;
 
-  User.findByIdAndUpdate(userId, { username, email, photoProfile }).then(() =>
+  User.findByIdAndUpdate(userId, { username, email, photoProfile, caption, description }).then(() =>
     res.redirect(`/profile`)
   );
 });

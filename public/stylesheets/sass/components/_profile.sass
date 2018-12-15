@@ -3,18 +3,22 @@
     +column-flex
     .proHeader
       +row-flex
+      width: 100%
       padding: 2% 5%
-      align-items: flex-start
+      justify-content: flex-end
       font-size: 1.5em
     .proPicture
       +row-flex
+      width: 100%
       justify-content: center
-      padding: 10% 5% 5% 5%
+      padding: 5% 5% 0% 5%
       img 
-        max-width: 100%
+        max-width: 50%
     .proUserInfo
       +column-flex
+      width: 100%
       justify-content: center
+      padding: 0 5%
       h2 
         +row-flex
         justify-content: center    
@@ -24,15 +28,47 @@
         font-family: 'Share Tech Mono', monospace
     .proCaption
       +column-flex
-      justify-content: flex-start
+      width: 100%
+      padding: 0 5%
+      align-items: flex-start
+      p 
+        font-family: 'Share Tech Mono', monospace
+    .proDescr
+      +column-flex
+      width: 100%
+      padding: 0 5% 5% 5%
+      align-items: flex-start
+      p 
+        font-family: 'Share Tech Mono', monospace
     .proMetrics
       +row-flex
+      width: 100%
+      padding: 5% 5%
       justify-content: center
+    .proBox
+      display: flex
+      flex-flow: row wrap
+      justify-content: center
+      align-items: center
+      padding: 5% 5%
+      font-family: 'Share Tech Mono', monospace
+      background-color: black
+      margin: 0 1%
       i 
-        font-size: 2.5em
-      .proBox
-        border: 1px solid white
-        background-color: black
-        padding: 10px 10px
-        margin: 0 10px
-  
+        margin: 0 10%
+        font-size: 1.5em
+.container
+  &.cont_editUserProfile_page
+    .rowForm
+      input,textarea
+        font-family: 'Share Tech Mono', monospace
+        font-size: 1em
+  img 
+    width: 100%
+  .cancelLink
+    +row-flex
+    width: 100%
+    padding: 5% 5%
+    justify-content: center
+    a 
+      color: red
