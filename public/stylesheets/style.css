@@ -2790,6 +2790,8 @@ form {
       .container.cont_initial_page .initialMenu .groupMenu a {
         width: 48%;
         display: inline-block; }
+        .container.cont_initial_page .initialMenu .groupMenu a.btnLoginHeroku {
+          width: 100%; }
   .container.cont_initial_page .backImg {
     background-image: url("../../images/iwtb_bg.gif");
     background-position: center;
