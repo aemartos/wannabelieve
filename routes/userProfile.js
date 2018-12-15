@@ -4,33 +4,40 @@ const { isLoggedOut, isLoggedIn } = require("../middlewares/isLogged");
 
 const User = require("../models/User");
 const Phenomenon = require("../models/Phenomenon");
+const ObjectId = require("mongoose").Types.ObjectId;
 
 const uploadMethods = require("../config/cloudinary.js");
 const uploadProfilePicture = uploadMethods.uploadProfilePicture;
 
 /* GET home page */
 router.get("/profile", isLoggedIn("/auth/login"), (req, res, next) => {
-  let queryRegistr = { "creatorId._id": req.user._id };
-  let queryVisits = {"visitorsId":req.user._id};
+  let queryReg = { creatorId: new ObjectId(`${req.user._id}`) };
+  let queryVisits = { visitorsId: new ObjectId(`${req.user._id}`) };
+  let queryFavs ={}
+  let userCreationDate = `${req.user.createdAt.getDay()}/${req.user.createdAt.getMonth()}/${req.user.createdAt.getFullYear()}`;
 
-  // Phenomenon.find(queryRegistr).then(phenomenaUser => {
-  //   return numberRegistr=phenomenaUser.length
-  // })
-  // Phenomenon.find(queryVisits).then(phenomenaUser => {
-  //   return numberVisits=phenomenaUser.length
-  // })
-  res.render("userProfile", {
-    actual_page: "userProfile_page",
-    profile: true
-  });
+  Promise.all([Phenomenon.find(queryReg), Phenomenon.find(queryVisits)]).then(
+    ([phenReg, phenVisits]) => {
+      let numberReg = phenReg.length;
+      let numberVisits = phenVisits.length;
+
+      res.render("userProfile", {
+        numberReg,
+        numberVisits,
+        userCreationDate,
+        actual_page: "userProfile_page",
+        profile: true
+      });
+    }
+  );
 });
 
 router.get("/profile/edit", isLoggedIn("/auth/login"), (req, res, next) => {
-  res.render("userProfile/edit", {actual_page: "editUserProfile_page"});
+  res.render("userProfile/edit", { actual_page: "editUserProfile_page" });
 });
 
 router.post("/editProfile", uploadProfilePicture.single("file"), (req, res) => {
-  if(req.file==undefined){
+  if (req.file == undefined) {
     var photoProfile = null;
   } else {
     photoProfile = req.file.url;
@@ -38,7 +45,7 @@ router.post("/editProfile", uploadProfilePicture.single("file"), (req, res) => {
 
   const { username, email, userId } = req.body;
 
-  User.findByIdAndUpdate(userId, {username, email, photoProfile}).then(() =>
+  User.findByIdAndUpdate(userId, { username, email, photoProfile }).then(() =>
     res.redirect(`/profile`)
   );
 });
