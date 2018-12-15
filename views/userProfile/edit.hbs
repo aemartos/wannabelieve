@@ -1,17 +1,14 @@
 <div class="containerForm">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <form action="/editProfile" method="post" enctype="multipart/form-data">
+
     {{#if user.photoProfile}}
-    <input type="file" accept="image/*" capture="camera" name="file" id="file" class="inputfile" />
-    <label class="profilePicture" for="file"><img id="imgUpl" src="{{user.photoProfile}}" alt="">
-      <p></p>
-    </label>
+    <input class="inputfile" type="file" accept="image/*;capture=camera" name="file" id="file">
+    <label class="profilePicture" for="file"><img id="imgUpl" src="{{user.photoProfile}}" alt=""></label>
+
     {{else}}
-    <input type="file" accept="image/*" capture="camera" name="file" id="file" class="inputfile" />
-    <label class="profilePicture" for="file"><img id="imgUpl" src="https://imgplaceholder.com/100x100/cccccc/757575/fa-camera-retro"
-        alt="">
-      <p></p>
-    </label>
+    <input type="file" accept="image/*;capture=camera" name="file" id="file" class="inputfile">
+    <label class="profilePicture" for="file"><img id="imgUpl" src="/images/avatars/addimg.png" alt="profilePicture"></label>
     {{/if}}
     <div class="rowForm">
       <label for="username">Username</label>
