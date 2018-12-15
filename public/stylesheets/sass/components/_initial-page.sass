@@ -1,8 +1,17 @@
 .container
-  &.cont_initial_page, &.cont_signup, &.cont_login
+  &.cont_initial_page, &.cont_signup, &.cont_login, &.cont_signupOK
     min-height: 100%
     padding: 4em 0
     background-color: $menubg
+  &.cont_signupOK
+    +column-flex
+    justify-content: center
+    .confirmOk
+      width: 80%
+      font-size: 2em
+      line-height: 1.3em
+      a
+        color: $secondarycolor
   &.cont_initial_page
     position: relative
     justify-content: space-between

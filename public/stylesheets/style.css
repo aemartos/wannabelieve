@@ -2757,15 +2757,29 @@ form {
   form .account-message {
     margin-top: 2em;
     opacity: .5; }
+    form .account-message a {
+      color: #39FF14; }
   form .error-message {
     margin-bottom: 2em;
     text-transform: lowercase;
     color: #F25652; }
 
-.container.cont_initial_page, .container.cont_signup, .container.cont_login {
+.container.cont_initial_page, .container.cont_signup, .container.cont_login, .container.cont_signupOK {
   min-height: 100%;
   padding: 4em 0;
   background-color: #010f0c; }
+
+.container.cont_signupOK {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center; }
+  .container.cont_signupOK .confirmOk {
+    width: 80%;
+    font-size: 2em;
+    line-height: 1.3em; }
+    .container.cont_signupOK .confirmOk a {
+      color: #39FF14; }
 
 .container.cont_initial_page {
   position: relative;

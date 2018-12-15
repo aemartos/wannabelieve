@@ -124,4 +124,7 @@ app.use('/', mapRoutes);
 const apiRoutes = require('./routes/apiRoutes');
 app.use('/api', apiRoutes);
 
+const routesRoutes = require('./routes/routesRoutes');
+app.use('/routes', routesRoutes);
+
 module.exports = app;
