@@ -31,20 +31,20 @@ router.post("/signup",  isLoggedOut('/map'), (req, res, next) => {
   const password = req.body.password;
   if (username === "" || password === "" || email === "") {
     req.flash("error", "indicate username, password and email");
-    res.render("auth/signup", {actual_page: 'signup'});
+    res.redirect("signup");
     return;
   }
 
   User.findOne({username}, "username", (err, user) => {
     if (user !== null) {
       req.flash("error", "the username already exists");
-      res.render("auth/signup", {actual_page: 'signup'});
+      res.redirect("signup");
       return;
     } else {
       User.findOne({email}, "email", (err, user) => {
         if (user !== null) {
           req.flash("error", "the email already exists");
-          res.render("auth/signup", {actual_page: 'signup'});
+          res.redirect("signup");
           return;
         }
 
@@ -58,10 +58,10 @@ router.post("/signup",  isLoggedOut('/map'), (req, res, next) => {
         });
 
         newUser.save()
-          .then(() => {res.redirect("/auth/signupOK")})
+          .then(() => {res.redirect("signupOK")})
           .catch(err => {
             req.flash("error", "something went wrong");
-            res.render("auth/signup", {actual_page: 'signupOK'})
+            res.redirect("signup");
           });
       });
     }
