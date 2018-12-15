@@ -3042,12 +3042,13 @@ form {
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
-      align-items: center; }
-    .container.cont_userProfile_page .proUserInfo p {
+      justify-content: center; }
+    .container.cont_userProfile_page .proUserInfo .proEmailDate {
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
-      font-size: 0.8em; }
+      font-size: 0.8em;
+      font-family: 'Share Tech Mono', monospace; }
   .container.cont_userProfile_page .proCaption {
     display: flex;
     flex-flow: column nowrap;
