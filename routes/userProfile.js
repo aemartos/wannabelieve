@@ -13,15 +13,13 @@ router.get("/profile", isLoggedIn("/auth/login"), (req, res, next) => {
   let queryRegistr = { "creatorId._id": req.user._id };
   let queryVisits = {"visitorsId":req.user._id};
 
-  Phenomenon.find(queryRegistr).then(phenomenaUser => {
-    return numberRegistr=phenomenaUser.length
-  })
-  Phenomenon.find(queryVisits).then(phenomenaUser => {
-    return numberVisits=phenomenaUser.length
-  })
+  // Phenomenon.find(queryRegistr).then(phenomenaUser => {
+  //   return numberRegistr=phenomenaUser.length
+  // })
+  // Phenomenon.find(queryVisits).then(phenomenaUser => {
+  //   return numberVisits=phenomenaUser.length
+  // })
   res.render("userProfile", {
-    numberRegistr,
-    numberVisits,
     actual_page: "userProfile_page",
     profile: true
   });
