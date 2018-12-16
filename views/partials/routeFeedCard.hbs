@@ -1,5 +1,5 @@
 <div class="routeCard">
-  <img class="routeImg" src="images/avatars/addimg.png" alt="">
+  <img class="routeImg" src="/images/avatars/addimg.png" alt="">
   <div class="infoRouteDetails">
     <div class="routeText">
       <p class="routeId">{{this._id}}</p>
@@ -10,5 +10,13 @@
       <p class="distance">10km</p><p class="separator">|</p><p class="difficulty">hard</p><p class="separator">|</p><p class="creator">{{this.creatorId.username}}</p>
     </div>
   </div>
-  <a class="goRoute" href="/routes/{{this._id}}/detail"><span class="x-back"></span></a>
+  {{#if @root.addingPhenomenon}}
+    <div class="addPhenomenonToRoute">
+      <form method="POST" action="/routes/{{this._id}}/add/{{@root.phenomenon}}">
+        <button type="submit"><span class="x-registered {{this.alreadyIn}}"></span></button>
+      </form>
+    </div>
+  {{else}}
+    <a class="goRoute" href="/routes/{{this._id}}/detail"><span class="x-back"></span></a>
+  {{/if}}
 </div>

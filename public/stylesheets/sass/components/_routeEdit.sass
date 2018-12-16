@@ -55,17 +55,6 @@
         :-moz-placeholder /* Firefox 18- */
           opacity: 1
           color: $menubg
-        .phenomenaList
-          margin-top: 1em
-          border-bottom: 2px solid #fff
-          ul
-            li
-              +row-flex
-              justify-content: space-between
-              margin-bottom: .3em
-              opacity: .5
-              &:last-child
-                margin-bottom: 0
         .actions
           +row-flex
           justify-content: space-between
@@ -93,3 +82,40 @@
         .error-message
           padding: .5em 0 0
           opacity: .5
+    .phenomenaList
+      width: 85%
+      margin: 0 auto
+      margin-top: 1em
+      ul
+        li
+          +row-flex
+          justify-content: space-between
+          font-size: .8em
+          margin-bottom: .7em
+          padding-bottom: .7em
+          opacity: .5
+          border-bottom: 1.5px solid #fff
+          &:last-child
+            margin-bottom: 0
+            border-bottom: 0
+          span
+            &.text
+              width: 19em
+              white-space: nowrap
+              overflow: hidden
+              text-overflow: ellipsis
+          form
+            width: max-content
+            &.deleteFromRoute
+              +row-flex
+              justify-content: center
+              button
+                width: max-content
+                border: 0
+                padding: 0
+                margin: 0
+                span
+                  &.active
+                    color: $secondarycolor
+                    &[class*='x-']
+                      -webkit-text-stroke: .3px $secondarycolor

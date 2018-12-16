@@ -1,5 +1,5 @@
 const singleMarker = (title, position, map, type) => {
-  let url = 'images/markers/small/';
+  let url = '/images/markers/small/';
   url += type + ".png";
   let marker = new google.maps.Marker({
     title,
@@ -64,8 +64,10 @@ const closeInfoWindow = () => {
     if (e.target && e.target.tagName === 'DIV' && !e.target.getAttribute('id')&& !e.target.getAttribute('class')) {
       if (infowindow) { infowindow.close(); }
       //Close filterBox
-      document.getElementById('filtersBox').style.display = 'none';
-      filters = false;
+      if (document.getElementById('filtersBox')) {
+        document.getElementById('filtersBox').style.display = 'none';
+        filters = false;
+      }
     }
   }
 };

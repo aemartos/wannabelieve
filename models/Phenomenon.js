@@ -10,6 +10,7 @@ const phenomenonSchema = new Schema(
     reviewsId: [{ type: Schema.Types.ObjectId, ref:'Review' }],
     creatorId: { type: Schema.Types.ObjectId, ref:'User' },
     visitorsId: [{ type: Schema.Types.ObjectId, ref:'User' }],
+    routesImIn: [{type: Schema.Types.ObjectId, ref:'Route'}],
     location: {type: {type: String,default: 'Point'}, coordinates: [Number]}
   },
   {

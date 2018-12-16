@@ -27,20 +27,4 @@ const {lat,lng} = geolocateMe().then(({lat,lng})=>{
 });
 
 
-const markers = [];
-const loadData = (map, extra = {}) => {
-  (extra.phenomena || phenomena).forEach(p => {
-    let markerPhenom = addMarker(
-      p.name,
-      p.description,
-      {
-        lng: extra.lng || p.location.coordinates[0],
-        lat: extra.lat || p.location.coordinates[1]
-      },
-      map,
-      p.type,
-      p._id
-    );
-    markers.push(markerPhenom);
-  })
-};
+

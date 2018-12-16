@@ -50,17 +50,6 @@ document.addEventListener("DOMContentLoaded", function() {
   //convert serarch input in a searchBox to find places with this library
   let searchBox = new google.maps.places.SearchBox(searchInput);
 
-  //set min and max zoom to avoid grey areas in the map
-  const fixZoom = () => {
-    const MAX_ZOOM = 14;
-    const MIN_ZOOM = 2.3;
-    if (map.getZoom() > MAX_ZOOM) {
-      map.setZoom(MAX_ZOOM);
-    } else if (map.getZoom() < MIN_ZOOM) {
-      map.setZoom(MIN_ZOOM);
-    }
-  };
-
   const searchReq = (e) => {
     e.preventDefault();
     let searchVal = searchInput.value;
