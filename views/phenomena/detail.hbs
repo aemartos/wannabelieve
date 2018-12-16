@@ -4,6 +4,7 @@
   {{/each}}
 </div>
 
+
 <div class="phHeader">
   <div class="phTitle">
     <h5>{{phenomenon.name}}</h5>
@@ -20,8 +21,13 @@
 </div>
 
 <div class="phFavReg">
-  <div class="phFavRegCell">
 
+  {{#if visited}}
+  <div>
+    <p>Ya registrado</p>
+  </div>
+  {{else}}
+  <div class="phFavRegCell">
     <form method="POST" action="/phenomena/{{phenomenon._id}}/register">
       <div class="form-group">
         <input type="hidden" name="latitude" placeholder="latitude">
@@ -30,6 +36,7 @@
       <button type="submit"><i class="x-sighting"></i>register</button>
     </form>
   </div>
+{{/if}}
 
   <div class="phFavRegCell">
     <form method="POST" action="/phenomena/{{phenomenon._id}}/favourite">
