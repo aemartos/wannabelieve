@@ -2476,10 +2476,7 @@ body {
 .container {
   width: 100%;
   height: calc(100% - 5.5em);
-  overflow-y: scroll;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center; }
+  overflow-y: scroll; }
   .container .content {
     width: 80%; }
 
@@ -2765,6 +2762,9 @@ form {
     color: #F25652; }
 
 .container.cont_initial_page, .container.cont_signup, .container.cont_login, .container.cont_signupOK {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   min-height: 100%;
   padding: 4em 0;
   background-color: #010f0c; }
@@ -2773,7 +2773,11 @@ form {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  background-image: url("../../images/signupOK_bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; }
   .container.cont_signupOK .confirmOk {
     width: 80%;
     font-size: 2em;
@@ -3146,48 +3150,61 @@ form {
     padding-bottom: .6em;
     width: 100%;
     text-align: center;
-    border-bottom: 4px solid #fff; }
+    border-bottom: 4px solid #fff;
+    color: #010f0c; }
   .container.cont_routes_page form {
     width: 85%;
+    margin: 0 auto;
     margin-top: .5em; }
-    .container.cont_routes_page form.addRoute .inputBox {
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      justify-content: space-between; }
-    .container.cont_routes_page form.addRoute input {
-      border: 0;
-      border-bottom: 2px solid #fff;
-      padding: 0 .5em .5em .5em;
-      margin: 0;
-      margin-top: .5em;
-      width: 85%; }
-      .container.cont_routes_page form.addRoute input:-webkit-autofill, .container.cont_routes_page form.addRoute input:-webkit-autofill:hover, .container.cont_routes_page form.addRoute input:-webkit-autofill:focus {
-        -webkit-box-shadow: 0 0 0px 1000px #a8a8a8 inset; }
-    .container.cont_routes_page form.addRoute button {
-      border: 0;
-      padding: 0;
-      margin: 0;
-      width: unset; }
-      .container.cont_routes_page form.addRoute button span {
-        font-size: 2em; }
-        .container.cont_routes_page form.addRoute button span[class*='x-'] {
-          -webkit-text-stroke: 0.3px #fff; }
-        .container.cont_routes_page form.addRoute button span:active {
-          color: #39FF14; }
-          .container.cont_routes_page form.addRoute button span:active[class*='x-'] {
-            -webkit-text-stroke: 0.3px #39FF14; }
-    .container.cont_routes_page form.addRoute .messages {
-      width: 85%;
-      word-spacing: 0; }
-      .container.cont_routes_page form.addRoute .messages .error-message {
-        padding: .5em 0 0; }
+    .container.cont_routes_page form.addRoute {
+      -ms-input-placeholder-color: #fff;
+      -moz-placeholder-color: #fff; }
+      .container.cont_routes_page form.addRoute .inputBox {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between; }
+      .container.cont_routes_page form.addRoute input {
+        border: 0;
+        border-bottom: 2px solid #fff;
+        padding: 0 .5em .5em .5em;
+        margin: 0;
+        margin-top: .5em;
+        width: 85%;
+        color: #010f0c; }
+        .container.cont_routes_page form.addRoute input:-webkit-autofill, .container.cont_routes_page form.addRoute input:-webkit-autofill:hover, .container.cont_routes_page form.addRoute input:-webkit-autofill:focus {
+          -webkit-box-shadow: 0 0 0px 1000px #a8a8a8 inset; }
+      .container.cont_routes_page form.addRoute ::-webkit-input-placeholder {
+        color: #fff; }
+      .container.cont_routes_page form.addRoute ::-moz-placeholder {
+        color: #fff; }
+      .container.cont_routes_page form.addRoute button {
+        border: 0;
+        padding: 0;
+        margin: 0;
+        width: unset; }
+        .container.cont_routes_page form.addRoute button span {
+          font-size: 2em;
+          color: #010f0c; }
+          .container.cont_routes_page form.addRoute button span[class*='x-'] {
+            -webkit-text-stroke: 0.3px #010f0c; }
+          .container.cont_routes_page form.addRoute button span:active {
+            color: #39FF14; }
+            .container.cont_routes_page form.addRoute button span:active[class*='x-'] {
+              -webkit-text-stroke: 0.3px #39FF14; }
+      .container.cont_routes_page form.addRoute .messages {
+        width: 85%;
+        word-spacing: 0; }
+        .container.cont_routes_page form.addRoute .messages .error-message {
+          padding: .5em 0 0;
+          opacity: .5; }
   .container.cont_routes_page .noRoutes {
     width: 85%;
     margin-top: 1em;
     line-height: 1.2em; }
   .container.cont_routes_page .routestList {
     width: 85%;
+    margin: 0 auto;
     margin-top: 1em; }
     .container.cont_routes_page .routestList .routeCard {
       display: flex;
@@ -3196,7 +3213,8 @@ form {
       justify-content: space-between;
       border-bottom: 2px solid #fff;
       padding-bottom: 1em;
-      margin: 1em 0; }
+      margin: 1em 0;
+      color: #010f0c; }
       .container.cont_routes_page .routestList .routeCard:last-child {
         border-bottom: 0; }
       .container.cont_routes_page .routestList .routeCard .routeImg {
@@ -3235,12 +3253,251 @@ form {
           margin: 0 .5em; }
       .container.cont_routes_page .routestList .routeCard a.goRoute {
         font-size: 2em;
-        color: #fff; }
+        color: #010f0c; }
+        .container.cont_routes_page .routestList .routeCard a.goRoute span[class*='x-'] {
+          -webkit-text-stroke: 0.3px #010f0c; }
         .container.cont_routes_page .routestList .routeCard a.goRoute span:before {
           -webkit-transform: rotate(180deg);
           -moz-transform: rotate(180deg);
           -ms-transform: rotate(180deg);
           -o-transform: rotate(180deg);
           transform: rotate(180deg); }
-        .container.cont_routes_page .routestList .routeCard a.goRoute:active {
+        .container.cont_routes_page .routestList .routeCard a.goRoute span:active {
           color: #39FF14; }
+          .container.cont_routes_page .routestList .routeCard a.goRoute span:active[class*='x-'] {
+            -webkit-text-stroke: 0.3px #39FF14; }
+
+.container.cont_routeDetail_page {
+  color: #010f0c;
+  word-spacing: -.5em; }
+  .container.cont_routeDetail_page span[class*='x-'] {
+    color: #010f0c;
+    font-size: 1.5em;
+    -webkit-text-stroke: 0.3px #010f0c;
+    text-transform: uppercase; }
+    .container.cont_routeDetail_page span[class*='x-']:active {
+      color: #39FF14; }
+      .container.cont_routeDetail_page span[class*='x-']:active[class*='x-'] {
+        -webkit-text-stroke: 0.3px #39FF14; }
+  .container.cont_routeDetail_page #routeMap {
+    background-color: #8f8f8f;
+    height: 33%;
+    width: 100%;
+    border-bottom: 4px solid #fff; }
+    .container.cont_routeDetail_page #routeMap a[rel='noopener'] {
+      display: none !important; }
+    .container.cont_routeDetail_page #routeMap .gmnoprint, .container.cont_routeDetail_page #routeMap .gm-style-cc {
+      display: none; }
+  .container.cont_routeDetail_page .section {
+    width: 100%;
+    padding: 1.2em 0;
+    border-bottom: 4px solid #fff;
+    text-transform: lowercase; }
+    .container.cont_routeDetail_page .section p {
+      width: 85%;
+      margin: 0 auto; }
+    .container.cont_routeDetail_page .section.sectionBtn {
+      padding: 0;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      background-color: #8f8f8f; }
+      .container.cont_routeDetail_page .section.sectionBtn p {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        padding: .8em 0; }
+        .container.cont_routeDetail_page .section.sectionBtn p:first-child {
+          border-right: 4px solid #fff; }
+        .container.cont_routeDetail_page .section.sectionBtn p span {
+          margin-right: .5em; }
+    .container.cont_routeDetail_page .section.firstSection .routeMainInfo {
+      width: 85%;
+      text-align: left;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto; }
+      .container.cont_routeDetail_page .section.firstSection .routeMainInfo h4 {
+        margin: 0;
+        margin-right: 1em;
+        width: 78%; }
+        .container.cont_routeDetail_page .section.firstSection .routeMainInfo h4.alone {
+          width: 85%;
+          text-align: center;
+          margin-right: 0; }
+      .container.cont_routeDetail_page .section.firstSection .routeMainInfo .action {
+        width: 25%; }
+    .container.cont_routeDetail_page .section.firstSection .createdOn {
+      font-family: 'Share Tech Mono';
+      word-spacing: 0;
+      font-size: .8em;
+      opacity: .5; }
+      .container.cont_routeDetail_page .section.firstSection .createdOn.alone {
+        text-align: center;
+        margin-top: .5em; }
+    .container.cont_routeDetail_page .section.secondSection .createdBy .username {
+      opacity: .5; }
+    .container.cont_routeDetail_page .section.thirdSection .text {
+      margin-top: .5em;
+      opacity: .5; }
+    .container.cont_routeDetail_page .section.fourthSection p, .container.cont_routeDetail_page .section.fifthSection p {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between; }
+      .container.cont_routeDetail_page .section.fourthSection p span:before, .container.cont_routeDetail_page .section.fifthSection p span:before {
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg); }
+    .container.cont_routeDetail_page .section.fifthSection {
+      border: 0; }
+    .container.cont_routeDetail_page .section.addCommentSection {
+      padding-top: 0;
+      border: 0; }
+      .container.cont_routeDetail_page .section.addCommentSection form.addComment {
+        width: 85%;
+        margin: 0 auto;
+        margin-top: .5em; }
+        .container.cont_routeDetail_page .section.addCommentSection form.addComment .commentBox {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: space-between;
+          -ms-input-placeholder-color: #010f0c;
+          -ms-input-placeholder-opacity: .5;
+          -moz-placeholder-color: #010f0c;
+          -moz-placeholder-opacity: .5; }
+          .container.cont_routeDetail_page .section.addCommentSection form.addComment .commentBox textarea {
+            border: 0;
+            border: 1.5px solid #010f0c;
+            padding: 1em;
+            margin: 0;
+            margin-top: .5em;
+            width: 85%;
+            height: 6em;
+            color: #010f0c; }
+            .container.cont_routeDetail_page .section.addCommentSection form.addComment .commentBox textarea:-webkit-autofill, .container.cont_routeDetail_page .section.addCommentSection form.addComment .commentBox textarea:-webkit-autofill:hover, .container.cont_routeDetail_page .section.addCommentSection form.addComment .commentBox textarea:-webkit-autofill:focus {
+              -webkit-box-shadow: 0 0 0px 1000px #a8a8a8 inset; }
+          .container.cont_routeDetail_page .section.addCommentSection form.addComment .commentBox ::-webkit-input-placeholder {
+            color: #010f0c;
+            opacity: .5; }
+          .container.cont_routeDetail_page .section.addCommentSection form.addComment .commentBox ::-moz-placeholder {
+            color: #010f0c;
+            opacity: .5; }
+          .container.cont_routeDetail_page .section.addCommentSection form.addComment .commentBox button.addCommentBtn {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            width: unset; }
+            .container.cont_routeDetail_page .section.addCommentSection form.addComment .commentBox button.addCommentBtn span {
+              font-size: 2em; }
+              .container.cont_routeDetail_page .section.addCommentSection form.addComment .commentBox button.addCommentBtn span:active {
+                color: #39FF14; }
+        .container.cont_routeDetail_page .section.addCommentSection form.addComment .messages {
+          width: 85%;
+          word-spacing: 0; }
+          .container.cont_routeDetail_page .section.addCommentSection form.addComment .messages .error-message {
+            padding: .5em 0 0;
+            opacity: .5; }
+
+.container.cont_routeEdit_page {
+  min-height: 100%;
+  padding: 4em 0;
+  word-spacing: -.5em;
+  color: #010f0c;
+  text-transform: lowercase; }
+  .container.cont_routeEdit_page span[class*='x-'] {
+    color: #010f0c;
+    font-size: 1.5em;
+    -webkit-text-stroke: 0.3px #010f0c;
+    text-transform: uppercase; }
+    .container.cont_routeEdit_page span[class*='x-']:active {
+      color: #39FF14; }
+      .container.cont_routeEdit_page span[class*='x-']:active[class*='x-'] {
+        -webkit-text-stroke: 0.3px #39FF14; }
+  .container.cont_routeEdit_page .routesEditTitle {
+    margin-top: 0;
+    padding-bottom: .6em;
+    width: 100%;
+    text-align: center;
+    border-bottom: 4px solid #fff; }
+  .container.cont_routeEdit_page form.editRoute {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: .5em;
+    -ms-input-placeholder-opacity: 1;
+    -ms-input-placeholder-color: #010f0c;
+    -moz-placeholder-opacity: 1;
+    -moz-placeholder-color: #010f0c; }
+    .container.cont_routeEdit_page form.editRoute .routeDescription {
+      margin-top: 1em; }
+    .container.cont_routeEdit_page form.editRoute textarea, .container.cont_routeEdit_page form.editRoute input {
+      border: 0;
+      border: 1.5px solid #8f8f8f;
+      padding: 1em;
+      margin: 0;
+      margin-top: .5em;
+      width: 100%;
+      text-transform: lowercase;
+      color: #010f0c; }
+      .container.cont_routeEdit_page form.editRoute textarea:-webkit-autofill, .container.cont_routeEdit_page form.editRoute textarea:-webkit-autofill:hover, .container.cont_routeEdit_page form.editRoute textarea:-webkit-autofill:focus, .container.cont_routeEdit_page form.editRoute input:-webkit-autofill, .container.cont_routeEdit_page form.editRoute input:-webkit-autofill:hover, .container.cont_routeEdit_page form.editRoute input:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0px 1000px #a8a8a8 inset; }
+    .container.cont_routeEdit_page form.editRoute input, .container.cont_routeEdit_page form.editRoute textarea {
+      opacity: .5; }
+    .container.cont_routeEdit_page form.editRoute textarea {
+      height: 8em; }
+    .container.cont_routeEdit_page form.editRoute ::-webkit-input-placeholder {
+      opacity: 1;
+      color: #010f0c; }
+    .container.cont_routeEdit_page form.editRoute ::-moz-placeholder {
+      opacity: 1;
+      color: #010f0c; }
+    .container.cont_routeEdit_page form.editRoute .phenomenaList {
+      margin-top: 1em;
+      border-bottom: 2px solid #fff; }
+      .container.cont_routeEdit_page form.editRoute .phenomenaList ul li {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: .3em;
+        opacity: .5; }
+        .container.cont_routeEdit_page form.editRoute .phenomenaList ul li:last-child {
+          margin-bottom: 0; }
+    .container.cont_routeEdit_page form.editRoute .actions {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1.5em; }
+      .container.cont_routeEdit_page form.editRoute .actions button, .container.cont_routeEdit_page form.editRoute .actions a {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center; }
+        .container.cont_routeEdit_page form.editRoute .actions button.saveBtn, .container.cont_routeEdit_page form.editRoute .actions a.saveBtn {
+          border: 0;
+          padding: 0;
+          margin: 0;
+          width: unset; }
+        .container.cont_routeEdit_page form.editRoute .actions button span:active, .container.cont_routeEdit_page form.editRoute .actions a span:active {
+          color: #39FF14; }
+          .container.cont_routeEdit_page form.editRoute .actions button span:active[class*='x-'], .container.cont_routeEdit_page form.editRoute .actions a span:active[class*='x-'] {
+            -webkit-text-stroke: 0.3px #39FF14; }
+        .container.cont_routeEdit_page form.editRoute .actions button span.text, .container.cont_routeEdit_page form.editRoute .actions a span.text {
+          color: #010f0c;
+          font-size: .5em;
+          margin-top: .3em; }
+  .container.cont_routeEdit_page form .messages {
+    width: 85%;
+    word-spacing: 0; }
+    .container.cont_routeEdit_page form .messages .error-message {
+      padding: .5em 0 0;
+      opacity: .5; }

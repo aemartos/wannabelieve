@@ -1,11 +1,16 @@
 .container
   &.cont_initial_page, &.cont_signup, &.cont_login, &.cont_signupOK
+    +column-flex
     min-height: 100%
     padding: 4em 0
     background-color: $menubg
   &.cont_signupOK
     +column-flex
     justify-content: center
+    background-image: url("../../images/signupOK_bg.png")
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
     .confirmOk
       width: 80%
       font-size: 2em
@@ -40,9 +45,9 @@
       background-image: url("../../images/iwtb_bg.gif")
       background-position: center
       background-size: cover
+      background-repeat: no-repeat
       //background-position: 75% 105%
       //background-size: 150%
-      background-repeat: no-repeat
       position: absolute
       right: 0
       bottom: 0

@@ -1,0 +1,60 @@
+<div class="routeMap" id="routeMap"></div>
+
+<div class="section firstSection">
+  <div class="routeMainInfo">
+    {{#if canEdit}}
+      <h4 class="mainTitle">{{route.routetitle}}</h4>
+      <div class="actions">
+        <a href="/routes/{{route._id}}/edit"><span class="x-update"></span></a>
+        <a href="/routes/{{route._id}}/delete"><span class="x-delete"></span></a>
+      </div>
+    {{else}}
+      <h4 class="mainTitle alone">{{route.routetitle}}</h4>
+    {{/if}}
+  </div>
+  {{#if canEdit}}
+    <p class="createdOn">create on: {{creationDate}}</p>
+  {{else}}
+    <p class="createdOn alone">create on: {{creationDate}}</p>
+  {{/if}}
+</div>
+
+<div class="section sectionBtn">
+  <p class="startRoute"><span class="x-sighting"></span> <span class="text">start</span></p>
+  <p class="favoriteRoute"><span class="x-favorite"></span> <span class="text">favorite</span></p>
+</div>
+
+<div class="section secondSection">
+  <p class="createdBy">create by: <span class="username">{{user.username}}</span></p>
+</div>
+
+<div class="section thirdSection">
+  <p class="description">description:</p>
+  <p class="text">{{route.description}}</p>
+</div>
+
+<div class="section fourthSection">
+  <p class="phenomena"><span class="text">phenomena:</span> <span class="x-back" id="expandPhenomena"></span></p>
+</div>
+
+<div class="section fifthSection">
+  <p class="comments"><span class="text">comments:</span> <span class="x-back" id="expandComments"></span></p>
+</div>
+
+<div class="section addCommentSection">
+  <form class="addComment"  method="POST" action="/routes/{{route._id}}/detail">
+    <div class="commentBox">
+      <textarea type="text" name="review" placeholder="write your comment here"></textarea>
+      <button type="submit" class="addCommentBtn"><span class="x-plus"></span></button>
+    </div>
+    <div class="messages">
+      {{#each messages}}
+        <div class="error-message">{{this}}</div>
+      {{/each}}
+    </div>
+  </form>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDALLA4IgWrHmR_9IiIAhCE6-keEuJks34"></script>
+<script src="/javascripts/map/mapStyles.js"></script>
+<script src="/javascripts/routes/routes.js"></script>
