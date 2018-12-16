@@ -5,6 +5,7 @@ const { distanceCheck } = require("../middlewares/distanceCheck");
 
 const Phenomenon = require("../models/Phenomenon");
 const User = require("../models/User");
+const Review = require("../models/Review")
 const ObjectId = require("mongoose").Types.ObjectId;
 
 const uploadMethods = require("../config/cloudinary.js");
@@ -107,8 +108,9 @@ router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
     Promise.all([
       User.findById(phenomCreator),
       Phenomenon.find(queryVisited),
-      User.find(queryFavourite)
-    ]).then(([creator, visit, favourites]) => {
+      User.find(queryFavourite),
+      Review.find({ phenomId: ObjectId(`${req.params.id}`)})
+    ]).then(([creator, visit, favourites, reviews]) => {
       const visited = () => {
         if (visit.length == 1) {
           return true;
@@ -135,12 +137,14 @@ router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
         }
       }
 
+
       res.render("phenomena/detail", {
         phenomenon,
         creator,
         editUser,
         visited,
         favourite,
+        reviews,
         phenomCreationDate,
         actual_page: "phenomena_detailPage"
       });
@@ -210,6 +214,35 @@ router.post(
           }).then(() => res.redirect(`/phenomena/${phenomFav}`));
         }
       });
-    })
+    });
+
+
+
+    router.post(
+      "/uploadComment",
+      (req, res) => {
+        let content = req.body.comment;
+        let authorId = new ObjectId(req.user._id);
+        let phenomId = new ObjectId(req.body.phenomId);
+
+        Review.create({ content, authorId, phenomId }).then(
+          review => {
+
+            Promise.all([
+              Phenomenon.findByIdAndUpdate(phenomId , {
+                $push: {reviewsId: `${review._id}` }
+              }),
+              User.findByIdAndUpdate(authorId, {
+                $push: {reviewsId: `${review._id}` }
+              })]).then(() => res.redirect(`/phenomena/${phenomId}`))
+
+            .catch(err => {
+              // When the ID isn't valid, it shows up as an error
+              console.log(err.message, "Error while fetching the ToDo data on the database");
+          });
+          }
+        )
+      });
+      
           
 module.exports = router;

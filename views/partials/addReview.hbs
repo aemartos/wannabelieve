@@ -1,0 +1,12 @@
+<div class="phCommentsAdd">
+  <form action="/uploadComment" method="post">
+    <div class="form-group">
+      <label for="comment">Comment</label>
+      <textarea class="form-control"name="comment"></textarea>
+    </div>
+
+    <input type="hidden" id="custId" name="phenomId" value="{{this.id}}">
+    <button type="submit" class="btn btn-primary">Post Comment</button>
+  </form>
+
+</div>
