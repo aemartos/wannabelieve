@@ -3054,14 +3054,9 @@ form {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    align-items: center;
     border-bottom: 2px solid white;
-    margin: 0 0; }
-    .container.cont_phenomena_detailPage .slider .sliderImage {
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      margin: 0 0.5em; }
+    padding: 0 0;
+    height: auto; }
   .container.cont_phenomena_detailPage .phHeader {
     display: flex;
     flex-flow: column nowrap;
@@ -3096,7 +3091,7 @@ form {
     justify-content: space-between;
     width: 100%;
     border-bottom: 2px solid white;
-    padding: 0 3em;
+    padding: 0.5em 3em;
     font-size: 0.8em; }
     .container.cont_phenomena_detailPage .phFavReg .phRegisted {
       display: flex;
@@ -3123,50 +3118,72 @@ form {
         margin: 0; }
       .container.cont_phenomena_detailPage .phFavReg .phFavRegCell i {
         padding: 0 0.5em; }
-  .container.cont_phenomena_detailPage .phBody {
+  .container.cont_phenomena_detailPage .phCreator {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    border-bottom: 2px solid white;
+    padding: 1em 1em;
+    font-size: 0.8em; }
+  .container.cont_phenomena_detailPage .phContent {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    width: 100%;
-    font-size: 0.8em;
-    color: black; }
-    .container.cont_phenomena_detailPage .phBody .phCreator {
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      justify-content: flex-start;
-      width: 100%;
-      border-bottom: 2px solid white;
-      padding: 3% 5%; }
-    .container.cont_phenomena_detailPage .phBody .accordionWrapper {
+    width: 100%; }
+    .container.cont_phenomena_detailPage .phContent .phDescription {
       display: flex;
       flex-flow: column nowrap;
       align-items: center;
-      width: 100%;
       align-items: flex-start;
-      min-height: 0; }
-      .container.cont_phenomena_detailPage .phBody .accordionWrapper .accordionItem {
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        width: 100%;
-        align-items: flex-start;
-        border-bottom: 2px solid white; }
-        .container.cont_phenomena_detailPage .phBody .accordionWrapper .accordionItem .accordionItemHeading {
-          display: flex;
-          flex-flow: row nowrap;
-          align-items: center;
-          width: 100%;
-          padding: 1em 5%;
-          background-color: red; }
-        .container.cont_phenomena_detailPage .phBody .accordionWrapper .accordionItem .accordionItemContent {
-          display: flex;
-          flex-flow: row nowrap;
-          align-items: center;
-          width: 100%;
-          height: 100%;
-          padding: 1em 5%;
-          background-color: green; }
+      width: 100%;
+      border-bottom: 2px solid white;
+      padding: 1em 1em;
+      font-size: 0.8em; }
+      .container.cont_phenomena_detailPage .phContent .phDescription .phDescHeader {
+        padding: 0.5em 0em; }
+      .container.cont_phenomena_detailPage .phContent .phDescription .phDescContent {
+        padding: 0.5em 0em; }
+    .container.cont_phenomena_detailPage .phContent .phComments {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      align-items: flex-start;
+      width: 100%;
+      border-bottom: 2px solid white;
+      padding: 1em 1em;
+      font-size: 0.8em; }
+      .container.cont_phenomena_detailPage .phContent .phComments .phCommentsHeader {
+        padding: 0.5em 0em; }
+      .container.cont_phenomena_detailPage .phContent .phComments .phCommentsContent {
+        padding: 0.5em 0em; }
+    .container.cont_phenomena_detailPage .phContent .phGallery {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      align-items: flex-start;
+      width: 100%;
+      border-bottom: 2px solid white;
+      padding: 1em 1em;
+      font-size: 0.8em; }
+      .container.cont_phenomena_detailPage .phContent .phGallery .phGalleryHeader {
+        padding: 0.5em 0em; }
+      .container.cont_phenomena_detailPage .phContent .phGallery .phGalleryContent {
+        padding: 0.5em 0em; }
+    .container.cont_phenomena_detailPage .phContent .phRoutes {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      align-items: flex-start;
+      width: 100%;
+      border-bottom: 2px solid white;
+      padding: 1em 1em;
+      font-size: 0.8em; }
+      .container.cont_phenomena_detailPage .phContent .phRoutes .phRoutesHeader {
+        padding: 0.5em 0em; }
+      .container.cont_phenomena_detailPage .phContent .phRoutes .phRoutesHeader {
+        padding: 0.5em 0em; }
 
 .container.cont_userProfile_page {
   display: flex;

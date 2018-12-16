@@ -1,6 +1,8 @@
 <div class="slider">
   {{#each phenomenon.imgPhenomUrls}}
-  <div class="sliderImage"><img src={{this}} alt=""></div>
+  <div class="sliderImage">
+    <img src={{this}} alt="">
+    </div>
   {{/each}}
 </div>
 
@@ -36,75 +38,82 @@
       <button type="submit"><i class="x-sighting"></i>register</button>
     </form>
   </div>
-{{/if}}
+  {{/if}}
 
-{{#if favourite}}
-<div class="phFavourite">
-  <i class="x-favorite">Favourite</i>
-</div>
-{{else}}
+  {{#if favourite}}
+  <div class="phFavourite">
+    <i class="x-favorite">Favourite</i>
+  </div>
+  {{else}}
   <div class="phFavRegCell">
     <form method="POST" action="/phenomena/{{phenomenon._id}}/favourite">
       <button type="submit"><i class="x-favorite"></i>favourite</button>
     </form>
   </div>
-
-{{/if}}
+  {{/if}}
 </div>
 
-<div class="phBody">
-  <div class="phCreator">
-    <p>discovered by:</p>
-    <p>{{creator.username}}</p>
+<div class="phCreator">
+  <p>discovered by:</p>
+  <p>{{creator.username}}</p>
+</div>
+
+<div class="phContent accordionWrapper">
+
+  <div class="phDescription accordionItem">
+    <div class="phDescHeader accordionItemHeading">
+      <p>description:</p>
+    </div>
+
+    <div class="phDescContent accordionItemContent">
+      {{!-- <p>Esto es una description fija para poder maquetar pero se empieza a solapar con lo de abajo si es mas larga </p> --}}
+      {{!-- <p>{{phenomenon.description}}</p> --}}
+    </div>
   </div>
 
-  <div class="accordionWrapper">
-
-    <div class="accordionItem">
-      <div class="accordionItemHeading">
-        <p>description:</p>
-      </div>
-
-      <div class="accordionItemContent">
-        {{!-- <p>{{phenomenon.description}}</p> --}}
-      </div>
+  <div class="phComments accordionItem">
+    <div class="phCommentsHeader accordionItemHeading">
+      <p>community comments</p>
     </div>
 
-    <div class="accordionItem">
-      <div class="accordionItemHeading">
-        <p>community comments</p>
+    {{#if reviews}}
+      <div class="phCommentsContent accordionItemContent">
+      {{!-- {{#each reviews}}
+      {{> reviewCard this}}
+      {{/each}} --}}
       </div>
-
-      <div class="accordionItemContent">
-        <p>hola que hase</p>
-      </div>
+    {{else}}
+    <div class="phCommentsContent accordionItemContent">
+      <p>There are no comments</p>
     </div>
+    {{/if}}
 
-    <div class="accordionItem">
-      <div class="accordionItemHeading">
-        <p>community images</p>
-      </div>
-
-      <div class="accordionItemContent">
-        <p></p>
-      </div>
-    </div>
-
-    <div class="accordionItem">
-      <div class="accordionItemHeading">
-        <p>routes it belongs to</p>
-      </div>
-
-      <div class="accordionItemContent">
-        <p>hola que hase</p>
-      </div>
-    </div>
-
-
+    {{> addReview phenomenon}}
   </div>
+
+  {{!-- <div class="phGallery accordionItem">
+    <div class="phGalleryHeader accordionItemHeading">
+      <p>community images</p>
+    </div>
+
+    <div class="phGalleryContent accordionItemContent">
+      <p>Aqui se mostrara la galleria</p>
+    </div>
+  </div>
+
+  <div class="phRoutes accordionItem">
+    <div class="phRoutesHeader accordionItemHeading">
+      <p>routes it belongs to</p>
+    </div>
+
+    <div class="phRoutesContent accordionItemContent">
+      <p>hola que hase</p>
+    </div>
+  </div> --}}
 
 
 </div>
+
 
 <script src="../../javascripts/accordion.js"></script>
 <script src="../../javascripts/map/geolocate.js"></script>
