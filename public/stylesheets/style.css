@@ -3048,19 +3048,16 @@ form {
 .container.cont_phenomena_detailPage {
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
   justify-content: flex-start; }
   .container.cont_phenomena_detailPage .slider {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     border-bottom: 2px solid white;
-    padding: 0 0;
-    height: auto; }
+    padding: 0 0; }
   .container.cont_phenomena_detailPage .phHeader {
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;
     border-bottom: 2px solid white;
     width: 100%; }
     .container.cont_phenomena_detailPage .phHeader .phTitle {
@@ -3130,7 +3127,6 @@ form {
   .container.cont_phenomena_detailPage .phContent {
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;
     width: 100%; }
     .container.cont_phenomena_detailPage .phContent .phDescription {
       display: flex;
@@ -3138,9 +3134,9 @@ form {
       align-items: center;
       align-items: flex-start;
       width: 100%;
-      border-bottom: 2px solid white;
       padding: 1em 1em;
-      font-size: 0.8em; }
+      font-size: 0.8em;
+      border-bottom: 2px solid white; }
       .container.cont_phenomena_detailPage .phContent .phDescription .phDescHeader {
         padding: 0.5em 0em; }
       .container.cont_phenomena_detailPage .phContent .phDescription .phDescContent {
@@ -3148,16 +3144,33 @@ form {
     .container.cont_phenomena_detailPage .phContent .phComments {
       display: flex;
       flex-flow: column nowrap;
-      align-items: center;
       align-items: flex-start;
       width: 100%;
-      border-bottom: 2px solid white;
       padding: 1em 1em;
       font-size: 0.8em; }
       .container.cont_phenomena_detailPage .phContent .phComments .phCommentsHeader {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
         padding: 0.5em 0em; }
       .container.cont_phenomena_detailPage .phContent .phComments .phCommentsContent {
+        display: flex;
+        flex-flow: column nowrap;
         padding: 0.5em 0em; }
+        .container.cont_phenomena_detailPage .phContent .phComments .phCommentsContent .reviewBox {
+          background-color: black;
+          margin: 0.2em 0; }
+          .container.cont_phenomena_detailPage .phContent .phComments .phCommentsContent .reviewBox p {
+            padding: 0.5em 0; }
+      .container.cont_phenomena_detailPage .phContent .phComments .phCommentsAdd {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        width: 100%; }
+        .container.cont_phenomena_detailPage .phContent .phComments .phCommentsAdd form {
+          width: 100%;
+          margin: 0 0;
+          padding: 1em 0; }
     .container.cont_phenomena_detailPage .phContent .phGallery {
       display: flex;
       flex-flow: column nowrap;

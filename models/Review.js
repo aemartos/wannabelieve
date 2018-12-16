@@ -5,6 +5,7 @@ const reviewSchema = Schema({
   title:String,
   content: String,
   authorId: {type: Schema.Types.ObjectId, ref:'User'},
+  phenomId: {type: Schema.Types.ObjectId, ref:'Phenomenon'},
   imgReviewUrl: String,
 }, {
   timestamps: { createdAt: "createdAt", updatedAt: "updatedAt" }

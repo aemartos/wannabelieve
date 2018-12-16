@@ -1,14 +1,15 @@
 .container
   &.cont_phenomena_detailPage
-    +column-flex
+    display: flex
+    flex-flow: column nowrap
     justify-content: flex-start
     .slider
       +row-flex
       border-bottom: 2px solid white
       padding: 0 0
-      height: auto
     .phHeader
-      +column-flex
+      display: flex
+      flex-flow: column nowrap
       border-bottom: 2px solid white
       width: 100%
       .phTitle
@@ -62,30 +63,46 @@
       padding: 1em 1em 
       font-size: 0.8em
     .phContent
-      +column-flex
+      display: flex
+      flex-flow: column nowrap
       width: 100%
       .phDescription
         +column-flex
         align-items: flex-start
         width: 100%
-        border-bottom: 2px solid white
         padding: 1em 1em
         font-size: 0.8em
+        border-bottom: 2px solid white
         .phDescHeader
           padding: 0.5em 0em
         .phDescContent
           padding: 0.5em 0em
       .phComments
-        +column-flex
+        display: flex
+        flex-flow: column nowrap
         align-items: flex-start
         width: 100%
-        border-bottom: 2px solid white
         padding: 1em 1em
         font-size: 0.8em
         .phCommentsHeader
+          +row-flex
           padding: 0.5em 0em
         .phCommentsContent
+          display: flex
+          flex-flow: column nowrap
           padding: 0.5em 0em
+          .reviewBox
+            background-color: black
+            margin: 0.2em 0
+            p 
+              padding: 0.5em 0
+        .phCommentsAdd
+          +row-flex
+          width: 100%
+          form 
+            width: 100%
+            margin: 0 0
+            padding: 1em 0
       .phGallery
         +column-flex
         align-items: flex-start

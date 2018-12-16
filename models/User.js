@@ -13,6 +13,7 @@ const userSchema = new Schema({
   role: {type: String, enum: ['Admin', 'User'], default: 'User'},
   favPhenoms: [{ type: Schema.Types.ObjectId, ref:'Phenomenom' }],
   favRoutes: [{ type: Schema.Types.ObjectId, ref:'Routes' }],
+  reviewsId:[{ type: Schema.Types.ObjectId, ref:'Reviews' }],
   caption:{type: String, default: "Hey there I Want to Believe"},
   description: {type: String, default: "Edit profile to change this"},
 }, {timestamps: true}
