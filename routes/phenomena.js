@@ -47,6 +47,7 @@ router.post("/addPhenomenon", uploadPhenomPicture.array("file"), (req, res) => {
     });
 });
 
+
 router.get("/phenomena", isLoggedIn("/auth/login"), (req, res, next) => {
   // Sorting by last created
   let query = { created_at: -1 };
@@ -96,11 +97,18 @@ router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
       ]
     };
 
+    let queryFavourite = {
+      $and: [
+        { _id: ObjectId(`${req.user._id}`) },
+        { favPhenoms: ObjectId(`${req.params.id}`) }
+      ]
+    };
+
     Promise.all([
       User.findById(phenomCreator),
-      Phenomenon.find(queryVisited)
-    ]).then(([creator, visit]) => {
-      
+      Phenomenon.find(queryVisited),
+      User.find(queryFavourite)
+    ]).then(([creator, visit, favourites]) => {
       const visited = () => {
         if (visit.length == 1) {
           return true;
@@ -119,11 +127,20 @@ router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
         }
       };
 
+      const favourite = () =>{
+        if(favourites.length==1){
+          return true
+        } else {
+          return false
+        }
+      }
+
       res.render("phenomena/detail", {
         phenomenon,
         creator,
         editUser,
         visited,
+        favourite,
         phenomCreationDate,
         actual_page: "phenomena_detailPage"
       });
@@ -145,16 +162,16 @@ router.post(
         { visitorsId: ObjectId(`${userId}`) }
       ]
     };
-    Phenomenon.find(queryVisited).then(visited =>{
-      if(visited.length==1){
-        console.log("ya has estado aqui")
-        res.redirect(`/phenomena/${phenomRegister}`)
 
-      } else{
+    Phenomenon.find(queryVisited).then(visited => {
+      if (visited.length == 1) {
+        console.log("ya has estado aqui");
+        res.redirect(`/phenomena/${phenomRegister}`);
+      } else {
         Phenomenon.findById(phenomRegister).then(phenomenon => {
           let phenLong = phenomenon.location.coordinates[1];
           let phenLat = phenomenon.location.coordinates[0];
-    
+
           if (distanceCheck(geoLat, geoLong, phenLat, phenLong, "K") < 0.2) {
             Phenomenon.findByIdAndUpdate(phenomRegister, {
               $push: { visitorsId: userId }
@@ -164,13 +181,35 @@ router.post(
             console.log("no puedes");
           }
         });
-
       }
-    })
-
-
-
- 
+    });
   }
 );
+
+
+router.post(
+  "/phenomena/:id/favourite",
+  isLoggedIn("/auth/login"),
+  (req, res) => {
+    let phenomFav = new ObjectId(req.params.id);
+    let userId = new ObjectId(req.user._id);
+    let queryFavourite = {
+      $and: [
+        { _id: ObjectId(`${userId}`) },
+        { favPhenoms: ObjectId(`${phenomFav}`) }
+      ]
+    };
+
+    User.find(queryFavourite).then(favourite => {
+      if (favourite.length == 1) {
+        console.log("ya es favorito");
+        res.redirect(`/phenomena/${phenomFav}`);
+      } else {
+        User.findByIdAndUpdate(userId, {
+            $push: { favPhenoms: phenomFav }
+          }).then(() => res.redirect(`/phenomena/${phenomFav}`));
+        }
+      });
+    })
+          
 module.exports = router;

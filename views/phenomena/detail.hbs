@@ -1,6 +1,6 @@
 <div class="slider">
   {{#each phenomenon.imgPhenomUrls}}
-  <img src={{this}} alt="">
+  <div class="sliderImage"><img src={{this}} alt=""></div>
   {{/each}}
 </div>
 
@@ -23,8 +23,8 @@
 <div class="phFavReg">
 
   {{#if visited}}
-  <div>
-    <p>Ya registrado</p>
+  <div class="phRegisted">
+    <i class="x-sighting">Registered</i>
   </div>
   {{else}}
   <div class="phFavRegCell">
@@ -38,11 +38,18 @@
   </div>
 {{/if}}
 
+{{#if favourite}}
+<div class="phFavourite">
+  <i class="x-favorite">Favourite</i>
+</div>
+{{else}}
   <div class="phFavRegCell">
     <form method="POST" action="/phenomena/{{phenomenon._id}}/favourite">
       <button type="submit"><i class="x-favorite"></i>favourite</button>
     </form>
   </div>
+
+{{/if}}
 </div>
 
 <div class="phBody">

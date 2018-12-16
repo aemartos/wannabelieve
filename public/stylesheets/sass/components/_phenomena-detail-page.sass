@@ -1,29 +1,33 @@
 .container
   &.cont_phenomena_detailPage
     +column-flex
+    justify-content: flex-start
     .slider
       +row-flex
-      width: 100%
-      border-bottom: 4px solid white
-      height: 100%
-      img 
-        max-width: 100%
-        height: 100%
+      align-items: center
+      border-bottom: 2px solid white
+      margin: 0 0
+      .sliderImage
+        +row-flex
+        margin: 0 0.5em
     .phHeader
       +column-flex
-      border-bottom: 4px solid white
+      border-bottom: 2px solid white
       width: 100%
       .phTitle
         +row-flex
         justify-content: center
         width: 100%
         color: black
+        padding: 0.5em 0
+        h5 
+          margin: 0 0
       .phTypeDate
         +row-flex
         justify-content: center
         font-family: 'Share Tech Mono', monospace
         font-size: 0.8em
-        padding: 1em 0
+        padding: 0.5em 0
         width: 100%
         p 
           color: grey
@@ -31,15 +35,26 @@
       +row-flex
       justify-content: space-between
       width: 100%
-      padding: 1em 5%
-      font-size: 1.5em
-      border-bottom: 4px solid white
+      border-bottom: 2px solid white
+      padding: 0 3em
+      font-size: 0.8em
+      .phRegisted
+        +row-flex
+        padding: 0.5em 0
+        color: green 
+      .phFavourite
+        +row-flex
+        padding: 0.5em 0
+        color: pink 
       .phFavRegCell
         +row-flex
-        font-size: 0.6em
-        width: 100%
+        padding: 0.5em 0 
+        form 
+          width: 100%
+          padding: 0
         button
           border: none
+          margin: 0  
         i 
           padding: 0 0.5em
     .phBody
@@ -51,7 +66,7 @@
         +row-flex
         justify-content: flex-start
         width: 100%
-        border-bottom: 4px solid white
+        border-bottom: 2px solid white
         padding: 3% 5%
       .accordionWrapper
         +column-flex
@@ -62,7 +77,7 @@
           +column-flex
           width: 100%
           align-items: flex-start
-          border-bottom: 4px solid white
+          border-bottom: 2px solid white
           .accordionItemHeading
             +row-flex
             width: 100%
