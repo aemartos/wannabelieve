@@ -1,0 +1,26 @@
+<h1 class="routesEditTitle">edit route</h1>
+<form class="editRoute"  method="POST" action="/routes/{{route._id}}/edit">
+  <p class="routeTitle">route title</p>
+  <input type="text" name="routetitle" placeholder="{{route.routetitle}}" value="{{route.routetitle}}">
+  <p class="routeDescription">route description</p>
+  <textarea type="text" name="description" placeholder="{{route.description}}" value="{{route.description}}"></textarea>
+  <div class="phenomenaList">
+    <p class="phenomListTitle">phenomena</p>
+    <ul class="pList">
+      <li class="phenom"><span class="text">Phenom01</span> <span class="x-delete"></span></li>
+      <li class="phenom"><span class="text">Phenom02</span> <span class="x-delete"></span></li>
+      <li class="phenom"><span class="text">Phenom03</span> <span class="x-delete"></span></li>
+      <li class="phenom"><span class="text">Phenom04</span> <span class="x-delete"></span></li>
+      <li class="phenom"><span class="text">Phenom05</span> <span class="x-delete"></span><li>
+    </ul>
+  </div>
+  <div class="messages">
+    {{#each messages}}
+      <div class="error-message">{{this}}</div>
+    {{/each}}
+  </div>
+  <div class="actions">
+    <button type="submit" class="saveBtn"><span class="x-save"></span><span class="text">save</span></button>
+    <a href="/routes/{{route._id}}/delete"><span class="x-delete"></span><span class="text">delete</span></a>
+  </div>
+</form>

@@ -1,6 +1,6 @@
-const createMap = ({lat,lng}) => {
+const createMap = (map, {lat,lng}) => {
   return new google.maps.Map(
-    document.getElementById('mainMap'), {
+    document.getElementById(map), {
       zoom: 14,
       center: {
         lat: lat || 40.4169473,
@@ -18,11 +18,11 @@ const createMap = ({lat,lng}) => {
 let map;
 const {lat,lng} = geolocateMe().then(({lat,lng})=>{
   console.log(lat,lng)
-  map = createMap({lat,lng});
+  map = createMap('mainMap', {lat,lng});
   meMarker = newMeMarker({lat,lng});
   loadData(map);
 }).catch(err=>{
-  map = createMap({});
+  map = createMap('mainMap', {});
   loadData(map);
 });
 
