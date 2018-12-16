@@ -33,7 +33,7 @@
         +row-flex
         justify-content: center
         background-color: $darkbg
-        p
+        p, .favoriteRoute
           +row-flex
           justify-content: center
           width: 50%
@@ -42,6 +42,22 @@
             border-right: 4px solid $maincolor
           span
             margin-right: .5em
+            &.active
+              color: $secondarycolor
+        .favoriteRoute
+          form
+            +row-flex
+            justify-content: center
+            button
+              width: max-content
+              border: 0
+              padding: 0
+              margin: 0
+              span
+                &.active
+                  color: $secondarycolor
+                  &[class*='x-']
+                    -webkit-text-stroke: .3px $secondarycolor
       &.firstSection
         .routeMainInfo
           width: 85%

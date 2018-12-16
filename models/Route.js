@@ -7,6 +7,7 @@ const routeSchema = new Schema({
   creatorId: {type: Schema.Types.ObjectId, ref:'User'},
   phenomenoId: [{type: Schema.Types.ObjectId, ref:'Phenomenon'}],
   reviewsId: [{type: Schema.Types.ObjectId, ref:'Review'}],
+  whoseFavId: [{type: Schema.Types.ObjectId, ref:'User'}],
 }, {timestamps: true}
 );
 
