@@ -1,0 +1,40 @@
+.container
+  &.cont_phenomena_page
+    +column-flex
+    width: 100%
+    .phsFeed
+      +column-flex
+      width: 100%
+      padding: 0 5%
+      .phCard
+        +row-flex
+        justify-content: space-between
+        align-items: center
+        width: 100%
+        background: red
+        margin: 1% 0
+        .phType
+          +row-flex
+          height: 100%
+          padding: 1% 1%
+          img 
+            width: 32px
+            height: 32px
+        .phInfo
+          +column-flex
+          align-items: flex-start
+          .phInfoFavs
+            +row-flex
+            font-size: 0.8em
+            font-family: 'Share Tech Mono', monospace
+          .phInfoName
+            +row-flex
+            margin: 0.01em
+            font-size: 0.8em
+          .phInfoTypeRoutes
+            +row-flex
+            font-size: 0.8em
+            font-family: 'Share Tech Mono', monospace
+        .phDetail
+          +row-flex
+          transform: rotate(180deg)
