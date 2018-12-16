@@ -6,7 +6,7 @@ const geolocateMe = () => {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         });
-      }, () => reject('Error in the geolocation service.'), {timeout:4000});
+      }, () => reject('Error in the geolocation service.'), {timeout: 4000});
     } else {
       reject('Browser does not support geolocation.');
     }
