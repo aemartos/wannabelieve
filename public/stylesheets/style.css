@@ -2971,12 +2971,14 @@ form {
   align-items: center;
   width: 100%; }
   .container.cont_phenomena_page .phsFeed {
+    flex: 1;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     width: 100%;
     padding: 0 5%; }
     .container.cont_phenomena_page .phsFeed .phCard {
+      flex: 1;
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
@@ -3077,12 +3079,17 @@ form {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 1em;
     padding: 1em 5%;
     font-size: 1.5em;
     border-bottom: 4px solid white; }
     .container.cont_phenomena_detailPage .phFavReg .phFavRegCell {
-      font-size: 0.6em; }
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      font-size: 0.6em;
+      width: 100%; }
+      .container.cont_phenomena_detailPage .phFavReg .phFavRegCell button {
+        border: none; }
       .container.cont_phenomena_detailPage .phFavReg .phFavRegCell i {
         padding: 0 0.5em; }
   .container.cont_phenomena_detailPage .phBody {
@@ -3112,7 +3119,6 @@ form {
         flex-flow: column nowrap;
         align-items: center;
         width: 100%;
-        height: 500px;
         align-items: flex-start;
         border-bottom: 4px solid white; }
         .container.cont_phenomena_detailPage .phBody .accordionWrapper .accordionItem .accordionItemHeading {

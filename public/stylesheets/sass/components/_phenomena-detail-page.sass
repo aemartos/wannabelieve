@@ -31,12 +31,15 @@
       +row-flex
       justify-content: space-between
       width: 100%
-      height: 1em
       padding: 1em 5%
       font-size: 1.5em
       border-bottom: 4px solid white
       .phFavRegCell
+        +row-flex
         font-size: 0.6em
+        width: 100%
+        button
+          border: none
         i 
           padding: 0 0.5em
     .phBody
@@ -58,7 +61,6 @@
         .accordionItem
           +column-flex
           width: 100%
-          height: 500px
           align-items: flex-start
           border-bottom: 4px solid white
           .accordionItemHeading

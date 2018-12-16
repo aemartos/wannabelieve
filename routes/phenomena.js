@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { isLoggedOut, isLoggedIn } = require("../middlewares/isLogged");
+const {distanceCheck} = require ("../middlewares/distanceCheck");
 
 const Phenomenon = require("../models/Phenomenon");
 const User = require("../models/User");
@@ -17,7 +18,6 @@ router.post("/addPhenomenon", uploadPhenomPicture.array("file"), (req, res) => {
   var imgPhenomUrls = [];
 
   if (req.files.length > 0) {
-    console.log("hola");
     for (let i = 0; i < req.files.length; i++) {
       imgPhenomUrls.push(req.files[i].url);
     }
@@ -109,4 +109,23 @@ router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
   });
 });
 
+router.post("/phenomena/:id/register", isLoggedIn("/auth/login"), (req, res) => {
+let geoLat=req.body.latitude;
+let geoLong=req.body.longitude;
+let phenomRegister= new ObjectId(req.params.id);
+
+Phenomenon.findById(phenomRegister).then(phenomenon =>{
+  let phenLong=phenomenon.location.coordinates[1]
+  let phenLat=phenomenon.location.coordinates[0]
+
+  if(distanceCheck(geoLat,geoLong,phenLat,phenLong,"K")<1){
+    console.log("you can register")
+
+  } else {
+    console.log("no puedes")
+  }
+})
+
+
+});
 module.exports = router;
