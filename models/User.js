@@ -12,6 +12,7 @@ const userSchema = new Schema({
   confirmationCode: {type: String, unique: true},
   role: {type: String, enum: ['Admin', 'User'], default: 'User'},
   favPhenoms: [{ type: Schema.Types.ObjectId, ref:'Phenomenom' }],
+  favRoutes: [{ type: Schema.Types.ObjectId, ref:'Routes' }],
   caption:{type: String, default: "Hey there I Want to Believe"},
   description: {type: String, default: "Edit profile to change this"},
 }, {timestamps: true}

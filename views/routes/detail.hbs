@@ -21,11 +21,15 @@
 
 <div class="section sectionBtn">
   <p class="startRoute"><span class="x-sighting"></span> <span class="text">start</span></p>
-  <p class="favoriteRoute"><span class="x-favorite"></span> <span class="text">favorite</span></p>
+  <div class="favoriteRoute">
+    <form method="POST" action="/routes/{{route._id}}/toggleFav">
+      <button type="submit"><span class="x-favorite {{#if fav}}active{{/if}}"></span></button><span class="text {{#if fav}}active{{/if}}">favorite</span>
+    </form>
+  </div>
 </div>
 
 <div class="section secondSection">
-  <p class="createdBy">create by: <span class="username">{{user.username}}</span></p>
+  <p class="createdBy">create by: <span class="username">{{route.creatorId.username}}</span></p>
 </div>
 
 <div class="section thirdSection">
@@ -39,12 +43,23 @@
 
 <div class="section fifthSection">
   <p class="comments"><span class="text">comments:</span> <span class="x-back" id="expandComments"></span></p>
+  <ul class="commentsList">
+    {{#each route.reviewsId}}
+      <li class="comment">
+        <span>{{this.content}}</span>
+        <span>{{this.authorId.username}}</span>
+        {{#if canDelete}}
+          <span class="x-delete"></span>
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
 </div>
 
 <div class="section addCommentSection">
-  <form class="addComment"  method="POST" action="/routes/{{route._id}}/detail">
+  <form class="addComment"  method="POST" action="/routes/{{route._id}}/postComment">
     <div class="commentBox">
-      <textarea type="text" name="review" placeholder="write your comment here"></textarea>
+      <textarea type="text" name="content" placeholder="write your comment here"></textarea>
       <button type="submit" class="addCommentBtn"><span class="x-plus"></span></button>
     </div>
     <div class="messages">
