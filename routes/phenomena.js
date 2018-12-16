@@ -219,15 +219,15 @@ router.post(
       "/uploadComment",
       (req, res) => {
         let content = req.body.comment;
-        let authorId = req.user._id};
-        let phenomId = req.body.phenomId};
-        console.log(phenomId)
-        
+        let authorId = req.user._id;
+        let phenomId = req.body.phenomId;
+       
+
         Review.create({ content, authorId }).then(
           review => {
+            console.log(review.id)
+            let reviewId=new ObjectId(`${review.id}`)
             
-            let reviewId=new ObjectId(`${review._id}`)
-            console.log(reviewId)
             Phenomenon.findByIdAndUpdate(phenomId,{$push:{reviewsId:reviewId}})
             .then(() => {
               res.redirect(`/phenomena/${phenomId}`);
