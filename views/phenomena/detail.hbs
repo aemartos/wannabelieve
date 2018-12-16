@@ -1,8 +1,9 @@
 <div class="slider">
   {{#each phenomenon.imgPhenomUrls}}
-  <img src={{this}} alt="">
+  <div class="sliderImage"><img src={{this}} alt=""></div>
   {{/each}}
 </div>
+
 
 <div class="phHeader">
   <div class="phTitle">
@@ -20,13 +21,35 @@
 </div>
 
 <div class="phFavReg">
+
+  {{#if visited}}
+  <div class="phRegisted">
+    <i class="x-sighting">Registered</i>
+  </div>
+  {{else}}
   <div class="phFavRegCell">
-    <a href="#"><i class="x-sighting"></i>register</a>
+    <form method="POST" action="/phenomena/{{phenomenon._id}}/register">
+      <div class="form-group">
+        <input type="hidden" name="latitude" placeholder="latitude">
+        <input type="hidden" name="longitude" placeholder="longitude">
+      </div>
+      <button type="submit"><i class="x-sighting"></i>register</button>
+    </form>
+  </div>
+{{/if}}
+
+{{#if favourite}}
+<div class="phFavourite">
+  <i class="x-favorite">Favourite</i>
+</div>
+{{else}}
+  <div class="phFavRegCell">
+    <form method="POST" action="/phenomena/{{phenomenon._id}}/favourite">
+      <button type="submit"><i class="x-favorite"></i>favourite</button>
+    </form>
   </div>
 
-  <div class="phFavRegCell">
-    <a href="#"><i class="x-favorite"></i>favourite</a>
-  </div>
+{{/if}}
 </div>
 
 <div class="phBody">
@@ -41,7 +64,7 @@
       <div class="accordionItemHeading">
         <p>description:</p>
       </div>
-      
+
       <div class="accordionItemContent">
         {{!-- <p>{{phenomenon.description}}</p> --}}
       </div>
@@ -84,3 +107,5 @@
 </div>
 
 <script src="../../javascripts/accordion.js"></script>
+<script src="../../javascripts/map/geolocate.js"></script>
+<script src="../../javascripts/registerPhenom.js"></script>

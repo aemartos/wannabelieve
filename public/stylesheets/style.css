@@ -2972,8 +2972,7 @@ form {
 .container.cont_phenomena_page {
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
-  width: 100%; }
+  align-items: center; }
   .container.cont_phenomena_page .phsFeed {
     display: flex;
     flex-flow: column nowrap;
@@ -2987,22 +2986,28 @@ form {
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      background: red;
-      margin: 1% 0; }
+      background: black;
+      margin: 0.3em 0;
+      padding: 2em 1em; }
       .container.cont_phenomena_page .phsFeed .phCard .phType {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
-        height: 100%;
-        padding: 1% 1%; }
+        padding: 0.3em 0.3em; }
         .container.cont_phenomena_page .phsFeed .phCard .phType img {
-          width: 32px;
-          height: 32px; }
+          width: 40px;
+          height: 40px;
+          background-color: grey;
+          border-radius: 25%;
+          padding: 0.3em 0.3em; }
       .container.cont_phenomena_page .phsFeed .phCard .phInfo {
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
-        align-items: flex-start; }
+        width: 100%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0 0.5em; }
         .container.cont_phenomena_page .phsFeed .phCard .phInfo .phInfoFavs {
           display: flex;
           flex-flow: row nowrap;
@@ -3015,10 +3020,13 @@ form {
           align-items: center;
           margin: 0.01em;
           font-size: 0.8em; }
+          .container.cont_phenomena_page .phsFeed .phCard .phInfo .phInfoName h5 {
+            margin: 0; }
         .container.cont_phenomena_page .phsFeed .phCard .phInfo .phInfoTypeRoutes {
           display: flex;
           flex-flow: row nowrap;
           align-items: center;
+          padding: 0.5em 0;
           font-size: 0.8em;
           font-family: 'Share Tech Mono', monospace; }
       .container.cont_phenomena_page .phsFeed .phCard .phDetail {
@@ -3040,22 +3048,25 @@ form {
 .container.cont_phenomena_detailPage {
   display: flex;
   flex-flow: column nowrap;
-  align-items: center; }
+  align-items: center;
+  justify-content: flex-start; }
   .container.cont_phenomena_detailPage .slider {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    width: 100%;
-    border-bottom: 4px solid white;
-    height: 100%; }
-    .container.cont_phenomena_detailPage .slider img {
-      max-width: 100%;
-      height: 100%; }
+    align-items: center;
+    border-bottom: 2px solid white;
+    margin: 0 0; }
+    .container.cont_phenomena_detailPage .slider .sliderImage {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      margin: 0 0.5em; }
   .container.cont_phenomena_detailPage .phHeader {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    border-bottom: 4px solid white;
+    border-bottom: 2px solid white;
     width: 100%; }
     .container.cont_phenomena_detailPage .phHeader .phTitle {
       display: flex;
@@ -3063,7 +3074,10 @@ form {
       align-items: center;
       justify-content: center;
       width: 100%;
-      color: black; }
+      color: black;
+      padding: 0.5em 0; }
+      .container.cont_phenomena_detailPage .phHeader .phTitle h5 {
+        margin: 0 0; }
     .container.cont_phenomena_detailPage .phHeader .phTypeDate {
       display: flex;
       flex-flow: row nowrap;
@@ -3071,7 +3085,7 @@ form {
       justify-content: center;
       font-family: 'Share Tech Mono', monospace;
       font-size: 0.8em;
-      padding: 1em 0;
+      padding: 0.5em 0;
       width: 100%; }
       .container.cont_phenomena_detailPage .phHeader .phTypeDate p {
         color: grey; }
@@ -3081,12 +3095,32 @@ form {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 1em;
-    padding: 1em 5%;
-    font-size: 1.5em;
-    border-bottom: 4px solid white; }
+    border-bottom: 2px solid white;
+    padding: 0 3em;
+    font-size: 0.8em; }
+    .container.cont_phenomena_detailPage .phFavReg .phRegisted {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      padding: 0.5em 0;
+      color: green; }
+    .container.cont_phenomena_detailPage .phFavReg .phFavourite {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      padding: 0.5em 0;
+      color: pink; }
     .container.cont_phenomena_detailPage .phFavReg .phFavRegCell {
-      font-size: 0.6em; }
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      padding: 0.5em 0; }
+      .container.cont_phenomena_detailPage .phFavReg .phFavRegCell form {
+        width: 100%;
+        padding: 0; }
+      .container.cont_phenomena_detailPage .phFavReg .phFavRegCell button {
+        border: none;
+        margin: 0; }
       .container.cont_phenomena_detailPage .phFavReg .phFavRegCell i {
         padding: 0 0.5em; }
   .container.cont_phenomena_detailPage .phBody {
@@ -3102,7 +3136,7 @@ form {
       align-items: center;
       justify-content: flex-start;
       width: 100%;
-      border-bottom: 4px solid white;
+      border-bottom: 2px solid white;
       padding: 3% 5%; }
     .container.cont_phenomena_detailPage .phBody .accordionWrapper {
       display: flex;
@@ -3116,9 +3150,8 @@ form {
         flex-flow: column nowrap;
         align-items: center;
         width: 100%;
-        height: 500px;
         align-items: flex-start;
-        border-bottom: 4px solid white; }
+        border-bottom: 2px solid white; }
         .container.cont_phenomena_detailPage .phBody .accordionWrapper .accordionItem .accordionItemHeading {
           display: flex;
           flex-flow: row nowrap;

@@ -1,7 +1,6 @@
 .container
   &.cont_phenomena_page
     +column-flex
-    width: 100%
     .phsFeed
       +column-flex
       width: 100%
@@ -11,18 +10,24 @@
         justify-content: space-between
         align-items: center
         width: 100%
-        background: red
-        margin: 1% 0
+        background: black
+        margin: 0.3em 0
+        padding: 2em 1em
         .phType
           +row-flex
-          height: 100%
-          padding: 1% 1%
+          padding: 0.3em 0.3em
           img 
-            width: 32px
-            height: 32px
+            width: 40px
+            height: 40px
+            background-color: grey
+            border-radius: 25%
+            padding: 0.3em 0.3em
         .phInfo
           +column-flex
+          width: 100%
+          justify-content: flex-start
           align-items: flex-start
+          padding: 0 0.5em
           .phInfoFavs
             +row-flex
             font-size: 0.8em
@@ -31,8 +36,11 @@
             +row-flex
             margin: 0.01em
             font-size: 0.8em
+            h5 
+              margin: 0
           .phInfoTypeRoutes
             +row-flex
+            padding: 0.5em 0
             font-size: 0.8em
             font-family: 'Share Tech Mono', monospace
         .phDetail

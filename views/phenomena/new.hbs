@@ -7,12 +7,6 @@
     </label>
 
     <div class="form-group">
-      <input type="hidden" name="latitude" placeholder="latitude">
-      <input type="hidden" name="longitude" placeholder="longitude">
-      <div style="color:green" class="locationStatus"></div>
-    </div>
-
-    <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" rows="3" name="name"></input>
     </div>
@@ -41,11 +35,18 @@
       <textarea class="form-control" rows="3" name="description"></textarea>
     </div>
 
-    <button class="addBtn" type="submit">Add</button>
+    <button type="submit" disabled>Add</button>
+
+    <div class="form-group">
+      <input type="hidden" name="latitude" placeholder="latitude">
+      <input type="hidden" name="longitude" placeholder="longitude">
+    </div>
+
   </form>
 
 </div>
 
-<script src="../javascripts/fileUpload.js"></script>
-<script src="../javascripts/geolocate.js"></script>
+{{!-- <script src="../javascripts/fileUpload.js"></script> --}}
+
+<script src="../javascripts/map/geolocate.js"></script>
 <script src="../javascripts/createPhenom.js"></script>
