@@ -4,48 +4,83 @@
   {{/each}}
 </div>
 
-
 <div class="phHeader">
   <div class="phTitle">
-    <h2>{{phenomenon.name}}</h2>
+    <h5>{{phenomenon.name}}</h5>
     {{#if editUser}}
-    <a href="/phenomena/{{phenomenon._id}}/edit/"><i class="fa-edit"></i></a>
+    <a href="/phenomena/{{phenomenon._id}}/edit/"><i class="x-update"></i></a>
     <a href="/phenomena/{{phenomenon._id}}/delete/"><i class="x-delete"></i></a>
     {{/if}}
   </div>
   <div class="phTypeDate">
-    <img src="/images/markers/small/{{phenomenon.type}}.png" alt="">
     <p>{{phenomenon.type}}</p>
     <p>|</p>
-    <p>{{phenomenon.created_at}}</p>
+    <p>discovered on {{phenomCreationDate}}</p>
   </div>
 </div>
+
 <div class="phFavReg">
-  <div class="phFavourite">
-    <a href="#"><i class="x-favorite"></i></a>
-    <span>{{numberFavourites}}</span>
+  <div class="phFavRegCell">
+    <a href="#"><i class="x-sighting"></i>register</a>
   </div>
-  <div class="phRegister">
-    <a href="#"><i class="x-registered"></i></a>
-    <span>{{numberVisitors}}</span>
+
+  <div class="phFavRegCell">
+    <a href="#"><i class="x-favorite"></i>favourite</a>
   </div>
 </div>
 
 <div class="phBody">
   <div class="phCreator">
-    <p>Discoverer: </p>
+    <p>discovered by:</p>
     <p>{{creator.username}}</p>
   </div>
-  <div class="phDescription">
-    <p>{{phenomenon.description}}</p>
-  </div>
-  <div class="phReviews">
-    <p>Reviews: {{numberReviews}}</p>
-  </div>
-  <div class="phGallery">
+
+  <div class="accordionWrapper">
+
+    <div class="accordionItem">
+      <div class="accordionItemHeading">
+        <p>description:</p>
+      </div>
+      
+      <div class="accordionItemContent">
+        {{!-- <p>{{phenomenon.description}}</p> --}}
+      </div>
+    </div>
+
+    <div class="accordionItem">
+      <div class="accordionItemHeading">
+        <p>community comments</p>
+      </div>
+
+      <div class="accordionItemContent">
+        <p>hola que hase</p>
+      </div>
+    </div>
+
+    <div class="accordionItem">
+      <div class="accordionItemHeading">
+        <p>community images</p>
+      </div>
+
+      <div class="accordionItemContent">
+        <p></p>
+      </div>
+    </div>
+
+    <div class="accordionItem">
+      <div class="accordionItemHeading">
+        <p>routes it belongs to</p>
+      </div>
+
+      <div class="accordionItemContent">
+        <p>hola que hase</p>
+      </div>
+    </div>
+
 
   </div>
-  <div class="phRoutes">
 
-  </div>
+
 </div>
+
+<script src="../../javascripts/accordion.js"></script>

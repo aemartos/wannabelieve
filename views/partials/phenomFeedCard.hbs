@@ -1,8 +1,27 @@
-<div class="phenomenonCard">
-  <h4>{{this.name}}</h4>
-  <img src={{this.imgPhenomUrls.[0]}} alt="" width="80%">
-  {{!-- <p>{{this.description}}</p> --}}
+<div class="phCard">
 
-  <a href="/phenomena/{{this._id}}">View More</a>
+  <div class="phType">
+    <img src="./images/markers/big/{{this.type}}.png" alt="">
+  </div>
+
+  <div class="phInfo">
+    <div class="phInfoFavs"></div>
+
+    <div class="phInfoName">
+      <h5>{{this.name}}</h5>
+    </div>
+
+    <div class="phInfoTypeRoutes">
+      <p>400m</p>
+      <p>|</p>
+      <p>{{this.type}}</p>
+      <p>|</p>
+      <p>difficulty</p>
+    </div>
+  </div>
+
+  <div class="phDetail">
+    <a href="/phenomena/{{this._id}}"><i class="x-back"></i></a>
+  </div>
 
 </div>

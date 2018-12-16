@@ -4,12 +4,13 @@ const { isLoggedOut, isLoggedIn } = require("../middlewares/isLogged");
 
 const Phenomenon = require("../models/Phenomenon");
 const User = require("../models/User");
+const ObjectId = require("mongoose").Types.ObjectId;
 
 const uploadMethods = require("../config/cloudinary.js");
 const uploadPhenomPicture = uploadMethods.uploadPhenomPicture;
 
 router.get("/phenomena/new", isLoggedIn("/auth/login"), (req, res) => {
-  res.render("phenomena/new", {actual_page: "addPhenom_page"});
+  res.render("phenomena/new", { actual_page: "addPhenom_page" });
 });
 
 router.post("/addPhenomenon", uploadPhenomPicture.array("file"), (req, res) => {
@@ -63,7 +64,10 @@ router.get("/phenomena", isLoggedIn("/auth/login"), (req, res, next) => {
 
 router.get("/phenomena/:id/edit/", (req, res) => {
   Phenomenon.findById(req.params.id).then(phenomenon => {
-    res.render("phenomena/edit", { phenomenon, actual_page: "phenomena_editPage" });
+    res.render("phenomena/edit", {
+      phenomenon,
+      actual_page: "phenomena_editPage"
+    });
   });
 });
 
@@ -82,21 +86,26 @@ router.get("/phenomena/:id/delete", (req, res) => {
 });
 
 router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
-  let phenomenaId = req.params.id;
-  Phenomenon.findById(phenomenaId).then(phenomenon => {
-    let numberVisitors=phenomenon.visitorsId.length;
-    let numberReviews=phenomenon.reviews.length;
-    User.findById(phenomenon.creatorId).then(creator=>{
-      var editUser=false;
-      console.log(req.user._id)
-      console.log(phenomenon.creatorId)
-      if(JSON.stringify(phenomenon.creatorId)===JSON.stringify(req.user._id)){
-        editUser=true;
-      }
-      console.log(editUser)
-      res.render("phenomena/detail", { phenomenon , creator, numberVisitors, numberReviews, editUser, actual_page: "phenomena_detailPage"});
 
-    })
+  Phenomenon.findById(req.params.id).then(phenomenon => {
+    let phenomCreationDate=`${phenomenon.created_at.getDay()}/${phenomenon.created_at.getMonth()}/${phenomenon.created_at.getFullYear()}`
+    let phenomCreator= new ObjectId(phenomenon.creatorId)
+
+    User.findById(phenomCreator).then(creator => {
+      var editUser = false;
+      if (
+        JSON.stringify(phenomenon.creatorId) === JSON.stringify(req.user._id)
+      ) {
+        editUser = true;
+      }
+      res.render("phenomena/detail", {
+        phenomenon,
+        creator,
+        editUser,
+        phenomCreationDate,
+        actual_page: "phenomena_detailPage"
+      });
+    });
   });
 });
 
