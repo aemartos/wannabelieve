@@ -3595,12 +3595,18 @@ form {
           .container.cont_routeDetail_page .section.fifthSection .commentsList .comment:last-child {
             border-bottom: 0; }
           .container.cont_routeDetail_page .section.fifthSection .commentsList .comment .metaData {
-            display: inline;
-            width: 14em;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            align-items: flex-start;
+            width: 16em;
             padding-top: .2em;
             font-family: 'Share Tech Mono';
             font-size: .6em;
             word-spacing: 0; }
+            .container.cont_routeDetail_page .section.fifthSection .commentsList .comment .metaData .author {
+              margin-top: .3em;
+              opacity: .5; }
           .container.cont_routeDetail_page .section.fifthSection .commentsList .comment .commentContent {
             margin-right: .8em;
             font-size: .8em;

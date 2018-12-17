@@ -127,7 +127,12 @@ router.get('/:id/detail', isLoggedIn("/auth/login"), (req, res, next) => {
   let canEdit = undefined;
   Route.findById(req.params.id).populate('creatorId').populate({path: 'reviewsId', populate: {path: 'authorId'}}).populate('phenomenoId').then(route => {
     const comments = route.reviewsId.map((com)=>{
-      return {...JSON.parse(JSON.stringify(com)), formatDate: `${com.createdAt.getDate()}/${com.createdAt.getMonth() + 1}/${com.createdAt.getFullYear()}`};
+      let min = com.createdAt.getMinutes().toString().length === 1 ? `0${com.createdAt.getMinutes()}` : com.createdAt.getMinutes();
+      return {
+        ...JSON.parse(JSON.stringify(com)),
+        formatDate: `${com.createdAt.getDate()}/${com.createdAt.getMonth() + 1}/${com.createdAt.getFullYear()}`,
+        formatTime: `${com.createdAt.getHours()}:${min}`
+      };
     });
     const phenomena = JSON.stringify(route.phenomenoId);
     let creationDate = `${route.createdAt.getDate()}/${route.createdAt.getMonth() + 1}/${route.createdAt.getFullYear()}`;

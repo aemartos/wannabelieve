@@ -141,12 +141,16 @@
             &:last-child
               border-bottom: 0
             .metaData
-              display: inline
-              width: 14em
+              +column-flex
+              align-items: flex-start
+              width: 16em
               padding-top: .2em
               font-family: 'Share Tech Mono'
               font-size: .6em
               word-spacing: 0
+              .author
+                margin-top: .3em
+                opacity: .5
             .commentContent
               margin-right: .8em
               font-size: .8em

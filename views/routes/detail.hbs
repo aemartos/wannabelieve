@@ -63,9 +63,10 @@ window.inRoute = true;
     {{#each comments}}
       <li class="comment">
         <p class="metaData">
-          <span>{{this.authorId.username}}</span>
-          <span> | </span>
-          <span>{{this.formatDate}}</span>
+          <span>
+            <span>{{this.formatTime}}</span><span> | </span><span>{{this.formatDate}}</span>
+          </span>
+          <span class="author">author: {{this.authorId.username}}</span>
         </p>
         <p class="commentContent">{{this.content}}</p>
         {{!-- {{#if canDelete}} --}}
