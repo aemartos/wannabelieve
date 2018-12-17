@@ -2656,10 +2656,12 @@ header {
           font-family: 'Share Tech Mono';
           font-size: .7em;
           margin-bottom: .1em; }
+          header nav .filtersBox form.filtersForm p input[type='checkbox'] {
+            width: .6em !important; }
         header nav .filtersBox form.filtersForm input[type='checkbox'] {
-          -webkit-appearance: radio;
-          width: .8em !important;
-          margin: 0; }
+          -webkit-appearance: checkbox;
+          margin: 0;
+          width: .8em !important; }
 
 footer {
   bottom: 0; }
