@@ -2645,7 +2645,7 @@ header {
           margin-top: 1.5em;
           font-size: .6em; }
           header nav .filtersBox form.filtersForm h3 input {
-            width: 6%;
+            width: 1.2em;
             margin: 0; }
         header nav .filtersBox form.filtersForm p {
           display: flex;
@@ -2658,7 +2658,7 @@ header {
           header nav .filtersBox form.filtersForm p input {
             display: inline-block;
             margin: 0;
-            width: unset; }
+            width: 1.2em; }
 
 footer {
   bottom: 0; }
@@ -2692,6 +2692,8 @@ form {
     margin-top: 1em; }
     form label:first-child {
       margin-top: 0; }
+  form input {
+    border-radius: 0 !important; }
   form input, form button, form textarea, form select {
     font-family: 'Press Start 2P';
     color: #fff;
@@ -3315,6 +3317,7 @@ form {
   word-spacing: -.5em; }
   .container.cont_routes_page .routesListTitle {
     margin-top: 0;
+    font-size: 1.8em;
     padding-bottom: .6em;
     width: 100%;
     text-align: center;
@@ -3368,6 +3371,7 @@ form {
           opacity: .5; }
   .container.cont_routes_page .noRoutes {
     width: 85%;
+    margin: 0 auto;
     margin-top: 1em;
     line-height: 1.2em; }
   .container.cont_routes_page .routestList {
@@ -3722,6 +3726,7 @@ form {
         -webkit-text-stroke: 0.3px #39FF14; }
   .container.cont_routeEdit_page .routesEditTitle {
     margin-top: 0;
+    font-size: 1.8em;
     padding-bottom: .6em;
     width: 100%;
     text-align: center;
