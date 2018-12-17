@@ -73,7 +73,10 @@ let phenomena = [
   }
 ];
 
-
+// creatorId: {
+//   username: 'wannabelieve',
+//   email: 'wannabelieve@iwtb.com'
+// }
 
 Phenomenon.collection.drop();
 

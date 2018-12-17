@@ -31,6 +31,7 @@ const accordion = (trigger, content) => {
   content.style.opacity = '0';
   content.style.transform = 'translateY(0em)';
   content.style.transition = 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)';
+  content.style["webkitTransition"] = 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)';
   content.style.setProperty('-webkit-transition', 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)');
   trigger.addEventListener("click", function() {
     if (!content.style.maxHeight || content.style.maxHeight ==="0px") {

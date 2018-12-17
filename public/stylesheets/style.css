@@ -2780,7 +2780,9 @@ form {
   align-items: center;
   min-height: 100%;
   padding: 4em 0;
-  background-color: #010f0c; }
+  background-color: #010f0c;
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff; }
 
 .container.cont_signupOK {
   display: flex;
