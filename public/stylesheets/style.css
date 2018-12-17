@@ -3128,7 +3128,7 @@ form {
       align-items: center;
       justify-content: center;
       background-color: #8f8f8f; }
-      .container.cont_phenomena_detailPage .section.sectionBtn p, .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom {
+      .container.cont_phenomena_detailPage .section.sectionBtn p, .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom, .container.cont_phenomena_detailPage .section.sectionBtn .registerPhenom {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
@@ -3136,25 +3136,25 @@ form {
         font-size: .8em;
         width: 50%;
         padding: .8em 0; }
-        .container.cont_phenomena_detailPage .section.sectionBtn p:first-child, .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom:first-child {
+        .container.cont_phenomena_detailPage .section.sectionBtn p:first-child, .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom:first-child, .container.cont_phenomena_detailPage .section.sectionBtn .registerPhenom:first-child {
           border-right: 4px solid #fff; }
-        .container.cont_phenomena_detailPage .section.sectionBtn p span, .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom span {
+        .container.cont_phenomena_detailPage .section.sectionBtn p span, .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom span, .container.cont_phenomena_detailPage .section.sectionBtn .registerPhenom span {
           margin-right: .5em; }
-          .container.cont_phenomena_detailPage .section.sectionBtn p span.active, .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom span.active {
+          .container.cont_phenomena_detailPage .section.sectionBtn p span.active, .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom span.active, .container.cont_phenomena_detailPage .section.sectionBtn .registerPhenom span.active {
             color: #39FF14; }
-      .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom form {
+      .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom form, .container.cont_phenomena_detailPage .section.sectionBtn .registerPhenom form {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
         justify-content: center; }
-        .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom form button {
+        .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom form button, .container.cont_phenomena_detailPage .section.sectionBtn .registerPhenom form button {
           width: max-content;
           border: 0;
           padding: 0;
           margin: 0; }
-          .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom form button span.active {
+          .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom form button span.active, .container.cont_phenomena_detailPage .section.sectionBtn .registerPhenom form button span.active {
             color: #39FF14; }
-            .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom form button span.active[class*='x-'] {
+            .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom form button span.active[class*='x-'], .container.cont_phenomena_detailPage .section.sectionBtn .registerPhenom form button span.active[class*='x-'] {
               -webkit-text-stroke: 0.3px #39FF14; }
     .container.cont_phenomena_detailPage .section.firstSection .phenomMainInfo {
       width: 85%;

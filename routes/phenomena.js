@@ -55,6 +55,7 @@ router.get("/phenomena", isLoggedIn("/auth/login"), (req, res, next) => {
   Phenomenon.find()
     .sort(query)
     .then(phenomena => {
+      // const phenomList = phenomena.map(p=>{return { ...JSON.parse(JSON.stringify(p)), numFavs: p.whoseFavId.length}});
       res.render("phenomena/main", {
         phenomena,
         actual_page: "phenomena_page",
@@ -207,6 +208,7 @@ router.post(
         { favPhenoms: ObjectId(`${phenomFav}`) }
       ]
     };
+
 
     User.find(queryFavourite).then(favourite => {
       if (favourite.length == 1) {
