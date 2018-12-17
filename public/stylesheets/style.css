@@ -3548,7 +3548,11 @@ form {
           text-align: center;
           margin-right: 0; }
       .container.cont_routeDetail_page .section.firstSection .routeMainInfo .actions {
-        width: 18%; }
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        width: 17%; }
     .container.cont_routeDetail_page .section.firstSection .createdOn {
       font-family: 'Share Tech Mono';
       word-spacing: 0;

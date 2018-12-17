@@ -75,9 +75,9 @@ window.inRoute = true;
           <span class="author">author: {{this.authorId.username}}</span>
         </p>
         <p class="commentContent">{{this.content}}</p>
-        {{!-- {{#if canDelete}} --}}
+        {{#if canDelete}}
           <p class="deleteBtn"><span class="x-delete"></span></p>
-        {{!-- {{/if}} --}}
+        {{/if}}
       </li>
     {{/each}}
   </ul>
