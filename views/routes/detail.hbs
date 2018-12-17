@@ -45,7 +45,10 @@ window.inRoute = true;
 
 <div class="section fourthSection">
   <p class="phenomena"><span class="text">phenomena:</span> <span class="x-back" id="expandPhenomena"></span></p>
-  <ul class="phenomsList">
+  <ul class="phenomsList closed" id="phenomsAccordion">
+    {{#unless route.phenomenoId}}
+      <li class="phenom noPhenom">There is no phenomena in this route yet</li>
+    {{/unless}}
     {{#each route.phenomenoId}}
       <li class="phenom">
         <a href="/phenomena/{{this._id}}">
@@ -59,7 +62,10 @@ window.inRoute = true;
 
 <div class="section fifthSection">
   <p class="comments"><span class="text">comments:</span> <span class="x-back" id="expandComments"></span></p>
-  <ul class="commentsList">
+  <ul class="commentsList closed" id="commentsAccordion">
+    {{#unless comments}}
+      <li class="comment noComment">There are no comments in this route yet</li>
+    {{/unless}}
     {{#each comments}}
       <li class="comment">
         <p class="metaData">
@@ -97,3 +103,4 @@ window.inRoute = true;
 <script src="/javascripts/map/geolocate.js"></script>
 <script src="/javascripts/map/mapStyles.js"></script>
 <script src="/javascripts/routes/routes.js"></script>
+<script src="/javascripts/accordion.js"></script>

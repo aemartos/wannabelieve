@@ -98,20 +98,42 @@
         p
           +row-flex
           justify-content: space-between
-          span[class='x-back']:before
-            +transform(rotate(-90deg))
+          span
+            &[class='x-back']:before
+              +transform(rotate(-90deg))
+            &:active
+              color: $menubg
+              &[class*='x-']
+                -webkit-text-stroke: .3px $menubg
       &.fourthSection
         .phenomena
-          margin-bottom: 1em
+          //margin-bottom: 1em
+          #expandPhenomena
+            +transition_default
+            &.rotate
+              +transform(rotate(90deg))
+              +transition_default
         ul
-          &.phenomsList
+          &#phenomsAccordion
+            //display: none
             width: 85%
             margin: 0 auto
+            max-height: 0px
+            overflow: hidden
+            opacity: 1
+            +transform(translateY(0em))
+            +transition_default
+            &.closed
+              opacity: 0
+              max-height: 0px
+              +transition_default
             li
               &.phenom
                 //font-family: 'Share Tech Mono'
                 font-size: .8em
                 margin-bottom: .5em
+                &.noPhenom
+                  opacity: .5
                 &:last-child
                   margin-bottom: 0
                 a
@@ -127,10 +149,24 @@
         border: 0
         padding-bottom: 0
         .comments
-          margin-bottom: 1em
-        .commentsList
+          #expandComments
+            +transition_default
+            &.rotate
+              +transform(rotate(90deg))
+              +transition_default
+        #commentsAccordion
+          //display: none
           width: 85%
           margin: 0 auto
+          max-height: 0px
+          overflow: hidden
+          opacity: 1
+          +transform(translateY(0em))
+          +transition_default
+          &.closed
+            opacity: 0
+            max-height: 0px
+            +transition_default
           .comment
             +row-flex
             align-items: flex-start
@@ -138,6 +174,9 @@
             margin-bottom: .8em
             padding-bottom: .8em
             border-bottom: .5px solid $darkbg
+            &.noComment
+              opacity: .5
+              font-size: .8em
             &:last-child
               border-bottom: 0
             .metaData
@@ -165,7 +204,7 @@
           &.addComment
             width: 85%
             margin: 0 auto
-            margin-top: .5em
+            margin-top: 1em
             .commentBox
               +row-flex
               justify-content: space-between
