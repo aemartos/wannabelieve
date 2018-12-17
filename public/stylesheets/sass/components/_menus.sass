@@ -91,8 +91,7 @@ header
             font-size: .55em
             //font-size: .6em
             input[type='checkbox']
-              width: .7em !important
-              height: .7em
+              width: 1em !important
           p
             +row-flex
             justify-content: space-between
@@ -100,18 +99,20 @@ header
             font-size: .7em
             margin-bottom: .1em
           input[type='checkbox']
-            -webkit-appearance: none
-            width: .5em !important
-            height: .5em
-            display: inline-block !important
-            margin: 0 !important
-            margin: 0 !important
-            outline: 0 !important
-            box-shadow: none !important
-            color: $maincolor
-            border: 1px solid $maincolor !important
-            background: $menubg !important
-            background-color: $menubg !important
+            //-webkit-appearance: checkbox
+            -webkit-appearance: radio
+            width: .8em !important
+            margin: 0
+            // width: .5em !important
+            // height: .5em
+            // display: inline-block !important
+            // margin: 0 !important
+            // outline: 0 !important
+            // box-shadow: none !important
+            // color: $maincolor
+            // border: 1px solid $maincolor !important
+            // background: $menubg !important
+            // background-color: $menubg !important
 
 footer
   bottom: 0
