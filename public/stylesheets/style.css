@@ -3580,20 +3580,7 @@ form {
         -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
     .container.cont_routeDetail_page .section.fourthSection ul#phenomsAccordion {
       width: 85%;
-      margin: 0 auto;
-      max-height: 0px;
-      overflow: hidden;
-      opacity: 1;
-      -webkit-transform: translateY(0em);
-      -moz-transform: translateY(0em);
-      -ms-transform: translateY(0em);
-      -o-transform: translateY(0em);
-      transform: translateY(0em);
-      transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+      margin: 0 auto; }
       .container.cont_routeDetail_page .section.fourthSection ul#phenomsAccordion.closed {
         opacity: 0;
         max-height: 0px;
@@ -3642,20 +3629,7 @@ form {
           -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
       .container.cont_routeDetail_page .section.fifthSection #commentsAccordion {
         width: 85%;
-        margin: 0 auto;
-        max-height: 0px;
-        overflow: hidden;
-        opacity: 1;
-        -webkit-transform: translateY(0em);
-        -moz-transform: translateY(0em);
-        -ms-transform: translateY(0em);
-        -o-transform: translateY(0em);
-        transform: translateY(0em);
-        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+        margin: 0 auto; }
         .container.cont_routeDetail_page .section.fifthSection #commentsAccordion.closed {
           opacity: 0;
           max-height: 0px;

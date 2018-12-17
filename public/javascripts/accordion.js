@@ -24,27 +24,50 @@ function toggleItem() {
 
 /*-------------------------*/
 
-// DISPLAY NONE ACCORDION
+//DISPLAY NONE ACCORDION
 // const accordion = (trigger, content) => {
+//   content.style.display = 'none';
 //   trigger.addEventListener("click", function() {
-//     trigger.classList.toggle("rotate");
 //     if (content.style.display === "block") {
+//       trigger.style.transform = 'rotate(180deg)';
 //       content.style.display = "none";
 //     } else {
+//       trigger.style.transform = 'rotate(0deg)';
 //       content.style.display = "block";
 //     }
 //   });
 // };
 
-// ANIMATE HEIGHT ACCORDION
+// ANIMATE HEIGHT ACCORDION (with classes)
+// const accordion = (trigger, content) => {
+//   trigger.addEventListener("click", function() {
+//     trigger.classList.toggle("rotate");
+//     content.classList.toggle("closed");
+//     if (!content.style.maxHeight || content.style.maxHeight ==="0px") {
+//       content.style.maxHeight = content.scrollHeight + 25 + "px";
+//       content.style.paddingTop = "1.5em";
+//     } else {
+//       content.style.maxHeight = "0px";
+//       content.style.paddingTop = "0em";
+//     }
+//   });
+// };
+
+// ANIMATE HEIGHT ACCORDION (only js)
 const accordion = (trigger, content) => {
+  content.style.maxHeight = '0px';
+  content.style.overflow = 'hidden';
+  content.style.opacity = '0';
+  content.style.transform = 'translateY(0em)';
+  content.style.transition = 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)';
   trigger.addEventListener("click", function() {
-    trigger.classList.toggle("rotate");
-    content.classList.toggle("closed");
     if (!content.style.maxHeight || content.style.maxHeight ==="0px") {
+      trigger.style.transform = 'rotate(180deg)';
+      content.style.opacity = '1';
       content.style.maxHeight = content.scrollHeight + 25 + "px";
       content.style.paddingTop = "1.5em";
     } else {
+      trigger.style.transform = 'rotate(0deg)';
       content.style.maxHeight = "0px";
       content.style.paddingTop = "0em";
     }

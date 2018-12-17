@@ -45,7 +45,7 @@ window.inRoute = true;
 
 <div class="section fourthSection">
   <p class="phenomena"><span class="text">phenomena:</span> <span class="x-back" id="expandPhenomena"></span></p>
-  <ul class="phenomsList closed" id="phenomsAccordion">
+  <ul class="phenomsList" id="phenomsAccordion">
     {{#unless route.phenomenoId}}
       <li class="phenom noPhenom">There is no phenomena in this route yet</li>
     {{/unless}}
@@ -62,7 +62,7 @@ window.inRoute = true;
 
 <div class="section fifthSection">
   <p class="comments"><span class="text">comments:</span> <span class="x-back" id="expandComments"></span></p>
-  <ul class="commentsList closed" id="commentsAccordion">
+  <ul class="commentsList" id="commentsAccordion">
     {{#unless comments}}
       <li class="comment noComment">There are no comments in this route yet</li>
     {{/unless}}
