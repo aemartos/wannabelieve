@@ -6,7 +6,7 @@
     document.querySelector('input[name=longitude]').value = l.lng;
     
     document.querySelector('button').disabled=false;
-    document.querySelector('button').className+="addBtn";
+    // document.querySelector('button').className+="addBtn";
   })
 
   

@@ -67,10 +67,10 @@
 <div class="section fourthSection">
   <p class="comments"><span class="text">comments:</span> <span class="x-back" id="expandComments"></span></p>
   <ul class="commentsList" id="commentsAccordion">
-    {{#unless comments}}
+    {{#unless reviews}}
     <li class="comment noComment">There are no comments in this phenomenon yet</li>
     {{/unless}}
-    {{#each comments}}
+    {{#each reviews}}
     <li class="comment">
       <p class="metaData">
         <span>
@@ -88,7 +88,7 @@
 </div>
 
 <div class="section addCommentSection">
-  <form class="addComment" method="POST" action="/phenomena/{{route._id}}/postComment">
+  <form class="addComment" method="POST" action="/phenomena/{{phenomenon._id}}/postReview">
     <div class="commentBox">
       <textarea type="text" name="content" placeholder="write your comment here"></textarea>
       <button type="submit" class="addCommentBtn"><span class="x-plus"></span></button>

@@ -5,7 +5,7 @@ const { distanceCheck } = require("../middlewares/distanceCheck");
 
 const Phenomenon = require("../models/Phenomenon");
 const User = require("../models/User");
-const Review = require("../models/Review")
+const Review = require("../models/Review");
 const ObjectId = require("mongoose").Types.ObjectId;
 
 const uploadMethods = require("../config/cloudinary.js");
@@ -48,7 +48,6 @@ router.post("/addPhenomenon", uploadPhenomPicture.array("file"), (req, res) => {
     });
 });
 
-
 router.get("/phenomena", isLoggedIn("/auth/login"), (req, res, next) => {
   // Sorting by last created
   let query = { created_at: -1 };
@@ -56,6 +55,7 @@ router.get("/phenomena", isLoggedIn("/auth/login"), (req, res, next) => {
   Phenomenon.find()
     .sort(query)
     .then(phenomena => {
+      // const phenomList = phenomena.map(p=>{return { ...JSON.parse(JSON.stringify(p)), numFavs: p.whoseFavId.length}});
       res.render("phenomena/main", {
         phenomena,
         actual_page: "phenomena_page",
@@ -91,6 +91,14 @@ router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
   Phenomenon.findById(req.params.id).then(phenomenon => {
     let phenomCreationDate = `${phenomenon.created_at.getDay()}/${phenomenon.created_at.getMonth()}/${phenomenon.created_at.getFullYear()}`;
     let phenomCreator = new ObjectId(phenomenon.creatorId);
+
+    var reviews = [];
+    phenomenon.reviewsId.forEach(revId => {
+      Review.findById(revId).then(reviewInfo => {
+        return reviews.push(reviewInfo);
+      });
+    });
+
     let queryVisited = {
       $and: [
         { _id: ObjectId(`${req.params.id}`) },
@@ -108,9 +116,8 @@ router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
     Promise.all([
       User.findById(phenomCreator),
       Phenomenon.find(queryVisited),
-      User.find(queryFavourite),
-      Review.find({ phenomId: ObjectId(`${req.params.id}`)})
-    ]).then(([creator, visit, favourites, reviews]) => {
+      User.find(queryFavourite)
+    ]).then(([creator, visit, favourites]) => {
       const visited = () => {
         if (visit.length == 1) {
           return true;
@@ -129,14 +136,13 @@ router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
         }
       };
 
-      const favourite = () =>{
-        if(favourites.length==1){
-          return true
+      const favourite = () => {
+        if (favourites.length == 1) {
+          return true;
         } else {
-          return false
+          return false;
         }
-      }
-
+      };
 
       res.render("phenomena/detail", {
         phenomenon,
@@ -190,7 +196,6 @@ router.post(
   }
 );
 
-
 router.post(
   "/phenomena/:id/favourite",
   isLoggedIn("/auth/login"),
@@ -204,45 +209,43 @@ router.post(
       ]
     };
 
+
     User.find(queryFavourite).then(favourite => {
       if (favourite.length == 1) {
         console.log("ya es favorito");
         res.redirect(`/phenomena/${phenomFav}`);
       } else {
         User.findByIdAndUpdate(userId, {
-            $push: { favPhenoms: phenomFav }
-          }).then(() => res.redirect(`/phenomena/${phenomFav}`));
-        }
-      });
+          $push: { favPhenoms: phenomFav }
+        }).then(() => res.redirect(`/phenomena/${phenomFav}`));
+      }
     });
+  }
+);
 
+router.post("/phenomena/:id/postReview", (req, res) => {
+  let content = req.body.content;
+  let authorId = new ObjectId(req.user._id);
 
+  Review.create({ content, authorId }).then(review => {
+    Promise.all([
+      Phenomenon.findByIdAndUpdate(req.params.id, {
+        $push: { reviewsId: `${review._id}` }
+      }),
+      User.findByIdAndUpdate(authorId, {
+        $push: { reviewsId: `${review._id}` }
+      })
+    ])
+      .then(() => res.redirect(`/phenomena/${req.params.id}`))
 
-    router.post(
-      "/phenomena/:id/postComment",
-      (req, res) => {
-        let content = req.body.content;
-        let authorId = new ObjectId(req.user._id);
-        let phenomId = new ObjectId(req.body.phenomId);
-
-        Review.create({ content, authorId, phenomId }).then(
-          review => {
-
-            Promise.all([
-              Phenomenon.findByIdAndUpdate(phenomId , {
-                $push: {reviewsId: `${review._id}` }
-              }),
-              User.findByIdAndUpdate(authorId, {
-                $push: {reviewsId: `${review._id}` }
-              })]).then(() => res.redirect(`/phenomena/${phenomId}`))
-
-            .catch(err => {
-              // When the ID isn't valid, it shows up as an error
-              console.log(err.message, "Error while fetching the ToDo data on the database");
-          });
-          }
-        )
+      .catch(err => {
+        // When the ID isn't valid, it shows up as an error
+        console.log(
+          err.message,
+          "Error while fetching the ToDo data on the database"
+        );
       });
-      
-          
+  });
+});
+
 module.exports = router;
