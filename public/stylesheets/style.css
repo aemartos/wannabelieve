@@ -2645,7 +2645,7 @@ header {
           align-items: center;
           justify-content: space-between;
           margin-top: 1.5em;
-          font-size: .5em; }
+          font-size: .55em; }
           header nav .filtersBox form.filtersForm h3 input[type='checkbox'] {
             width: 1em !important; }
         header nav .filtersBox form.filtersForm p {
@@ -3548,7 +3548,7 @@ form {
           text-align: center;
           margin-right: 0; }
       .container.cont_routeDetail_page .section.firstSection .routeMainInfo .actions {
-        width: 17%; }
+        width: 18%; }
     .container.cont_routeDetail_page .section.firstSection .createdOn {
       font-family: 'Share Tech Mono';
       word-spacing: 0;
@@ -3657,7 +3657,7 @@ form {
             flex-flow: column nowrap;
             align-items: center;
             align-items: flex-start;
-            width: 16em;
+            width: 17em;
             padding-top: .2em;
             font-family: 'Share Tech Mono';
             font-size: .6em;
