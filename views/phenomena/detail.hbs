@@ -2,122 +2,134 @@
   {{#each phenomenon.imgPhenomUrls}}
   <div class="sliderImage">
     <img src={{this}} alt="">
-    </div>
+  </div>
   {{/each}}
 </div>
 
-
-<div class="phHeader">
-  <div class="phTitle">
-    <h5>{{phenomenon.name}}</h5>
+<div class="section firstSection">
+  <div class="phenomMainInfo">
     {{#if editUser}}
-    <a href="/phenomena/{{phenomenon._id}}/edit/"><i class="x-update"></i></a>
-    <a href="/phenomena/{{phenomenon._id}}/delete/"><i class="x-delete"></i></a>
+    <h4 class="mainTitle">{{phenomenon.name}}</h4>
+    <div class="actions">
+      <a href="/phenomena/{{phenomenon._id}}/edit/"><i class="x-update"></i></a>
+      <a href="/phenomena/{{phenomenon._id}}/delete/"><i class="x-delete"></i></a>
+    </div>
+    {{else}}
+    <h4 class="mainTitle alone">{{phenomenon.name}}</h4>
     {{/if}}
   </div>
-  <div class="phTypeDate">
+  {{#if editUser}}
+  <p class="discoveredOn">discovered on: {{phenomCreationDate}}</p>
+  {{else}}
+  <p class="discoveredOn alone">discovered on: {{phenomCreationDate}}</p>
+  {{!-- <div class="phTypeDate">
     <p>{{phenomenon.type}}</p>
     <p>|</p>
-    <p>discovered on {{phenomCreationDate}}</p>
-  </div>
+  </div> --}}
+  {{/if}}
 </div>
 
-<div class="phFavReg">
-
+<div class="section sectionBtn">
   {{#if visited}}
-  <div class="phRegisted">
-    <i class="x-sighting">Registered</i>
-  </div>
+  <p class="registered"><span class="x-sighting-fill active"></span><span class="text">registered</span></p>
   {{else}}
-  <div class="phFavRegCell">
+  <div class="registerPhenom">
     <form method="POST" action="/phenomena/{{phenomenon._id}}/register">
       <div class="form-group">
         <input type="hidden" name="latitude" placeholder="latitude">
         <input type="hidden" name="longitude" placeholder="longitude">
       </div>
-      <button type="submit"><i class="x-sighting"></i>register</button>
+      <button type="submit"><span class="x-sighting"></span></button><span class="text">register</span>
     </form>
   </div>
   {{/if}}
 
   {{#if favourite}}
-  <div class="phFavourite">
-    <i class="x-favorite">Favourite</i>
-  </div>
+  <p class="favourite"><span class="x-favorite-fill active"></span><span class="text">favourite</span></p>
   {{else}}
-  <div class="phFavRegCell">
+  <div class="favouritePhenom">
     <form method="POST" action="/phenomena/{{phenomenon._id}}/favourite">
-      <button type="submit"><i class="x-favorite"></i>favourite</button>
+      <button type="submit"><span class="x-favorite"></span></button><span class="text">favourite</span>
     </form>
   </div>
   {{/if}}
 </div>
 
-<div class="phCreator">
-  <p>discovered by:</p>
-  <p>{{creator.username}}</p>
+<div class="section secondSection">
+  <p class="discoveredBy">discovered by: <span class="username">{{creator.username}}</span></p>
 </div>
 
-<div class="phContent accordionWrapper">
+<div class="section thirdSection">
+  <p class="description">description:</p>
+  <p class="text">{{phenomenon.description}}</p>
+</div>
 
-  <div class="phDescription accordionItem">
-    <div class="phDescHeader accordionItemHeading">
-      <p>description:</p>
+<div class="section fourthSection">
+  <p class="comments"><span class="text">comments:</span> <span class="x-back" id="expandComments"></span></p>
+  <ul class="commentsList" id="commentsAccordion">
+    {{#unless comments}}
+    <li class="comment noComment">There are no comments in this phenomenon yet</li>
+    {{/unless}}
+    {{#each comments}}
+    <li class="comment">
+      <p class="metaData">
+        <span>
+          <span>{{this.formatTime}}</span><span> | </span><span>{{this.formatDate}}</span>
+        </span>
+        <span class="author">author: {{this.authorId.username}}</span>
+      </p>
+      <p class="commentContent">{{this.content}}</p>
+      {{#if canDelete}}
+      <p class="deleteBtn"><span class="x-delete"></span></p>
+      {{/if}}
+    </li>
+    {{/each}}
+  </ul>
+</div>
+
+<div class="section addCommentSection">
+  <form class="addComment" method="POST" action="/phenomena/{{route._id}}/postComment">
+    <div class="commentBox">
+      <textarea type="text" name="content" placeholder="write your comment here"></textarea>
+      <button type="submit" class="addCommentBtn"><span class="x-plus"></span></button>
     </div>
-
-    <div class="phDescContent accordionItemContent">
-      {{!-- <p>Esto es una description fija para poder maquetar pero se empieza a solapar con lo de abajo si es mas larga </p> --}}
-      {{!-- <p>{{phenomenon.description}}</p> --}}
-    </div>
-  </div>
-
-  <div class="phComments accordionItem">
-    <div class="phCommentsHeader accordionItemHeading">
-      <p>community comments</p>
-    </div>
-
-    {{#if reviews}}
-      <div class="phCommentsContent accordionItemContent">
-      {{#each reviews}}
-      {{> reviewCard this}}
+    <div class="messages">
+      {{#each messages}}
+      <div class="error-message">{{this}}</div>
       {{/each}}
-      </div>
-    {{else}}
-    <div class="phCommentsContent accordionItemContent">
-      <p>There are no comments</p>
     </div>
-    {{/if}}
-
-    {{> addReview phenomenon}}
-  </div>
-
-  {{!-- <div class="phGallery accordionItem">
-    <div class="phGalleryHeader accordionItemHeading">
-      <p>community images</p>
-    </div>
-
-    <div class="phGalleryContent accordionItemContent">
-      <p>Aqui se mostrara la galleria</p>
-    </div>
-  </div>
-
-  <div class="phRoutes accordionItem">
-    <div class="phRoutesHeader accordionItemHeading">
-      <p>routes it belongs to</p>
-    </div>
-
-    <div class="phRoutesContent accordionItemContent">
-      <p>hola que hase</p>
-    </div>
-  </div> --}}
-
-
+  </form>
 </div>
+
+{{!-- <div class="phGallery accordionItem">
+  <div class="phGalleryHeader accordionItemHeading">
+    <p>community images</p>
+  </div>
+
+  <div class="phGalleryContent accordionItemContent">
+    <p>Aqui se mostrara la galleria</p>
+  </div>
+</div>
+
+
+
+<div class="phRoutes accordionItem">
+  <div class="phRoutesHeader accordionItemHeading">
+    <p>routes it belongs to</p>
+  </div>
+
+  <div class="phRoutesContent accordionItemContent">
+    <p>hola que hase</p>
+  </div>
+</div> --}}
+
+
+
 
 {{!-- Tere necesito un botón para añadir fenómeno a ruta, te lo dejo aquí provisional --}}
 <a href="/routes/add/{{phenomenon._id}}"><span class="x-routes"></span><span class="text"> add to route</span></a>
 
 
-<script src="../../javascripts/accordion.js"></script>
-<script src="../../javascripts/map/geolocate.js"></script>
-<script src="../../javascripts/registerPhenom.js"></script>
+<script src="/javascripts/accordion.js"></script>
+<script src="/javascripts/map/geolocate.js"></script>
+<script src="/javascripts/registerPhenom.js"></script>

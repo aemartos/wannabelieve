@@ -1,187 +1,200 @@
 .container
   &.cont_phenomena_detailPage
-    display: flex
-    flex-flow: column nowrap
-    justify-content: flex-start
+    color: $menubg
+    word-spacing: -.5em
+    span[class*='x-']
+      color: $menubg
+      font-size: 1.5em
+      -webkit-text-stroke: .3px $menubg
+      text-transform: uppercase
+      &:active
+        color: $secondarycolor
+        &[class*='x-']
+          -webkit-text-stroke: .3px $secondarycolor
     .slider
       +row-flex
       border-bottom: 2px solid white
       padding: 0 0
-    .phHeader
-      display: flex
-      flex-flow: column nowrap
-      border-bottom: 2px solid white
+    .section
       width: 100%
-      .phTitle
+      padding: 1.2em 0
+      border-bottom: 4px solid $maincolor
+      text-transform: lowercase
+      p
+        width: 85%
+        margin: 0 auto
+      &.sectionBtn
+        padding: 0
         +row-flex
         justify-content: center
-        width: 100%
-        color: black
-        padding: 0.5em 0
-        h5 
-          margin: 0 0
-      .phTypeDate
-        +row-flex
-        justify-content: center
-        font-family: 'Share Tech Mono', monospace
-        font-size: 0.8em
-        padding: 0.5em 0
-        width: 100%
-        p 
-          color: grey
-    .phFavReg
-      +row-flex
-      justify-content: space-between
-      width: 100%
-      border-bottom: 2px solid white
-      padding: 0.5em 3em
-      font-size: 0.8em
-      .phRegisted
-        +row-flex
-        padding: 0.5em 0
-        color: green 
-      .phFavourite
-        +row-flex
-        padding: 0.5em 0
-        color: pink 
-      .phFavRegCell
-        +row-flex
-        padding: 0.5em 0 
-        form 
-          width: 100%
-          padding: 0
-        button
-          border: none
-          margin: 0  
-        i 
-          padding: 0 0.5em
-    .phCreator
-      +row-flex
-      justify-content: flex-start
-      width: 100%
-      border-bottom: 2px solid white
-      padding: 1em 1em 
-      font-size: 0.8em
-    .phContent
-      display: flex
-      flex-flow: column nowrap
-      width: 100%
-      .phDescription
-        +column-flex
-        align-items: flex-start
-        width: 100%
-        padding: 1em 1em
-        font-size: 0.8em
-        border-bottom: 2px solid white
-        .phDescHeader
-          padding: 0.5em 0em
-        .phDescContent
-          padding: 0.5em 0em
-      .phComments
-        display: flex
-        flex-flow: column nowrap
-        align-items: flex-start
-        width: 100%
-        padding: 1em 1em
-        font-size: 0.8em
-        .phCommentsHeader
+        background-color: $darkbg
+        p, .favouritePhenom
           +row-flex
-          padding: 0.5em 0em
-        .phCommentsContent
-          display: flex
-          flex-flow: column nowrap
-          padding: 0.5em 0em
-          .reviewBox
-            background-color: black
-            margin: 0.2em 0
-            p 
-              padding: 0.5em 0
-        .phCommentsAdd
+          justify-content: center
+          font-size: .8em
+          width: 50%
+          padding: .8em 0
+          &:first-child
+            border-right: 4px solid $maincolor
+          span
+            margin-right: .5em
+            &.active
+              color: $secondarycolor
+        .favouritePhenom
+          form
+            +row-flex
+            justify-content: center
+            button
+              width: max-content
+              border: 0
+              padding: 0
+              margin: 0
+              span
+                &.active
+                  color: $secondarycolor
+                  &[class*='x-']
+                    -webkit-text-stroke: .3px $secondarycolor
+      &.firstSection
+        .phenomMainInfo
+          width: 85%
+          text-align: left
           +row-flex
-          width: 100%
-          form 
-            width: 100%
-            margin: 0 0
-            padding: 1em 0
-      .phGallery
-        +column-flex
-        align-items: flex-start
-        width: 100%
-        border-bottom: 2px solid white
-        padding: 1em 1em
-        font-size: 0.8em
-        .phGalleryHeader
-          padding: 0.5em 0em
-        .phGalleryContent
-          padding: 0.5em 0em
-      .phRoutes
-        +column-flex
-        align-items: flex-start
-        width: 100%
-        border-bottom: 2px solid white
-        padding: 1em 1em
-        font-size: 0.8em
-        .phRoutesHeader
-          padding: 0.5em 0em
-        .phRoutesHeader
-          padding: 0.5em 0em
-
-
-    // .accordionWrapper
-    //   +column-flex
-    //   width: 100%
-    //   align-items: flex-start
-    //   .accordionItem
-    //     +column-flex
-    //     width: 100%
-    //     align-items: flex-start
-    //     border-bottom: 2px solid white
-    //     .accordionItemHeading
-    //       +row-flex
-    //       width: 100%
-    //       padding: 1em 5%
-    //       background-color: red
-    //     .accordionItemContent
-    //       +row-flex
-    //       width: 100%
-    //       height: 100%
-    //       padding: 1em 5%
-    //       background-color: green
-        
-
-
-
-
-    // .accordionWrapper
-    //   +column-flex
-    //   align-items: flex-start
-    //   background-color: red
-    //   width: 100%
-    //   box-sizing: border-box
-    //   .accordionItem
-    //     +column-flex
-    //     width: 100%
-    //     align-items: flex-start
-    //     border-bottom: 4px solid white
-    //     box-sizing: border-box
-    //     .accordionItemHeading
-    //       +row-flex
-    //       width: 100%
-    //       justify-content: space-between
-    //       cursor: pointer
-    //       box-sizing: border-box
-    //     .close
-    //       &.accordionItemContent
-    //         +column-flex
-    //         height: 0%
-    //         transition: height 1s ease-out
-    //         transform: scaleY(0)
-    //     .open
-    //       &.accordionItemContent
-    //         +column-flex
-    //         width: 100%
-    //         transform: scaleY(1)
-    //         transform-origin: top 
-    //         transition: transform 0.4s ease
-    //         box-sizing: border-box
-      
+          justify-content: center
+          margin: 0 auto
+          h4
+            margin: 0
+            margin-right: 1em
+            //font-size: .9em
+            width: 78%
+            &.alone
+              width: 85%
+              text-align: center
+              margin-right: 0
+          .actions
+            +row-flex
+            justify-content: space-between
+            width: 17%
+            //width: 4em
+        .discoveredOn
+          font-family: 'Share Tech Mono'
+          word-spacing: 0
+          //width: 82%
+          font-size: .8em
+          opacity: .5
+          &.alone
+            text-align: center
+            margin-top: .5em
+      &.secondSection
+        .discoveredBy
+          //text-align: center
+          .username
+            opacity: .5
+      &.thirdSection
+        .text
+          margin-top: .5em
+          opacity: .5
+      &.fourthSection, &.fifthSection
+        p
+          +row-flex
+          justify-content: space-between
+          span
+            &[class='x-back']:before
+              +transform(rotate(-90deg))
+            &:active
+              color: $menubg
+              &[class*='x-']
+                -webkit-text-stroke: .3px $menubg
+      &.fourthSection
+        border: 0
+        padding-bottom: 0
+        .comments
+          #expandComments
+            +transition_default
+            &.rotate
+              +transform(rotate(90deg))
+              +transition_default
+        #commentsAccordion
+          width: 85%
+          margin: 0 auto
+          .comment
+            +row-flex
+            align-items: flex-start
+            justify-content: space-between
+            margin-bottom: .8em
+            padding-bottom: .8em
+            border-bottom: .5px solid $darkbg
+            &.noComment
+              opacity: .5
+              font-size: .8em
+            &:last-child
+              border-bottom: 0
+            .metaData
+              +column-flex
+              align-items: flex-start
+              width: 17em
+              padding-top: .2em
+              font-family: 'Share Tech Mono'
+              font-size: .6em
+              word-spacing: 0
+              .author
+                margin-top: .3em
+                opacity: .5
+            .commentContent
+              margin-right: .8em
+              font-size: .8em
+              opacity: .5
+            .deleteBtn
+              width: max-content
+              font-size: .7em
+      &.addCommentSection
+        padding-top: 0
+        border: 0
+        form
+          &.addComment
+            width: 85%
+            margin: 0 auto
+            margin-top: 1em
+            .commentBox
+              +row-flex
+              justify-content: space-between
+              textarea
+                border: 0
+                border: 1.5px solid $menubg
+                padding: 1em
+                margin: 0
+                margin-top: .5em
+                margin-right: 1em
+                //width: 85%
+                height: 6em
+                color: $menubg
+                //text-align: center
+                &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus
+                  -webkit-box-shadow: 0 0 0px 1000px $background inset
+              ::-webkit-input-placeholder /* Chrome/Opera/Safari */
+                color: $menubg
+                opacity: .5
+              ::-moz-placeholder /* Firefox 19+ */
+                color: $menubg
+                opacity: .5
+              :-ms-input-placeholder /* IE 10+ */
+                color: $menubg
+                opacity: .5
+              :-moz-placeholder /* Firefox 18- */
+                color: $menubg
+                opacity: .5
+              button
+                &.addCommentBtn
+                  border: 0
+                  padding: 0
+                  margin: 0
+                  width: unset
+                  span
+                    font-size: 2em
+                    &:active
+                      color: $secondarycolor
+            .messages
+              width: 85%
+              word-spacing: 0
+              .error-message
+                padding: .5em 0 0
+                opacity: .5

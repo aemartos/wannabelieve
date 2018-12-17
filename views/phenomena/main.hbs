@@ -1,9 +1,16 @@
 
-<h2>Last sightnings</h2>
+<h1 class="phenomenaListTitle">Last sightnings</h1>
 
-
+{{#if phenomena}}
 <div class="phsFeed">
   {{#each phenomena}}
   {{> phenomFeedCard this}}
   {{/each}}
 </div>
+{{else}}
+  <div class="noPhenomena">
+    there are no phenomena yet
+  </div>
+{{/if}}
+
+

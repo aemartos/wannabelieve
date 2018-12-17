@@ -1,18 +1,34 @@
 .container
   &.cont_phenomena_page
-    +column-flex
-    .phsFeed
-      +column-flex
+    min-height: 100%
+    padding: 4em 0
+    word-spacing: -.5em
+    .phenomenaListTitle
+      margin-top: 0
+      font-size: 1.8em
+      padding-bottom: .6em
       width: 100%
-      padding: 0 5%
-      .phCard
+      text-align: center
+      border-bottom: 4px solid $maincolor
+      color: $menubg
+    .noPhenomena
+      width: 85%
+      margin: 0 auto
+      margin-top: 1em
+      line-height: 1.2em
+    .phsFeed
+      width: 85%
+      margin: 0 auto
+      margin-top: 1em
+      .phenomCard
         +row-flex
         justify-content: space-between
-        align-items: center
-        width: 100%
-        background: black
-        margin: 0.3em 0
-        padding: 2em 1em
+        border-bottom: 2px solid $maincolor
+        padding-bottom: 1em
+        margin: 1em 0
+        color: $menubg
+        &:last-child
+          border-bottom: 0
         .phType
           +row-flex
           padding: 0.3em 0.3em
@@ -22,27 +38,47 @@
             background-color: grey
             border-radius: 25%
             padding: 0.3em 0.3em
-        .phInfo
-          +column-flex
-          width: 100%
-          justify-content: flex-start
-          align-items: flex-start
-          padding: 0 0.5em
-          .phInfoFavs
+        .phenomInfoDetails
+          width: 70%
+          word-spacing: 0
+          h4
+            &.phenomTitle
+              font-family: 'Press Start 2P'
+              text-transform: lowercase
+              margin: .5em 0 0 0
+              width: 14em
+              white-space: nowrap
+              overflow: hidden
+              text-overflow: ellipsis
+          .phenomText, .phenomDetails
+            p
+              display: inline-block
+              font-family: 'Share Tech Mono'
+              font-size: .6em
+          .phenomText
             +row-flex
-            font-size: 0.8em
-            font-family: 'Share Tech Mono', monospace
-          .phInfoName
-            +row-flex
-            margin: 0.01em
-            font-size: 0.8em
-            h5 
-              margin: 0
-          .phInfoTypeRoutes
-            +row-flex
-            padding: 0.5em 0
-            font-size: 0.8em
-            font-family: 'Share Tech Mono', monospace
-        .phDetail
-          +row-flex
-          transform: rotate(180deg)
+            justify-content: flex-start
+            line-height: 0
+            .favorites
+              +row-flex
+              display: inline-flex
+              justify-content: center
+              margin-left: 1em
+              .heart
+                margin-right: .3em
+                margin-right: .3em
+          .phenomDetails
+            .separator
+              margin: 0 .5em
+        a.goPhenom
+          font-size: 2em
+          color: $menubg
+          span
+            &[class*='x-']
+              -webkit-text-stroke: .3px $menubg
+            &:before
+              +transform(rotate(180deg))
+            &:active
+              color: $secondarycolor
+              &[class*='x-']
+                -webkit-text-stroke: .3px $secondarycolor

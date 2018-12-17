@@ -1,23 +1,16 @@
-<div class="phCard">
-
+<div class="phenomCard">
   <div class="phType">
     <img src="../images/markers/big/{{this.type}}.png" alt="">
   </div>
-
-  <div class="phInfo">
-    <div class="phInfoFavs"></div>
-
-    <div class="phInfoName">
-      <h5>{{this.name}}</h5>
+  <div class="phenomInfoDetails">
+    <div class="phenomText">
+      <p class="phenomId">{{this._id}}</p>
+      <p class="favorites"><span class="x-favorite heart"></span><span class="favNum">5</span></p>
     </div>
-
-    <div class="phInfoTypeRoutes">
+    <h4 class="phenomTitle">{{this.name}}</h4>
+    <div class="phenomDetails">
       <p>{{this.type}}</p>
     </div>
   </div>
-
-  <div class="phDetail">
-    <a href="/phenomena/{{this._id}}"><i class="x-back"></i></a>
-  </div>
-
+  <a class="goPhenom" href="/phenomena/{{this._id}}"><span class="x-back"></span></a>
 </div>

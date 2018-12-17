@@ -2994,70 +2994,96 @@ form {
     background-color: red; }
 
 .container.cont_phenomena_page {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center; }
-  .container.cont_phenomena_page .phsFeed {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
+  min-height: 100%;
+  padding: 4em 0;
+  word-spacing: -.5em; }
+  .container.cont_phenomena_page .phenomenaListTitle {
+    margin-top: 0;
+    font-size: 1.8em;
+    padding-bottom: .6em;
     width: 100%;
-    padding: 0 5%; }
-    .container.cont_phenomena_page .phsFeed .phCard {
+    text-align: center;
+    border-bottom: 4px solid #fff;
+    color: #010f0c; }
+  .container.cont_phenomena_page .noPhenomena {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 1em;
+    line-height: 1.2em; }
+  .container.cont_phenomena_page .phsFeed {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 1em; }
+    .container.cont_phenomena_page .phsFeed .phenomCard {
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
       justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      background: black;
-      margin: 0.3em 0;
-      padding: 2em 1em; }
-      .container.cont_phenomena_page .phsFeed .phCard .phType {
+      border-bottom: 2px solid #fff;
+      padding-bottom: 1em;
+      margin: 1em 0;
+      color: #010f0c; }
+      .container.cont_phenomena_page .phsFeed .phenomCard:last-child {
+        border-bottom: 0; }
+      .container.cont_phenomena_page .phsFeed .phenomCard .phType {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
         padding: 0.3em 0.3em; }
-        .container.cont_phenomena_page .phsFeed .phCard .phType img {
+        .container.cont_phenomena_page .phsFeed .phenomCard .phType img {
           width: 40px;
           height: 40px;
           background-color: grey;
           border-radius: 25%;
           padding: 0.3em 0.3em; }
-      .container.cont_phenomena_page .phsFeed .phCard .phInfo {
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        width: 100%;
-        justify-content: flex-start;
-        align-items: flex-start;
-        padding: 0 0.5em; }
-        .container.cont_phenomena_page .phsFeed .phCard .phInfo .phInfoFavs {
+      .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails {
+        width: 70%;
+        word-spacing: 0; }
+        .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails h4.phenomTitle {
+          font-family: 'Press Start 2P';
+          text-transform: lowercase;
+          margin: .5em 0 0 0;
+          width: 14em;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+        .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails .phenomText p, .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails .phenomDetails p {
+          display: inline-block;
+          font-family: 'Share Tech Mono';
+          font-size: .6em; }
+        .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails .phenomText {
           display: flex;
           flex-flow: row nowrap;
           align-items: center;
-          font-size: 0.8em;
-          font-family: 'Share Tech Mono', monospace; }
-        .container.cont_phenomena_page .phsFeed .phCard .phInfo .phInfoName {
-          display: flex;
-          flex-flow: row nowrap;
-          align-items: center;
-          margin: 0.01em;
-          font-size: 0.8em; }
-          .container.cont_phenomena_page .phsFeed .phCard .phInfo .phInfoName h5 {
-            margin: 0; }
-        .container.cont_phenomena_page .phsFeed .phCard .phInfo .phInfoTypeRoutes {
-          display: flex;
-          flex-flow: row nowrap;
-          align-items: center;
-          padding: 0.5em 0;
-          font-size: 0.8em;
-          font-family: 'Share Tech Mono', monospace; }
-      .container.cont_phenomena_page .phsFeed .phCard .phDetail {
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        transform: rotate(180deg); }
+          justify-content: flex-start;
+          line-height: 0; }
+          .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails .phenomText .favorites {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            display: inline-flex;
+            justify-content: center;
+            margin-left: 1em; }
+            .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails .phenomText .favorites .heart {
+              margin-right: .3em;
+              margin-right: .3em; }
+        .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails .phenomDetails .separator {
+          margin: 0 .5em; }
+      .container.cont_phenomena_page .phsFeed .phenomCard a.goPhenom {
+        font-size: 2em;
+        color: #010f0c; }
+        .container.cont_phenomena_page .phsFeed .phenomCard a.goPhenom span[class*='x-'] {
+          -webkit-text-stroke: 0.3px #010f0c; }
+        .container.cont_phenomena_page .phsFeed .phenomCard a.goPhenom span:before {
+          -webkit-transform: rotate(180deg);
+          -moz-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+          -o-transform: rotate(180deg);
+          transform: rotate(180deg); }
+        .container.cont_phenomena_page .phsFeed .phenomCard a.goPhenom span:active {
+          color: #39FF14; }
+          .container.cont_phenomena_page .phsFeed .phenomCard a.goPhenom span:active[class*='x-'] {
+            -webkit-text-stroke: 0.3px #39FF14; }
 
 .container.cont_addPhenom_page {
   display: flex;
@@ -3070,157 +3096,221 @@ form {
     width: 100%; }
 
 .container.cont_phenomena_detailPage {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start; }
+  color: #010f0c;
+  word-spacing: -.5em; }
+  .container.cont_phenomena_detailPage span[class*='x-'] {
+    color: #010f0c;
+    font-size: 1.5em;
+    -webkit-text-stroke: 0.3px #010f0c;
+    text-transform: uppercase; }
+    .container.cont_phenomena_detailPage span[class*='x-']:active {
+      color: #39FF14; }
+      .container.cont_phenomena_detailPage span[class*='x-']:active[class*='x-'] {
+        -webkit-text-stroke: 0.3px #39FF14; }
   .container.cont_phenomena_detailPage .slider {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     border-bottom: 2px solid white;
     padding: 0 0; }
-  .container.cont_phenomena_detailPage .phHeader {
-    display: flex;
-    flex-flow: column nowrap;
-    border-bottom: 2px solid white;
-    width: 100%; }
-    .container.cont_phenomena_detailPage .phHeader .phTitle {
+  .container.cont_phenomena_detailPage .section {
+    width: 100%;
+    padding: 1.2em 0;
+    border-bottom: 4px solid #fff;
+    text-transform: lowercase; }
+    .container.cont_phenomena_detailPage .section p {
+      width: 85%;
+      margin: 0 auto; }
+    .container.cont_phenomena_detailPage .section.sectionBtn {
+      padding: 0;
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      color: black;
-      padding: 0.5em 0; }
-      .container.cont_phenomena_detailPage .phHeader .phTitle h5 {
-        margin: 0 0; }
-    .container.cont_phenomena_detailPage .phHeader .phTypeDate {
+      background-color: #8f8f8f; }
+      .container.cont_phenomena_detailPage .section.sectionBtn p, .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        font-size: .8em;
+        width: 50%;
+        padding: .8em 0; }
+        .container.cont_phenomena_detailPage .section.sectionBtn p:first-child, .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom:first-child {
+          border-right: 4px solid #fff; }
+        .container.cont_phenomena_detailPage .section.sectionBtn p span, .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom span {
+          margin-right: .5em; }
+          .container.cont_phenomena_detailPage .section.sectionBtn p span.active, .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom span.active {
+            color: #39FF14; }
+      .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom form {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center; }
+        .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom form button {
+          width: max-content;
+          border: 0;
+          padding: 0;
+          margin: 0; }
+          .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom form button span.active {
+            color: #39FF14; }
+            .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom form button span.active[class*='x-'] {
+              -webkit-text-stroke: 0.3px #39FF14; }
+    .container.cont_phenomena_detailPage .section.firstSection .phenomMainInfo {
+      width: 85%;
+      text-align: left;
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
       justify-content: center;
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 0.8em;
-      padding: 0.5em 0;
-      width: 100%; }
-      .container.cont_phenomena_detailPage .phHeader .phTypeDate p {
-        color: grey; }
-  .container.cont_phenomena_detailPage .phFavReg {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    border-bottom: 2px solid white;
-    padding: 0.5em 3em;
-    font-size: 0.8em; }
-    .container.cont_phenomena_detailPage .phFavReg .phRegisted {
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      padding: 0.5em 0;
-      color: green; }
-    .container.cont_phenomena_detailPage .phFavReg .phFavourite {
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      padding: 0.5em 0;
-      color: pink; }
-    .container.cont_phenomena_detailPage .phFavReg .phFavRegCell {
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      padding: 0.5em 0; }
-      .container.cont_phenomena_detailPage .phFavReg .phFavRegCell form {
-        width: 100%;
-        padding: 0; }
-      .container.cont_phenomena_detailPage .phFavReg .phFavRegCell button {
-        border: none;
-        margin: 0; }
-      .container.cont_phenomena_detailPage .phFavReg .phFavRegCell i {
-        padding: 0 0.5em; }
-  .container.cont_phenomena_detailPage .phCreator {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    border-bottom: 2px solid white;
-    padding: 1em 1em;
-    font-size: 0.8em; }
-  .container.cont_phenomena_detailPage .phContent {
-    display: flex;
-    flex-flow: column nowrap;
-    width: 100%; }
-    .container.cont_phenomena_detailPage .phContent .phDescription {
-      display: flex;
-      flex-flow: column nowrap;
-      align-items: center;
-      align-items: flex-start;
-      width: 100%;
-      padding: 1em 1em;
-      font-size: 0.8em;
-      border-bottom: 2px solid white; }
-      .container.cont_phenomena_detailPage .phContent .phDescription .phDescHeader {
-        padding: 0.5em 0em; }
-      .container.cont_phenomena_detailPage .phContent .phDescription .phDescContent {
-        padding: 0.5em 0em; }
-    .container.cont_phenomena_detailPage .phContent .phComments {
-      display: flex;
-      flex-flow: column nowrap;
-      align-items: flex-start;
-      width: 100%;
-      padding: 1em 1em;
-      font-size: 0.8em; }
-      .container.cont_phenomena_detailPage .phContent .phComments .phCommentsHeader {
+      margin: 0 auto; }
+      .container.cont_phenomena_detailPage .section.firstSection .phenomMainInfo h4 {
+        margin: 0;
+        margin-right: 1em;
+        width: 78%; }
+        .container.cont_phenomena_detailPage .section.firstSection .phenomMainInfo h4.alone {
+          width: 85%;
+          text-align: center;
+          margin-right: 0; }
+      .container.cont_phenomena_detailPage .section.firstSection .phenomMainInfo .actions {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
-        padding: 0.5em 0em; }
-      .container.cont_phenomena_detailPage .phContent .phComments .phCommentsContent {
-        display: flex;
-        flex-flow: column nowrap;
-        padding: 0.5em 0em; }
-        .container.cont_phenomena_detailPage .phContent .phComments .phCommentsContent .reviewBox {
-          background-color: black;
-          margin: 0.2em 0; }
-          .container.cont_phenomena_detailPage .phContent .phComments .phCommentsContent .reviewBox p {
-            padding: 0.5em 0; }
-      .container.cont_phenomena_detailPage .phContent .phComments .phCommentsAdd {
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        width: 100%; }
-        .container.cont_phenomena_detailPage .phContent .phComments .phCommentsAdd form {
-          width: 100%;
-          margin: 0 0;
-          padding: 1em 0; }
-    .container.cont_phenomena_detailPage .phContent .phGallery {
+        justify-content: space-between;
+        width: 17%; }
+    .container.cont_phenomena_detailPage .section.firstSection .discoveredOn {
+      font-family: 'Share Tech Mono';
+      word-spacing: 0;
+      font-size: .8em;
+      opacity: .5; }
+      .container.cont_phenomena_detailPage .section.firstSection .discoveredOn.alone {
+        text-align: center;
+        margin-top: .5em; }
+    .container.cont_phenomena_detailPage .section.secondSection .discoveredBy .username {
+      opacity: .5; }
+    .container.cont_phenomena_detailPage .section.thirdSection .text {
+      margin-top: .5em;
+      opacity: .5; }
+    .container.cont_phenomena_detailPage .section.fourthSection p, .container.cont_phenomena_detailPage .section.fifthSection p {
       display: flex;
-      flex-flow: column nowrap;
+      flex-flow: row nowrap;
       align-items: center;
-      align-items: flex-start;
-      width: 100%;
-      border-bottom: 2px solid white;
-      padding: 1em 1em;
-      font-size: 0.8em; }
-      .container.cont_phenomena_detailPage .phContent .phGallery .phGalleryHeader {
-        padding: 0.5em 0em; }
-      .container.cont_phenomena_detailPage .phContent .phGallery .phGalleryContent {
-        padding: 0.5em 0em; }
-    .container.cont_phenomena_detailPage .phContent .phRoutes {
-      display: flex;
-      flex-flow: column nowrap;
-      align-items: center;
-      align-items: flex-start;
-      width: 100%;
-      border-bottom: 2px solid white;
-      padding: 1em 1em;
-      font-size: 0.8em; }
-      .container.cont_phenomena_detailPage .phContent .phRoutes .phRoutesHeader {
-        padding: 0.5em 0em; }
-      .container.cont_phenomena_detailPage .phContent .phRoutes .phRoutesHeader {
-        padding: 0.5em 0em; }
+      justify-content: space-between; }
+      .container.cont_phenomena_detailPage .section.fourthSection p span[class='x-back']:before, .container.cont_phenomena_detailPage .section.fifthSection p span[class='x-back']:before {
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg); }
+      .container.cont_phenomena_detailPage .section.fourthSection p span:active, .container.cont_phenomena_detailPage .section.fifthSection p span:active {
+        color: #010f0c; }
+        .container.cont_phenomena_detailPage .section.fourthSection p span:active[class*='x-'], .container.cont_phenomena_detailPage .section.fifthSection p span:active[class*='x-'] {
+          -webkit-text-stroke: 0.3px #010f0c; }
+    .container.cont_phenomena_detailPage .section.fourthSection {
+      border: 0;
+      padding-bottom: 0; }
+      .container.cont_phenomena_detailPage .section.fourthSection .comments #expandComments {
+        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+        .container.cont_phenomena_detailPage .section.fourthSection .comments #expandComments.rotate {
+          -webkit-transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          -o-transform: rotate(90deg);
+          transform: rotate(90deg);
+          transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+          -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+          -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+          -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+          -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+      .container.cont_phenomena_detailPage .section.fourthSection #commentsAccordion {
+        width: 85%;
+        margin: 0 auto; }
+        .container.cont_phenomena_detailPage .section.fourthSection #commentsAccordion .comment {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          align-items: flex-start;
+          justify-content: space-between;
+          margin-bottom: .8em;
+          padding-bottom: .8em;
+          border-bottom: 0.5px solid #8f8f8f; }
+          .container.cont_phenomena_detailPage .section.fourthSection #commentsAccordion .comment.noComment {
+            opacity: .5;
+            font-size: .8em; }
+          .container.cont_phenomena_detailPage .section.fourthSection #commentsAccordion .comment:last-child {
+            border-bottom: 0; }
+          .container.cont_phenomena_detailPage .section.fourthSection #commentsAccordion .comment .metaData {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            align-items: flex-start;
+            width: 17em;
+            padding-top: .2em;
+            font-family: 'Share Tech Mono';
+            font-size: .6em;
+            word-spacing: 0; }
+            .container.cont_phenomena_detailPage .section.fourthSection #commentsAccordion .comment .metaData .author {
+              margin-top: .3em;
+              opacity: .5; }
+          .container.cont_phenomena_detailPage .section.fourthSection #commentsAccordion .comment .commentContent {
+            margin-right: .8em;
+            font-size: .8em;
+            opacity: .5; }
+          .container.cont_phenomena_detailPage .section.fourthSection #commentsAccordion .comment .deleteBtn {
+            width: max-content;
+            font-size: .7em; }
+    .container.cont_phenomena_detailPage .section.addCommentSection {
+      padding-top: 0;
+      border: 0; }
+      .container.cont_phenomena_detailPage .section.addCommentSection form.addComment {
+        width: 85%;
+        margin: 0 auto;
+        margin-top: 1em; }
+        .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .commentBox {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: space-between;
+          -ms-input-placeholder-color: #010f0c;
+          -ms-input-placeholder-opacity: .5;
+          -moz-placeholder-color: #010f0c;
+          -moz-placeholder-opacity: .5; }
+          .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .commentBox textarea {
+            border: 0;
+            border: 1.5px solid #010f0c;
+            padding: 1em;
+            margin: 0;
+            margin-top: .5em;
+            margin-right: 1em;
+            height: 6em;
+            color: #010f0c; }
+            .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .commentBox textarea:-webkit-autofill, .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .commentBox textarea:-webkit-autofill:hover, .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .commentBox textarea:-webkit-autofill:focus {
+              -webkit-box-shadow: 0 0 0px 1000px #a8a8a8 inset; }
+          .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .commentBox ::-webkit-input-placeholder {
+            color: #010f0c;
+            opacity: .5; }
+          .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .commentBox ::-moz-placeholder {
+            color: #010f0c;
+            opacity: .5; }
+          .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .commentBox button.addCommentBtn {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            width: unset; }
+            .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .commentBox button.addCommentBtn span {
+              font-size: 2em; }
+              .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .commentBox button.addCommentBtn span:active {
+                color: #39FF14; }
+        .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .messages {
+          width: 85%;
+          word-spacing: 0; }
+          .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .messages .error-message {
+            padding: .5em 0 0;
+            opacity: .5; }
 
 .container.cont_userProfile_page {
   display: flex;

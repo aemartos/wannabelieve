@@ -219,9 +219,9 @@ router.post(
 
 
     router.post(
-      "/uploadComment",
+      "/phenomena/:id/postComment",
       (req, res) => {
-        let content = req.body.comment;
+        let content = req.body.content;
         let authorId = new ObjectId(req.user._id);
         let phenomId = new ObjectId(req.body.phenomId);
 
