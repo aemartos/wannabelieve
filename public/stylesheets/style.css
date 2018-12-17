@@ -3581,14 +3581,6 @@ form {
     .container.cont_routeDetail_page .section.fourthSection ul#phenomsAccordion {
       width: 85%;
       margin: 0 auto; }
-      .container.cont_routeDetail_page .section.fourthSection ul#phenomsAccordion.closed {
-        opacity: 0;
-        max-height: 0px;
-        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
       .container.cont_routeDetail_page .section.fourthSection ul#phenomsAccordion li.phenom {
         font-size: .8em;
         margin-bottom: .5em; }
@@ -3630,14 +3622,6 @@ form {
       .container.cont_routeDetail_page .section.fifthSection #commentsAccordion {
         width: 85%;
         margin: 0 auto; }
-        .container.cont_routeDetail_page .section.fifthSection #commentsAccordion.closed {
-          opacity: 0;
-          max-height: 0px;
-          transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-          -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-          -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-          -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-          -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
         .container.cont_routeDetail_page .section.fifthSection #commentsAccordion .comment {
           display: flex;
           flex-flow: row nowrap;
