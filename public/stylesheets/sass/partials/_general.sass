@@ -5,7 +5,7 @@
 	outline: none
 	+no_select_text
 
-input
+input, textarea
 	+select_text(initial)
 
 html, body
@@ -23,7 +23,9 @@ html, body
 body
 	+column-flex
 	justify-content: center
-	border: 4px solid white
+	border: 4px solid $maincolor
+	border-top: 0
+	border-bottom: 0
 
 .container
 	width: 100%

@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (meMarker) meMarker.setMap(null);
       clearInterval(RTLinterval);
     } else {
-      RTLinterval = setInterval(realTimeLocation, 1000);
+      RTLinterval = setInterval(realTimeLocation, 500);
     }
     RTL = !RTL;
   };
