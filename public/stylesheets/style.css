@@ -2647,11 +2647,7 @@ header {
           margin-top: 1.5em;
           font-size: .6em; }
           header nav .filtersBox form.filtersForm h3 input[type='checkbox'] {
-            width: 1em !important;
-            margin: 0;
-            border: 0;
-            outline: 0;
-            box-shadow: none; }
+            width: 1em !important; }
         header nav .filtersBox form.filtersForm p {
           display: flex;
           flex-flow: row nowrap;
@@ -2660,14 +2656,16 @@ header {
           font-family: 'Share Tech Mono';
           font-size: .7em;
           margin-bottom: .1em; }
-          header nav .filtersBox form.filtersForm p input[type='checkbox'] {
-            width: 1em !important;
-            display: inline-block;
-            margin: 0;
-            margin: 0;
-            border: 0;
-            outline: 0;
-            box-shadow: none; }
+        header nav .filtersBox form.filtersForm input[type='checkbox'] {
+          width: .9em;
+          display: inline-block;
+          margin: 0;
+          margin: 0;
+          outline: 0;
+          box-shadow: none;
+          border: 1px solid #fff;
+          background: #010f0c;
+          background-color: #010f0c; }
 
 footer {
   bottom: 0; }
