@@ -2442,6 +2442,9 @@
 .x-whatsapp:before {
   content: '\0057'; }
 
+.x-sighting-fill:before {
+  content: '\0059'; }
+
 .x-search:before {
   content: '\005a'; }
 
