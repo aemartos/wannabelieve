@@ -29,7 +29,7 @@ window.inRoute = true;
   <p class="startRoute"><span class="x-sighting"></span> <span class="text">start</span></p>
   <div class="favoriteRoute">
     <form method="POST" action="/routes/{{route._id}}/toggleFav">
-      <button type="submit"><span class="x-favorite {{#if fav}}active{{/if}}"></span></button><span class="text {{#if fav}}active{{/if}}">favorite</span>
+      <button type="submit"><span class="x-favorite{{#if fav}}-fill active{{/if}}"></span></button><span class="text {{!--{{#if fav}}active{{/if}}--}}">favorite</span>
     </form>
   </div>
 </div>
@@ -45,18 +45,32 @@ window.inRoute = true;
 
 <div class="section fourthSection">
   <p class="phenomena"><span class="text">phenomena:</span> <span class="x-back" id="expandPhenomena"></span></p>
+  <ul class="phenomsList">
+    {{#each route.phenomenoId}}
+      <li class="phenom">
+        <a href="/phenomena/{{this._id}}">
+          <img src="/images/markers/big/{{this.type}}.png" alt="">
+          <span>{{this.name}}</span>
+        </a>
+      </li>
+    {{/each}}
+  </ul>
 </div>
 
 <div class="section fifthSection">
   <p class="comments"><span class="text">comments:</span> <span class="x-back" id="expandComments"></span></p>
   <ul class="commentsList">
-    {{#each route.reviewsId}}
+    {{#each comments}}
       <li class="comment">
-        <span>{{this.content}}</span>
-        <span>{{this.authorId.username}}</span>
-        {{#if canDelete}}
-          <span class="x-delete"></span>
-        {{/if}}
+        <p class="metaData">
+          <span>{{this.authorId.username}}</span>
+          <span> | </span>
+          <span>{{this.formatDate}}</span>
+        </p>
+        <p class="commentContent">{{this.content}}</p>
+        {{!-- {{#if canDelete}} --}}
+          <p class="deleteBtn"><span class="x-delete"></span></p>
+        {{!-- {{/if}} --}}
       </li>
     {{/each}}
   </ul>

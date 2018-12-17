@@ -1,7 +1,7 @@
 .container
-  &.cont_map_page
+  &.cont_map_page, &.cont_routeDetail_page
     position: relative
-    .mainMap
+    .mainMap, .routeMap
       background-color: $darkbg
       height: 100%
       width: 100%
@@ -28,6 +28,7 @@
           width: 50em
           height: 12.5em
           padding: 2em 4em 2em 3em
+          color: $maincolor
           .infoPhenomDetails
             .phenomTitle
               h1
@@ -35,6 +36,7 @@
                 font-size: 1.8em
                 text-transform: lowercase
             .phenomText, .phenomDetails
+              word-spacing: 0
               p
                 display: inline-block
                 margin-right: .7em
@@ -49,15 +51,21 @@
                 display: inline-flex
                 justify-content: center
                 margin-left: 1em
+                span
+                  color: $maincolor
+                  &[class*='x-']
+                    -webkit-text-stroke: .3px $maincolor
                 .heart
                   margin-right: .3em
           a.goPhenom
             font-size: 4em
             color: $maincolor
-            span:before
-              +transform(rotate(180deg))
-            &:active
-              color: $secondarycolor
+            span
+              color: $maincolor
+              &:before
+                +transform(rotate(180deg))
+              &:active
+                color: $secondarycolor
       .gm-ui-hover-effect
         display: none !important
         top: 3em !important

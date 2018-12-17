@@ -33,12 +33,11 @@ router.get('/add/:phenomenonId', isLoggedIn("/auth/login"), (req, res, next) => 
   let alreadyIn = '';
   Route.find().populate('creatorId').sort({createdAt: -1})
   .then(routes => {
-    let routesList = routes.map(r=>{return { ...JSON.parse(JSON.stringify(r)), numFavs: r.whoseFavId.length, alreadyIn}});
-    console.log(routesList.phenomenoId);
-    routesList.forEach((e,i)=>{
-      if(e.phenomenoId.indexOf(req.params.phenomenonId) !== -1) {
-        e.alreadyIn = 'active';
-        console.log(true);
+    let routesList = routes.map(r => {
+      return {
+        ...JSON.parse(JSON.stringify(r)),
+        numFavs: r.whoseFavId.length,
+        alreadyIn: (r.phenomenoId.indexOf(req.params.phenomenonId) !== -1) ? '-fill active' : ''
       }
     });
     const phenomenon = req.params.phenomenonId;
@@ -127,7 +126,9 @@ router.post('/addRoute', isLoggedIn("/auth/login"), (req, res, next) => {
 router.get('/:id/detail', isLoggedIn("/auth/login"), (req, res, next) => {
   let canEdit = undefined;
   Route.findById(req.params.id).populate('creatorId').populate({path: 'reviewsId', populate: {path: 'authorId'}}).populate('phenomenoId').then(route => {
-    //console.log(route.reviewsId[0].authorId);
+    const comments = route.reviewsId.map((com)=>{
+      return {...JSON.parse(JSON.stringify(com)), formatDate: `${com.createdAt.getDate()}/${com.createdAt.getMonth() + 1}/${com.createdAt.getFullYear()}`};
+    });
     const phenomena = JSON.stringify(route.phenomenoId);
     let creationDate = `${route.createdAt.getDate()}/${route.createdAt.getMonth() + 1}/${route.createdAt.getFullYear()}`;
     if (route.creatorId._id.toString() === req.user._id.toString()) {
@@ -140,6 +141,7 @@ router.get('/:id/detail', isLoggedIn("/auth/login"), (req, res, next) => {
       actual_page: "routeDetail_page",
       creationDate,
       phenomena,
+      comments,
       route,
       canEdit,
       fav,

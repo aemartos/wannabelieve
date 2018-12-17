@@ -13,7 +13,7 @@
   {{#if @root.addingPhenomenon}}
     <div class="addPhenomenonToRoute">
       <form method="POST" action="/routes/{{this._id}}/add/{{@root.phenomenon}}">
-        <button type="submit"><span class="x-registered {{this.alreadyIn}}"></span></button>
+        <button type="submit"><span class="x-registered{{this.alreadyIn}}"></span></button>
       </form>
     </div>
   {{else}}

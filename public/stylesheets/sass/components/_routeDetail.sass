@@ -98,10 +98,62 @@
         p
           +row-flex
           justify-content: space-between
-          span:before
+          span[class='x-back']:before
             +transform(rotate(-90deg))
+      &.fourthSection
+        .phenomena
+          margin-bottom: 1em
+        ul
+          &.phenomsList
+            width: 85%
+            margin: 0 auto
+            li
+              &.phenom
+                //font-family: 'Share Tech Mono'
+                font-size: .8em
+                margin-bottom: .5em
+                &:last-child
+                  margin-bottom: 0
+                a
+                  +row-flex
+                  justify-content: flex-start
+                  color: $menubg
+                  img
+                    width: 1.5em
+                    margin-right: .5em
+                  span
+                    opacity: .5
       &.fifthSection
         border: 0
+        padding-bottom: 0
+        .comments
+          margin-bottom: 1em
+        .commentsList
+          width: 85%
+          margin: 0 auto
+          .comment
+            +row-flex
+            align-items: flex-start
+            justify-content: space-between
+            margin-bottom: .8em
+            padding-bottom: .8em
+            border-bottom: .5px solid $darkbg
+            &:last-child
+              border-bottom: 0
+            .metaData
+              display: inline
+              width: 14em
+              padding-top: .2em
+              font-family: 'Share Tech Mono'
+              font-size: .6em
+              word-spacing: 0
+            .commentContent
+              margin-right: .8em
+              font-size: .8em
+              opacity: .5
+            .deleteBtn
+              width: max-content
+              font-size: .7em
       &.addCommentSection
         padding-top: 0
         border: 0
@@ -119,7 +171,8 @@
                 padding: 1em
                 margin: 0
                 margin-top: .5em
-                width: 85%
+                margin-right: 1em
+                //width: 85%
                 height: 6em
                 color: $menubg
                 //text-align: center

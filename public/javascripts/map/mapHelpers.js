@@ -7,7 +7,7 @@ const fixZoom = () => {
   } else if (map.getZoom() < MIN_ZOOM) {
     map.setZoom(MIN_ZOOM);
   }
-  console.log(map.getZoom())
+  //console.log(map.getZoom())
 };
 
 

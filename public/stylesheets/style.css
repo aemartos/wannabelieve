@@ -2400,6 +2400,9 @@
 .x-instagram:before {
   content: '\0049'; }
 
+.x-favorite-fill:before {
+  content: '\004a'; }
+
 .x-facebook:before {
   content: '\004b'; }
 
@@ -2417,6 +2420,9 @@
 
 .x-profile:before {
   content: '\0050'; }
+
+.x-registered-fill:before {
+  content: '\0051'; }
 
 .x-routes:before {
   content: '\0052'; }
@@ -2823,17 +2829,17 @@ form {
     min-height: 100%;
     z-index: 0; }
 
-.container.cont_map_page {
+.container.cont_map_page, .container.cont_routeDetail_page {
   position: relative; }
-  .container.cont_map_page .mainMap {
+  .container.cont_map_page .mainMap, .container.cont_map_page .routeMap, .container.cont_routeDetail_page .mainMap, .container.cont_routeDetail_page .routeMap {
     background-color: #8f8f8f;
     height: 100%;
     width: 100%; }
-    .container.cont_map_page .mainMap a[rel='noopener'] {
+    .container.cont_map_page .mainMap a[rel='noopener'], .container.cont_map_page .routeMap a[rel='noopener'], .container.cont_routeDetail_page .mainMap a[rel='noopener'], .container.cont_routeDetail_page .routeMap a[rel='noopener'] {
       display: none !important; }
-    .container.cont_map_page .mainMap .gmnoprint, .container.cont_map_page .mainMap .gm-style-cc {
+    .container.cont_map_page .mainMap .gmnoprint, .container.cont_map_page .mainMap .gm-style-cc, .container.cont_map_page .routeMap .gmnoprint, .container.cont_map_page .routeMap .gm-style-cc, .container.cont_routeDetail_page .mainMap .gmnoprint, .container.cont_routeDetail_page .mainMap .gm-style-cc, .container.cont_routeDetail_page .routeMap .gmnoprint, .container.cont_routeDetail_page .routeMap .gm-style-cc {
       display: none; }
-    .container.cont_map_page .mainMap .gm-style-iw {
+    .container.cont_map_page .mainMap .gm-style-iw, .container.cont_map_page .routeMap .gm-style-iw, .container.cont_routeDetail_page .mainMap .gm-style-iw, .container.cont_routeDetail_page .routeMap .gm-style-iw {
       background-image: url("../../images/windows/infowbox.png");
       background-position: center;
       background-size: contain;
@@ -2842,66 +2848,75 @@ form {
       height: 14.1em !important;
       left: -6.7em !important;
       top: 5em !important; }
-      .container.cont_map_page .mainMap .gm-style-iw > div:first-child {
+      .container.cont_map_page .mainMap .gm-style-iw > div:first-child, .container.cont_map_page .routeMap .gm-style-iw > div:first-child, .container.cont_routeDetail_page .mainMap .gm-style-iw > div:first-child, .container.cont_routeDetail_page .routeMap .gm-style-iw > div:first-child {
         max-width: 50em !important;
         overflow: unset !important; }
-      .container.cont_map_page .mainMap .gm-style-iw .infoPhenom {
+      .container.cont_map_page .mainMap .gm-style-iw .infoPhenom, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
         justify-content: space-between;
         width: 50em;
         height: 12.5em;
-        padding: 2em 4em 2em 3em; }
-        .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomTitle h1 {
+        padding: 2em 4em 2em 3em;
+        color: #fff; }
+        .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomTitle h1, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomTitle h1, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomTitle h1, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomTitle h1 {
           font-family: 'Press Start 2P';
           font-size: 1.8em;
           text-transform: lowercase; }
-        .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText p, .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomDetails p {
-          display: inline-block;
-          margin-right: .7em;
-          font-family: 'Share Tech Mono';
-          font-size: 1.4em; }
-        .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText {
+        .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText, .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomDetails, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomDetails, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomDetails, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomDetails {
+          word-spacing: 0; }
+          .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText p, .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomDetails p, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText p, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomDetails p, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText p, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomDetails p, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText p, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomDetails p {
+            display: inline-block;
+            margin-right: .7em;
+            font-family: 'Share Tech Mono';
+            font-size: 1.4em; }
+        .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText {
           display: flex;
           flex-flow: row nowrap;
           align-items: center;
           justify-content: flex-start;
           line-height: 0; }
-          .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites {
+          .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites {
             display: flex;
             flex-flow: row nowrap;
             align-items: center;
             display: inline-flex;
             justify-content: center;
             margin-left: 1em; }
-            .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites .heart {
+            .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites span, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites span, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites span, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites span {
+              color: #fff; }
+              .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites span[class*='x-'], .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites span[class*='x-'], .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites span[class*='x-'], .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites span[class*='x-'] {
+                -webkit-text-stroke: 0.3px #fff; }
+            .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites .heart, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites .heart, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites .heart, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites .heart {
               margin-right: .3em; }
-        .container.cont_map_page .mainMap .gm-style-iw .infoPhenom a.goPhenom {
+        .container.cont_map_page .mainMap .gm-style-iw .infoPhenom a.goPhenom, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom a.goPhenom, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom a.goPhenom, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom a.goPhenom {
           font-size: 4em;
           color: #fff; }
-          .container.cont_map_page .mainMap .gm-style-iw .infoPhenom a.goPhenom span:before {
-            -webkit-transform: rotate(180deg);
-            -moz-transform: rotate(180deg);
-            -ms-transform: rotate(180deg);
-            -o-transform: rotate(180deg);
-            transform: rotate(180deg); }
-          .container.cont_map_page .mainMap .gm-style-iw .infoPhenom a.goPhenom:active {
-            color: #39FF14; }
-    .container.cont_map_page .mainMap .gm-ui-hover-effect {
+          .container.cont_map_page .mainMap .gm-style-iw .infoPhenom a.goPhenom span, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom a.goPhenom span, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom a.goPhenom span, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom a.goPhenom span {
+            color: #fff; }
+            .container.cont_map_page .mainMap .gm-style-iw .infoPhenom a.goPhenom span:before, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom a.goPhenom span:before, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom a.goPhenom span:before, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom a.goPhenom span:before {
+              -webkit-transform: rotate(180deg);
+              -moz-transform: rotate(180deg);
+              -ms-transform: rotate(180deg);
+              -o-transform: rotate(180deg);
+              transform: rotate(180deg); }
+            .container.cont_map_page .mainMap .gm-style-iw .infoPhenom a.goPhenom span:active, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom a.goPhenom span:active, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom a.goPhenom span:active, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom a.goPhenom span:active {
+              color: #39FF14; }
+    .container.cont_map_page .mainMap .gm-ui-hover-effect, .container.cont_map_page .routeMap .gm-ui-hover-effect, .container.cont_routeDetail_page .mainMap .gm-ui-hover-effect, .container.cont_routeDetail_page .routeMap .gm-ui-hover-effect {
       display: none !important;
       top: 3em !important;
       right: -3em !important;
       z-index: 1000 !important; }
-      .container.cont_map_page .mainMap .gm-ui-hover-effect img {
+      .container.cont_map_page .mainMap .gm-ui-hover-effect img, .container.cont_map_page .routeMap .gm-ui-hover-effect img, .container.cont_routeDetail_page .mainMap .gm-ui-hover-effect img, .container.cont_routeDetail_page .routeMap .gm-ui-hover-effect img {
         filter: invert(100%);
         opacity: 1; }
-  .container.cont_map_page .mapOptions, .container.cont_map_page .mapZoom, .container.cont_map_page .addPhenom {
+  .container.cont_map_page .mapOptions, .container.cont_map_page .mapZoom, .container.cont_map_page .addPhenom, .container.cont_routeDetail_page .mapOptions, .container.cont_routeDetail_page .mapZoom, .container.cont_routeDetail_page .addPhenom {
     position: absolute;
     background: #010f0c;
     border: 4px solid #fff;
     padding: .5em; }
-    .container.cont_map_page .mapOptions button, .container.cont_map_page .mapZoom button, .container.cont_map_page .addPhenom button {
+    .container.cont_map_page .mapOptions button, .container.cont_map_page .mapZoom button, .container.cont_map_page .addPhenom button, .container.cont_routeDetail_page .mapOptions button, .container.cont_routeDetail_page .mapZoom button, .container.cont_routeDetail_page .addPhenom button {
       background: transparent;
       color: #fff;
       font-size: 1.5em;
@@ -2909,20 +2924,20 @@ form {
       border: 0;
       padding: 0;
       cursor: pointer; }
-      .container.cont_map_page .mapOptions button.findMe, .container.cont_map_page .mapZoom button.findMe, .container.cont_map_page .addPhenom button.findMe {
+      .container.cont_map_page .mapOptions button.findMe, .container.cont_map_page .mapZoom button.findMe, .container.cont_map_page .addPhenom button.findMe, .container.cont_routeDetail_page .mapOptions button.findMe, .container.cont_routeDetail_page .mapZoom button.findMe, .container.cont_routeDetail_page .addPhenom button.findMe {
         margin: .15em 0 .3em 0; }
-      .container.cont_map_page .mapOptions button.zoomIn, .container.cont_map_page .mapZoom button.zoomIn, .container.cont_map_page .addPhenom button.zoomIn {
+      .container.cont_map_page .mapOptions button.zoomIn, .container.cont_map_page .mapZoom button.zoomIn, .container.cont_map_page .addPhenom button.zoomIn, .container.cont_routeDetail_page .mapOptions button.zoomIn, .container.cont_routeDetail_page .mapZoom button.zoomIn, .container.cont_routeDetail_page .addPhenom button.zoomIn {
         margin-right: .5em; }
-  .container.cont_map_page .mapOptions {
+  .container.cont_map_page .mapOptions, .container.cont_routeDetail_page .mapOptions {
     top: 1em;
     left: 1em;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: space-between; }
-    .container.cont_map_page .mapOptions #findMeBtn.active, .container.cont_map_page .mapOptions #layersBtn.active {
+    .container.cont_map_page .mapOptions #findMeBtn.active, .container.cont_map_page .mapOptions #layersBtn.active, .container.cont_routeDetail_page .mapOptions #findMeBtn.active, .container.cont_routeDetail_page .mapOptions #layersBtn.active {
       color: #39FF14; }
-  .container.cont_map_page .mapZoom {
+  .container.cont_map_page .mapZoom, .container.cont_routeDetail_page .mapZoom {
     bottom: 1em;
     right: 1em;
     display: flex;
@@ -2930,9 +2945,9 @@ form {
     align-items: center;
     justify-content: space-between;
     padding-bottom: .3em; }
-    .container.cont_map_page .mapZoom #zoomInBtn:active, .container.cont_map_page .mapZoom #zoomOutBtn:active {
+    .container.cont_map_page .mapZoom #zoomInBtn:active, .container.cont_map_page .mapZoom #zoomOutBtn:active, .container.cont_routeDetail_page .mapZoom #zoomInBtn:active, .container.cont_routeDetail_page .mapZoom #zoomOutBtn:active {
       color: #39FF14; }
-  .container.cont_map_page .addPhenom {
+  .container.cont_map_page .addPhenom, .container.cont_routeDetail_page .addPhenom {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -2945,9 +2960,9 @@ form {
     border: none;
     padding: 0;
     font-size: 3.1em; }
-    .container.cont_map_page .addPhenom a {
+    .container.cont_map_page .addPhenom a, .container.cont_routeDetail_page .addPhenom a {
       color: #fff; }
-      .container.cont_map_page .addPhenom a:active {
+      .container.cont_map_page .addPhenom a:active, .container.cont_routeDetail_page .addPhenom a:active {
         color: #39FF14;
         opacity: 1; }
 
@@ -3533,14 +3548,66 @@ form {
       flex-flow: row nowrap;
       align-items: center;
       justify-content: space-between; }
-      .container.cont_routeDetail_page .section.fourthSection p span:before, .container.cont_routeDetail_page .section.fifthSection p span:before {
+      .container.cont_routeDetail_page .section.fourthSection p span[class='x-back']:before, .container.cont_routeDetail_page .section.fifthSection p span[class='x-back']:before {
         -webkit-transform: rotate(-90deg);
         -moz-transform: rotate(-90deg);
         -ms-transform: rotate(-90deg);
         -o-transform: rotate(-90deg);
         transform: rotate(-90deg); }
+    .container.cont_routeDetail_page .section.fourthSection .phenomena {
+      margin-bottom: 1em; }
+    .container.cont_routeDetail_page .section.fourthSection ul.phenomsList {
+      width: 85%;
+      margin: 0 auto; }
+      .container.cont_routeDetail_page .section.fourthSection ul.phenomsList li.phenom {
+        font-size: .8em;
+        margin-bottom: .5em; }
+        .container.cont_routeDetail_page .section.fourthSection ul.phenomsList li.phenom:last-child {
+          margin-bottom: 0; }
+        .container.cont_routeDetail_page .section.fourthSection ul.phenomsList li.phenom a {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: flex-start;
+          color: #010f0c; }
+          .container.cont_routeDetail_page .section.fourthSection ul.phenomsList li.phenom a img {
+            width: 1.5em;
+            margin-right: .5em; }
+          .container.cont_routeDetail_page .section.fourthSection ul.phenomsList li.phenom a span {
+            opacity: .5; }
     .container.cont_routeDetail_page .section.fifthSection {
-      border: 0; }
+      border: 0;
+      padding-bottom: 0; }
+      .container.cont_routeDetail_page .section.fifthSection .comments {
+        margin-bottom: 1em; }
+      .container.cont_routeDetail_page .section.fifthSection .commentsList {
+        width: 85%;
+        margin: 0 auto; }
+        .container.cont_routeDetail_page .section.fifthSection .commentsList .comment {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          align-items: flex-start;
+          justify-content: space-between;
+          margin-bottom: .8em;
+          padding-bottom: .8em;
+          border-bottom: 0.5px solid #8f8f8f; }
+          .container.cont_routeDetail_page .section.fifthSection .commentsList .comment:last-child {
+            border-bottom: 0; }
+          .container.cont_routeDetail_page .section.fifthSection .commentsList .comment .metaData {
+            display: inline;
+            width: 14em;
+            padding-top: .2em;
+            font-family: 'Share Tech Mono';
+            font-size: .6em;
+            word-spacing: 0; }
+          .container.cont_routeDetail_page .section.fifthSection .commentsList .comment .commentContent {
+            margin-right: .8em;
+            font-size: .8em;
+            opacity: .5; }
+          .container.cont_routeDetail_page .section.fifthSection .commentsList .comment .deleteBtn {
+            width: max-content;
+            font-size: .7em; }
     .container.cont_routeDetail_page .section.addCommentSection {
       padding-top: 0;
       border: 0; }
@@ -3563,7 +3630,7 @@ form {
             padding: 1em;
             margin: 0;
             margin-top: .5em;
-            width: 85%;
+            margin-right: 1em;
             height: 6em;
             color: #010f0c; }
             .container.cont_routeDetail_page .section.addCommentSection form.addComment .commentBox textarea:-webkit-autofill, .container.cont_routeDetail_page .section.addCommentSection form.addComment .commentBox textarea:-webkit-autofill:hover, .container.cont_routeDetail_page .section.addCommentSection form.addComment .commentBox textarea:-webkit-autofill:focus {
