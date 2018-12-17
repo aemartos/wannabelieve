@@ -2657,7 +2657,7 @@ header {
         header nav .filtersBox form.filtersForm input[type='checkbox'] {
           -webkit-appearance: checkbox;
           margin: 0;
-          font-size: .55em;
+          font-size: .4em;
           width: fit-content; }
 
 footer {
