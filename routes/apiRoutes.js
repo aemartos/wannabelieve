@@ -93,6 +93,13 @@ router.get('/getNaturalPhenomena', (req, res, next) => {
     .catch((error)=>{console.log(error); res.json({error})});
 });
 
+/* API 🏚 abandonedPlaces */
+router.get('/getAbandonedPlaces', (req, res, next) => {
+  Phenomenon.find({type: 'abandonedPlaces'})
+    .then((phenomena) => {res.json(phenomena);})
+    .catch((error)=>{console.log(error); res.json({error})});
+});
+
 /* API 🙈 unclassified */
 router.get('/getUnclassified', (req, res, next) => {
   Phenomenon.find({type: 'unclassified'})

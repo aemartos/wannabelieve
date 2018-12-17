@@ -2872,7 +2872,11 @@ form {
         .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomTitle h1, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomTitle h1, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomTitle h1, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomTitle h1 {
           font-family: 'Press Start 2P';
           font-size: 1.8em;
-          text-transform: lowercase; }
+          text-transform: lowercase;
+          width: 14em;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
         .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText, .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomDetails, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomDetails, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomDetails, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomDetails {
           word-spacing: 0; }
           .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText p, .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomDetails p, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText p, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomDetails p, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText p, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomDetails p, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText p, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomDetails p {

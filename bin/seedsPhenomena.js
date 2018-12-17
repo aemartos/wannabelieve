@@ -75,7 +75,7 @@ let phenomena = [
       coordinates: [-3.7055272, 40.416527]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545068795/joseCowboy.png"]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545068795/phenomena-pictures/joseCowboy.png"]
   },
   {
     name: "Cairo alien construction",
@@ -86,7 +86,7 @@ let phenomena = [
       coordinates: [31.7196536, 30.0207008]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545067787/CairoAlienConstruction.png"]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545067787/phenomena-pictures/CairoAlienConstruction.png"]
   },
   {
     name: "Pyramid of Antarctica",
@@ -97,7 +97,7 @@ let phenomena = [
       coordinates: [-81.9639787, -79.9773191]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545068069/PyramidAntarctica.png"]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545068069/phenomena-pictures/PyramidAntarctica.png"]
   },
   {
     name: "Satanic pentagram in Asia (Lisakovsk Pentagram)",
@@ -108,7 +108,7 @@ let phenomena = [
       coordinates: [62.1833549, 52.4797941]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545068354/LisakovskPentagram.png"]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545068354/phenomena-pictures/LisakovskPentagram.png"]
   },
   {
     name: "Hexagon (Harold E Holt Communications Station VLF towers)",
@@ -119,7 +119,7 @@ let phenomena = [
       coordinates: [114.1566755, -21.815346]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545068509/Hexagon.png"]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545068509/phenomena-pictures/Hexagon.png"]
   },
   {
     name: "Alien triangle sign (crop signs)",
@@ -130,7 +130,7 @@ let phenomena = [
       coordinates: [-116.8535996, 37.6284057]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545069646/AlienTriangleSign.png"]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545069646/phenomena-pictures/AlienTriangleSign.png"]
   },
   {
     name: "Nevada Circle",
@@ -141,7 +141,7 @@ let phenomena = [
       coordinates: [-116.8701787, 37.4027942]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545069999/NevadaCircle.png"]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545069999/phenomena-pictures/NevadaCircle.png"]
   },
   {
     name: "Nevada Target",
@@ -152,7 +152,7 @@ let phenomena = [
       coordinates: [-116.8528342, 37.5641652]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545070137/NevadaTarget.png"]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545070137/phenomena-pictures/NevadaTarget.png"]
   },
   {
     name: "Geoglifo of Hill Unita",
@@ -163,7 +163,7 @@ let phenomena = [
       coordinates: [-69.6340762, -19.9487334]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545070305/GiganteTarapaca.png"]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545070305/phenomena-pictures/GiganteTarapaca.png"]
   },
   {
     name: "Folkestone White Horse",
@@ -174,7 +174,7 @@ let phenomena = [
       coordinates: [1.1393707, 51.101225]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545070436/FolkestoneWhiteHorse.png"]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545070436/phenomena-pictures/FolkestoneWhiteHorse.png"]
   },
   {
     name: "Geoglifo of Tiliviche",
@@ -185,7 +185,7 @@ let phenomena = [
       coordinates: [-69.9681224, -19.5489396]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545070614/GeoglifoTiliviche.jpg"]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545070614/phenomena-pictures/GeoglifoTiliviche.jpg"]
   },
   {
     name: "Position mark without UFO in Antarctica",
@@ -196,216 +196,260 @@ let phenomena = [
       coordinates: [-30.1107492, -80.5664016]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545070818/ufoMark.png"]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545070818/phenomena-pictures/ufoMark.png"]
   },
   {
-    name: "",
-    description: "",
-    type: "",
+    name: "Kraken",
+    description: "The Kraken appears in the Antarctic Ocean. The images of the supposed sea monster were published on YouTube on April 29, 2016.",
+    type: "seaCreatures",
     location: {
       type: "Point",
-      coordinates: []
+      coordinates: [-60.958801, -63.0489288]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: [""]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545079365/phenomena-pictures/kraken.png"]
   },
   {
-    name: "",
-    description: "",
-    type: "",
+    name: "Saiyajin spaceship",
+    description: "Leftover spaceship in the snowy mountains.",
+    type: "ufos",
     location: {
       type: "Point",
-      coordinates: []
+      coordinates: [99.7181613, -66.6032979]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: [""]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545079535/phenomena-pictures/SaiyajinSpaceship.png"]
   },
   {
-    name: "",
-    description: "",
-    type: "",
+    name: "Millennium Falcon UFO in Area 51",
+    description: 'The "UFO specialist" Scott Waring says is a building that has risen to hide an alien ship. To see the supposed mystery, you must use the "time travel" tool of Google Maps that allows you to see the area in past years through the different images that have been taken to create the maps.',
+    type: "ufos",
     location: {
       type: "Point",
-      coordinates: []
+      coordinates: [-116.0103273, 36.9290293]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: [""]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545079678/phenomena-pictures/MillenniumFalconUFO.png"]
   },
   {
-    name: "",
-    description: "",
-    type: "",
+    name: "UFO sighting",
+    description: "STRANGE UFO Sitting Above Amazon Rainforest",
+    type: "ufos",
     location: {
       type: "Point",
-      coordinates: []
+      coordinates: [-64.6094487, -10.2672547]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: [""]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545080075/phenomena-pictures/strangeUfo.png"]
   },
   {
-    name: "",
-    description: "",
-    type: "",
+    name: "Is this an OVNI?",
+    description: "OVNI city sighting",
+    type: "ufos",
     location: {
       type: "Point",
-      coordinates: []
+      coordinates: [100.5843624, 6.0477867]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: [""]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545080270/phenomena-pictures/ufoSighting.png"]
   },
   {
-    name: "",
-    description: "",
-    type: "",
+    name: "OVNI sighting",
+    description: "Is this an OVNI? It seems to be in a backyard in the middle of nowhere...",
+    type: "ufos",
     location: {
       type: "Point",
-      coordinates: []
+      coordinates: [21.2998613, 45.7034537]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: [""]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545081793/phenomena-pictures/ufoBackyard.png", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545081787/phenomena-pictures/ufoBackyard_3D.png"]
   },
   {
-    name: "",
-    description: "",
-    type: "",
+    name: "OVNI with shadow",
+    description: "No description",
+    type: "ufos",
     location: {
       type: "Point",
-      coordinates: []
+      coordinates: [-116.4725983, 37.3057244]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: [""]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545081935/phenomena-pictures/shadowOVNI.png"]
   },
   {
-    name: "",
-    description: "",
-    type: "",
+    name: "Big triangle sign",
+    description: 'This is the Google Maps description: "Luke Air Force Base Auxillary No. 4"',
+    type: "signals",
     location: {
       type: "Point",
-      coordinates: []
+      coordinates: [-112.6358287, 33.7450844]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: [""]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545082117/phenomena-pictures/bigTriangle.png"]
   },
   {
-    name: "",
-    description: "",
-    type: "",
+    name: "Big spiral signal",
+    description: 'Eine Insel für die Zeit. The earth sign at Munich Airport is an earth sculpture by the painter Wilhelm Holderied and the sculptor Karl Schlamminger. The artwork is also called an island for the time. According to Holderied, it should be a symbol for the time sequences determined by the "primordial force of the earth".',
+    type: "signals",
     location: {
       type: "Point",
-      coordinates: []
+      coordinates: [11.7306413, 48.3536035]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: [""]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545082321/phenomena-pictures/timeIsland.png"]
   },
   {
-    name: "",
-    description: "",
-    type: "",
+    name: "The Lion Point",
+    description: "ZSL Whipsnade Zoo has finished restoration work on the Whipsnade White Lion, a famous chalk image that has overlooked the Dunstable Downs in Bedfordshire since 1933.",
+    type: "signals",
     location: {
       type: "Point",
-      coordinates: []
+      coordinates: [-0.5556809, 51.8484132]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: [""]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545082434/phenomena-pictures/lionPoint.png"]
   },
   {
-    name: "",
-    description: "",
-    type: "",
+    name: "Is it a map?",
+    description: "Strange map marks somewhere in Asia.",
+    type: "unclassified",
     location: {
       type: "Point",
-      coordinates: []
+      coordinates: [93.3884928, 40.4572688]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: [""]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545082675/phenomena-pictures/strangeMarks.png"]
   },
   {
-    name: "",
-    description: "",
-    type: "",
+    name: "Plane graveyard",
+    description: 'The United States manufactured about 294,000 aircraft for WWII, and once peace was assured the military found itself with a huge surplus of aircraft. Within a year of the end of the war, about 34,000 airplanes had been moved to 30 sales-storage depots, or "aircraft boneyards".',
+    type: "weirdStuff",
     location: {
       type: "Point",
-      coordinates: []
+      coordinates: [-110.8321706, 32.154355]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: [""]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545082902/phenomena-pictures/planeGraveyard01.png", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545082902/phenomena-pictures/planeGraveyard02.png", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545082901/phenomena-pictures/planeGraveyard03.png"]
   },
   {
-    name: "",
-    description: "",
-    type: "",
+    name: "Desert Breath",
+    description: "Located in the Egyptian desert near Hurghada on the Red Sea coast, is a double-spiral work of land art. It was created by the D.A.ST. Arteam, a group made up of three Greek artists.",
+    type: "unclassified",
     location: {
       type: "Point",
-      coordinates: []
+      coordinates: [33.6316469, 27.3802495]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: [""]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545083036/phenomena-pictures/desertBreath.jpg"]
   },
   {
-    name: "",
-    description: "",
-    type: "",
+    name: "Swastika-Shaped Building Complex",
+    description: "Naval Amphibious Base Coronado, California, USA. That's all said.",
+    type: "weirdStuff",
     location: {
       type: "Point",
-      coordinates: []
+      coordinates: [-117.1578331, 32.6767003]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: [""]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545083260/phenomena-pictures/navalBase.png"]
   },
   {
-    name: "",
-    description: "",
-    type: "",
+    name: "Buffalo Herd",
+    description: "Kigosi Game Reserve, Tanzania.",
+    type: "fantasticAnimals",
     location: {
       type: "Point",
-      coordinates: []
+      coordinates: [31.3961856, -4.2892671]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: [""]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545083437/phenomena-pictures/buffaloHerd.png"]
   },
   {
-    name: "",
-    description: "",
-    type: "",
+    name: "Shipwrecked SS Ayrfield with Trees",
+    description: "102-Year-Old Abandoned Ship in Homebush Bay, Sydney, Australia. The beautiful spectacle, also referred to as The Floating Forest, adds a bit of life to the area, which happens to be a sort of ship graveyard.",
+    type: "abandonedPlaces",
     location: {
       type: "Point",
-      coordinates: []
+      coordinates: [151.0804758, -33.8363363]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: [""]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545084201/phenomena-pictures/ship01.jpg", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545084202/phenomena-pictures/ship02.png"]
   },
   {
-    name: "",
-    description: "",
-    type: "",
+    name: "The Badlands Guardian",
+    description: "The nature of this curiosity is that, seen from the air, this rock formation looks like a human head wearing a hat in the style of the natives. Walsh, Alberta, Canada.",
+    type: "naturalPhenomena",
     location: {
       type: "Point",
-      coordinates: []
+      coordinates: [-110.1179596, 50.0102157]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: [""]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545084449/phenomena-pictures/badlandsGuardian.png"]
   },
   {
-    name: "",
-    description: "",
-    type: "",
+    name: "Jesus love you",
+    description: "Never forget.",
+    type: "religiousApparitions",
     location: {
       type: "Point",
-      coordinates: []
+      coordinates: [-115.9925688, 43.6449735]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: [""]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545084594/phenomena-pictures/jesusLovesYou.png"]
   },
   {
-    name: "",
-    description: "",
-    type: "",
+    name: "Oil Fields",
+    description: "Río Negro, Argentina.",
+    type: "signals",
     location: {
       type: "Point",
-      coordinates: []
+      coordinates: [-68.1903273, -37.6545474]
     },
     creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls: [""]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545084827/phenomena-pictures/rioNegro.png"]
+  },
+  {
+    name: "Sanatorio de la Marina",
+    description: "Built in the mandate of Generalissimo Franco, at the beginning of the 40s to eradicate the disease of tuberculosis, but medical advances and new medicines changed the way to attack this disease leaving aside that mass of brick and concrete, which until then located in full mountain range of Madrid, allowed to breathe pure air away from pollution.",
+    type: "abandonedPlaces",
+    location: {
+      type: "Point",
+      coordinates: [-4.0834973, 40.7123606]
+    },
+    creatorId: "5c17d333e29a2fdbba269dd1",
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545085130/phenomena-pictures/sanatorioMarina_01.jpg", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545085130/phenomena-pictures/sanatorioMarina_02.jpg", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545085130/phenomena-pictures/sanatorioMarina_03.jpg", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545085131/phenomena-pictures/sanatorioMarina_04.png"]
+  },
+  {
+    name: "A Most Phallic Buliding",
+    description: "Christian Science Society of Dixon. ?????",
+    type: "weirdStuff",
+    location: {
+      type: "Point",
+      coordinates: [-89.4859745, 41.8418626]
+    },
+    creatorId: "5c17d333e29a2fdbba269dd1",
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545085814/phenomena-pictures/phallicBuilding.png"]
+  },
+  {
+    name: "Uluru",
+    description: "Also known as Ayers Rock, is a large sandstone rock formation in the southern part of the Northern Territory in central Australia. It lies 335 km (208 mi) south west of the nearest large town, Alice Springs, 450 km (280 mi) by road.",
+    type: "naturalPhenomena",
+    location: {
+      type: "Point",
+      coordinates: [131.0292422, -25.3456324]
+    },
+    creatorId: "5c17d333e29a2fdbba269dd1",
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545085955/phenomena-pictures/uluru.png"]
+  },
+  {
+    name: "Barringer Meteor Crater",
+    description: 'Is a meteorite impact crater approximately 37 miles (60 km) east of Flagstaff and 18 miles (29 km) west of Winslow in the northern Arizona desert of the United States. Because the United States Board on Geographic Names commonly recognizes names of natural features derived from the nearest post office, the feature acquired the name of "Meteor Crater" from the nearby post office named Meteor.',
+    type: "naturalPhenomena",
+    location: {
+      type: "Point",
+      coordinates: [-111.0245767, 35.0271894]
+    },
+    creatorId: "5c17d333e29a2fdbba269dd1",
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545086077/phenomena-pictures/MeteorCrater.png"]
   }
 ];
 
