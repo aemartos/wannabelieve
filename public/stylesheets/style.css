@@ -3196,7 +3196,13 @@ form {
         flex-flow: row nowrap;
         align-items: center;
         justify-content: space-between;
-        width: 17%; }
+        width: 17%;
+        text-transform: uppercase;
+        font-size: 1.5em; }
+        .container.cont_phenomena_detailPage .section.firstSection .phenomMainInfo .actions a {
+          color: #010f0c; }
+          .container.cont_phenomena_detailPage .section.firstSection .phenomMainInfo .actions a i {
+            -webkit-text-stroke: 0.3px #010f0c; }
     .container.cont_phenomena_detailPage .section.firstSection .discoveredOn {
       font-family: 'Share Tech Mono';
       word-spacing: 0;
