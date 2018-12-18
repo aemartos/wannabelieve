@@ -57,7 +57,7 @@ let phenomena = [
   },
   {
     name: "Furious anicornia",
-    description: "One of the creators of this app, be careful be careful not to piss her off... www.anaestrada.es",
+    description: "One of the creators of this app, be careful not to piss her off... www.anaestrada.es",
     type: "fantasticAnimals",
     location: {
       type: "Point",

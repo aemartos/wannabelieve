@@ -25,20 +25,23 @@ if (window.phenomena.length > 1) {
   map.setZoom(5);
 }
 
-//avoid markers to open infoWindow onclick in route detail
-markers.forEach(el => {
-  el.addListener('click', function() {
-    infoWindows.forEach(e => e.close());
+//enable and disable markers to open infoWindow onclick in route detail
+const markersFunction = (boolean) => {
+  markers.forEach(e => {
+    e.setClickable(boolean);
   });
-});
+};
+markersFunction(false);
 
 /* ------------ START ROUTE -------------- */
 
 
 //hide and show map
 const sections = [...document.getElementsByClassName('section')];
+
 document.getElementById('startRoute').onclick = (el) => {
   map.setZoom(2);
+  markersFunction(true);
   document.getElementById('mainMap').style.height = "100%";
   document.getElementById('finishRoute').style.display = "inline-block";
   sections.forEach(e => {
@@ -48,6 +51,7 @@ document.getElementById('startRoute').onclick = (el) => {
 
 document.getElementById('finishRoute').onclick = (el) => {
   fixZoom();
+  markersFunction(false);
   document.getElementById('mainMap').style.height = "33%";
   document.getElementById('finishRoute').style.display = "none";
   sections.forEach(e => {
