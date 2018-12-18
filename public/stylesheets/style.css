@@ -2570,6 +2570,13 @@ header, footer {
     header nav a, footer nav a {
       color: #fff; }
 
+.pac-container.pac-logo.hdpi:after {
+  display: none; }
+
+.pac-container .pac-item {
+  padding: .3em 1em;
+  font-family: "Share Tech Mono"; }
+
 header {
   top: 0; }
   header nav {
@@ -3157,7 +3164,7 @@ form {
         align-items: center;
         justify-content: center; }
         .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom form button, .container.cont_phenomena_detailPage .section.sectionBtn .registerPhenom form button {
-          width: max-content;
+          width: auto;
           border: 0;
           padding: 0;
           margin: 0; }
@@ -3617,25 +3624,31 @@ form {
       display: none; }
     .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom a.goPhenom {
       font-size: 3em; }
+  .container.cont_routeDetail_page .mapZoom, .container.cont_routeDetail_page .mapOptions {
+    display: none; }
+    .container.cont_routeDetail_page .mapZoom span, .container.cont_routeDetail_page .mapOptions span {
+      font-size: 1em;
+      color: #fff;
+      -webkit-text-stroke: 0.3px #fff; }
+  .container.cont_routeDetail_page .mapOptions #findMeBtn.active span, .container.cont_routeDetail_page .mapOptions #layersBtn.active span {
+    color: #39FF14;
+    -webkit-text-stroke: 0.3px #39FF14; }
+  .container.cont_routeDetail_page .mapZoom #zoomInBtn:active span, .container.cont_routeDetail_page .mapZoom #zoomOutBtn:active span {
+    color: #39FF14;
+    -webkit-text-stroke: 0.3px #39FF14; }
   .container.cont_routeDetail_page .finishRoute {
     position: absolute;
-    bottom: 1em;
+    bottom: 1.3em;
     left: 1em;
     display: none;
-    padding: .5em 1em;
+    padding: 1.2em;
     font-size: .8em;
     background-color: #010f0c;
-    border: 4px solid #fff; }
-    .container.cont_routeDetail_page .finishRoute a {
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      justify-content: center;
+    border: 4px solid #fff;
+    color: #fff; }
+    .container.cont_routeDetail_page .finishRoute span {
+      text-align: center;
       color: #fff; }
-      .container.cont_routeDetail_page .finishRoute a span {
-        color: #fff;
-        -webkit-text-stroke: 0.3px #fff;
-        margin-right: .5em; }
   .container.cont_routeDetail_page .section {
     width: 100%;
     padding: 1.2em 0;
@@ -3678,7 +3691,7 @@ form {
         align-items: center;
         justify-content: center; }
         .container.cont_routeDetail_page .section.sectionBtn .favoriteRoute form button {
-          width: max-content;
+          width: auto;
           border: 0;
           padding: 0;
           margin: 0; }

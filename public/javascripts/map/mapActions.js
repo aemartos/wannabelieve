@@ -10,8 +10,10 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('findMeBtn').classList.toggle("active");
     if(RTL && RTLinterval) {
       if (meMarker) meMarker.setMap(null);
+      isGeolocating = false;
       clearInterval(RTLinterval);
     } else {
+      isGeolocating = true;
       RTLinterval = setInterval(realTimeLocation, 1000);
     }
     RTL = !RTL;
@@ -105,44 +107,48 @@ document.addEventListener("DOMContentLoaded", function() {
       .catch(e => console.error('Error:', e));
   };
 
-  document.getElementById('mGlass').onclick = searchReq;
-  searchInput.onkeydown = (event) => {
-    if(event.keyCode == 13) {
-      event.preventDefault();
-      searchReq(event);
-      return false;
+  if(document.getElementById('mGlass')) {
+    document.getElementById('mGlass').onclick = searchReq;
+    searchInput.onkeydown = (event) => {
+      if(event.keyCode == 13) {
+        event.preventDefault();
+        searchReq(event);
+        return false;
+      }
     }
   }
 
   /*---------------- FILTERS ---------------*/
 
-  document.getElementById('filtersBtn').onclick = (e) => {
-    document.getElementById('filtersBtn').classList.toggle("active");
-    if(!filters) {
-      document.getElementById('filtersBox').style.display = 'block';
-    } else {
-      document.getElementById('filtersBox').style.display = 'none';
-    }
-    filters = !filters;
-  };
-
-  [...document.getElementsByClassName('checkboxCat')].forEach((el)=>{
-    el.onchange = (e) => {
-      let activeFilters = [...document.getElementsByClassName('checkboxCat')]
-        .filter(el=>el.checked)
-        .map(filter=>filter.value);
-      removeMarkers(markers);
-      filteredPhenomena= window.phenomena.filter(ph => activeFilters.includes(ph.type));
-      loadData(map,{phenomena: filteredPhenomena});
+  if(document.getElementById('filtersBtn')) {
+    document.getElementById('filtersBtn').onclick = (e) => {
+      document.getElementById('filtersBtn').classList.toggle("active");
+      if(!filters) {
+        document.getElementById('filtersBox').style.display = 'block';
+      } else {
+        document.getElementById('filtersBox').style.display = 'none';
+      }
+      filters = !filters;
     };
-  });
 
-  document.getElementById('showAll').onchange = (e) => {
-    removeMarkers(markers);
-    loadData(map,{phenomena: e.target.checked ? window.phenomena : []});
-    [...document.getElementsByClassName('checkboxCat')].forEach(el=>{
-      el.checked = e.target.checked;
+    [...document.getElementsByClassName('checkboxCat')].forEach((el)=>{
+      el.onchange = (e) => {
+        let activeFilters = [...document.getElementsByClassName('checkboxCat')]
+          .filter(el=>el.checked)
+          .map(filter=>filter.value);
+        removeMarkers(markers);
+        filteredPhenomena= window.phenomena.filter(ph => activeFilters.includes(ph.type));
+        loadData(map,{phenomena: filteredPhenomena});
+      };
     });
-  };
+
+    document.getElementById('showAll').onchange = (e) => {
+      removeMarkers(markers);
+      loadData(map,{phenomena: e.target.checked ? window.phenomena : []});
+      [...document.getElementsByClassName('checkboxCat')].forEach(el=>{
+        el.checked = e.target.checked;
+      });
+    };
+  }
 
 });

@@ -26,23 +26,37 @@
           a
             &.goPhenom
               font-size: 3em
+    .mapZoom, .mapOptions
+      display: none
+      span
+        font-size: 1em
+        color: $maincolor
+        -webkit-text-stroke: .3px $maincolor
+    .mapOptions
+      #findMeBtn, #layersBtn
+        &.active
+          span
+            color: $secondarycolor
+            -webkit-text-stroke: .3px $secondarycolor
+    .mapZoom
+      #zoomInBtn, #zoomOutBtn
+        &:active
+          span
+            color: $secondarycolor
+            -webkit-text-stroke: .3px $secondarycolor
     .finishRoute
       position: absolute
-      bottom: 1em
+      bottom: 1.3em
       left: 1em
       display: none
-      padding: .5em 1em
+      padding: 1.2em
       font-size: .8em
       background-color: $menubg
       border: 4px solid $maincolor
-      a
-        +row-flex
-        justify-content: center
+      color: $maincolor
+      span
+        text-align: center
         color: $maincolor
-        span
-          color: $maincolor
-          -webkit-text-stroke: .3px $maincolor
-          margin-right: .5em
     .section
       width: 100%
       padding: 1.2em 0
@@ -79,7 +93,7 @@
             +row-flex
             justify-content: center
             button
-              width: max-content
+              width: auto
               border: 0
               padding: 0
               margin: 0

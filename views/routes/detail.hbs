@@ -1,11 +1,17 @@
-<script>window.phenomena = {{{phenomena}}}
-window.inRoute = true;
-
-
-</script>
+<script>window.phenomena = {{{phenomena}}};</script>
 
 <div class="mainMap" id="mainMap"></div>
-<p class="finishRoute" id="finishRoute"><a href="#"><span class="x-sighting"></span> <span class="text">finish</span></a></p>
+<p class="finishRoute" id="finishRoute">{{!--<span class="x-sighting"></span>--}} <span class="text">finish</span></p>
+
+<div class="mapOptions" id="mapOptions">
+  <button class="findMe" id="findMeBtn"><span class="x-geolocation"></span></button>
+  <button class="layers" id="layersBtn"><span class="x-layers"></span></button>
+</div>
+
+<div class="mapZoom" id="mapZoom">
+  <button class="zoomIn" id="zoomInBtn"><span class="x-plus"></span></button>
+  <button class="zoomOut" id="zoomOutBtn"><span class="x-minus"></span></button>
+</div>
 
 <div class="section firstSection">
   <div class="routeMainInfo">
@@ -27,7 +33,7 @@ window.inRoute = true;
 </div>
 
 <div class="section sectionBtn">
-  <p class="startRoute" id="startRoute"><a href="#"><span class="x-sighting"></span> <span class="text">start</span></a></p>
+  <p class="startRoute" id="startRoute"><span class="x-sighting"></span> <span class="text">start</span></p>
   <div class="favoriteRoute">
     <form method="POST" action="/routes/{{route._id}}/toggleFav">
       <button type="submit"><span class="x-favorite{{#if fav}}-fill active{{/if}}"></span></button><span class="text {{!--{{#if fav}}active{{/if}}--}}">favorite</span>
@@ -101,6 +107,7 @@ window.inRoute = true;
 <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDALLA4IgWrHmR_9IiIAhCE6-keEuJks34"></script>
 <script src="/javascripts/map/mapHelpers.js"></script>
 <script src="/javascripts/map/markers.js"></script>
+<script src="/javascripts/map/mapActions.js"></script>
 <script src="/javascripts/map/geolocate.js"></script>
 <script src="/javascripts/map/mapStyles.js"></script>
 <script src="/javascripts/routes/routes.js"></script>

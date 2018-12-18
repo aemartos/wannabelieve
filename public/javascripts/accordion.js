@@ -47,5 +47,5 @@ const accordion = (trigger, content) => {
   });
 };
 
-accordion(document.getElementById("expandComments"), document.getElementById("commentsAccordion"));
-accordion(document.getElementById("expandPhenomena"), document.getElementById("phenomsAccordion"));
+if(document.getElementById("expandComments")) accordion(document.getElementById("expandComments"), document.getElementById("commentsAccordion"));
+if(document.getElementById("expandPhenomena")) accordion(document.getElementById("expandPhenomena"), document.getElementById("phenomsAccordion"));
