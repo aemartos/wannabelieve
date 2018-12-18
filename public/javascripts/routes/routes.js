@@ -18,10 +18,16 @@ let map = createMap('mainMap', {});
 //console.log(window.phenomena) ;
 loadData(map);
 if (window.phenomena.length > 1) {
-  console.log('hola');
   map.fitBounds(calculateBoundsToFitAllMarkers(window.phenomena));
   fixZoom();
 } else if (window.phenomena.length == 1) {
   map.setCenter({lat: window.phenomena[0].location.coordinates[1], lng: window.phenomena[0].location.coordinates[0]});
   map.setZoom(5);
 }
+
+//avoid markers to open infoWindow onclick in route detail
+markers.forEach(el => {
+  el.addListener('click', function() {
+    infoWindows.forEach(e => e.close());
+  });
+});
