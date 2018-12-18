@@ -65,7 +65,6 @@ User.create(users)
         ])
         .then(() => {
           mongoose.disconnect();
-          console.log('unicornio');
         });
       }
       return e;
