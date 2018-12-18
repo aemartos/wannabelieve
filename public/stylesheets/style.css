@@ -3161,6 +3161,9 @@ form {
             color: #39FF14; }
             .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom form button span.active[class*='x-'], .container.cont_phenomena_detailPage .section.sectionBtn .registerPhenom form button span.active[class*='x-'] {
               -webkit-text-stroke: 0.3px #39FF14; }
+      .container.cont_phenomena_detailPage .section.sectionBtn p.favourite span[class*='x-'].active {
+        color: #39FF14;
+        -webkit-text-stroke: 0.3px #39FF14; }
     .container.cont_phenomena_detailPage .section.firstSection .phenomMainInfo {
       width: 85%;
       text-align: left;
