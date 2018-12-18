@@ -21,10 +21,9 @@ const {lat,lng} = geolocateMe().then(({lat,lng})=>{
   map = createMap('mainMap', {lat,lng});
   meMarker = newMeMarker({lat,lng});
   loadData(map);
+  //console.log('geolocate');
 }).catch(err=>{
   map = createMap('mainMap', {});
   loadData(map);
+  //console.log('no geolocate');
 });
-
-
-

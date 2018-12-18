@@ -14,6 +14,7 @@ const fixZoom = () => {
 const markers = [];
 const loadData = (map, extra = {}) => {
   (extra.phenomena || phenomena).forEach(p => {
+    //console.log(p);
     let markerPhenom = addMarker(
       p.name,
       p.description,

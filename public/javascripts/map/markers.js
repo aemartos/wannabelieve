@@ -12,6 +12,7 @@ const singleMarker = (title, position, map, type) => {
 
 const addMarker = (title, description, position, map, type, id) => {
   let marker = singleMarker(title, position, map, type);
+  //console.log(title, description, map, type, marker, id);
   addWindow(title, description, map, type, marker, id);
   return marker;
 };
@@ -24,8 +25,8 @@ const newMeMarker = (position) => {
   });
 };
 
-let infowindow = null;
 const addWindow = (title, description, map, type, marker, id) => {
+  let infowindow = null;
   let content = `<div class="infoPhenom">
                   <div class="infoPhenomDetails">
                     <div class="phenomText">
