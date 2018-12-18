@@ -1,3 +1,5 @@
+let filters = false;
+
 document.addEventListener("DOMContentLoaded", function() {
 
   /*---------------- REAL TIME LOCATION ---------------*/
@@ -114,7 +116,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   /*---------------- FILTERS ---------------*/
 
-  let filters = false;
   document.getElementById('filtersBtn').onclick = (e) => {
     document.getElementById('filtersBtn').classList.toggle("active");
     if(!filters) {

@@ -25,5 +25,6 @@ const {lat,lng} = geolocateMe().then(({lat,lng})=>{
 }).catch(err=>{
   map = createMap('mainMap', {});
   loadData(map);
+  console.log(infoWindows);
   //console.log('no geolocate');
 });

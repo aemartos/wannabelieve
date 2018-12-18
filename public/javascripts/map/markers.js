@@ -25,6 +25,7 @@ const newMeMarker = (position) => {
   });
 };
 
+let infoWindows = [];
 const addWindow = (title, description, map, type, marker, id) => {
   let infowindow = null;
   let content = `<div class="infoPhenom">
@@ -56,16 +57,22 @@ const addWindow = (title, description, map, type, marker, id) => {
       });
     });
   });
+  infoWindows.push(infowindow);
   return infowindow;
 };
 
+
 //Close infoWindow and filtersBox when clicking the map
+
 const closeInfoWindow = () => {
   document.getElementById('mainMap').onclick = e => {
     if (e.target && e.target.tagName === 'DIV' && !e.target.getAttribute('id')&& !e.target.getAttribute('class')) {
-      if (infowindow) { infowindow.close(); }
+      if (infoWindows.length > 0) {
+        infoWindows.forEach(e => e.close());
+      }
       //Close filterBox
       if (document.getElementById('filtersBox')) {
+        document.getElementById('filtersBtn').classList.remove("active");
         document.getElementById('filtersBox').style.display = 'none';
         filters = false;
       }

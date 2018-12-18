@@ -3601,16 +3601,16 @@ form {
       color: #39FF14; }
       .container.cont_routeDetail_page span[class*='x-']:active[class*='x-'] {
         -webkit-text-stroke: 0.3px #39FF14; }
-  .container.cont_routeDetail_page .routeMap {
+  .container.cont_routeDetail_page .mainMap {
     background-color: #8f8f8f;
     height: 33%;
     width: 100%;
     border-bottom: 4px solid #fff; }
-    .container.cont_routeDetail_page .routeMap a[rel='noopener'] {
+    .container.cont_routeDetail_page .mainMap a[rel='noopener'] {
       display: none !important; }
-    .container.cont_routeDetail_page .routeMap .gmnoprint, .container.cont_routeDetail_page .routeMap .gm-style-cc {
+    .container.cont_routeDetail_page .mainMap .gmnoprint, .container.cont_routeDetail_page .mainMap .gm-style-cc {
       display: none; }
-    .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom a.goPhenom {
+    .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom a.goPhenom {
       font-size: 3em; }
   .container.cont_routeDetail_page .section {
     width: 100%;
