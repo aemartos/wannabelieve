@@ -19,40 +19,35 @@
     {{/if}}
   </div>
   {{#if editUser}}
+  <p class="discoveredOn">{{phenomenon.type}}</p>
+  <span>|</span>
   <p class="discoveredOn">discovered on: {{phenomCreationDate}}</p>
   {{else}}
   <p class="discoveredOn alone">discovered on: {{phenomCreationDate}}</p>
-  {{!-- <div class="phTypeDate">
-    <p>{{phenomenon.type}}</p>
-    <p>|</p>
-  </div> --}}
   {{/if}}
+  <div class="messages">
+      {{#each messages}}
+        <div class="error-message">{{this}}</div>
+      {{/each}}
+    </div>
 </div>
 
 <div class="section sectionBtn">
-  {{#if visited}}
-  <p class="registered"><span class="x-sighting-fill active"></span><span class="text">sighted</span></p>
-  {{else}}
   <div class="registerPhenom">
     <form method="POST" action="/phenomena/{{phenomenon._id}}/register">
       <div class="form-group">
         <input type="hidden" name="latitude" placeholder="latitude">
         <input type="hidden" name="longitude" placeholder="longitude">
       </div>
-      <button type="submit"><span class="x-sighting"></span></button><span class="text">sighted</span>
+      <button type="submit"><span class="x-sighting{{#if visited}}-fill active{{/if}}"></span></button><span class="text">sighted</span>
     </form>
   </div>
-  {{/if}}
-
-  {{#if favourite}}
-  <p class="favourite"><span class="x-favorite-fill active"></span><span class="text">favourite</span></p>
-  {{else}}
+ 
   <div class="favouritePhenom">
     <form method="POST" action="/phenomena/{{phenomenon._id}}/favourite">
-      <button type="submit"><span class="x-favorite"></span></button><span class="text">favourite</span>
+      <button type="submit"><span class="x-favorite{{#if favourite}}-fill active{{/if}}"></span></button><span class="text">favourite</span>
     </form>
   </div>
-  {{/if}}
 </div>
 
 <div class="section sectionAddToRoute">
@@ -60,7 +55,7 @@
 </div>
 
 <div class="section secondSection">
-  <p class="discoveredBy"><span class="text">discovered by:</span> <span class="username">{{creator.username}}</span></p>
+  <p class="discoveredBy"><span class="text">discovered by:</span> <span class="username">{{phenomenon.creatorId.username}}</span></p>
 </div>
 
 <div class="section thirdSection">
@@ -83,9 +78,6 @@
         <span class="author">author: {{this.authorId.username}}</span>
       </p>
       <p class="commentContent">{{this.content}}</p>
-      {{#if canDelete}}
-      <p class="deleteBtn"><span class="x-delete"></span></p>
-      {{/if}}
     </li>
     {{/each}}
   </ul>
@@ -96,11 +88,6 @@
     <div class="commentBox">
       <textarea type="text" name="content" placeholder="write your comment here"></textarea>
       <button type="submit" class="addCommentBtn"><span class="x-plus"></span></button>
-    </div>
-    <div class="messages">
-      {{#each messages}}
-      <div class="error-message">{{this}}</div>
-      {{/each}}
     </div>
   </form>
 </div>

@@ -50,14 +50,20 @@ router.post("/addPhenomenon", uploadPhenomPicture.array("file"), (req, res) => {
 
 router.get("/phenomena", isLoggedIn("/auth/login"), (req, res, next) => {
   // Sorting by last created
-  let query = { created_at: -1 };
+  let query = { createdAt: -1 };
 
   Phenomenon.find()
     .sort(query)
     .then(phenomena => {
-      // const phenomList = phenomena.map(p=>{return { ...JSON.parse(JSON.stringify(p)), numFavs: p.whoseFavId.length}});
+      const phenomList = phenomena.map(p => {
+        return {
+          ...JSON.parse(JSON.stringify(p)),
+          numFavs: p.whoseFavId.length,
+          numRevs: p.reviewsId.length
+        };
+      });
       res.render("phenomena/main", {
-        phenomena,
+        phenomList,
         actual_page: "phenomena_page",
         phenomenon: true
       });
@@ -88,111 +94,88 @@ router.get("/phenomena/:id/delete", (req, res) => {
 });
 
 router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
-  Phenomenon.findById(req.params.id).then(phenomenon => {
-    let phenomCreationDate = `${phenomenon.created_at.getDay()}/${phenomenon.created_at.getMonth()}/${phenomenon.created_at.getFullYear()}`;
-    let phenomCreator = new ObjectId(phenomenon.creatorId);
-
-    var reviews = [];
-    phenomenon.reviewsId.forEach(revId => {
-      Review.findById(revId).then(reviewInfo => {
-        return reviews.push(reviewInfo);
+  Phenomenon.findById(req.params.id)
+    .populate("creatorId")
+    .populate({ path: "reviewsId", populate: { path: "authorId" } })
+    .populate("routesImIn")
+    .then(phenomenon => {
+      const reviews = phenomenon.reviewsId.map(revs => {
+        let min =
+          revs.createdAt.getMinutes().toString().length === 1
+            ? `0${revs.createdAt.getMinutes()}`
+            : revs.createdAt.getMinutes();
+        return {
+          ...JSON.parse(JSON.stringify(revs)),
+          formatDate: `${revs.createdAt.getDate()}/${revs.createdAt.getMonth() +
+            1}/${revs.createdAt.getFullYear()}`,
+          formatTime: `${revs.createdAt.getHours()}:${min}`
+        };
       });
-    });
 
-    let queryVisited = {
-      $and: [
-        { _id: ObjectId(`${req.params.id}`) },
-        { visitorsId: ObjectId(`${req.user._id}`) }
-      ]
-    };
+      let phenomCreationDate = `${phenomenon.createdAt.getDate()}/${phenomenon.createdAt.getMonth() +
+        1}/${phenomenon.createdAt.getFullYear()}`;
 
-    let queryFavourite = {
-      $and: [
-        { _id: ObjectId(`${req.user._id}`) },
-        { favPhenoms: ObjectId(`${req.params.id}`) }
-      ]
-    };
+      //editUser - false (no es el mismo)  
+      //editUser - true (es el mismo)  
+      const editUser = phenomenon.creatorId._id === req.user._id
 
-    Promise.all([
-      User.findById(phenomCreator),
-      Phenomenon.find(queryVisited),
-      User.find(queryFavourite)
-    ]).then(([creator, visit, favourites]) => {
-      const visited = () => {
-        if (visit.length == 1) {
-          return true;
-        } else {
-          return false;
-        }
-      };
+      // visited - false (no ecuentra el userID)
+      // visited - true (encuentra el userID)
+      const visited = phenomenon.visitorsId.indexOf(req.user._id) !== -1;
 
-      const editUser = () => {
-        if (
-          JSON.stringify(phenomenon.creatorId) === JSON.stringify(req.user._id)
-        ) {
-          return true;
-        } else {
-          return false;
-        }
-      };
-
-      const favourite = () => {
-        if (favourites.length == 1) {
-          return true;
-        } else {
-          return false;
-        }
-      };
+      // favourite - false (no ecuentra el userID)
+      // favourite - true (encuentra el userID)
+      const favourite = phenomenon.whoseFavId.indexOf(req.user._id) !== -1;
+        console.log(favourite)
 
       res.render("phenomena/detail", {
         phenomenon,
-        creator,
+        reviews,
+        phenomCreationDate,
         editUser,
         visited,
         favourite,
-        reviews,
-        phenomCreationDate,
         actual_page: "phenomena_detailPage"
       });
     });
-  });
 });
 
 router.post(
   "/phenomena/:id/register",
   isLoggedIn("/auth/login"),
   (req, res) => {
+
     let geoLat = req.body.latitude;
     let geoLong = req.body.longitude;
-    let phenomRegister = new ObjectId(req.params.id);
-    let userId = new ObjectId(req.user._id);
-    let queryVisited = {
-      $and: [
-        { _id: ObjectId(`${phenomRegister}`) },
-        { visitorsId: ObjectId(`${userId}`) }
-      ]
-    };
 
-    Phenomenon.find(queryVisited).then(visited => {
-      if (visited.length == 1) {
-        console.log("ya has estado aqui");
-        res.redirect(`/phenomena/${phenomRegister}`);
-      } else {
-        Phenomenon.findById(phenomRegister).then(phenomenon => {
-          let phenLong = phenomenon.location.coordinates[1];
-          let phenLat = phenomenon.location.coordinates[0];
+    let userId = req.user._id
+    
+    //geolocate check
+    if(geoLat ==undefined || geoLong == undefined){
+      req.flash("error", "geolocation not found");
+      res.redirect(`/phenomena/${req.params.id}`);
+    } else {
+      Phenomenon.findById(req.params.id).then(phenomenon=>{
+        //distance check
 
-          if (distanceCheck(geoLat, geoLong, phenLat, phenLong, "K") < 0.2) {
-            Phenomenon.findByIdAndUpdate(phenomRegister, {
-              $push: { visitorsId: userId }
-            }).then(() => res.redirect(`/phenomena/${phenomRegister}`));
-          } else {
-            res.redirect(`/phenomena/${phenomRegister}`);
-            console.log("no puedes");
-          }
-        });
-      }
-    });
+        let phenLat = phenomenon.location.coordinates[0];
+        let phenLong = phenomenon.location.coordinates[1];
+
+        if (distanceCheck(geoLat, geoLong, phenLat, phenLong, "K") > 0.1) {
+          req.flash("error", "you need to be near (min 150m)");
+          res.redirect(`/phenomena/${req.params.id}`);
+          //already register check
+        } else if(phenomenon.visitorsId.indexOf(userId) !==-1){
+          req.flash("error", "ya has registrado esta visita");
+          res.redirect(`/phenomena/${req.params.id}`);
+        } else {
+          phenomenon.visitorsId.push(userId);
+          phenomenon.save();
+          res.redirect(`/phenomena/${req.params.id}`);
+          
+        }
+      })
+    }
   }
 );
 
@@ -200,26 +183,19 @@ router.post(
   "/phenomena/:id/favourite",
   isLoggedIn("/auth/login"),
   (req, res) => {
-    let phenomFav = new ObjectId(req.params.id);
-    let userId = new ObjectId(req.user._id);
-    let queryFavourite = {
-      $and: [
-        { _id: ObjectId(`${userId}`) },
-        { favPhenoms: ObjectId(`${phenomFav}`) }
-      ]
-    };
+    let userId = req.user._id;
+    Phenomenon.findById(req.params.id).then(phenomenon=>{
 
-
-    User.find(queryFavourite).then(favourite => {
-      if (favourite.length == 1) {
+      if(phenomenon.whoseFavId.indexOf(userId) !==-1){
+        req.flash("error", "already in favs");
         console.log("ya es favorito");
-        res.redirect(`/phenomena/${phenomFav}`);
+        res.redirect(`/phenomena/${req.params.id}`);
       } else {
-        User.findByIdAndUpdate(userId, {
-          $push: { favPhenoms: phenomFav }
-        }).then(() => res.redirect(`/phenomena/${phenomFav}`));
+        phenomenon.whoseFavId.push(userId);
+        phenomenon.save()
+        res.redirect(`/phenomena/${req.params.id}`)
       }
-    });
+    })
   }
 );
 
@@ -238,13 +214,6 @@ router.post("/phenomena/:id/postReview", (req, res) => {
     ])
       .then(() => res.redirect(`/phenomena/${req.params.id}`))
 
-      .catch(err => {
-        // When the ID isn't valid, it shows up as an error
-        console.log(
-          err.message,
-          "Error while fetching the ToDo data on the database"
-        );
-      });
   });
 });
 

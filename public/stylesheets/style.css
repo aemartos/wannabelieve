@@ -3211,6 +3211,16 @@ form {
       .container.cont_phenomena_detailPage .section.firstSection .discoveredOn.alone {
         text-align: center;
         margin-top: .5em; }
+    .container.cont_phenomena_detailPage .section .messages {
+      word-spacing: 0;
+      font-family: 'Share Tech Mono';
+      font-size: .8em;
+      text-align: center; }
+      .container.cont_phenomena_detailPage .section .messages .error-message {
+        padding: .5em 0 0;
+        opacity: .5;
+        text-transform: lowercase;
+        color: #F25652; }
     .container.cont_phenomena_detailPage .section.sectionAddToRoute {
       text-align: center;
       margin: 0 auto;
@@ -3354,12 +3364,6 @@ form {
               font-size: 2em; }
               .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .commentBox button.addCommentBtn span:active {
                 color: #39FF14; }
-        .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .messages {
-          width: 85%;
-          word-spacing: 0; }
-          .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .messages .error-message {
-            padding: .5em 0 0;
-            opacity: .5; }
 
 .container.cont_userProfile_page {
   display: flex;
