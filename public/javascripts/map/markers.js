@@ -47,9 +47,8 @@ const addWindow = (title, description, map, type, marker, id) => {
                   </div>
                   <a class="goPhenom" href="/phenomena/${id}"><span class="x-back"></span></a>
                 </div>`;
-
-  infowindow = new google.maps.InfoWindow({content, maxWidth: 200});
   marker.addListener('click', function() {
+    infoWindows.forEach(e => e.close());
     infowindow.open(map, marker);
     google.maps.event.addListener(infowindow,'domready',()=>{
       [...document.getElementsByClassName('gm-style-iw')].forEach(el=>{
@@ -57,13 +56,13 @@ const addWindow = (title, description, map, type, marker, id) => {
       });
     });
   });
+  infowindow = new google.maps.InfoWindow({content, maxWidth: 200});
   infoWindows.push(infowindow);
   return infowindow;
 };
 
 
 //Close infoWindow and filtersBox when clicking the map
-
 const closeInfoWindow = () => {
   document.getElementById('mainMap').onclick = e => {
     if (e.target && e.target.tagName === 'DIV' && !e.target.getAttribute('id')&& !e.target.getAttribute('class')) {
