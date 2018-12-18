@@ -3035,11 +3035,12 @@ form {
         align-items: center;
         padding: 0.3em 0.3em; }
         .container.cont_phenomena_page .phsFeed .phenomCard .phType img {
-          width: 40px;
-          height: 40px;
-          background-color: grey;
-          border-radius: 25%;
-          padding: 0.3em 0.3em; }
+          width: 3.5em;
+          height: 3.5em;
+          border-radius: 5em;
+          padding: 0.3em 0.3em;
+          border: 3px solid #fff;
+          margin-right: .5em; }
       .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails {
         width: 70%;
         word-spacing: 0; }
@@ -3115,7 +3116,7 @@ form {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    border-bottom: 2px solid white;
+    border-bottom: 4px solid white;
     padding: 0 0; }
   .container.cont_phenomena_detailPage .section {
     width: 100%;
@@ -3190,11 +3191,35 @@ form {
       .container.cont_phenomena_detailPage .section.firstSection .discoveredOn.alone {
         text-align: center;
         margin-top: .5em; }
-    .container.cont_phenomena_detailPage .section.secondSection .discoveredBy .username {
-      opacity: .5; }
+    .container.cont_phenomena_detailPage .section.sectionAddToRoute {
+      text-align: center;
+      margin: 0 auto;
+      padding: .8em 0;
+      font-size: .8em;
+      background-color: #8f8f8f; }
+      .container.cont_phenomena_detailPage .section.sectionAddToRoute .addToRouteBtn {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        color: #010f0c; }
+        .container.cont_phenomena_detailPage .section.sectionAddToRoute .addToRouteBtn span.routesBtn {
+          margin-right: .5em; }
+    .container.cont_phenomena_detailPage .section.secondSection .discoveredBy {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      flex-flow: row wrap;
+      justify-content: flex-start; }
+      .container.cont_phenomena_detailPage .section.secondSection .discoveredBy .username {
+        opacity: .5;
+        font-size: .8em;
+        line-height: 1.4em; }
     .container.cont_phenomena_detailPage .section.thirdSection .text {
       margin-top: .5em;
-      opacity: .5; }
+      opacity: .5;
+      font-size: .8em;
+      line-height: 1.4em; }
     .container.cont_phenomena_detailPage .section.fourthSection p, .container.cont_phenomena_detailPage .section.fifthSection p {
       display: flex;
       flex-flow: row nowrap;
@@ -3578,6 +3603,8 @@ form {
       display: none !important; }
     .container.cont_routeDetail_page .routeMap .gmnoprint, .container.cont_routeDetail_page .routeMap .gm-style-cc {
       display: none; }
+    .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom a.goPhenom {
+      font-size: 3em; }
   .container.cont_routeDetail_page .section {
     width: 100%;
     padding: 1.2em 0;
@@ -3651,9 +3678,18 @@ form {
       .container.cont_routeDetail_page .section.firstSection .createdOn.alone {
         text-align: center;
         margin-top: .5em; }
-    .container.cont_routeDetail_page .section.secondSection .createdBy .username {
-      opacity: .5; }
+    .container.cont_routeDetail_page .section.secondSection .createdBy {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: flex-start; }
+      .container.cont_routeDetail_page .section.secondSection .createdBy .username {
+        opacity: .5;
+        font-size: .8em;
+        line-height: 1.4em; }
     .container.cont_routeDetail_page .section.thirdSection .text {
+      font-size: .8em;
+      line-height: 1.4em;
       margin-top: .5em;
       opacity: .5; }
     .container.cont_routeDetail_page .section.fourthSection p, .container.cont_routeDetail_page .section.fifthSection p {

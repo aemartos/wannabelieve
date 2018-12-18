@@ -31,7 +31,7 @@
 
 <div class="section sectionBtn">
   {{#if visited}}
-  <p class="registered"><span class="x-sighting-fill active"></span><span class="text">registered</span></p>
+  <p class="registered"><span class="x-sighting-fill active"></span><span class="text">sighted</span></p>
   {{else}}
   <div class="registerPhenom">
     <form method="POST" action="/phenomena/{{phenomenon._id}}/register">
@@ -39,7 +39,7 @@
         <input type="hidden" name="latitude" placeholder="latitude">
         <input type="hidden" name="longitude" placeholder="longitude">
       </div>
-      <button type="submit"><span class="x-sighting"></span></button><span class="text">register</span>
+      <button type="submit"><span class="x-sighting"></span></button><span class="text">sighted</span>
     </form>
   </div>
   {{/if}}
@@ -55,8 +55,12 @@
   {{/if}}
 </div>
 
+<div class="section sectionAddToRoute">
+  <a class="addToRouteBtn" href="/routes/add/{{phenomenon._id}}"><span class="x-routes routesBtn"></span><span class="text"> add to route</span></a>
+</div>
+
 <div class="section secondSection">
-  <p class="discoveredBy">discovered by: <span class="username">{{creator.username}}</span></p>
+  <p class="discoveredBy"><span class="text">discovered by:</span> <span class="username">{{creator.username}}</span></p>
 </div>
 
 <div class="section thirdSection">
@@ -125,9 +129,6 @@
 
 
 
-
-{{!-- Tere necesito un botón para añadir fenómeno a ruta, te lo dejo aquí provisional --}}
-<a href="/routes/add/{{phenomenon._id}}"><span class="x-routes"></span><span class="text"> add to route</span></a>
 
 
 <script src="/javascripts/accordion.js"></script>

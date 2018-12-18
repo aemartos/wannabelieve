@@ -13,7 +13,7 @@
           -webkit-text-stroke: .3px $secondarycolor
     .slider
       +row-flex
-      border-bottom: 2px solid white
+      border-bottom: 4px solid white
       padding: 0 0
     .section
       width: 100%
@@ -84,15 +84,36 @@
           &.alone
             text-align: center
             margin-top: .5em
+      &.sectionAddToRoute
+        text-align: center
+        margin: 0 auto
+        padding: .8em 0
+        font-size: .8em
+        background-color: $darkbg
+        .addToRouteBtn
+          //width: 85%
+          +row-flex
+          justify-content: center
+          color: $menubg
+          span
+            &.routesBtn
+              margin-right: .5em
       &.secondSection
         .discoveredBy
+          +row-flex
+          flex-flow: row wrap
+          justify-content: flex-start
           //text-align: center
           .username
             opacity: .5
+            font-size: .8em
+            line-height: 1.4em
       &.thirdSection
         .text
           margin-top: .5em
           opacity: .5
+          font-size: .8em
+          line-height: 1.4em
       &.fourthSection, &.fifthSection
         p
           +row-flex

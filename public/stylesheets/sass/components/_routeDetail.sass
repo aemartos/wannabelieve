@@ -20,6 +20,11 @@
         display: none !important
       .gmnoprint, .gm-style-cc
         display: none
+      .gm-style-iw
+        .infoPhenom
+          a
+            &.goPhenom
+              font-size: 3em
     .section
       width: 100%
       padding: 1.2em 0
@@ -91,11 +96,16 @@
             margin-top: .5em
       &.secondSection
         .createdBy
-          //text-align: center
+          +row-flex
+          justify-content: flex-start
           .username
             opacity: .5
+            font-size: .8em
+            line-height: 1.4em
       &.thirdSection
         .text
+          font-size: .8em
+          line-height: 1.4em
           margin-top: .5em
           opacity: .5
       &.fourthSection, &.fifthSection
