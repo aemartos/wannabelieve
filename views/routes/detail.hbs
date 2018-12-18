@@ -5,6 +5,7 @@ window.inRoute = true;
 </script>
 
 <div class="mainMap" id="mainMap"></div>
+<p class="finishRoute" id="finishRoute"><a href="#"><span class="x-sighting"></span> <span class="text">finish</span></a></p>
 
 <div class="section firstSection">
   <div class="routeMainInfo">
@@ -26,7 +27,7 @@ window.inRoute = true;
 </div>
 
 <div class="section sectionBtn">
-  <p class="startRoute"><span class="x-sighting"></span> <span class="text">start</span></p>
+  <p class="startRoute" id="startRoute"><a href="#"><span class="x-sighting"></span> <span class="text">start</span></a></p>
   <div class="favoriteRoute">
     <form method="POST" action="/routes/{{route._id}}/toggleFav">
       <button type="submit"><span class="x-favorite{{#if fav}}-fill active{{/if}}"></span></button><span class="text {{!--{{#if fav}}active{{/if}}--}}">favorite</span>

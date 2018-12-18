@@ -31,3 +31,26 @@ markers.forEach(el => {
     infoWindows.forEach(e => e.close());
   });
 });
+
+/* ------------ START ROUTE -------------- */
+
+
+//hide and show map
+const sections = [...document.getElementsByClassName('section')];
+document.getElementById('startRoute').onclick = (el) => {
+  map.setZoom(2);
+  document.getElementById('mainMap').style.height = "100%";
+  document.getElementById('finishRoute').style.display = "inline-block";
+  sections.forEach(e => {
+    e.style.display = "none";
+  });
+};
+
+document.getElementById('finishRoute').onclick = (el) => {
+  fixZoom();
+  document.getElementById('mainMap').style.height = "33%";
+  document.getElementById('finishRoute').style.display = "none";
+  sections.forEach(e => {
+    e.style.display = "block";
+  });
+};

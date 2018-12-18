@@ -3605,13 +3605,37 @@ form {
     background-color: #8f8f8f;
     height: 33%;
     width: 100%;
-    border-bottom: 4px solid #fff; }
+    border-bottom: 4px solid #fff;
+    transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
     .container.cont_routeDetail_page .mainMap a[rel='noopener'] {
       display: none !important; }
     .container.cont_routeDetail_page .mainMap .gmnoprint, .container.cont_routeDetail_page .mainMap .gm-style-cc {
       display: none; }
     .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom a.goPhenom {
       font-size: 3em; }
+  .container.cont_routeDetail_page .finishRoute {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    display: none;
+    padding: .5em 1em;
+    font-size: .8em;
+    background-color: #010f0c;
+    border: 4px solid #fff; }
+    .container.cont_routeDetail_page .finishRoute a {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      color: #fff; }
+      .container.cont_routeDetail_page .finishRoute a span {
+        color: #fff;
+        -webkit-text-stroke: 0.3px #fff;
+        margin-right: .5em; }
   .container.cont_routeDetail_page .section {
     width: 100%;
     padding: 1.2em 0;
@@ -3625,8 +3649,15 @@ form {
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
+      display: flex !important;
       justify-content: center;
       background-color: #8f8f8f; }
+      .container.cont_routeDetail_page .section.sectionBtn .startRoute a {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        color: #010f0c; }
       .container.cont_routeDetail_page .section.sectionBtn p, .container.cont_routeDetail_page .section.sectionBtn .favoriteRoute {
         display: flex;
         flex-flow: row nowrap;

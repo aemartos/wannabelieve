@@ -16,6 +16,7 @@
       height: 33%
       width: 100%
       border-bottom: 4px solid $maincolor
+      +transition_default
       a[rel='noopener']
         display: none !important
       .gmnoprint, .gm-style-cc
@@ -25,6 +26,23 @@
           a
             &.goPhenom
               font-size: 3em
+    .finishRoute
+      position: absolute
+      bottom: 1em
+      left: 1em
+      display: none
+      padding: .5em 1em
+      font-size: .8em
+      background-color: $menubg
+      border: 4px solid $maincolor
+      a
+        +row-flex
+        justify-content: center
+        color: $maincolor
+        span
+          color: $maincolor
+          -webkit-text-stroke: .3px $maincolor
+          margin-right: .5em
     .section
       width: 100%
       padding: 1.2em 0
@@ -36,8 +54,14 @@
       &.sectionBtn
         padding: 0
         +row-flex
+        display: flex !important
         justify-content: center
         background-color: $darkbg
+        .startRoute
+          a
+            +row-flex
+            justify-content: center
+            color: $menubg
         p, .favoriteRoute
           +row-flex
           justify-content: center
