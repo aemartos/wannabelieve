@@ -6,6 +6,9 @@ const path = require('path');
 const dotenv = require('dotenv');
 dotenv.config({path: path.join(__dirname, '../.private.env')});
 
+const createPhenomena = require('./seedsPhenomena');
+const createRoutes = require('./seedsRoutes');
+
 mongoose.connect(process.env.DBURL, {useNewUrlParser: true})
   .then(x => {console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)})
   .catch(err => {console.error("Error connecting to mongo", err)});
@@ -52,5 +55,23 @@ let users = [
 User.collection.drop();
 
 User.create(users)
-  .then(users => {console.log(`Created users!`)})
-  .then(() => {mongoose.disconnect()});
+  .then(users => {
+    console.log(`Created users!`);
+    users.map(e => {
+      if(e.username === "wannabelieve") {
+        Promise.all([
+          createPhenomena(e._id),
+          createRoutes(e._id)
+        ])
+        .then(() => {
+          mongoose.disconnect();
+          console.log('unicornio');
+        });
+      }
+      return e;
+    });
+  }).catch(() => {
+    mongoose.disconnect();
+
+    console.log('purpurina');
+  });

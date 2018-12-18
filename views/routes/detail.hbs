@@ -1,4 +1,7 @@
-<script>window.phenomena = {{{phenomena}}};</script>
+<script>
+  window.phenomena = {{{phenomena}}};
+  window.searchBox = false;
+  </script>
 
 <div class="mainMap" id="mainMap"></div>
 <p class="finishRoute" id="finishRoute">{{!--<span class="x-sighting"></span>--}} <span class="text">finish</span></p>
@@ -104,11 +107,11 @@
   </form>
 </div>
 
-<script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDALLA4IgWrHmR_9IiIAhCE6-keEuJks34"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDALLA4IgWrHmR_9IiIAhCE6-keEuJks34"></script>
 <script src="/javascripts/map/mapHelpers.js"></script>
 <script src="/javascripts/map/markers.js"></script>
 <script src="/javascripts/map/mapActions.js"></script>
 <script src="/javascripts/map/geolocate.js"></script>
 <script src="/javascripts/map/mapStyles.js"></script>
-<script src="/javascripts/routes/routes.js"></script>
+<script src="/javascripts/routes.js"></script>
 <script src="/javascripts/accordion.js"></script>

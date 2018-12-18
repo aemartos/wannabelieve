@@ -95,6 +95,7 @@ const sections = [...document.getElementsByClassName('section')];
 document.getElementById('startRoute').onclick = (el) => {
   isGeolocating = true;
   RTLinterval = setInterval(realTimeLocation, 1000);
+  map.setZoom(12);
   markersFunction(true);
   document.getElementById('mainMap').style.height = "100%";
   document.getElementById('finishRoute').style.display = "inline-block";

@@ -5,9 +5,9 @@ const path = require('path');
 const dotenv = require('dotenv');
 dotenv.config({path: path.join(__dirname, '../.private.env')});
 
-mongoose.connect(process.env.DBURL, {useNewUrlParser: true})
-  .then(x => {console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)})
-  .catch(err => {console.error("Error connecting to mongo", err)});
+// mongoose.connect(process.env.DBURL, {useNewUrlParser: true})
+//   .then(x => {console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)})
+//   .catch(err => {console.error("Error connecting to mongo", err)});
 
 //lng, lat
 let phenomena = [
@@ -19,7 +19,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-116.4447316, 52.2236092]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://i.pinimg.com/originals/08/02/02/0802020181b082b6d7128bc5a67031e5.jpg"]
   },
   {
@@ -30,7 +30,7 @@ let phenomena = [
       type: "Point",
       coordinates: [162.2491575, -77.7166662]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls:["https://thumbor.forbes.com/thumbor/1280x868/https%3A%2F%2Fblogs-images.forbes.com%2Ftrevornace%2Ffiles%2F2017%2F04%2Fblood-falls-1200x585.jpg"]
   },
   {
@@ -41,7 +41,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-105.569769, 20.699692]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["http://ichef.bbci.co.uk/wwfeatures/wm/live/1600_900/images/live/p0/42/l6/p042l6q8.jpg"]
   },
   {
@@ -52,7 +52,7 @@ let phenomena = [
       type: "Point",
       coordinates: [123.1852682, -34.0949983]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["http://ichef.bbci.co.uk/wwfeatures/wm/live/1600_900/images/live/p0/42/l6/p042l6q8.jpg"]
   },
   {
@@ -63,7 +63,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-3.7265464, 40.4523082]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://pbs.twimg.com/profile_images/879273650192609281/KIuRFg6B_400x400.jpg"]
   },
   {
@@ -74,7 +74,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-3.7055272, 40.416527]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545068795/phenomena-pictures/joseCowboy.png"]
   },
   {
@@ -85,7 +85,7 @@ let phenomena = [
       type: "Point",
       coordinates: [31.7196536, 30.0207008]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545067787/phenomena-pictures/CairoAlienConstruction.png"]
   },
   {
@@ -96,7 +96,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-81.9639787, -79.9773191]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545068069/phenomena-pictures/PyramidAntarctica.png"]
   },
   {
@@ -107,7 +107,7 @@ let phenomena = [
       type: "Point",
       coordinates: [62.1833549, 52.4797941]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545068354/phenomena-pictures/LisakovskPentagram.png"]
   },
   {
@@ -118,7 +118,7 @@ let phenomena = [
       type: "Point",
       coordinates: [114.1566755, -21.815346]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545068509/phenomena-pictures/Hexagon.png"]
   },
   {
@@ -129,7 +129,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-116.8535996, 37.6284057]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545069646/phenomena-pictures/AlienTriangleSign.png"]
   },
   {
@@ -140,7 +140,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-116.8701787, 37.4027942]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545069999/phenomena-pictures/NevadaCircle.png"]
   },
   {
@@ -151,7 +151,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-116.8528342, 37.5641652]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545070137/phenomena-pictures/NevadaTarget.png"]
   },
   {
@@ -162,7 +162,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-69.6340762, -19.9487334]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545070305/phenomena-pictures/GiganteTarapaca.png"]
   },
   {
@@ -173,7 +173,7 @@ let phenomena = [
       type: "Point",
       coordinates: [1.1393707, 51.101225]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545070436/phenomena-pictures/FolkestoneWhiteHorse.png"]
   },
   {
@@ -184,7 +184,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-69.9681224, -19.5489396]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545070614/phenomena-pictures/GeoglifoTiliviche.jpg"]
   },
   {
@@ -195,7 +195,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-30.1107492, -80.5664016]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545070818/phenomena-pictures/ufoMark.png"]
   },
   {
@@ -206,7 +206,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-60.958801, -63.0489288]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545079365/phenomena-pictures/kraken.png"]
   },
   {
@@ -217,7 +217,7 @@ let phenomena = [
       type: "Point",
       coordinates: [99.7181613, -66.6032979]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545079535/phenomena-pictures/SaiyajinSpaceship.png"]
   },
   {
@@ -228,7 +228,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-116.0103273, 36.9290293]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545079678/phenomena-pictures/MillenniumFalconUFO.png"]
   },
   {
@@ -239,7 +239,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-64.6094487, -10.2672547]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545080075/phenomena-pictures/strangeUfo.png"]
   },
   {
@@ -250,7 +250,7 @@ let phenomena = [
       type: "Point",
       coordinates: [100.5843624, 6.0477867]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545080270/phenomena-pictures/ufoSighting.png"]
   },
   {
@@ -261,7 +261,7 @@ let phenomena = [
       type: "Point",
       coordinates: [21.2998613, 45.7034537]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545081793/phenomena-pictures/ufoBackyard.png", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545081787/phenomena-pictures/ufoBackyard_3D.png"]
   },
   {
@@ -272,7 +272,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-116.4725983, 37.3057244]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545081935/phenomena-pictures/shadowOVNI.png"]
   },
   {
@@ -283,7 +283,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-112.6358287, 33.7450844]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545082117/phenomena-pictures/bigTriangle.png"]
   },
   {
@@ -294,7 +294,7 @@ let phenomena = [
       type: "Point",
       coordinates: [11.7306413, 48.3536035]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545082321/phenomena-pictures/timeIsland.png"]
   },
   {
@@ -305,7 +305,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-0.5556809, 51.8484132]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545082434/phenomena-pictures/lionPoint.png"]
   },
   {
@@ -316,7 +316,7 @@ let phenomena = [
       type: "Point",
       coordinates: [93.3884928, 40.4572688]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545082675/phenomena-pictures/strangeMarks.png"]
   },
   {
@@ -327,7 +327,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-110.8321706, 32.154355]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545082902/phenomena-pictures/planeGraveyard01.png", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545082902/phenomena-pictures/planeGraveyard02.png", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545082901/phenomena-pictures/planeGraveyard03.png"]
   },
   {
@@ -338,7 +338,7 @@ let phenomena = [
       type: "Point",
       coordinates: [33.6316469, 27.3802495]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545083036/phenomena-pictures/desertBreath.jpg"]
   },
   {
@@ -349,7 +349,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-117.1578331, 32.6767003]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545083260/phenomena-pictures/navalBase.png"]
   },
   {
@@ -360,7 +360,7 @@ let phenomena = [
       type: "Point",
       coordinates: [31.3961856, -4.2892671]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545083437/phenomena-pictures/buffaloHerd.png"]
   },
   {
@@ -371,7 +371,7 @@ let phenomena = [
       type: "Point",
       coordinates: [151.0804758, -33.8363363]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545084201/phenomena-pictures/ship01.jpg", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545084202/phenomena-pictures/ship02.png"]
   },
   {
@@ -382,7 +382,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-110.1179596, 50.0102157]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545084449/phenomena-pictures/badlandsGuardian.png"]
   },
   {
@@ -393,7 +393,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-115.9925688, 43.6449735]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545084594/phenomena-pictures/jesusLovesYou.png"]
   },
   {
@@ -404,7 +404,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-68.1903273, -37.6545474]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545084827/phenomena-pictures/rioNegro.png"]
   },
   {
@@ -415,7 +415,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-4.0834973, 40.7123606]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545085130/phenomena-pictures/sanatorioMarina_01.jpg", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545085130/phenomena-pictures/sanatorioMarina_02.jpg", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545085130/phenomena-pictures/sanatorioMarina_03.jpg", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545085131/phenomena-pictures/sanatorioMarina_04.png"]
   },
   {
@@ -426,7 +426,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-89.4859745, 41.8418626]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545085814/phenomena-pictures/phallicBuilding.png"]
   },
   {
@@ -437,7 +437,7 @@ let phenomena = [
       type: "Point",
       coordinates: [131.0292422, -25.3456324]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545085955/phenomena-pictures/uluru.png"]
   },
   {
@@ -448,7 +448,7 @@ let phenomena = [
       type: "Point",
       coordinates: [-111.0245767, 35.0271894]
     },
-    creatorId: "5c17d333e29a2fdbba269dd1",
+    //creatorId: "5c17d333e29a2fdbba269dd1",
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545086077/phenomena-pictures/MeteorCrater.png"]
   }
 ];
@@ -461,6 +461,13 @@ let phenomena = [
 
 Phenomenon.collection.drop();
 
-Phenomenon.create(phenomena)
-  .then(phenoms => {console.log(`Created phenomena!`)})
-  .then(() => {mongoose.disconnect()});
+const createPhenomena = (idUser) => {
+  const phenom = phenomena.map(e => ({...e, creatorId: idUser}));
+  return Phenomenon.create(phenom)
+    .then(phenoms => {
+      console.log(`Created phenomena!`);
+    });
+}
+
+
+module.exports = createPhenomena;

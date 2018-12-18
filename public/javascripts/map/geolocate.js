@@ -24,7 +24,6 @@ const realTimeLocation = () => {
         console.log('Position updated');
         console.log(location);
         map.setCenter(location);
-        map.setZoom(14);
         if (meMarker) meMarker.setMap(null);
         meMarker = newMeMarker(location);
         loadData(map);

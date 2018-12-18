@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   let searchInput = document.getElementById('searchInput');
   //convert serarch input in a searchBox to find places with this library
-  let searchBox = new google.maps.places.SearchBox(searchInput);
+  if(window.searchBox) {let searchBox = new google.maps.places.SearchBox(searchInput);}
 
   const searchReq = (e) => {
     e.preventDefault();
@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function() {
           .filter(el=>el.checked)
           .map(filter=>filter.value);
         removeMarkers(markers);
-        filteredPhenomena= window.phenomena.filter(ph => activeFilters.includes(ph.type));
+        filteredPhenomena = window.phenomena.filter(ph => activeFilters.includes(ph.type));
         loadData(map,{phenomena: filteredPhenomena});
       };
     });
