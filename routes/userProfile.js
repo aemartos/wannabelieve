@@ -11,20 +11,32 @@ const uploadProfilePicture = uploadMethods.uploadProfilePicture;
 
 /* GET home page */
 router.get("/profile", isLoggedIn("/auth/login"), (req, res, next) => {
-  let queryReg = { creatorId: new ObjectId(`${req.user._id}`) };
-  let queryVisits = { visitorsId: new ObjectId(`${req.user._id}`) };
-  let numFavs = req.user.favPhenoms.length
-  let userCreationDate = `${req.user.createdAt.getDay()}/${req.user.createdAt.getMonth()}/${req.user.createdAt.getFullYear()}`;
 
-  Promise.all([Phenomenon.find(queryReg), Phenomenon.find(queryVisits)]).then(
-    ([phenReg, phenVisits]) => {
-      let numberReg = phenReg.length;
-      let numberVisits = phenVisits.length;
+  const sightedQuery = { visitorsId: new ObjectId(`${req.user._id}`) }
+  const registerQuery = { creatorId: new ObjectId(`${req.user._id}`) }
+  const favQuery = { whoseFavId: new ObjectId(`${req.user._id}`) }
 
+  let userCreationDate = `${req.user.createdAt.getDay()}/${req.user.createdAt.getMonth()+1}/${req.user.createdAt.getFullYear()}`;
+  
+  Promise.all([
+    Phenomenon.find(sightedQuery), 
+    Phenomenon.find(registerQuery),
+    Phenomenon.find(favQuery)
+  ]).then(
+      ([sighted, registed, favourites]) => {
+        let numSight = sighted.length;
+        let numReg = registed.length;
+        let numFav = favourites.length;
+
+
+        console.log(sighted)
       res.render("userProfile", {
-        numFavs,
-        numberReg,
-        numberVisits,
+        numSight,
+        sighted,
+        numReg,
+        registed,
+        numFav,
+        favourites,
         userCreationDate,
         actual_page: "userProfile_page",
         profile: true

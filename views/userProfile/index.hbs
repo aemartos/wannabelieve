@@ -33,20 +33,53 @@
   <p>{{user.description}}</p>
 </div>
 
-<div class="proMetrics">
-  <div class="proBox userSignings">
-    <i class="x-sighting"></i>
-    <p>{{numberVisits}}</p>
-    <p>sightnings</p>
-  </div>
-  <div class="proBox userRegisters">
-    <i class="x-registered"></i>
-    <p>{{numberReg}}</p>
-    <p>registered</p>
-  </div>
-  <div class="proBox userFavs">
-    <i class="x-favorite"></i>
-    <p>{{numFavs}}</p>
-    <p>favourites</p>
-    </div>
+
+<div class="section fourthSection">
+  <p class="titles"><span class="x-sighting" ></span><span class="text">{{numSight}}</span><span class="text">Sightnings</span> <span class="x-back" id="sightSection"></span></p>
+  <ul class="list" id="sightAccordion">
+    {{#unless sighted}}
+      <li class="title noList">You have no sightnings</li>
+    {{/unless}}
+    {{#each sighted}}
+      <li class="title">
+        <a href="/phenomena/{{this._id}}/">
+          <span>{{this.name}}</span>
+        </a>
+      </li>
+    {{/each}}
+  </ul>
 </div>
+
+<div class="section fourthSection">
+  <p class="titles"><span class="x-registered" ></span><span class="text">{{numReg}}</span><span class="text">Registers</span> <span class="x-back" id="regSection"></span></p>
+  <ul class="list" id="regAccordion">
+    {{#unless registed}}
+      <li class="title noList">You have no registers</li>
+    {{/unless}}
+    {{#each registed}}
+      <li class="title">
+        <a href="/phenomena/{{this._id}}/">
+          <span>{{this.name}}</span>
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
+<div class="section fourthSection">
+  <p class="titles"><span class="x-favorite" ></span><span class="text">{{numFav}}</span><span class="text">Favourites</span> <span class="x-back" id="favSection"></span></p>
+  <ul class="list" id="favAccordion">
+    {{#unless favourites}}
+      <li class="title noList">You have no favorites</li>
+    {{/unless}}
+    {{#each favourites}}
+      <li class="title">
+        <a href="/phenomena/{{this._id}}/">
+          <span>{{this.name}}</span>
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
+<script src="/javascripts/accordion.js"></script>

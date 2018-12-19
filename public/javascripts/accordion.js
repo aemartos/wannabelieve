@@ -1,27 +1,5 @@
-var accItem = document.getElementsByClassName("accordionItem");
-var accHD = document.getElementsByClassName("accordionItemHeading");
 
-//console.log(accItem);
-//console.log(accHD);
-for (i = 0; i < accHD.length; i++) {
-  accHD[i].addEventListener("click", toggleItem, false);
-}
-
-function toggleItem() {
-  var itemClass = this.parentNode.className;
-
-  console.log(itemClass)
-
-  for (i = 0; i < accItem.length; i++) {
-    accItem[i].className = "accordionItem close";
-  }
-
-  if (itemClass == "accordionItem close") {
-    this.parentNode.className = "accordionItem open";
-  }
-}
-
-
+window.onload = function() {
 /*-------------------------*/
 
 // ANIMATE HEIGHT ACCORDION
@@ -51,3 +29,7 @@ const accordion = (trigger, content) => {
 if(document.getElementById("expandComments")) accordion(document.getElementById("expandComments"), document.getElementById("commentsAccordion"));
 if(document.getElementById("expandPhenomena")) accordion(document.getElementById("expandPhenomena"), document.getElementById("phenomsAccordion"));
 if(document.getElementById("expandRoutes")) accordion(document.getElementById("expandRoutes"), document.getElementById("routesAccordion"));
+if(document.getElementById("sightSection")) accordion(document.getElementById("sightSection"), document.getElementById("sightAccordion"));
+if(document.getElementById("regSection")) accordion(document.getElementById("regSection"), document.getElementById("regAccordion"));
+if(document.getElementById("favSection")) accordion(document.getElementById("favSection"), document.getElementById("favAccordion"));
+}

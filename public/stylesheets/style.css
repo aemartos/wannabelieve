@@ -3402,9 +3402,17 @@ form {
                 color: #39FF14; }
 
 .container.cont_userProfile_page {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center; }
+  color: #010f0c;
+  word-spacing: -.3em; }
+  .container.cont_userProfile_page span[class*='x-'] {
+    color: #010f0c;
+    font-size: 1.5em;
+    -webkit-text-stroke: 0.3px #010f0c;
+    text-transform: uppercase; }
+    .container.cont_userProfile_page span[class*='x-']:active {
+      color: #39FF14; }
+      .container.cont_userProfile_page span[class*='x-']:active[class*='x-'] {
+        -webkit-text-stroke: 0.3px #39FF14; }
   .container.cont_userProfile_page .proHeader {
     display: flex;
     flex-flow: row nowrap;
@@ -3457,6 +3465,76 @@ form {
     width: 100%;
     padding: 0 5% 5% 5%;
     align-items: flex-start; }
+  .container.cont_userProfile_page .section {
+    width: 100%;
+    padding: 1.2em 0;
+    border-bottom: 4px solid #fff;
+    text-transform: lowercase; }
+    .container.cont_userProfile_page .section p {
+      width: 85%;
+      margin: 0 auto; }
+    .container.cont_userProfile_page .section.sectionBtn {
+      padding: 0;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      background-color: #8f8f8f; }
+      .container.cont_userProfile_page .section.sectionBtn p {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        font-size: .8em;
+        width: 50%;
+        padding: .8em 0; }
+        .container.cont_userProfile_page .section.sectionBtn p:first-child {
+          border-right: 4px solid #fff; }
+        .container.cont_userProfile_page .section.sectionBtn p span {
+          margin-right: .5em; }
+          .container.cont_userProfile_page .section.sectionBtn p span.active {
+            color: #39FF14; }
+    .container.cont_userProfile_page .section.fourthSection p {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between; }
+      .container.cont_userProfile_page .section.fourthSection p span[class='x-back']:before {
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg); }
+      .container.cont_userProfile_page .section.fourthSection p span:active {
+        color: #010f0c; }
+        .container.cont_userProfile_page .section.fourthSection p span:active[class*='x-'] {
+          -webkit-text-stroke: 0.3px #010f0c; }
+    .container.cont_userProfile_page .section.fourthSection .titles {
+      justify-content: space-between; }
+      .container.cont_userProfile_page .section.fourthSection .titles #sightSection.rotate, .container.cont_userProfile_page .section.fourthSection .titles #regSection.rotate, .container.cont_userProfile_page .section.fourthSection .titles #favSection.rotate {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg); }
+    .container.cont_userProfile_page .section.fourthSection ul#sightAccordion, .container.cont_userProfile_page .section.fourthSection ul#regAccordion, .container.cont_userProfile_page .section.fourthSection ul#favAccordion {
+      width: 85%;
+      margin: 0 auto; }
+      .container.cont_userProfile_page .section.fourthSection ul#sightAccordion li.title, .container.cont_userProfile_page .section.fourthSection ul#regAccordion li.title, .container.cont_userProfile_page .section.fourthSection ul#favAccordion li.title {
+        font-size: .8em;
+        margin-bottom: .5em; }
+        .container.cont_userProfile_page .section.fourthSection ul#sightAccordion li.title.noList, .container.cont_userProfile_page .section.fourthSection ul#regAccordion li.title.noList, .container.cont_userProfile_page .section.fourthSection ul#favAccordion li.title.noList {
+          opacity: .5; }
+        .container.cont_userProfile_page .section.fourthSection ul#sightAccordion li.title:last-child, .container.cont_userProfile_page .section.fourthSection ul#regAccordion li.title:last-child, .container.cont_userProfile_page .section.fourthSection ul#favAccordion li.title:last-child {
+          margin-bottom: 0; }
+        .container.cont_userProfile_page .section.fourthSection ul#sightAccordion li.title a, .container.cont_userProfile_page .section.fourthSection ul#regAccordion li.title a, .container.cont_userProfile_page .section.fourthSection ul#favAccordion li.title a {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: flex-start;
+          color: #010f0c; }
+          .container.cont_userProfile_page .section.fourthSection ul#sightAccordion li.title a span, .container.cont_userProfile_page .section.fourthSection ul#regAccordion li.title a span, .container.cont_userProfile_page .section.fourthSection ul#favAccordion li.title a span {
+            opacity: .5; }
   .container.cont_userProfile_page .proMetrics {
     display: flex;
     flex-flow: row nowrap;

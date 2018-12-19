@@ -1,6 +1,16 @@
 .container
   &.cont_userProfile_page
-    +column-flex
+    color: $menubg
+    word-spacing: -.3em
+    span[class*='x-']
+      color: $menubg
+      font-size: 1.5em
+      -webkit-text-stroke: .3px $menubg
+      text-transform: uppercase
+      &:active
+        color: $secondarycolor
+        &[class*='x-']
+          -webkit-text-stroke: .3px $secondarycolor
     .proHeader
       +row-flex
       width: 100%
@@ -40,7 +50,68 @@
       padding: 0 5% 5% 5%
       align-items: flex-start
       p 
-        
+    .section
+      width: 100%
+      padding: 1.2em 0
+      border-bottom: 4px solid $maincolor
+      text-transform: lowercase
+      p
+        width: 85%
+        margin: 0 auto
+      &.sectionBtn
+        padding: 0
+        +row-flex
+        justify-content: center
+        background-color: $darkbg
+        p,
+          +row-flex
+          justify-content: center
+          font-size: .8em
+          width: 50%
+          padding: .8em 0
+          &:first-child
+            border-right: 4px solid $maincolor
+          span
+            margin-right: .5em
+            &.active
+              color: $secondarycolor
+      &.fourthSection
+        p
+          +row-flex
+          justify-content: space-between
+          span
+            &[class='x-back']:before
+              +transform(rotate(-90deg))
+            &:active
+              color: $menubg
+              &[class*='x-']
+                -webkit-text-stroke: .3px $menubg
+      &.fourthSection
+        .titles
+          justify-content: space-between
+          //margin-bottom: 1em
+          #sightSection,#regSection,#favSection
+            &.rotate
+              +transform(rotate(90deg))
+        ul
+          &#sightAccordion,&#regAccordion,&#favAccordion
+            width: 85%
+            margin: 0 auto
+            li
+              &.title
+                //font-family: 'Share Tech Mono'
+                font-size: .8em
+                margin-bottom: .5em
+                &.noList
+                  opacity: .5
+                &:last-child
+                  margin-bottom: 0
+                a
+                  +row-flex
+                  justify-content: flex-start
+                  color: $menubg
+                  span
+                    opacity: .5
     .proMetrics
       +row-flex
       width: 100%
