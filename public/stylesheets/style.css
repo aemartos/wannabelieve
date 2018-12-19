@@ -3288,23 +3288,12 @@ form {
         color: #010f0c; }
         .container.cont_phenomena_detailPage .section.fourthSection p span:active[class*='x-'], .container.cont_phenomena_detailPage .section.fifthSection p span:active[class*='x-'] {
           -webkit-text-stroke: 0.3px #010f0c; }
-    .container.cont_phenomena_detailPage .section.fourthSection .routes #expandRoutes {
-      transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
-      .container.cont_phenomena_detailPage .section.fourthSection .routes #expandRoutes.rotate {
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        transform: rotate(90deg);
-        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .container.cont_phenomena_detailPage .section.fourthSection .routes #expandRoutes.rotate {
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg); }
     .container.cont_phenomena_detailPage .section.fourthSection ul#routesAccordion {
       width: 85%;
       margin: 0 auto; }
@@ -3326,23 +3315,12 @@ form {
     .container.cont_phenomena_detailPage .section.fifthSection {
       border: 0;
       padding-bottom: 0; }
-      .container.cont_phenomena_detailPage .section.fifthSection .comments #expandComments {
-        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
-        .container.cont_phenomena_detailPage .section.fifthSection .comments #expandComments.rotate {
-          -webkit-transform: rotate(90deg);
-          -moz-transform: rotate(90deg);
-          -ms-transform: rotate(90deg);
-          -o-transform: rotate(90deg);
-          transform: rotate(90deg);
-          transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-          -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-          -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-          -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-          -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+      .container.cont_phenomena_detailPage .section.fifthSection .comments #expandComments.rotate {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg); }
       .container.cont_phenomena_detailPage .section.fifthSection #commentsAccordion {
         width: 85%;
         margin: 0 auto; }
@@ -3826,23 +3804,12 @@ form {
         color: #010f0c; }
         .container.cont_routeDetail_page .section.fourthSection p span:active[class*='x-'], .container.cont_routeDetail_page .section.fifthSection p span:active[class*='x-'] {
           -webkit-text-stroke: 0.3px #010f0c; }
-    .container.cont_routeDetail_page .section.fourthSection .phenomena #expandPhenomena {
-      transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-      -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
-      .container.cont_routeDetail_page .section.fourthSection .phenomena #expandPhenomena.rotate {
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        transform: rotate(90deg);
-        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+    .container.cont_routeDetail_page .section.fourthSection .phenomena #expandPhenomena.rotate {
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg); }
     .container.cont_routeDetail_page .section.fourthSection ul#phenomsAccordion {
       width: 85%;
       margin: 0 auto; }
@@ -3867,23 +3834,12 @@ form {
     .container.cont_routeDetail_page .section.fifthSection {
       border: 0;
       padding-bottom: 0; }
-      .container.cont_routeDetail_page .section.fifthSection .comments #expandComments {
-        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
-        .container.cont_routeDetail_page .section.fifthSection .comments #expandComments.rotate {
-          -webkit-transform: rotate(90deg);
-          -moz-transform: rotate(90deg);
-          -ms-transform: rotate(90deg);
-          -o-transform: rotate(90deg);
-          transform: rotate(90deg);
-          transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-          -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-          -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-          -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-          -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+      .container.cont_routeDetail_page .section.fifthSection .comments #expandComments.rotate {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg); }
       .container.cont_routeDetail_page .section.fifthSection #commentsAccordion {
         width: 85%;
         margin: 0 auto; }

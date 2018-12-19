@@ -30,6 +30,7 @@ const accordion = (trigger, content) => {
   content.style.overflow = 'hidden';
   content.style.opacity = '0';
   content.style.transform = 'translateY(0em)';
+  trigger.style.transition = 'all 750ms cubic-bezier(0.4, 0, 0.2, 1)';
   content.style.transition = 'all 750ms cubic-bezier(0.4, 0, 0.2, 1)';
   content.style["webkitTransition"] = 'all 750ms cubic-bezier(0.4, 0, 0.2, 1)';
   content.style.setProperty('-webkit-transition', 'all 750ms cubic-bezier(0.4, 0, 0.2, 1)');
@@ -50,4 +51,3 @@ const accordion = (trigger, content) => {
 if(document.getElementById("expandComments")) accordion(document.getElementById("expandComments"), document.getElementById("commentsAccordion"));
 if(document.getElementById("expandPhenomena")) accordion(document.getElementById("expandPhenomena"), document.getElementById("phenomsAccordion"));
 if(document.getElementById("expandRoutes")) accordion(document.getElementById("expandRoutes"), document.getElementById("routesAccordion"));
-
