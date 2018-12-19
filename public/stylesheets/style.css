@@ -3209,14 +3209,24 @@ form {
           color: #010f0c; }
           .container.cont_phenomena_detailPage .section.firstSection .phenomMainInfo .actions a i {
             -webkit-text-stroke: 0.3px #010f0c; }
-    .container.cont_phenomena_detailPage .section.firstSection .discoveredOn {
+    .container.cont_phenomena_detailPage .section.firstSection .discoveredOn, .container.cont_phenomena_detailPage .section.firstSection .typePhenomenon {
       font-family: 'Share Tech Mono';
       word-spacing: 0;
       font-size: .8em;
       opacity: .5; }
-      .container.cont_phenomena_detailPage .section.firstSection .discoveredOn.alone {
+      .container.cont_phenomena_detailPage .section.firstSection .discoveredOn.alone, .container.cont_phenomena_detailPage .section.firstSection .typePhenomenon.alone {
         text-align: center;
         margin-top: .5em; }
+    .container.cont_phenomena_detailPage .section .messages {
+      word-spacing: 0;
+      font-family: 'Share Tech Mono';
+      font-size: .8em;
+      text-align: center; }
+      .container.cont_phenomena_detailPage .section .messages .error-message {
+        padding: .5em 0 0;
+        opacity: .5;
+        text-transform: lowercase;
+        color: #F25652; }
     .container.cont_phenomena_detailPage .section.sectionAddToRoute {
       text-align: center;
       margin: 0 auto;
@@ -3261,16 +3271,51 @@ form {
         color: #010f0c; }
         .container.cont_phenomena_detailPage .section.fourthSection p span:active[class*='x-'], .container.cont_phenomena_detailPage .section.fifthSection p span:active[class*='x-'] {
           -webkit-text-stroke: 0.3px #010f0c; }
-    .container.cont_phenomena_detailPage .section.fourthSection {
-      border: 0;
-      padding-bottom: 0; }
-      .container.cont_phenomena_detailPage .section.fourthSection .comments #expandComments {
+    .container.cont_phenomena_detailPage .section.fourthSection .routes #expandRoutes {
+      transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+      .container.cont_phenomena_detailPage .section.fourthSection .routes #expandRoutes.rotate {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
         transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
         -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
         -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
         -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
         -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
-        .container.cont_phenomena_detailPage .section.fourthSection .comments #expandComments.rotate {
+    .container.cont_phenomena_detailPage .section.fourthSection ul#routesAccordion {
+      width: 85%;
+      margin: 0 auto; }
+      .container.cont_phenomena_detailPage .section.fourthSection ul#routesAccordion li.route {
+        font-size: .8em;
+        margin-bottom: .5em; }
+        .container.cont_phenomena_detailPage .section.fourthSection ul#routesAccordion li.route.noRoute {
+          opacity: .5; }
+        .container.cont_phenomena_detailPage .section.fourthSection ul#routesAccordion li.route:last-child {
+          margin-bottom: 0; }
+        .container.cont_phenomena_detailPage .section.fourthSection ul#routesAccordion li.route a {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: flex-start;
+          color: #010f0c; }
+          .container.cont_phenomena_detailPage .section.fourthSection ul#routesAccordion li.route a span {
+            opacity: .5; }
+    .container.cont_phenomena_detailPage .section.fifthSection {
+      border: 0;
+      padding-bottom: 0; }
+      .container.cont_phenomena_detailPage .section.fifthSection .comments #expandComments {
+        transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
+        .container.cont_phenomena_detailPage .section.fifthSection .comments #expandComments.rotate {
           -webkit-transform: rotate(90deg);
           -moz-transform: rotate(90deg);
           -ms-transform: rotate(90deg);
@@ -3281,10 +3326,10 @@ form {
           -moz-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
           -ms-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
           -o-transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1); }
-      .container.cont_phenomena_detailPage .section.fourthSection #commentsAccordion {
+      .container.cont_phenomena_detailPage .section.fifthSection #commentsAccordion {
         width: 85%;
         margin: 0 auto; }
-        .container.cont_phenomena_detailPage .section.fourthSection #commentsAccordion .comment {
+        .container.cont_phenomena_detailPage .section.fifthSection #commentsAccordion .comment, .container.cont_phenomena_detailPage .section.fifthSection #commentsAccordion .route {
           display: flex;
           flex-flow: row nowrap;
           align-items: center;
@@ -3293,12 +3338,12 @@ form {
           margin-bottom: .8em;
           padding-bottom: .8em;
           border-bottom: 0.5px solid #8f8f8f; }
-          .container.cont_phenomena_detailPage .section.fourthSection #commentsAccordion .comment.noComment {
+          .container.cont_phenomena_detailPage .section.fifthSection #commentsAccordion .comment.noComment, .container.cont_phenomena_detailPage .section.fifthSection #commentsAccordion .comment.noRoute, .container.cont_phenomena_detailPage .section.fifthSection #commentsAccordion .route.noComment, .container.cont_phenomena_detailPage .section.fifthSection #commentsAccordion .route.noRoute {
             opacity: .5;
             font-size: .8em; }
-          .container.cont_phenomena_detailPage .section.fourthSection #commentsAccordion .comment:last-child {
+          .container.cont_phenomena_detailPage .section.fifthSection #commentsAccordion .comment:last-child, .container.cont_phenomena_detailPage .section.fifthSection #commentsAccordion .route:last-child {
             border-bottom: 0; }
-          .container.cont_phenomena_detailPage .section.fourthSection #commentsAccordion .comment .metaData {
+          .container.cont_phenomena_detailPage .section.fifthSection #commentsAccordion .comment .metaData, .container.cont_phenomena_detailPage .section.fifthSection #commentsAccordion .route .metaData {
             display: flex;
             flex-flow: column nowrap;
             align-items: center;
@@ -3308,14 +3353,14 @@ form {
             font-family: 'Share Tech Mono';
             font-size: .6em;
             word-spacing: 0; }
-            .container.cont_phenomena_detailPage .section.fourthSection #commentsAccordion .comment .metaData .author {
+            .container.cont_phenomena_detailPage .section.fifthSection #commentsAccordion .comment .metaData .author, .container.cont_phenomena_detailPage .section.fifthSection #commentsAccordion .route .metaData .author {
               margin-top: .3em;
               opacity: .5; }
-          .container.cont_phenomena_detailPage .section.fourthSection #commentsAccordion .comment .commentContent {
+          .container.cont_phenomena_detailPage .section.fifthSection #commentsAccordion .comment .commentContent, .container.cont_phenomena_detailPage .section.fifthSection #commentsAccordion .comment .routeTitle, .container.cont_phenomena_detailPage .section.fifthSection #commentsAccordion .route .commentContent, .container.cont_phenomena_detailPage .section.fifthSection #commentsAccordion .route .routeTitle {
             margin-right: .8em;
             font-size: .8em;
             opacity: .5; }
-          .container.cont_phenomena_detailPage .section.fourthSection #commentsAccordion .comment .deleteBtn {
+          .container.cont_phenomena_detailPage .section.fifthSection #commentsAccordion .comment .deleteBtn, .container.cont_phenomena_detailPage .section.fifthSection #commentsAccordion .route .deleteBtn {
             width: max-content;
             font-size: .7em; }
     .container.cont_phenomena_detailPage .section.addCommentSection {
@@ -3360,12 +3405,6 @@ form {
               font-size: 2em; }
               .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .commentBox button.addCommentBtn span:active {
                 color: #39FF14; }
-        .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .messages {
-          width: 85%;
-          word-spacing: 0; }
-          .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .messages .error-message {
-            padding: .5em 0 0;
-            opacity: .5; }
 
 .container.cont_userProfile_page {
   display: flex;

@@ -103,7 +103,7 @@
               i
                 -webkit-text-stroke: .3px $menubg
             //width: 4em
-        .discoveredOn
+        .discoveredOn,.typePhenomenon
           font-family: 'Share Tech Mono'
           word-spacing: 0
           //width: 82%
@@ -112,6 +112,16 @@
           &.alone
             text-align: center
             margin-top: .5em
+      .messages
+        word-spacing: 0
+        font-family: 'Share Tech Mono'
+        font-size: .8em
+        text-align: center
+        .error-message
+          padding: .5em 0 0
+          opacity: .5
+          text-transform: lowercase
+          color: #F25652
       &.sectionAddToRoute
         text-align: center
         margin: 0 auto
@@ -154,6 +164,33 @@
               &[class*='x-']
                 -webkit-text-stroke: .3px $menubg
       &.fourthSection
+        .routes
+          //margin-bottom: 1em
+          #expandRoutes
+            +transition_default
+            &.rotate
+              +transform(rotate(90deg))
+              +transition_default
+        ul
+          &#routesAccordion
+            width: 85%
+            margin: 0 auto
+            li
+              &.route
+                //font-family: 'Share Tech Mono'
+                font-size: .8em
+                margin-bottom: .5em
+                &.noRoute
+                  opacity: .5
+                &:last-child
+                  margin-bottom: 0
+                a
+                  +row-flex
+                  justify-content: flex-start
+                  color: $menubg
+                  span
+                    opacity: .5
+      &.fifthSection
         border: 0
         padding-bottom: 0
         .comments
@@ -165,14 +202,14 @@
         #commentsAccordion
           width: 85%
           margin: 0 auto
-          .comment
+          .comment, .route
             +row-flex
             align-items: flex-start
             justify-content: space-between
             margin-bottom: .8em
             padding-bottom: .8em
             border-bottom: .5px solid $darkbg
-            &.noComment
+            &.noComment, &.noRoute
               opacity: .5
               font-size: .8em
             &:last-child
@@ -188,7 +225,7 @@
               .author
                 margin-top: .3em
                 opacity: .5
-            .commentContent
+            .commentContent, .routeTitle
               margin-right: .8em
               font-size: .8em
               opacity: .5
@@ -241,9 +278,4 @@
                     font-size: 2em
                     &:active
                       color: $secondarycolor
-            .messages
-              width: 85%
-              word-spacing: 0
-              .error-message
-                padding: .5em 0 0
-                opacity: .5
+        

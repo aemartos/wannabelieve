@@ -1,3 +1,6 @@
+$(document).ready(function () {
+
+
 var inputs = document.querySelectorAll( '.inputfile' );
 Array.prototype.forEach.call( inputs, function( input )
 {
@@ -33,3 +36,5 @@ function readURL(input) {
 $("#file").change(function() {
   readURL(this);
 });
+
+})
