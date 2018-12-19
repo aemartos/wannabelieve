@@ -2564,7 +2564,8 @@ header, footer {
   height: 3em;
   width: 100%;
   background-color: #010f0c;
-  border: 4px solid #fff; }
+  border: 4px solid #fff;
+  z-index: 1; }
   header nav, footer nav {
     display: flex;
     flex-flow: row nowrap;

@@ -25,7 +25,7 @@ router.post("/addPhenomenon", uploadPhenomPicture.array("file"), (req, res) => {
   const creatorId = req.user;
   const location = {
     type: "Point",
-    coordinates: [req.body.latitude, req.body.longitude]
+    coordinates: [req.body.longitude, req.body.latitude]
   };
 
   if (req.body.latitude == undefined || req.body.longitude == undefined) {
@@ -176,8 +176,8 @@ router.post(
       Phenomenon.findById(req.params.id).then(phenomenon => {
         //distance check
 
-        let phenLat = phenomenon.location.coordinates[0];
-        let phenLong = phenomenon.location.coordinates[1];
+        let phenLat = phenomenon.location.coordinates[1];
+        let phenLong = phenomenon.location.coordinates[0];
 
         if (distanceCheck(geoLat, geoLong, phenLat, phenLong, "K") > 0.1) {
           req.flash("error", "you need to be near (min 150m)");
