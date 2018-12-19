@@ -23,7 +23,10 @@ const realTimeLocation = () => {
       if (isGeolocating) {
         console.log('Position updated');
         console.log(location);
-        //map.setCenter(location);
+        if (!window.realTimeLocation) {
+          map.setCenter(location);
+          window.realTimeLocation = true;
+        }
         if (meMarker) meMarker.setMap(null);
         meMarker = newMeMarker(location);
         loadData(map);

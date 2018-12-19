@@ -12,10 +12,10 @@ document.addEventListener("DOMContentLoaded", function() {
       if (meMarker) meMarker.setMap(null);
       isGeolocating = false;
       clearInterval(RTLinterval);
+      window.realTimeLocation = false;
     } else {
       isGeolocating = true;
       RTLinterval = setInterval(realTimeLocation, 1000);
-      //map.setCenter(realTimeLocation());
     }
     RTL = !RTL;
   };
