@@ -2442,6 +2442,9 @@
 .x-whatsapp:before {
   content: '\0057'; }
 
+.x-bubble:before {
+  content: '\0058'; }
+
 .x-sighting-fill:before {
   content: '\0059'; }
 
@@ -3604,14 +3607,14 @@ form {
           align-items: center;
           justify-content: flex-start;
           line-height: 0; }
-          .container.cont_routes_page .routestList .routeCard .infoRouteDetails .routeText .favorites {
+          .container.cont_routes_page .routestList .routeCard .infoRouteDetails .routeText .favorites, .container.cont_routes_page .routestList .routeCard .infoRouteDetails .routeText .comments {
             display: flex;
             flex-flow: row nowrap;
             align-items: center;
             display: inline-flex;
             justify-content: center;
             margin-left: 1em; }
-            .container.cont_routes_page .routestList .routeCard .infoRouteDetails .routeText .favorites .heart {
+            .container.cont_routes_page .routestList .routeCard .infoRouteDetails .routeText .favorites .heart, .container.cont_routes_page .routestList .routeCard .infoRouteDetails .routeText .favorites .bubble, .container.cont_routes_page .routestList .routeCard .infoRouteDetails .routeText .comments .heart, .container.cont_routes_page .routestList .routeCard .infoRouteDetails .routeText .comments .bubble {
               margin-right: .3em; }
         .container.cont_routes_page .routestList .routeCard .infoRouteDetails .routeDetails .separator {
           margin: 0 .5em; }

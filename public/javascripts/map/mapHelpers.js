@@ -10,6 +10,17 @@ const fixZoom = () => {
   //console.log(map.getZoom())
 };
 
+const calculateBoundsToFitAllMarkers = (phenomena) => {
+  let bounds = new google.maps.LatLngBounds();
+  //I need to iterate over all the places in my search to fit the bounds
+  for (let i = 0; i < phenomena.length; i++) {
+    //search all coordinates
+    let coorLoc = phenomena[i].location.coordinates;
+    //create geographic area to fit all the markers in the search
+    bounds.extend({lng: coorLoc[0], lat: coorLoc[1]});
+  }
+  return bounds;
+};
 
 const markers = [];
 const loadData = (map, extra = {}) => {

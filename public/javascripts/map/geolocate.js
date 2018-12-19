@@ -31,6 +31,6 @@ const realTimeLocation = () => {
     })
     .catch(e => {
       console.log(e);
-      //window.alert('Error in the geolocation service.');
+      // window.alert('Error in the geolocation service.');
     });
 };

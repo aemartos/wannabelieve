@@ -53,9 +53,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
   let searchInput = document.getElementById('searchInput');
   //convert serarch input in a searchBox to find places with this library
-  let searchBox = null;
-  if(window.searchBox) {searchBox = new google.maps.places.SearchBox(searchInput);}
+  //let searchBox = null;
+  //if(window.searchBox) {searchBox = new google.maps.places.SearchBox(searchInput);}
 
+  let searchBox = new google.maps.places.SearchBox(searchInput);
   const searchReq = (e) => {
     e.preventDefault();
     let searchVal = searchInput.value;
@@ -67,17 +68,23 @@ document.addEventListener("DOMContentLoaded", function() {
       //the first one is the most similar
       let geom = places[0].geometry.location;
       let vw = places[0].geometry.viewport;
+      console.log(vw);
       //get coordinates rounded to 5 decimals
       lat = geom.lat();
       lng = geom.lng();
-      l = vw.ea.j;
-      r = vw.ea.l;
-      t = vw.la.l;
-      b = vw.la.j;
+      // l = vw.ea.j;
+      // r = vw.ea.l;
+      // t = vw.la.l;
+      // b = vw.la.j;
+      l = vw.fa.j;
+      r = vw.fa.l;
+      t = vw.ma.l;
+      b = vw.ma.j;
     }
 
     //remote request to server passing my search query and coordinates of the closest place name
-    fetch(encodeURI("/mapsearch?query=" + searchVal + ((lat && lng) ? ("&t=" + t + "&l=" + l + "&b=" + b  + "&r=" + r) : "")))
+    //fetch(encodeURI("/mapsearch?query=" + searchVal + ((lat && lng) ? ("&t=" + t + "&l=" + l + "&b=" + b  + "&r=" + r) : "")))
+    fetch(encodeURI("/mapsearch?query=" + searchVal + "&t=" + t + "&l=" + l + "&b=" + b  + "&r=" + r))
       .then(res => res.json()).then(searchPhenomena => {
         //retrive results and substitute window variable
         window.phenomena = searchPhenomena.phenomena;

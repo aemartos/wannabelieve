@@ -10,7 +10,7 @@ const Review = require("../models/Review");
 router.get('/', isLoggedIn("/auth/login"), (req, res, next) => {
   Route.find().populate('creatorId').sort({createdAt: -1})
   .then(routes => {
-    const routesList = routes.map(r=>{return { ...JSON.parse(JSON.stringify(r)), numFavs: r.whoseFavId.length}});
+    const routesList = routes.map(r=>{return { ...JSON.parse(JSON.stringify(r)), numFavs: r.whoseFavId.length, numComs: r.reviewsId.length}});
     if(routesList.length === 0) {
       res.render('routes/index', {
         routesList,

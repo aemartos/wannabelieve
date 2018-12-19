@@ -32,7 +32,7 @@ router.get('/mapsearch', isLoggedIn('/auth/login'), (req, res, next) => {
     {"name": regex},
     {"description": regex},
     {"type": regex},
-    /* {"creatorId.username": regex}, */
+    {"creatorId.username": regex},
     {
       location: {
         $geoWithin: {
