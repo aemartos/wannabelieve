@@ -3010,7 +3010,7 @@ form {
 .container.cont_phenomena_page {
   min-height: 100%;
   padding: 4em 0;
-  word-spacing: -.5em; }
+  word-spacing: -.3em; }
   .container.cont_phenomena_page .phenomenaListTitle {
     margin-top: 0;
     font-size: 1.8em;
@@ -3112,7 +3112,7 @@ form {
 
 .container.cont_phenomena_detailPage {
   color: #010f0c;
-  word-spacing: -.5em; }
+  word-spacing: -.3em; }
   .container.cont_phenomena_detailPage span[class*='x-'] {
     color: #010f0c;
     font-size: 1.5em;
@@ -3517,7 +3517,7 @@ form {
 .container.cont_routes_page {
   min-height: 100%;
   padding: 4em 0;
-  word-spacing: -.5em; }
+  word-spacing: -.3em; }
   .container.cont_routes_page .routesListTitle {
     margin-top: 0;
     font-size: 1.8em;
@@ -3664,7 +3664,7 @@ form {
 
 .container.cont_routeDetail_page {
   color: #010f0c;
-  word-spacing: -.5em; }
+  word-spacing: -.3em; }
   .container.cont_routeDetail_page span[class*='x-'] {
     color: #010f0c;
     font-size: 1.5em;
@@ -3971,7 +3971,7 @@ form {
 .container.cont_routeEdit_page {
   min-height: 100%;
   padding: 4em 0;
-  word-spacing: -.5em;
+  word-spacing: -.3em;
   color: #010f0c;
   text-transform: lowercase; }
   .container.cont_routeEdit_page span[class*='x-'] {

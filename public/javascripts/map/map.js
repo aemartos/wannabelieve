@@ -30,7 +30,7 @@ const {lat,lng} = geolocateMe().then(({lat,lng})=>{
   //console.log('no geolocate');
 });
 
-//center map in phenom
+//center map in phenom with url params
 const centerMapInPhenom = () => {
   let url = new URL(window.location.href);
   let lat = Number(url.searchParams.get("lat"));
