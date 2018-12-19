@@ -14,12 +14,11 @@ const createMap = (map, {lat,lng}) => {
   );
 }
 
-
 let map;
 const {lat,lng} = geolocateMe().then(({lat,lng})=>{
-  console.log(lat,lng)
   map = createMap('mainMap', {lat,lng});
   meMarker = newMeMarker({lat,lng});
+  map.setCenter({lat,lng});
   loadData(map);
   //console.log('geolocate');
 }).catch(err=>{

@@ -2665,7 +2665,7 @@ header {
           -webkit-appearance: checkbox;
           margin: 0;
           font-size: .4em;
-          width: fit-content; }
+          width: auto; }
 
 footer {
   bottom: 0; }
@@ -3120,15 +3120,21 @@ form {
       .container.cont_phenomena_detailPage span[class*='x-']:active[class*='x-'] {
         -webkit-text-stroke: 0.3px #39FF14; }
   .container.cont_phenomena_detailPage .slider {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
     border-bottom: 4px solid white;
     padding: 0 0; }
-    .container.cont_phenomena_detailPage .slider .sliderImage {
+    .container.cont_phenomena_detailPage .slider.owl-carousel.owl-theme .owl-item img {
       width: 100%;
-      max-height: 18em;
-      overflow: hidden; }
+      height: 18em;
+      object-fit: cover; }
+    .container.cont_phenomena_detailPage .slider.owl-carousel.owl-theme .owl-nav.disabled + .owl-dots {
+      position: absolute;
+      bottom: .5em;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%); }
   .container.cont_phenomena_detailPage .section {
     width: 100%;
     padding: 1.2em 0;

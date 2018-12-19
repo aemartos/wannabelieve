@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       isGeolocating = true;
       RTLinterval = setInterval(realTimeLocation, 1000);
+      //map.setCenter(realTimeLocation());
     }
     RTL = !RTL;
   };
@@ -52,7 +53,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
   let searchInput = document.getElementById('searchInput');
   //convert serarch input in a searchBox to find places with this library
-  if(window.searchBox) {let searchBox = new google.maps.places.SearchBox(searchInput);}
+  let searchBox = null;
+  if(window.searchBox) {searchBox = new google.maps.places.SearchBox(searchInput);}
 
   const searchReq = (e) => {
     e.preventDefault();
@@ -133,12 +135,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     [...document.getElementsByClassName('checkboxCat')].forEach((el)=>{
       el.onchange = (e) => {
+        document.getElementById('showAll').checked = false;
         let activeFilters = [...document.getElementsByClassName('checkboxCat')]
           .filter(el=>el.checked)
           .map(filter=>filter.value);
         removeMarkers(markers);
         filteredPhenomena = window.phenomena.filter(ph => activeFilters.includes(ph.type));
         loadData(map,{phenomena: filteredPhenomena});
+        // function isTrue(val) {
+        //   return val === true;
+        // }
+        // console.log([...document.getElementsByClassName('checkboxCat').checked].every(isTrue));
       };
     });
 

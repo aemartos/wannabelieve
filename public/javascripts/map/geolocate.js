@@ -23,11 +23,14 @@ const realTimeLocation = () => {
       if (isGeolocating) {
         console.log('Position updated');
         console.log(location);
-        map.setCenter(location);
+        //map.setCenter(location);
         if (meMarker) meMarker.setMap(null);
         meMarker = newMeMarker(location);
         loadData(map);
       }
     })
-    .catch(e => console.log(e));
+    .catch(e => {
+      console.log(e);
+      //window.alert('Error in the geolocation service.');
+    });
 };
