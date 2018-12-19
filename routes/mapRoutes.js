@@ -6,8 +6,11 @@ const Phenomenon = require("../models/Phenomenon");
 
 router.get('/', isLoggedIn('/auth/login'), (req, res, next) => {
   Phenomenon.find().then(phenomena => {
+    const caca = phenomena.map((e,i)=>{
+      return {...JSON.parse(JSON.stringify(e)),
+      sighted: e.visitorsId.map(v => v.toString()).indexOf(req.user._id.toString()) !== -1}});
     res.render('map',{
-      phenomena: JSON.stringify(phenomena),
+      phenomena: JSON.stringify(caca),
       actual_page: 'map_page',
       map: true
     });

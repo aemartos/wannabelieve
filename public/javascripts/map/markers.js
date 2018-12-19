@@ -1,6 +1,7 @@
-const singleMarker = (title, position, map, type) => {
+const singleMarker = (title, position, map, type, sighted) => {
   let url = '/images/markers/small/';
-  url += type + ".png";
+  let sightedFolder = sighted ? 'sighted/' : '';
+  url += sightedFolder + type + ".png";
   let marker = new google.maps.Marker({
     title,
     position,
@@ -10,10 +11,10 @@ const singleMarker = (title, position, map, type) => {
   return marker;
 };
 
-const addMarker = (title, description, position, map, type, id) => {
-  let marker = singleMarker(title, position, map, type);
+const addMarker = (title, description, position, map, type, id, sighted) => {
+  let marker = singleMarker(title, position, map, type, sighted);
   //console.log(title, description, map, type, marker, id);
-  addWindow(title, description, map, type, marker, id);
+  addWindow(title, description, map, type, marker, id, sighted);
   return marker;
 };
 
@@ -26,13 +27,15 @@ const newMeMarker = (position) => {
 };
 
 let infoWindows = [];
-const addWindow = (title, description, map, type, marker, id) => {
+const addWindow = (title, description, map, type, marker, id, sighted) => {
   let infowindow = null;
+  let sightedBox = sighted ? '<p class="sighted"><span class="x-sighting"></span><span class="text"> sighted</span></p>' : '';
   let content = `<div class="infoPhenom">
                   <div class="infoPhenomDetails">
                     <div class="phenomText">
                       <p class="phenomId">${id}</p>
                       <p class="favorites"><span class="x-favorite heart"></span><span class="favNum"> 14</span></p>
+                      ${sightedBox}
                     </div>
                     <div class="phenomTitle">
                       <h1>${title}</h1>

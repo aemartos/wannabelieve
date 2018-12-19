@@ -28,6 +28,7 @@ const calculateBoundsToFitAllMarkers = (phenomena) => {
 const markers = [];
 const loadData = (map, extra = {}) => {
   (extra.phenomena || phenomena).forEach(p => {
+    //console.log(p);
     let markerPhenom = addMarker(
       p.name,
       p.description, {
@@ -36,7 +37,8 @@ const loadData = (map, extra = {}) => {
       },
       map,
       p.type,
-      p._id
+      p._id,
+      p.sighted
     );
     markers.push(markerPhenom);
   })

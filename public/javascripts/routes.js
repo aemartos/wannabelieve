@@ -30,7 +30,7 @@ if (window.phenomena.length > 1) {
   fixZoom();
 } else if (window.phenomena.length == 1) {
   map.setCenter({lat: window.phenomena[0].location.coordinates[1], lng: window.phenomena[0].location.coordinates[0]});
-  map.setZoom(5);
+  //map.setZoom(5);
 }
 
 
