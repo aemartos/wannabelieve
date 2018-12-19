@@ -16,11 +16,10 @@ router.get("/phenomena/new", isLoggedIn("/auth/login"), (req, res) => {
 });
 
 router.post("/addPhenomenon", uploadPhenomPicture.array("file"), (req, res) => {
- 
- //load of images
+  //load of images
   var imgPhenomUrls = [];
 
-//load of body POST
+  //load of body POST
   const { name, description, type } = req.body;
   const creatorId = req.user;
   const location = {
@@ -31,11 +30,10 @@ router.post("/addPhenomenon", uploadPhenomPicture.array("file"), (req, res) => {
   if (req.body.latitude == undefined || req.body.longitude == undefined) {
     req.flash("error", "No Geolocation detected, please refresh");
     res.redirect("/phenomena/new");
-  } else if(req.files.length > 4 || req.files.length == 0){
+  } else if (req.files.length > 4 || req.files.length == 0) {
     req.flash("error", "Please upload one image (max.4)");
     res.redirect("/phenomena/new");
   } else {
-
     if (req.files.length > 0) {
       for (let i = 0; i < req.files.length; i++) {
         imgPhenomUrls.push(req.files[i].url);
@@ -132,7 +130,8 @@ router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
 
       //editUser - false (no es el mismo)
       //editUser - true (es el mismo)
-      const editUser = (phenomenon.creatorId._id).toString() == (req.user._id).toString();
+      const editUser =
+        phenomenon.creatorId._id.toString() == req.user._id.toString();
       //console.log(phenomenon.creatorId._id);
       //console.log(req.user._id);
       //console.log(editUser);
@@ -144,7 +143,7 @@ router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
       // favourite - false (no ecuentra el userID)
       // favourite - true (encuentra el userID)
       const favourite = phenomenon.whoseFavId.indexOf(req.user._id) !== -1;
-      
+
       res.render("phenomena/detail", {
         phenomenon,
         lat: phenomenon.location.coordinates[1],
@@ -184,7 +183,7 @@ router.post(
           res.redirect(`/phenomena/${req.params.id}`);
           //already register check
         } else if (phenomenon.visitorsId.indexOf(userId) !== -1) {
-          req.flash("error", "ya has registrado esta visita");
+          req.flash("error", "already registered");
           res.redirect(`/phenomena/${req.params.id}`);
         } else {
           phenomenon.visitorsId.push(userId);
@@ -220,14 +219,9 @@ router.post("/phenomena/:id/postReview", (req, res) => {
   let authorId = new ObjectId(req.user._id);
 
   Review.create({ content, authorId }).then(review => {
-    Promise.all([
-      Phenomenon.findByIdAndUpdate(req.params.id, {
-        $push: { reviewsId: `${review._id}` }
-      }),
-      User.findByIdAndUpdate(authorId, {
-        $push: { reviewsId: `${review._id}` }
-      })
-    ]).then(() => res.redirect(`/phenomena/${req.params.id}`));
+    Phenomenon.findByIdAndUpdate(req.params.id, {
+      $push: { reviewsId: `${review._id}` }
+    }).then(() => res.redirect(`/phenomena/${req.params.id}`));
   });
 });
 

@@ -3102,6 +3102,19 @@ form {
           .container.cont_phenomena_page .phsFeed .phenomCard a.goPhenom span:active[class*='x-'] {
             -webkit-text-stroke: 0.3px #39FF14; }
 
+.container.cont_phenomena_editPage {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center; }
+  .container.cont_phenomena_editPage form {
+    padding: 3em 0; }
+    .container.cont_phenomena_editPage form label {
+      padding: 0.5em 0; }
+  .container.cont_phenomena_editPage #imgUpl {
+    width: 25%; }
+  .container.cont_phenomena_editPage a {
+    color: red; }
+
 .container.cont_addPhenom_page {
   display: flex;
   flex-flow: column nowrap;
@@ -3555,22 +3568,12 @@ form {
       margin: 0 10%;
       font-size: 1.5em; }
 
-.container.cont_editUserProfile_page .rowForm input, .container.cont_editUserProfile_page .rowForm textarea {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 1em; }
-
-.container img {
-  width: 100%; }
-
-.container .cancelLink {
+.container.cont_editUserProfile_page {
   display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  width: 100%;
-  padding: 5% 5%;
-  justify-content: center; }
-  .container .cancelLink a {
-    color: red; }
+  flex-flow: column nowrap;
+  align-items: center; }
+  .container.cont_editUserProfile_page #imgUpl {
+    width: 100%; }
 
 .container.cont_routes_page {
   min-height: 100%;
