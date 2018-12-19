@@ -113,6 +113,7 @@ router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
     .populate({ path: "reviewsId", populate: { path: "authorId" } })
     .populate("routesImIn")
     .then(phenomenon => {
+      console.log(phenomenon);
       const reviews = phenomenon.reviewsId.map(revs => {
         let min =
           revs.createdAt.getMinutes().toString().length === 1

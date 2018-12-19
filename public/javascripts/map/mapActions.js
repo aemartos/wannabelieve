@@ -142,10 +142,9 @@ document.addEventListener("DOMContentLoaded", function() {
         removeMarkers(markers);
         filteredPhenomena = window.phenomena.filter(ph => activeFilters.includes(ph.type));
         loadData(map,{phenomena: filteredPhenomena});
-        // function isTrue(val) {
-        //   return val === true;
-        // }
-        // console.log([...document.getElementsByClassName('checkboxCat').checked].every(isTrue));
+        if ([...document.getElementsByClassName('checkboxCat')].every(val => val.checked === true)) {
+          document.getElementById('showAll').checked = true;
+        };
       };
     });
 
