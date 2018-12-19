@@ -8,7 +8,8 @@
     </div>
     <h4 class="routeTitle">{{this.routetitle}}</h4>
     <div class="routeDetails">
-      <p class="distance">10km</p><p class="separator">|</p><p class="difficulty">hard</p><p class="separator">|</p><p class="creator">{{this.creatorId.username}}</p>
+      {{!-- <p class="distance">10km</p><p class="separator">|</p><p class="difficulty">hard</p><p class="separator">|</p> --}}
+      <p class="creator">created by: {{this.creatorId.username}}</p>
     </div>
   </div>
   {{#if @root.addingPhenomenon}}
