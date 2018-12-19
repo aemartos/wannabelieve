@@ -17,7 +17,10 @@ const calculateBoundsToFitAllMarkers = (phenomena) => {
     //search all coordinates
     let coorLoc = phenomena[i].location.coordinates;
     //create geographic area to fit all the markers in the search
-    bounds.extend({lng: coorLoc[0], lat: coorLoc[1]});
+    bounds.extend({
+      lng: coorLoc[0],
+      lat: coorLoc[1]
+    });
   }
   return bounds;
 };
@@ -27,8 +30,7 @@ const loadData = (map, extra = {}) => {
   (extra.phenomena || phenomena).forEach(p => {
     let markerPhenom = addMarker(
       p.name,
-      p.description,
-      {
+      p.description, {
         lng: extra.lng || p.location.coordinates[0],
         lat: extra.lat || p.location.coordinates[1]
       },

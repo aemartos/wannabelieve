@@ -3230,19 +3230,31 @@ form {
         opacity: .5;
         text-transform: lowercase;
         color: #F25652; }
-    .container.cont_phenomena_detailPage .section.sectionAddToRoute {
-      text-align: center;
-      margin: 0 auto;
-      padding: .8em 0;
+    .container.cont_phenomena_detailPage .section.sectionOtherBtns {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0;
       font-size: .8em;
       background-color: #8f8f8f; }
-      .container.cont_phenomena_detailPage .section.sectionAddToRoute .addToRouteBtn {
+      .container.cont_phenomena_detailPage .section.sectionOtherBtns .ATR, .container.cont_phenomena_detailPage .section.sectionOtherBtns .VIM {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        width: 50%; }
+        .container.cont_phenomena_detailPage .section.sectionOtherBtns .ATR:first-child, .container.cont_phenomena_detailPage .section.sectionOtherBtns .VIM:first-child {
+          border-right: 4px solid #fff; }
+      .container.cont_phenomena_detailPage .section.sectionOtherBtns .addToRouteBtn, .container.cont_phenomena_detailPage .section.sectionOtherBtns .viewInMapBtn {
+        padding: .8em;
+        width: 100%;
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
         justify-content: center;
         color: #010f0c; }
-        .container.cont_phenomena_detailPage .section.sectionAddToRoute .addToRouteBtn span.routesBtn {
+        .container.cont_phenomena_detailPage .section.sectionOtherBtns .addToRouteBtn span.routesBtn, .container.cont_phenomena_detailPage .section.sectionOtherBtns .addToRouteBtn span.mapBtn, .container.cont_phenomena_detailPage .section.sectionOtherBtns .viewInMapBtn span.routesBtn, .container.cont_phenomena_detailPage .section.sectionOtherBtns .viewInMapBtn span.mapBtn {
           margin-right: .5em; }
     .container.cont_phenomena_detailPage .section.secondSection .discoveredBy {
       display: flex;

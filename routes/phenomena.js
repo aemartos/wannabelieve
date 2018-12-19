@@ -113,7 +113,7 @@ router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
     .populate({ path: "reviewsId", populate: { path: "authorId" } })
     .populate("routesImIn")
     .then(phenomenon => {
-      console.log(phenomenon);
+      console.log(phenomenon.location.coordinates[0]);
       const reviews = phenomenon.reviewsId.map(revs => {
         let min =
           revs.createdAt.getMinutes().toString().length === 1
@@ -133,9 +133,9 @@ router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
       //editUser - false (no es el mismo)
       //editUser - true (es el mismo)
       const editUser = (phenomenon.creatorId._id).toString() == (req.user._id).toString();
-      console.log(phenomenon.creatorId._id);
-      console.log(req.user._id);
-      console.log(editUser);
+      //console.log(phenomenon.creatorId._id);
+      //console.log(req.user._id);
+      //console.log(editUser);
 
       // visited - false (no ecuentra el userID)
       // visited - true (encuentra el userID)
@@ -147,6 +147,8 @@ router.get("/phenomena/:id", isLoggedIn("/auth/login"), (req, res) => {
       
       res.render("phenomena/detail", {
         phenomenon,
+        lat: phenomenon.location.coordinates[1],
+        lng: phenomenon.location.coordinates[0],
         reviews,
         phenomCreationDate,
         editUser,

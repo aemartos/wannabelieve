@@ -122,20 +122,28 @@
           opacity: .5
           text-transform: lowercase
           color: #F25652
-      &.sectionAddToRoute
-        text-align: center
-        margin: 0 auto
-        padding: .8em 0
+      &.sectionOtherBtns
+        +row-flex
+        justify-content: space-between
+        padding: 0
         font-size: .8em
         background-color: $darkbg
-        .addToRouteBtn
-          //width: 85%
+        .ATR, .VIM
+          +row-flex
+          justify-content: center
+          width: 50%
+          &:first-child
+            border-right: 4px solid $maincolor
+        .addToRouteBtn, .viewInMapBtn
+          padding: .8em
+          width: 100%
           +row-flex
           justify-content: center
           color: $menubg
           span
-            &.routesBtn
+            &.routesBtn, &.mapBtn
               margin-right: .5em
+
       &.secondSection
         .discoveredBy
           +row-flex
