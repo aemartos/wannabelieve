@@ -19,10 +19,10 @@
     {{/if}}
   </div>
   {{#if editUser}}
-  <p class="discoveredOn">{{phenomenon.type}}</p>
-  <span>|</span>
+   <p class="typePhenomenon">{{phenomenon.type}}</p>
   <p class="discoveredOn">discovered on: {{phenomCreationDate}}</p>
   {{else}}
+  <p class="typePhenomenon alone">{{phenomenon.type}}</p>
   <p class="discoveredOn alone">discovered on: {{phenomCreationDate}}</p>
   {{/if}}
   <div class="messages">
@@ -63,7 +63,25 @@
   <p class="text">{{phenomenon.description}}</p>
 </div>
 
+
 <div class="section fourthSection">
+  <p class="routes"><span class="text">routes it belongs:</span> <span class="x-back" id="expandRoutes"></span></p>
+  <ul class="routesList" id="routesAccordion">
+    {{#unless phenomenon.routesImIn}}
+      <li class="route noRoute">There is no route with this phenomenon</li>
+    {{/unless}}
+    {{#each phenomenon.routesImIn}}
+      <li class="route">
+        <a href="/routes/{{this._id}}/detail">
+          <span>{{this.routetitle}}</span>
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+</div>
+
+
+<div class="section fifthSection">
   <p class="comments"><span class="text">comments:</span> <span class="x-back" id="expandComments"></span></p>
   <ul class="commentsList" id="commentsAccordion">
     {{#unless reviews}}
@@ -100,21 +118,7 @@
   <div class="phGalleryContent accordionItemContent">
     <p>Aqui se mostrara la galleria</p>
   </div>
-</div>
-
-
-
-<div class="phRoutes accordionItem">
-  <div class="phRoutesHeader accordionItemHeading">
-    <p>routes it belongs to</p>
-  </div>
-
-  <div class="phRoutesContent accordionItemContent">
-    <p>hola que hase</p>
-  </div>
 </div> --}}
-
-
 
 
 

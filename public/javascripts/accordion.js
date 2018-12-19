@@ -49,3 +49,5 @@ const accordion = (trigger, content) => {
 
 if(document.getElementById("expandComments")) accordion(document.getElementById("expandComments"), document.getElementById("commentsAccordion"));
 if(document.getElementById("expandPhenomena")) accordion(document.getElementById("expandPhenomena"), document.getElementById("phenomsAccordion"));
+if(document.getElementById("expandRoutes")) accordion(document.getElementById("expandRoutes"), document.getElementById("routesAccordion"));
+
