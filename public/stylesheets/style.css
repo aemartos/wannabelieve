@@ -2872,6 +2872,34 @@ form {
   .container.cont_login, .container.cont_signup {
     padding: 1.5em; } }
 
+.container.cont_info_page {
+  min-height: 100%;
+  padding: 4em 0;
+  word-spacing: -.3em;
+  color: #010f0c;
+  text-transform: lowercase; }
+  .container.cont_info_page span[class*='x-'] {
+    color: #010f0c;
+    font-size: 1.5em;
+    -webkit-text-stroke: 0.3px #010f0c;
+    text-transform: uppercase; }
+    .container.cont_info_page span[class*='x-']:active {
+      color: #39FF14; }
+      .container.cont_info_page span[class*='x-']:active[class*='x-'] {
+        -webkit-text-stroke: 0.3px #39FF14; }
+  .container.cont_info_page .infoTitle {
+    margin-top: 0;
+    font-size: 1.6em;
+    padding-bottom: .6em;
+    width: 100%;
+    text-align: center;
+    border-bottom: 4px solid #fff; }
+  .container.cont_info_page .index li, .container.cont_info_page .index p, .container.cont_info_page .index span {
+    padding: 0.5em 1em; }
+  .container.cont_info_page .index p {
+    color: #fff;
+    opacity: .5; }
+
 .container.cont_map_page, .container.cont_routeDetail_page {
   position: relative; }
   .container.cont_map_page .mainMap, .container.cont_map_page .routeMap, .container.cont_routeDetail_page .mainMap, .container.cont_routeDetail_page .routeMap {
@@ -4495,17 +4523,3 @@ form {
 @media (orientation: landscape) {
   .container.cont_routeEdit_page .editingRoutePage {
     padding-bottom: 3em; } }
-
-@-moz-document url-prefix() {
-  .container.cont_phenomena_page .phsFeed {
-    margin-bottom: 4em; }
-  .container.cont_routes_page .routestList {
-    margin-bottom: 4em; }
-  .container.cont_routeEdit_page, .container.cont_editUserProfile_page {
-    min-height: unset;
-    padding: 3em 0;
-    margin-bottom: 3em; }
-    .container.cont_routeEdit_page form, .container.cont_editUserProfile_page form {
-      width: auto; }
-  .container.cont_routeDetail_page .section.addCommentSection form.addComment .commentBox, .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .commentBox {
-    width: 87%; } }
