@@ -3064,7 +3064,7 @@ form {
           font-family: 'Press Start 2P';
           text-transform: lowercase;
           margin: .5em 0 0 0;
-          width: 12.5em;
+          width: 13.5em;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis; }
@@ -3105,6 +3105,26 @@ form {
           color: #39FF14; }
           .container.cont_phenomena_page .phsFeed .phenomCard a.goPhenom span:active[class*='x-'] {
             -webkit-text-stroke: 0.3px #39FF14; }
+
+@media (min-width: 360px) {
+  .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails h4.phenomTitle {
+    width: 11.5em; } }
+
+@media (min-width: 640px) {
+  .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails h4.phenomTitle {
+    width: 22.5em; } }
+
+@media (min-width: 731px) {
+  .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails h4.phenomTitle {
+    width: 28em; } }
+
+@media (min-width: 812px) {
+  .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails h4.phenomTitle {
+    width: 30em; } }
+
+@media (min-width: 960px) {
+  .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails h4.phenomTitle {
+    width: 37em; } }
 
 .container.cont_phenomena_editPage {
   min-height: 100%;
@@ -3582,6 +3602,10 @@ form {
               .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .commentBox button.addCommentBtn span:active {
                 color: #39FF14; }
 
+@media (orientation: landscape) {
+  .container.cont_phenomena_detailPage .slider.owl-carousel.owl-theme .owl-item img {
+    height: 12em; } }
+
 .container.cont_userProfile_page {
   color: #010f0c;
   word-spacing: -.3em; }
@@ -3984,6 +4008,26 @@ form {
               .container.cont_routes_page .routestList .routeCard .addPhenomenonToRoute form button span:active[class*='x-'], .container.cont_routes_page .routestList .routeCard .addPhenomenonToRoute form button span.active[class*='x-'] {
                 -webkit-text-stroke: 0.3px #39FF14; }
 
+@media (min-width: 360px) {
+  .container.cont_routes_page .routestList .routeCard .infoRouteDetails h4.routeTitle {
+    width: 11.5em; } }
+
+@media (min-width: 640px) {
+  .container.cont_routes_page .routestList .routeCard .infoRouteDetails h4.routeTitle {
+    width: 22.5em; } }
+
+@media (min-width: 731px) {
+  .container.cont_routes_page .routestList .routeCard .infoRouteDetails h4.routeTitle {
+    width: 28em; } }
+
+@media (min-width: 812px) {
+  .container.cont_routes_page .routestList .routeCard .infoRouteDetails h4.routeTitle {
+    width: 30em; } }
+
+@media (min-width: 960px) {
+  .container.cont_routes_page .routestList .routeCard .infoRouteDetails h4.routeTitle {
+    width: 37em; } }
+
 .container.cont_routeDetail_page {
   color: #010f0c;
   word-spacing: -.3em; }
@@ -4271,6 +4315,10 @@ form {
           .container.cont_routeDetail_page .section.addCommentSection form.addComment .messages .error-message {
             padding: .5em 0 0;
             opacity: .5; }
+
+@media (orientation: landscape) {
+  .container.cont_routeDetail_page .mainMap {
+    height: 75%; } }
 
 .container.cont_routeEdit_page {
   min-height: 100%;
