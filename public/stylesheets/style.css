@@ -2868,6 +2868,10 @@ form {
     min-height: 100%;
     z-index: 0; }
 
+@media (orientation: landscape) {
+  .container.cont_login, .container.cont_signup {
+    padding: 1.5em; } }
+
 .container.cont_info_page {
   min-height: 100%;
   padding: 4em 0;
@@ -2895,9 +2899,6 @@ form {
   .container.cont_info_page .index p {
     color: #fff;
     opacity: .5; }
-@media (orientation: landscape) {
-  .container.cont_login, .container.cont_signup {
-    padding: 1.5em; } }
 
 .container.cont_map_page, .container.cont_routeDetail_page {
   position: relative; }
@@ -4522,17 +4523,3 @@ form {
 @media (orientation: landscape) {
   .container.cont_routeEdit_page .editingRoutePage {
     padding-bottom: 3em; } }
-
-@-moz-document url-prefix() {
-  .container.cont_phenomena_page .phsFeed {
-    margin-bottom: 4em; }
-  .container.cont_routes_page .routestList {
-    margin-bottom: 4em; }
-  .container.cont_routeEdit_page, .container.cont_editUserProfile_page {
-    min-height: unset;
-    padding: 3em 0;
-    margin-bottom: 3em; }
-    .container.cont_routeEdit_page form, .container.cont_editUserProfile_page form {
-      width: auto; }
-  .container.cont_routeDetail_page .section.addCommentSection form.addComment .commentBox, .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .commentBox {
-    width: 87%; } }
