@@ -2451,6 +2451,9 @@
 .x-search:before {
   content: '\005a'; }
 
+.x-info:before {
+  content: '\0069'; }
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

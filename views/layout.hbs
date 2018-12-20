@@ -13,6 +13,13 @@
 
 <body>
 
+  <script>
+    if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && !localStorage.getItem("alertShown")) {
+      localStorage.setItem("alertShown", true);
+      window.alert('This app has been design to mobile! It will be a better experience if you see it that way. ;)');
+    }
+  </script>
+
 
   <div class="container cont_{{actual_page}}">
     {{{body}}}
