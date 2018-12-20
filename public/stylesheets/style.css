@@ -4411,3 +4411,17 @@ form {
                 color: #39FF14; }
                 .container.cont_routeEdit_page .editingRoutePage .phenomenaList ul li form.deleteFromRoute button span.active[class*='x-'] {
                   -webkit-text-stroke: 0.3px #39FF14; }
+
+@-moz-document url-prefix() {
+  .container.cont_phenomena_page .phsFeed {
+    margin-bottom: 4em; }
+  .container.cont_routes_page .routestList {
+    margin-bottom: 4em; }
+  .container.cont_routeEdit_page, .container.cont_editUserProfile_page {
+    min-height: unset;
+    padding: 3em 0;
+    margin-bottom: 3em; }
+    .container.cont_routeEdit_page form, .container.cont_editUserProfile_page form {
+      width: auto; }
+  .container.cont_routeDetail_page .section.addCommentSection form.addComment .commentBox, .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .commentBox {
+    width: 87%; } }
