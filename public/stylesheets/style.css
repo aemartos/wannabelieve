@@ -3110,6 +3110,10 @@ form {
   .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails h4.phenomTitle {
     width: 11.5em; } }
 
+@media (min-width: 414px) {
+  .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails h4.phenomTitle {
+    width: 13.5em; } }
+
 @media (min-width: 640px) {
   .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails h4.phenomTitle {
     width: 22.5em; } }
@@ -4344,7 +4348,7 @@ form {
         -webkit-text-stroke: 0.3px #39FF14; }
   .container.cont_routeEdit_page .editingRoutePage {
     position: relative;
-    height: 100%; }
+    min-height: 100%; }
     .container.cont_routeEdit_page .editingRoutePage .routesEditTitle {
       margin-top: 0;
       font-size: 1.8em;
@@ -4465,6 +4469,10 @@ form {
                 color: #39FF14; }
                 .container.cont_routeEdit_page .editingRoutePage .phenomenaList ul li form.deleteFromRoute button span.active[class*='x-'] {
                   -webkit-text-stroke: 0.3px #39FF14; }
+
+@media (orientation: landscape) {
+  .container.cont_routeEdit_page .editingRoutePage {
+    padding-bottom: 3em; } }
 
 @-moz-document url-prefix() {
   .container.cont_phenomena_page .phsFeed {
