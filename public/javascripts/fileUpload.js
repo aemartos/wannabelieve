@@ -33,8 +33,17 @@ function readURL(input) {
   }
 }
 
-$("#file").change(function() {
-  readURL(this);
+$("#file1").change(function() {
+	readURL(this);
+
+$("#file2").change(function() {
+		readURL(this);
+
+$("#file3").change(function() {
+			readURL(this);
+			
+$("#file4").change(function() {
+				readURL(this);
 });
 
 })

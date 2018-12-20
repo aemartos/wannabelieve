@@ -3232,11 +3232,18 @@ form {
       padding-bottom: 3em; }
       .container.cont_addPhenom_page form.addForm .error-message {
         opacity: .5; }
+      .container.cont_addPhenom_page form.addForm .imgsContainer {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        flex-flow: row wrap;
+        justify-content: space-between; }
       .container.cont_addPhenom_page form.addForm label {
         background-color: transparent;
         margin-top: .5em;
-        opacity: 1; }
-        .container.cont_addPhenom_page form.addForm label #imgUpl {
+        opacity: 1;
+        width: 48%; }
+        .container.cont_addPhenom_page form.addForm label #imgUpl1, .container.cont_addPhenom_page form.addForm label #imgUpl2, .container.cont_addPhenom_page form.addForm label #imgUpl3, .container.cont_addPhenom_page form.addForm label #imgUpl4 {
           width: 100%;
           opacity: .5; }
       .container.cont_addPhenom_page form.addForm input, .container.cont_addPhenom_page form.addForm textarea, .container.cont_addPhenom_page form.addForm select {
