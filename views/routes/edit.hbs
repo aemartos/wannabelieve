@@ -1,29 +1,39 @@
-<h1 class="routesEditTitle">edit route</h1>
-<form class="editRoute"  method="POST" action="/routes/{{route._id}}/edit">
-  <div class="actions">
-    <button type="submit" class="saveBtn"><span class="x-save"></span><span class="text">save</span></button>
-    <a href="/routes/{{route._id}}/delete"><span class="x-delete"></span><span class="text">delete</span></a>
+<div class="editingRoutePage">
+  <h1 class="routesEditTitle">edit route</h1>
+  <form class="editRoute"  method="POST" action="/routes/{{route._id}}/edit">
+    <div class="actions">
+      <a href="/routes/{{route._id}}/detail"><span class="x-back"></span></a>
+      <span class="editRoute">
+        <button type="submit" class="saveBtn"><span class="x-save"></span></button>
+        <a href="/routes/{{route._id}}/delete"><span class="x-delete"></span></a>
+      </span>
+    </div>
+    <div class="messages">
+      {{#each messages}}
+        <div class="error-message">{{this}}</div>
+      {{/each}}
+    </div>
+    <p class="routeTitle">route title</p>
+    <input type="text" name="routetitle" placeholder="{{route.routetitle}}" value="{{route.routetitle}}">
+    <p class="routeDescription">route description</p>
+    <textarea type="text" name="description" placeholder="{{route.description}}" value="{{route.description}}"></textarea>
+  </form>
+  <div class="phenomenaList">
+    <p class="phenomListTitle">phenomena</p>
+    <ul class="">
+      {{#unless route.phenomenoId}}
+        <li class="phenom noPhenom">
+          There are no phenomena in this route
+        </li>
+      {{/unless}}
+      {{#each route.phenomenoId}}
+        <li class="phenom">
+          <span><img src="/images/markers/big/{{this.type}}.png" alt=""> <span class="text">{{this.name}}</span></span>
+          <form class="deleteFromRoute" method="POST" action="/routes/{{@root.route._id}}/delete/{{this._id}}">
+            <button type="submit" class="deleteFromRouteBtn"><span class="x-delete"></span></button>
+          </form>
+        </li>
+      {{/each}}
+    </ul>
   </div>
-  <div class="messages">
-    {{#each messages}}
-      <div class="error-message">{{this}}</div>
-    {{/each}}
-  </div>
-  <p class="routeTitle">route title</p>
-  <input type="text" name="routetitle" placeholder="{{route.routetitle}}" value="{{route.routetitle}}">
-  <p class="routeDescription">route description</p>
-  <textarea type="text" name="description" placeholder="{{route.description}}" value="{{route.description}}"></textarea>
-</form>
-<div class="phenomenaList">
-  <p class="phenomListTitle">phenomena</p>
-  <ul class="">
-    {{#each route.phenomenoId}}
-      <li class="phenom">
-        <span class="text">{{this.name}}</span>
-        <form class="deleteFromRoute" method="POST" action="/routes/{{@root.route._id}}/delete/{{this._id}}">
-          <button type="submit" class="deleteFromRouteBtn"><span class="x-delete"></span></button>
-        </form>
-      </li>
-    {{/each}}
-  </ul>
 </div>

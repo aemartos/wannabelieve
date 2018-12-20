@@ -80,6 +80,12 @@ hbs.registerHelper('ifUndefined', (value, options) => {
   }
 });
 
+hbs.registerHelper('select', function(selected, options) {
+  return options.fn(this).replace(
+      new RegExp(' value=\"' + selected + '\"'),
+      '$& selected="selected"');
+});
+
 
 // default value for title local
 app.locals.title = 'wannabelieve';

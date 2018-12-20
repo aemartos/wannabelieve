@@ -1,9 +1,16 @@
 
-<div class="addForm">
-  <form action="/addPhenomenon" method="post" enctype="multipart/form-data">
+<div class="">
+  <h1 class="addPhenomTitle">add phenomenon</h1>
+  <form class="addForm" action="/addPhenomenon" method="post" enctype="multipart/form-data">
     <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
     <label class="addFileLabel " for="file"><img id="imgUpl" src="/images/avatars/addimg.png" alt="addImgIcon"></img>
     </label>
+
+    <div class="messages">
+      {{#each messages}}
+        <div class="error-message">{{this}}</div>
+      {{/each}}
+    </div>
 
     <div class="phenomName">
       <label for="name">Name</label>
@@ -11,23 +18,26 @@
     </div>
 
     <div class="phenomType">
-      <label for="type">Type</label>
-      <select name="type" class="form-control">
-        <option value="fantasticAnimals">🦄 Fanatic Animals</option>
-        <option value="seaCreatures">🦑 Sea Creatures</option>
-        <option value="extraterrestrials">👾 Extraterrestrials</option>
-        <option value="ufos">👽 Ufos</option>
-        <option value="ghosts">👻 Ghosts</option>
-        <option value="weirdStuff">💩 Weird Stuff</option>
-        <option value="psychophonies">👂🏻 Psychophonies</option>
-        <option value="paranormal">🧠 Paranormal</option>
-        <option value="abandonedPlaces">🏚 Abandoned places</option>
-        <option value="signals">🌾 Signals</option>
-        <option value="halfHuman">🧟‍♂️ Half-human</option>
-        <option value="religiousApparitions">⛪️ Religious Apparitions</option>
-        <option value="naturalPhenomena">🌈 Natural Phenomena</option>
-        <option value="unclassified">🙈 unclassified</option>
-      </select>
+      <label for="type">category</label>
+      <div class="selectBox">
+        <span class="fa fa-arrow-down arrowSelect"></span>
+        <select name="type" class="form-control">
+          <option value="fantasticAnimals">🦄 Fanatic Animals</option>
+          <option value="seaCreatures">🦑 Sea Creatures</option>
+          <option value="extraterrestrials">👾 Extraterrestrials</option>
+          <option value="ufos">👽 Ufos</option>
+          <option value="ghosts">👻 Ghosts</option>
+          <option value="weirdStuff">💩 Weird Stuff</option>
+          <option value="psychophonies">👂🏻 Psychophonies</option>
+          <option value="paranormal">🧠 Paranormal</option>
+          <option value="abandonedPlaces">🏚 Abandoned places</option>
+          <option value="signals">🌾 Signals</option>
+          <option value="halfHuman">🧟‍♂️ Half-human</option>
+          <option value="religiousApparitions">⛪️ Religious Apparitions</option>
+          <option value="naturalPhenomena">🌈 Natural Phenomena</option>
+          <option value="unclassified">🙈 unclassified</option>
+        </select>
+      </div>
     </div>
 
     <div class="phenomDescription">
@@ -35,7 +45,10 @@
       <textarea class="descripText" name="description"></textarea>
     </div>
 
-    <button type="submit">Add</button>
+    <div class="actions">
+      <a href="/map"><span class="x-back"></span></a>
+      <button type="submit"><span class="x-plus"></span> {{!--<span class="text">add</span>--}}</button>
+    </div>
 
     <div class="geolocation">
       <input type="hidden" name="latitude" placeholder="latitude">
@@ -43,12 +56,6 @@
     </div>
 
   </form>
-
-   <div class="messages">
-      {{#each messages}}
-        <div class="error-message">{{this}}</div>
-      {{/each}}
-    </div>
 
 </div>
 

@@ -1,11 +1,93 @@
-.container 
+.container
   &.cont_phenomena_editPage
-    +column-flex
-    form 
-      padding: 3em 0
-      label 
-        padding: 0.5em 0
-    #imgUpl
-      width: 25%
-    a 
-      color: red
+    min-height: 100%
+    width: 100%
+    padding: 4em 0
+    word-spacing: -.3em
+    color: $menubg
+    text-transform: lowercase
+    span[class*='x-']
+      color: $menubg
+      font-size: 1.5em
+      -webkit-text-stroke: .3px $menubg
+      text-transform: uppercase
+      &:active
+        color: $secondarycolor
+        &[class*='x-']
+          -webkit-text-stroke: .3px $secondarycolor
+    .editPhenomTitle
+      margin-top: 0
+      font-size: 1.8em
+      padding-bottom: .6em
+      width: 100%
+      text-align: center
+      border-bottom: 4px solid $maincolor
+    form
+      &.editForm
+        position: relative
+        width: 85%
+        margin: 0 auto
+        //min-height: 100%
+        min-height: 83%
+        padding-bottom: 3em
+        label
+          background-color: transparent
+          margin-top: .5em
+          opacity: 1
+          &.profilePicture
+            margin-bottom: 1.5em
+            opacity: .5
+          #imgUpl
+            width: 100%
+        input, textarea, select
+          border: 2px solid $darkbg
+          color: $menubg
+          text-transform: lowercase
+          line-height: 1.4em
+          opacity: .5
+          &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus
+            -webkit-text-fill-color: $menubg
+            -webkit-box-shadow: 0 0 0px 1000px $background inset
+        select
+          padding: 0 .8em
+          height: 3em
+          -moz-appearance: window
+          -webkit-appearance: none
+        textarea
+          height: 9em
+        button
+          border: none
+          display: inline-block
+          width: auto
+          margin: 0
+          padding: 0
+        .actions
+          width: 100%
+          position: absolute
+          bottom: 0
+          left: 0
+          +row-flex
+          justify-content: space-between
+          font-size: 1.5em
+        .usernameBox
+          input
+            text-align: center
+        .selectBox
+          position: relative
+          .arrowSelect
+            position: absolute
+            top: .8em
+            right: 1em
+            color: $darkbg
+      ::-webkit-input-placeholder /* Chrome/Opera/Safari */
+        color: $maincolor
+        opacity: .5
+      ::-moz-placeholder /* Firefox 19+ */
+        color: $maincolor
+        opacity: .5
+      :-ms-input-placeholder /* IE 10+ */
+        color: $maincolor
+        opacity: .5
+      :-moz-placeholder /* Firefox 18- */
+        color: $maincolor
+        opacity: .5

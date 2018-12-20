@@ -1,5 +1,64 @@
 .container
   &.cont_editUserProfile_page
-    +column-flex
-    #imgUpl
-      width: 100%
+    min-height: 100%
+    width: 85%
+    padding: 4em 0
+    margin: 0 auto
+    word-spacing: -.3em
+    color: $menubg
+    text-transform: lowercase
+    span[class*='x-']
+      color: $menubg
+      font-size: 1.5em
+      -webkit-text-stroke: .3px $menubg
+      text-transform: uppercase
+      &:active
+        color: $secondarycolor
+        &[class*='x-']
+          -webkit-text-stroke: .3px $secondarycolor
+    form
+      &.editForm
+        width: 100%
+        label
+          background-color: transparent
+          margin-top: .5em
+          opacity: 1
+          &.profilePicture
+            margin-bottom: 1.5em
+            opacity: .5
+          #imgUpl
+            width: 100%
+        input, textarea
+          border: 2px solid $darkbg
+          color: $menubg
+          text-transform: lowercase
+          line-height: 1.4em
+          opacity: .5
+          &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus
+            -webkit-text-fill-color: $menubg
+            -webkit-box-shadow: 0 0 0px 1000px $background inset
+        button
+          border: none
+          display: inline-block
+          width: auto
+          margin: 0
+          padding: 0
+        .actions
+          +row-flex
+          justify-content: space-between
+          font-size: 1.5em
+        .usernameBox
+          input
+            text-align: center
+      ::-webkit-input-placeholder /* Chrome/Opera/Safari */
+        color: $maincolor
+        opacity: .5
+      ::-moz-placeholder /* Firefox 19+ */
+        color: $maincolor
+        opacity: .5
+      :-ms-input-placeholder /* IE 10+ */
+        color: $maincolor
+        opacity: .5
+      :-moz-placeholder /* Firefox 18- */
+        color: $maincolor
+        opacity: .5

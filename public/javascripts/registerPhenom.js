@@ -7,7 +7,7 @@
 
     document.querySelector('button').disabled=false;
     // document.querySelector('button').className+="addBtn";
-  })
+  }).catch(e=> window.alert("You can't sight the phenomenon because we can't geolocate you."));
 
 
   /*--------------------- SLIDER ----------------------*/

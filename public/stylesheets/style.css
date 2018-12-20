@@ -2466,7 +2466,7 @@
   -ms-user-select: none;
   user-select: none; }
 
-input, textarea {
+input, textarea, select, button {
   -webkit-user-select: initial;
   -moz-user-select: initial;
   -ms-user-select: initial;
@@ -2474,6 +2474,7 @@ input, textarea {
 
 html, body {
   height: 100%;
+  overflow-x: scroll;
   width: 100%;
   color: white;
   background-color: #a8a8a8;
@@ -2691,7 +2692,7 @@ footer {
         -webkit-text-stroke: 0.2px #39FF14; }
 
 form {
-  width: 20em;
+  width: 80%;
   -ms-input-placeholder-color: #fff;
   -ms-input-placeholder-opacity: .5;
   -moz-placeholder-color: #fff;
@@ -3106,27 +3107,185 @@ form {
             -webkit-text-stroke: 0.3px #39FF14; }
 
 .container.cont_phenomena_editPage {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center; }
+  min-height: 100%;
+  width: 100%;
+  padding: 4em 0;
+  word-spacing: -.3em;
+  color: #010f0c;
+  text-transform: lowercase; }
+  .container.cont_phenomena_editPage span[class*='x-'] {
+    color: #010f0c;
+    font-size: 1.5em;
+    -webkit-text-stroke: 0.3px #010f0c;
+    text-transform: uppercase; }
+    .container.cont_phenomena_editPage span[class*='x-']:active {
+      color: #39FF14; }
+      .container.cont_phenomena_editPage span[class*='x-']:active[class*='x-'] {
+        -webkit-text-stroke: 0.3px #39FF14; }
+  .container.cont_phenomena_editPage .editPhenomTitle {
+    margin-top: 0;
+    font-size: 1.8em;
+    padding-bottom: .6em;
+    width: 100%;
+    text-align: center;
+    border-bottom: 4px solid #fff; }
   .container.cont_phenomena_editPage form {
-    padding: 3em 0; }
-    .container.cont_phenomena_editPage form label {
-      padding: 0.5em 0; }
-  .container.cont_phenomena_editPage #imgUpl {
-    width: 25%; }
-  .container.cont_phenomena_editPage a {
-    color: red; }
+    -ms-input-placeholder-color: #fff;
+    -ms-input-placeholder-opacity: .5;
+    -moz-placeholder-color: #fff;
+    -moz-placeholder-opacity: .5; }
+    .container.cont_phenomena_editPage form.editForm {
+      position: relative;
+      width: 85%;
+      margin: 0 auto;
+      min-height: 83%;
+      padding-bottom: 3em; }
+      .container.cont_phenomena_editPage form.editForm label {
+        background-color: transparent;
+        margin-top: .5em;
+        opacity: 1; }
+        .container.cont_phenomena_editPage form.editForm label.profilePicture {
+          margin-bottom: 1.5em;
+          opacity: .5; }
+        .container.cont_phenomena_editPage form.editForm label #imgUpl {
+          width: 100%; }
+      .container.cont_phenomena_editPage form.editForm input, .container.cont_phenomena_editPage form.editForm textarea, .container.cont_phenomena_editPage form.editForm select {
+        border: 2px solid #8f8f8f;
+        color: #010f0c;
+        text-transform: lowercase;
+        line-height: 1.4em;
+        opacity: .5; }
+        .container.cont_phenomena_editPage form.editForm input:-webkit-autofill, .container.cont_phenomena_editPage form.editForm input:-webkit-autofill:hover, .container.cont_phenomena_editPage form.editForm input:-webkit-autofill:focus, .container.cont_phenomena_editPage form.editForm textarea:-webkit-autofill, .container.cont_phenomena_editPage form.editForm textarea:-webkit-autofill:hover, .container.cont_phenomena_editPage form.editForm textarea:-webkit-autofill:focus, .container.cont_phenomena_editPage form.editForm select:-webkit-autofill, .container.cont_phenomena_editPage form.editForm select:-webkit-autofill:hover, .container.cont_phenomena_editPage form.editForm select:-webkit-autofill:focus {
+          -webkit-text-fill-color: #010f0c;
+          -webkit-box-shadow: 0 0 0px 1000px #a8a8a8 inset; }
+      .container.cont_phenomena_editPage form.editForm select {
+        padding: 0 .8em;
+        height: 3em;
+        -moz-appearance: window;
+        -webkit-appearance: none; }
+      .container.cont_phenomena_editPage form.editForm textarea {
+        height: 9em; }
+      .container.cont_phenomena_editPage form.editForm button {
+        border: none;
+        display: inline-block;
+        width: auto;
+        margin: 0;
+        padding: 0; }
+      .container.cont_phenomena_editPage form.editForm .actions {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.5em; }
+      .container.cont_phenomena_editPage form.editForm .usernameBox input {
+        text-align: center; }
+      .container.cont_phenomena_editPage form.editForm .selectBox {
+        position: relative; }
+        .container.cont_phenomena_editPage form.editForm .selectBox .arrowSelect {
+          position: absolute;
+          top: .8em;
+          right: 1em;
+          color: #8f8f8f; }
+    .container.cont_phenomena_editPage form ::-webkit-input-placeholder {
+      color: #fff;
+      opacity: .5; }
+    .container.cont_phenomena_editPage form ::-moz-placeholder {
+      color: #fff;
+      opacity: .5; }
 
 .container.cont_addPhenom_page {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center; }
-
-.container .addFileLabel {
-  width: 100%; }
-  .container .addFileLabel .addFilePh {
-    width: 100%; }
+  min-height: 100%;
+  padding: 4em 0;
+  word-spacing: -.3em;
+  color: #010f0c;
+  text-transform: lowercase; }
+  .container.cont_addPhenom_page span[class*='x-'] {
+    color: #010f0c;
+    font-size: 1.5em;
+    -webkit-text-stroke: 0.3px #010f0c;
+    text-transform: uppercase; }
+    .container.cont_addPhenom_page span[class*='x-']:active {
+      color: #39FF14; }
+      .container.cont_addPhenom_page span[class*='x-']:active[class*='x-'] {
+        -webkit-text-stroke: 0.3px #39FF14; }
+  .container.cont_addPhenom_page .addPhenomTitle {
+    margin-top: 0;
+    font-size: 1.6em;
+    padding-bottom: .6em;
+    width: 100%;
+    text-align: center;
+    border-bottom: 4px solid #fff; }
+  .container.cont_addPhenom_page form {
+    -ms-input-placeholder-color: #fff;
+    -ms-input-placeholder-opacity: .5;
+    -moz-placeholder-color: #fff;
+    -moz-placeholder-opacity: .5; }
+    .container.cont_addPhenom_page form.addForm {
+      position: relative;
+      min-height: 100%;
+      width: 85%;
+      margin: 0 auto;
+      padding-bottom: 3em; }
+      .container.cont_addPhenom_page form.addForm .error-message {
+        opacity: .5; }
+      .container.cont_addPhenom_page form.addForm label {
+        background-color: transparent;
+        margin-top: .5em;
+        opacity: 1; }
+        .container.cont_addPhenom_page form.addForm label #imgUpl {
+          width: 100%;
+          opacity: .5; }
+      .container.cont_addPhenom_page form.addForm input, .container.cont_addPhenom_page form.addForm textarea, .container.cont_addPhenom_page form.addForm select {
+        border: 2px solid #8f8f8f;
+        color: #010f0c;
+        text-transform: lowercase;
+        line-height: 1.4em;
+        opacity: .5; }
+        .container.cont_addPhenom_page form.addForm input:-webkit-autofill, .container.cont_addPhenom_page form.addForm input:-webkit-autofill:hover, .container.cont_addPhenom_page form.addForm input:-webkit-autofill:focus, .container.cont_addPhenom_page form.addForm textarea:-webkit-autofill, .container.cont_addPhenom_page form.addForm textarea:-webkit-autofill:hover, .container.cont_addPhenom_page form.addForm textarea:-webkit-autofill:focus, .container.cont_addPhenom_page form.addForm select:-webkit-autofill, .container.cont_addPhenom_page form.addForm select:-webkit-autofill:hover, .container.cont_addPhenom_page form.addForm select:-webkit-autofill:focus {
+          -webkit-text-fill-color: #010f0c;
+          -webkit-box-shadow: 0 0 0px 1000px #a8a8a8 inset; }
+      .container.cont_addPhenom_page form.addForm select {
+        padding: 0 .8em;
+        height: 3em;
+        -moz-appearance: window;
+        -webkit-appearance: none; }
+      .container.cont_addPhenom_page form.addForm textarea {
+        height: 9em; }
+      .container.cont_addPhenom_page form.addForm button {
+        border: none;
+        display: inline-block;
+        width: auto;
+        margin: 0;
+        padding: 0; }
+      .container.cont_addPhenom_page form.addForm .actions {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.5em; }
+      .container.cont_addPhenom_page form.addForm .usernameBox input {
+        text-align: center; }
+      .container.cont_addPhenom_page form.addForm .selectBox {
+        position: relative; }
+        .container.cont_addPhenom_page form.addForm .selectBox .arrowSelect {
+          position: absolute;
+          top: .8em;
+          right: 1em;
+          color: #8f8f8f; }
+    .container.cont_addPhenom_page form ::-webkit-input-placeholder {
+      color: #fff;
+      opacity: .5; }
+    .container.cont_addPhenom_page form ::-moz-placeholder {
+      color: #fff;
+      opacity: .5; }
 
 .container.cont_phenomena_detailPage {
   color: #010f0c;
@@ -3202,6 +3361,8 @@ form {
       .container.cont_phenomena_detailPage .section.sectionBtn p.favourite span[class*='x-'].active {
         color: #39FF14;
         -webkit-text-stroke: 0.3px #39FF14; }
+    .container.cont_phenomena_detailPage .section.firstSection .mainTitle {
+      line-height: 1.2em; }
     .container.cont_phenomena_detailPage .section.firstSection .phenomMainInfo {
       width: 85%;
       text-align: left;
@@ -3230,6 +3391,8 @@ form {
           color: #010f0c; }
           .container.cont_phenomena_detailPage .section.firstSection .phenomMainInfo .actions a i {
             -webkit-text-stroke: 0.3px #010f0c; }
+    .container.cont_phenomena_detailPage .section.firstSection .typePhenomenon {
+      margin-top: .5em; }
     .container.cont_phenomena_detailPage .section.firstSection .discoveredOn, .container.cont_phenomena_detailPage .section.firstSection .typePhenomenon {
       font-family: 'Share Tech Mono';
       word-spacing: 0;
@@ -3328,6 +3491,8 @@ form {
           color: #010f0c; }
           .container.cont_phenomena_detailPage .section.fourthSection ul#routesAccordion li.route a span {
             opacity: .5; }
+            .container.cont_phenomena_detailPage .section.fourthSection ul#routesAccordion li.route a span.routesIcon {
+              margin-right: .5em; }
     .container.cont_phenomena_detailPage .section.fifthSection {
       border: 0;
       padding-bottom: 0; }
@@ -3420,6 +3585,8 @@ form {
 .container.cont_userProfile_page {
   color: #010f0c;
   word-spacing: -.3em; }
+  .container.cont_userProfile_page p {
+    line-height: 1.4em; }
   .container.cont_userProfile_page span[class*='x-'] {
     color: #010f0c;
     font-size: 1.5em;
@@ -3433,62 +3600,92 @@ form {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    width: 100%;
-    padding: 2% 5%;
     justify-content: flex-end;
-    font-size: 1.5em; }
+    width: 100%;
+    font-size: 2em;
+    padding: .8em .5em 0 0; }
+    .container.cont_userProfile_page .proHeader a i {
+      color: #010f0c;
+      -webkit-text-stroke: 0.3px #010f0c; }
+      .container.cont_userProfile_page .proHeader a i:active {
+        color: #39FF14;
+        -webkit-text-stroke: 0.3px #39FF14; }
   .container.cont_userProfile_page .proPicture {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    width: 100%;
     justify-content: center;
-    padding: 5% 5% 0% 5%; }
+    width: 85%;
+    margin: 0 auto; }
     .container.cont_userProfile_page .proPicture img {
-      max-width: 50%; }
+      width: 65%; }
   .container.cont_userProfile_page .proUserInfo {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    width: 100%;
     justify-content: center;
-    padding: 0 5%; }
+    width: 85%;
+    margin: 0 auto; }
     .container.cont_userProfile_page .proUserInfo h2 {
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
-      justify-content: center; }
+      justify-content: center;
+      margin: 1.5em 0 .5em 0; }
     .container.cont_userProfile_page .proUserInfo .proEmailDate {
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
+      word-spacing: 0;
+      text-transform: lowercase;
       font-size: 0.8em;
-      font-family: 'Share Tech Mono', monospace; }
+      font-family: 'Share Tech Mono', monospace;
+      opacity: .5; }
   .container.cont_userProfile_page .proCaption {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    width: 100%;
-    padding: 0 5%;
-    align-items: flex-start; }
+    align-items: flex-start;
+    width: 85%;
+    margin: 0 auto;
+    text-transform: lowercase; }
+    .container.cont_userProfile_page .proCaption h4 {
+      margin-bottom: .5em; }
     .container.cont_userProfile_page .proCaption p {
       font-size: 0.9em;
-      font-weight: 100; }
+      font-weight: 100;
+      opacity: .5; }
   .container.cont_userProfile_page .proDescr {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    width: 100%;
-    padding: 0 5% 5% 5%;
-    align-items: flex-start; }
+    align-items: flex-start;
+    width: 85%;
+    margin: 0 auto;
+    text-transform: lowercase;
+    margin-bottom: 2em; }
+    .container.cont_userProfile_page .proDescr h4 {
+      margin-bottom: .5em; }
+    .container.cont_userProfile_page .proDescr p {
+      opacity: .5; }
   .container.cont_userProfile_page .section {
     width: 100%;
     padding: 1.2em 0;
-    border-bottom: 4px solid #fff;
     text-transform: lowercase; }
     .container.cont_userProfile_page .section p {
       width: 85%;
       margin: 0 auto; }
+    .container.cont_userProfile_page .section .iconNum {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: flex-start; }
+      .container.cont_userProfile_page .section .iconNum span:first-child {
+        margin-right: .5em; }
+      .container.cont_userProfile_page .section .iconNum span:nth-child(2) {
+        margin-right: 1em; }
+      .container.cont_userProfile_page .section .iconNum span:last-child {
+        margin-right: 0; }
     .container.cont_userProfile_page .section.sectionBtn {
       padding: 0;
       display: flex;
@@ -3525,32 +3722,37 @@ form {
         color: #010f0c; }
         .container.cont_userProfile_page .section.fourthSection p span:active[class*='x-'] {
           -webkit-text-stroke: 0.3px #010f0c; }
-    .container.cont_userProfile_page .section.fourthSection .titles {
-      justify-content: space-between; }
-      .container.cont_userProfile_page .section.fourthSection .titles #sightSection.rotate, .container.cont_userProfile_page .section.fourthSection .titles #regSection.rotate, .container.cont_userProfile_page .section.fourthSection .titles #favSection.rotate {
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        transform: rotate(90deg); }
-    .container.cont_userProfile_page .section.fourthSection ul#sightAccordion, .container.cont_userProfile_page .section.fourthSection ul#regAccordion, .container.cont_userProfile_page .section.fourthSection ul#favAccordion {
-      width: 85%;
-      margin: 0 auto; }
-      .container.cont_userProfile_page .section.fourthSection ul#sightAccordion li.title, .container.cont_userProfile_page .section.fourthSection ul#regAccordion li.title, .container.cont_userProfile_page .section.fourthSection ul#favAccordion li.title {
-        font-size: .8em;
-        margin-bottom: .5em; }
-        .container.cont_userProfile_page .section.fourthSection ul#sightAccordion li.title.noList, .container.cont_userProfile_page .section.fourthSection ul#regAccordion li.title.noList, .container.cont_userProfile_page .section.fourthSection ul#favAccordion li.title.noList {
-          opacity: .5; }
-        .container.cont_userProfile_page .section.fourthSection ul#sightAccordion li.title:last-child, .container.cont_userProfile_page .section.fourthSection ul#regAccordion li.title:last-child, .container.cont_userProfile_page .section.fourthSection ul#favAccordion li.title:last-child {
-          margin-bottom: 0; }
-        .container.cont_userProfile_page .section.fourthSection ul#sightAccordion li.title a, .container.cont_userProfile_page .section.fourthSection ul#regAccordion li.title a, .container.cont_userProfile_page .section.fourthSection ul#favAccordion li.title a {
-          display: flex;
-          flex-flow: row nowrap;
-          align-items: center;
-          justify-content: flex-start;
-          color: #010f0c; }
-          .container.cont_userProfile_page .section.fourthSection ul#sightAccordion li.title a span, .container.cont_userProfile_page .section.fourthSection ul#regAccordion li.title a span, .container.cont_userProfile_page .section.fourthSection ul#favAccordion li.title a span {
+    .container.cont_userProfile_page .section.fourthSection {
+      border-top: 4px solid #fff; }
+      .container.cont_userProfile_page .section.fourthSection .titles {
+        justify-content: space-between; }
+        .container.cont_userProfile_page .section.fourthSection .titles #sightSection.rotate, .container.cont_userProfile_page .section.fourthSection .titles #regSection.rotate, .container.cont_userProfile_page .section.fourthSection .titles #favSection.rotate {
+          -webkit-transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          -o-transform: rotate(90deg);
+          transform: rotate(90deg); }
+      .container.cont_userProfile_page .section.fourthSection ul#sightAccordion, .container.cont_userProfile_page .section.fourthSection ul#regAccordion, .container.cont_userProfile_page .section.fourthSection ul#favAccordion {
+        width: 85%;
+        margin: 0 auto; }
+        .container.cont_userProfile_page .section.fourthSection ul#sightAccordion li.title, .container.cont_userProfile_page .section.fourthSection ul#regAccordion li.title, .container.cont_userProfile_page .section.fourthSection ul#favAccordion li.title {
+          font-size: .8em;
+          margin-bottom: .5em; }
+          .container.cont_userProfile_page .section.fourthSection ul#sightAccordion li.title.noList, .container.cont_userProfile_page .section.fourthSection ul#regAccordion li.title.noList, .container.cont_userProfile_page .section.fourthSection ul#favAccordion li.title.noList {
             opacity: .5; }
+          .container.cont_userProfile_page .section.fourthSection ul#sightAccordion li.title:last-child, .container.cont_userProfile_page .section.fourthSection ul#regAccordion li.title:last-child, .container.cont_userProfile_page .section.fourthSection ul#favAccordion li.title:last-child {
+            margin-bottom: 0; }
+          .container.cont_userProfile_page .section.fourthSection ul#sightAccordion li.title a, .container.cont_userProfile_page .section.fourthSection ul#regAccordion li.title a, .container.cont_userProfile_page .section.fourthSection ul#favAccordion li.title a {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: flex-start;
+            color: #010f0c; }
+            .container.cont_userProfile_page .section.fourthSection ul#sightAccordion li.title a span, .container.cont_userProfile_page .section.fourthSection ul#regAccordion li.title a span, .container.cont_userProfile_page .section.fourthSection ul#favAccordion li.title a span {
+              opacity: .5; }
+            .container.cont_userProfile_page .section.fourthSection ul#sightAccordion li.title a img, .container.cont_userProfile_page .section.fourthSection ul#regAccordion li.title a img, .container.cont_userProfile_page .section.fourthSection ul#favAccordion li.title a img {
+              width: 1.5em;
+              margin-right: .5em; }
   .container.cont_userProfile_page .proMetrics {
     display: flex;
     flex-flow: row nowrap;
@@ -3572,11 +3774,67 @@ form {
       font-size: 1.5em; }
 
 .container.cont_editUserProfile_page {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center; }
-  .container.cont_editUserProfile_page #imgUpl {
-    width: 100%; }
+  min-height: 100%;
+  width: 85%;
+  padding: 4em 0;
+  margin: 0 auto;
+  word-spacing: -.3em;
+  color: #010f0c;
+  text-transform: lowercase; }
+  .container.cont_editUserProfile_page span[class*='x-'] {
+    color: #010f0c;
+    font-size: 1.5em;
+    -webkit-text-stroke: 0.3px #010f0c;
+    text-transform: uppercase; }
+    .container.cont_editUserProfile_page span[class*='x-']:active {
+      color: #39FF14; }
+      .container.cont_editUserProfile_page span[class*='x-']:active[class*='x-'] {
+        -webkit-text-stroke: 0.3px #39FF14; }
+  .container.cont_editUserProfile_page form {
+    -ms-input-placeholder-color: #fff;
+    -ms-input-placeholder-opacity: .5;
+    -moz-placeholder-color: #fff;
+    -moz-placeholder-opacity: .5; }
+    .container.cont_editUserProfile_page form.editForm {
+      width: 100%; }
+      .container.cont_editUserProfile_page form.editForm label {
+        background-color: transparent;
+        margin-top: .5em;
+        opacity: 1; }
+        .container.cont_editUserProfile_page form.editForm label.profilePicture {
+          margin-bottom: 1.5em;
+          opacity: .5; }
+        .container.cont_editUserProfile_page form.editForm label #imgUpl {
+          width: 100%; }
+      .container.cont_editUserProfile_page form.editForm input, .container.cont_editUserProfile_page form.editForm textarea {
+        border: 2px solid #8f8f8f;
+        color: #010f0c;
+        text-transform: lowercase;
+        line-height: 1.4em;
+        opacity: .5; }
+        .container.cont_editUserProfile_page form.editForm input:-webkit-autofill, .container.cont_editUserProfile_page form.editForm input:-webkit-autofill:hover, .container.cont_editUserProfile_page form.editForm input:-webkit-autofill:focus, .container.cont_editUserProfile_page form.editForm textarea:-webkit-autofill, .container.cont_editUserProfile_page form.editForm textarea:-webkit-autofill:hover, .container.cont_editUserProfile_page form.editForm textarea:-webkit-autofill:focus {
+          -webkit-text-fill-color: #010f0c;
+          -webkit-box-shadow: 0 0 0px 1000px #a8a8a8 inset; }
+      .container.cont_editUserProfile_page form.editForm button {
+        border: none;
+        display: inline-block;
+        width: auto;
+        margin: 0;
+        padding: 0; }
+      .container.cont_editUserProfile_page form.editForm .actions {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.5em; }
+      .container.cont_editUserProfile_page form.editForm .usernameBox input {
+        text-align: center; }
+    .container.cont_editUserProfile_page form ::-webkit-input-placeholder {
+      color: #fff;
+      opacity: .5; }
+    .container.cont_editUserProfile_page form ::-moz-placeholder {
+      color: #fff;
+      opacity: .5; }
 
 .container.cont_routes_page {
   min-height: 100%;
@@ -3914,7 +4172,11 @@ form {
             width: 1.5em;
             margin-right: .5em; }
           .container.cont_routeDetail_page .section.fourthSection ul#phenomsAccordion li.phenom a span {
-            opacity: .5; }
+            opacity: .5;
+            width: 24em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; }
     .container.cont_routeDetail_page .section.fifthSection {
       border: 0;
       padding-bottom: 0; }
@@ -4025,109 +4287,127 @@ form {
       color: #39FF14; }
       .container.cont_routeEdit_page span[class*='x-']:active[class*='x-'] {
         -webkit-text-stroke: 0.3px #39FF14; }
-  .container.cont_routeEdit_page .routesEditTitle {
-    margin-top: 0;
-    font-size: 1.8em;
-    padding-bottom: .6em;
-    width: 100%;
-    text-align: center;
-    border-bottom: 4px solid #fff; }
-  .container.cont_routeEdit_page form.editRoute {
-    width: 85%;
-    margin: 0 auto;
-    margin-top: .5em;
-    -ms-input-placeholder-opacity: 1;
-    -ms-input-placeholder-color: #010f0c;
-    -moz-placeholder-opacity: 1;
-    -moz-placeholder-color: #010f0c; }
-    .container.cont_routeEdit_page form.editRoute .routeDescription {
-      margin-top: 1em; }
-    .container.cont_routeEdit_page form.editRoute textarea, .container.cont_routeEdit_page form.editRoute input {
-      border: 0;
-      border: 1.5px solid #8f8f8f;
-      padding: 1em;
-      margin: 0;
-      margin-top: .5em;
+  .container.cont_routeEdit_page .editingRoutePage {
+    position: relative;
+    padding-bottom: 3em; }
+    .container.cont_routeEdit_page .editingRoutePage .routesEditTitle {
+      margin-top: 0;
+      font-size: 1.8em;
+      padding-bottom: .6em;
       width: 100%;
-      text-transform: lowercase;
-      color: #010f0c; }
-      .container.cont_routeEdit_page form.editRoute textarea:-webkit-autofill, .container.cont_routeEdit_page form.editRoute textarea:-webkit-autofill:hover, .container.cont_routeEdit_page form.editRoute textarea:-webkit-autofill:focus, .container.cont_routeEdit_page form.editRoute input:-webkit-autofill, .container.cont_routeEdit_page form.editRoute input:-webkit-autofill:hover, .container.cont_routeEdit_page form.editRoute input:-webkit-autofill:focus {
-        -webkit-box-shadow: 0 0 0px 1000px #a8a8a8 inset; }
-    .container.cont_routeEdit_page form.editRoute input, .container.cont_routeEdit_page form.editRoute textarea {
-      opacity: .5; }
-    .container.cont_routeEdit_page form.editRoute textarea {
-      height: 8em; }
-    .container.cont_routeEdit_page form.editRoute ::-webkit-input-placeholder {
-      opacity: 1;
-      color: #010f0c; }
-    .container.cont_routeEdit_page form.editRoute ::-moz-placeholder {
-      opacity: 1;
-      color: #010f0c; }
-    .container.cont_routeEdit_page form.editRoute .actions {
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 1.5em; }
-      .container.cont_routeEdit_page form.editRoute .actions button, .container.cont_routeEdit_page form.editRoute .actions a {
+      text-align: center;
+      border-bottom: 4px solid #fff; }
+    .container.cont_routeEdit_page .editingRoutePage form.editRoute {
+      width: 85%;
+      margin: 0 auto;
+      margin-top: .5em;
+      -ms-input-placeholder-opacity: 1;
+      -ms-input-placeholder-color: #010f0c;
+      -moz-placeholder-opacity: 1;
+      -moz-placeholder-color: #010f0c; }
+      .container.cont_routeEdit_page .editingRoutePage form.editRoute .routeDescription {
+        margin-top: 1em; }
+      .container.cont_routeEdit_page .editingRoutePage form.editRoute textarea, .container.cont_routeEdit_page .editingRoutePage form.editRoute input {
+        border: 0;
+        border: 1.5px solid #8f8f8f;
+        padding: 1em;
+        margin: 0;
+        margin-top: .5em;
+        width: 100%;
+        text-transform: lowercase;
+        color: #010f0c; }
+        .container.cont_routeEdit_page .editingRoutePage form.editRoute textarea:-webkit-autofill, .container.cont_routeEdit_page .editingRoutePage form.editRoute textarea:-webkit-autofill:hover, .container.cont_routeEdit_page .editingRoutePage form.editRoute textarea:-webkit-autofill:focus, .container.cont_routeEdit_page .editingRoutePage form.editRoute input:-webkit-autofill, .container.cont_routeEdit_page .editingRoutePage form.editRoute input:-webkit-autofill:hover, .container.cont_routeEdit_page .editingRoutePage form.editRoute input:-webkit-autofill:focus {
+          -webkit-box-shadow: 0 0 0px 1000px #a8a8a8 inset; }
+      .container.cont_routeEdit_page .editingRoutePage form.editRoute input, .container.cont_routeEdit_page .editingRoutePage form.editRoute textarea {
+        opacity: .5; }
+      .container.cont_routeEdit_page .editingRoutePage form.editRoute textarea {
+        height: 8em; }
+      .container.cont_routeEdit_page .editingRoutePage form.editRoute ::-webkit-input-placeholder {
+        opacity: 1;
+        color: #010f0c; }
+      .container.cont_routeEdit_page .editingRoutePage form.editRoute ::-moz-placeholder {
+        opacity: 1;
+        color: #010f0c; }
+      .container.cont_routeEdit_page .editingRoutePage form.editRoute .actions {
+        position: absolute;
+        bottom: 0;
         display: flex;
-        flex-flow: column nowrap;
+        flex-flow: row nowrap;
         align-items: center;
-        justify-content: center; }
-        .container.cont_routeEdit_page form.editRoute .actions button.saveBtn, .container.cont_routeEdit_page form.editRoute .actions a.saveBtn {
-          border: 0;
-          padding: 0;
-          margin: 0;
-          width: unset; }
-        .container.cont_routeEdit_page form.editRoute .actions button span:active, .container.cont_routeEdit_page form.editRoute .actions a span:active {
-          color: #39FF14; }
-          .container.cont_routeEdit_page form.editRoute .actions button span:active[class*='x-'], .container.cont_routeEdit_page form.editRoute .actions a span:active[class*='x-'] {
-            -webkit-text-stroke: 0.3px #39FF14; }
-        .container.cont_routeEdit_page form.editRoute .actions button span.text, .container.cont_routeEdit_page form.editRoute .actions a span.text {
-          color: #010f0c;
-          font-size: .5em;
-          margin-top: .3em; }
-  .container.cont_routeEdit_page form .messages {
-    width: 85%;
-    word-spacing: 0; }
-    .container.cont_routeEdit_page form .messages .error-message {
-      padding: .5em 0 0;
-      opacity: .5; }
-  .container.cont_routeEdit_page .phenomenaList {
-    width: 85%;
-    margin: 0 auto;
-    margin-top: 1em; }
-    .container.cont_routeEdit_page .phenomenaList ul li {
-      display: flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      justify-content: space-between;
-      font-size: .8em;
-      margin-bottom: .7em;
-      padding-bottom: .7em;
-      opacity: .5;
-      border-bottom: 1.5px solid #fff; }
-      .container.cont_routeEdit_page .phenomenaList ul li:last-child {
-        margin-bottom: 0;
-        border-bottom: 0; }
-      .container.cont_routeEdit_page .phenomenaList ul li span.text {
-        width: 19em;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis; }
-      .container.cont_routeEdit_page .phenomenaList ul li form {
-        width: max-content; }
-        .container.cont_routeEdit_page .phenomenaList ul li form.deleteFromRoute {
+        justify-content: space-between;
+        width: 85%;
+        font-size: 1.5em; }
+        .container.cont_routeEdit_page .editingRoutePage form.editRoute .actions .editRoute {
           display: flex;
           flex-flow: row nowrap;
           align-items: center;
+          justify-content: space-between; }
+        .container.cont_routeEdit_page .editingRoutePage form.editRoute .actions button, .container.cont_routeEdit_page .editingRoutePage form.editRoute .actions a {
+          display: flex;
+          flex-flow: column nowrap;
+          align-items: center;
           justify-content: center; }
-          .container.cont_routeEdit_page .phenomenaList ul li form.deleteFromRoute button {
-            width: max-content;
+          .container.cont_routeEdit_page .editingRoutePage form.editRoute .actions button.saveBtn, .container.cont_routeEdit_page .editingRoutePage form.editRoute .actions a.saveBtn {
             border: 0;
             padding: 0;
-            margin: 0; }
-            .container.cont_routeEdit_page .phenomenaList ul li form.deleteFromRoute button span.active {
-              color: #39FF14; }
-              .container.cont_routeEdit_page .phenomenaList ul li form.deleteFromRoute button span.active[class*='x-'] {
-                -webkit-text-stroke: 0.3px #39FF14; }
+            margin: 0;
+            margin-right: .5em;
+            width: unset; }
+          .container.cont_routeEdit_page .editingRoutePage form.editRoute .actions button span:active, .container.cont_routeEdit_page .editingRoutePage form.editRoute .actions a span:active {
+            color: #39FF14; }
+            .container.cont_routeEdit_page .editingRoutePage form.editRoute .actions button span:active[class*='x-'], .container.cont_routeEdit_page .editingRoutePage form.editRoute .actions a span:active[class*='x-'] {
+              -webkit-text-stroke: 0.3px #39FF14; }
+          .container.cont_routeEdit_page .editingRoutePage form.editRoute .actions button span.text, .container.cont_routeEdit_page .editingRoutePage form.editRoute .actions a span.text {
+            color: #010f0c;
+            font-size: .5em;
+            margin-top: .3em; }
+    .container.cont_routeEdit_page .editingRoutePage form .messages {
+      width: 85%;
+      word-spacing: 0; }
+      .container.cont_routeEdit_page .editingRoutePage form .messages .error-message {
+        padding: .5em 0 0;
+        opacity: .5; }
+    .container.cont_routeEdit_page .editingRoutePage .phenomenaList {
+      width: 85%;
+      min-height: 12em;
+      margin: 0 auto;
+      margin-top: 1em; }
+      .container.cont_routeEdit_page .editingRoutePage .phenomenaList ul li {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        font-size: .8em;
+        margin-bottom: .7em;
+        padding-bottom: .7em;
+        border-bottom: 1px solid #8f8f8f; }
+        .container.cont_routeEdit_page .editingRoutePage .phenomenaList ul li:last-child {
+          margin-bottom: 0;
+          border-bottom: 0; }
+        .container.cont_routeEdit_page .editingRoutePage .phenomenaList ul li.noPhenom {
+          opacity: .5; }
+        .container.cont_routeEdit_page .editingRoutePage .phenomenaList ul li span {
+          width: 24em;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+          .container.cont_routeEdit_page .editingRoutePage .phenomenaList ul li span .text {
+            opacity: .5; }
+        .container.cont_routeEdit_page .editingRoutePage .phenomenaList ul li img {
+          width: 1.5em; }
+        .container.cont_routeEdit_page .editingRoutePage .phenomenaList ul li form {
+          width: max-content; }
+          .container.cont_routeEdit_page .editingRoutePage .phenomenaList ul li form.deleteFromRoute {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: center; }
+            .container.cont_routeEdit_page .editingRoutePage .phenomenaList ul li form.deleteFromRoute button {
+              width: max-content;
+              border: 0;
+              padding: 0;
+              margin: 0; }
+              .container.cont_routeEdit_page .editingRoutePage .phenomenaList ul li form.deleteFromRoute button span.active {
+                color: #39FF14; }
+                .container.cont_routeEdit_page .editingRoutePage .phenomenaList ul li form.deleteFromRoute button span.active[class*='x-'] {
+                  -webkit-text-stroke: 0.3px #39FF14; }

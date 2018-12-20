@@ -1,7 +1,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-  <form action="/editProfile" method="post" enctype="multipart/form-data">
+  <form class="editForm" action="/editProfile" method="post" enctype="multipart/form-data">
 
     {{#if user.photoProfile}}
     <input class="inputfile" type="file" accept="image/*;capture=camera" name="file" id="file">
@@ -11,8 +11,8 @@
     <input type="file" accept="image/*;capture=camera" name="file" id="file" class="inputfile">
     <label class="profilePicture" for="file"><img id="imgUpl" src="/images/avatars/addimg.png" alt="profilePicture"></label>
     {{/if}}
-    <div class="rowForm">
-      <label for="username">Username</label>
+    <div class="rowForm usernameBox">
+      {{!-- <label for="username">Username</label> --}}
       <input type="text" name="username" value="{{user.username}}">
     </div>
     <div class="rowForm">
@@ -31,13 +31,12 @@
     </div>
 
     <input type="hidden" name="userId" value="{{user.id}}">
-    <button type="submit">Edit</button>
+
+    <div class="actions">
+      <a href="/profile"><span class="x-back"></span></a>
+      <button type="submit"><span class="x-save"></span></button>
+    </div>
   </form>
-
-  <div class="cancelLink">
-    <a href="/profile">Cancel</a>
-  </div>
-
 
 
 <script src="/javascripts/fileUpload.js"></script>

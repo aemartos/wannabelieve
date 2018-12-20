@@ -35,7 +35,14 @@
 
 
 <div class="section fourthSection">
-  <p class="titles"><span class="x-sighting" ></span><span class="text">{{numSight}}</span><span class="text">Sightnings</span> <span class="x-back" id="sightSection"></span></p>
+  <p class="titles">
+    <span class="iconNum">
+      <span class="x-sighting" ></span>
+      <span class="text">{{numSight}}</span>
+      <span class="text">Sightnings</span>
+    </span>
+    <span class="x-back" id="sightSection"></span>
+  </p>
   <ul class="list" id="sightAccordion">
     {{#unless sighted}}
       <li class="title noList">You have no sightnings</li>
@@ -43,6 +50,7 @@
     {{#each sighted}}
       <li class="title">
         <a href="/phenomena/{{this._id}}/">
+          <img src="/images/markers/big/{{this.type}}.png" alt="">
           <span>{{this.name}}</span>
         </a>
       </li>
@@ -51,7 +59,14 @@
 </div>
 
 <div class="section fourthSection">
-  <p class="titles"><span class="x-registered" ></span><span class="text">{{numReg}}</span><span class="text">Registers</span> <span class="x-back" id="regSection"></span></p>
+  <p class="titles">
+    <span class="iconNum">
+      <span class="x-registered" ></span>
+      <span class="text">{{numReg}}</span>
+      <span class="text">Registers</span>
+    </span>
+    <span class="x-back" id="regSection"></span>
+  </p>
   <ul class="list" id="regAccordion">
     {{#unless registed}}
       <li class="title noList">You have no registers</li>
@@ -59,6 +74,7 @@
     {{#each registed}}
       <li class="title">
         <a href="/phenomena/{{this._id}}/">
+          <img src="/images/markers/big/{{this.type}}.png" alt="">
           <span>{{this.name}}</span>
         </a>
       </li>
@@ -67,7 +83,14 @@
 </div>
 
 <div class="section fourthSection">
-  <p class="titles"><span class="x-favorite" ></span><span class="text">{{numFav}}</span><span class="text">Favourites</span> <span class="x-back" id="favSection"></span></p>
+  <p class="titles">
+    <span class="iconNum">
+      <span class="x-favorite"></span>
+      <span class="text">{{numFav}}</span>
+      <span class="text">Favourites</span>
+    </span>
+    <span class="x-back" id="favSection"></span>
+  </p>
   <ul class="list" id="favAccordion">
     {{#unless favourites}}
       <li class="title noList">You have no favorites</li>
@@ -75,6 +98,7 @@
     {{#each favourites}}
       <li class="title">
         <a href="/phenomena/{{this._id}}/">
+          <img src="/images/markers/big/{{this.type}}.png" alt="">
           <span>{{this.name}}</span>
         </a>
       </li>

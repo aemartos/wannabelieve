@@ -19,7 +19,7 @@
     {{/if}}
   </div>
   {{#if editUser}}
-   <p class="typePhenomenon">{{phenomenon.type}}</p>
+   <p class="typePhenomenon">category: {{phenomenon.type}}</p>
   <p class="discoveredOn">discovered on: {{phenomCreationDate}}</p>
   {{else}}
   <p class="typePhenomenon alone">{{phenomenon.type}}</p>
@@ -74,6 +74,7 @@
     {{#each phenomenon.routesImIn}}
       <li class="route">
         <a href="/routes/{{this._id}}/detail">
+          <span class="x-routes routesIcon"></span>
           <span>{{this.routetitle}}</span>
         </a>
       </li>

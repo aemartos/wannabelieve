@@ -14,109 +14,125 @@
         color: $secondarycolor
         &[class*='x-']
           -webkit-text-stroke: .3px $secondarycolor
-    .routesEditTitle
-      margin-top: 0
-      font-size: 1.8em
-      padding-bottom: .6em
-      width: 100%
-      text-align: center
-      border-bottom: 4px solid #fff
-    form
-      &.editRoute
-        width: 85%
-        margin: 0 auto
-        margin-top: .5em
-        .routeDescription
-          margin-top: 1em
-        textarea, input
-          border: 0
-          border: 1.5px solid $darkbg
-          padding: 1em
-          margin: 0
+    .editingRoutePage
+      position: relative
+      padding-bottom: 3em
+      .routesEditTitle
+        margin-top: 0
+        font-size: 1.8em
+        padding-bottom: .6em
+        width: 100%
+        text-align: center
+        border-bottom: 4px solid $maincolor
+      form
+        &.editRoute
+          width: 85%
+          margin: 0 auto
           margin-top: .5em
-          width: 100%
-          text-transform: lowercase
-          color: $menubg
-          //text-align: center
-          &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus
-            -webkit-box-shadow: 0 0 0px 1000px $background inset
-        input, textarea
-          opacity: .5
-        textarea
-          height: 8em
-        ::-webkit-input-placeholder /* Chrome/Opera/Safari */
-          opacity: 1
-          color: $menubg
-        ::-moz-placeholder /* Firefox 19+ */
-          opacity: 1
-          color: $menubg
-        :-ms-input-placeholder /* IE 10+ */
-          opacity: 1
-          color: $menubg
-        :-moz-placeholder /* Firefox 18- */
-          opacity: 1
-          color: $menubg
-        .actions
-          +row-flex
-          justify-content: space-between
-          font-size: 1.5em
-          button, a
-            +column-flex
-            justify-content: center
-            &.saveBtn
-              border: 0
-              padding: 0
-              margin: 0
-              width: unset
-            span
-              &:active
-                color: $secondarycolor
-                &[class*='x-']
-                  -webkit-text-stroke: .3px $secondarycolor
-              &.text
-                color: $menubg
-                font-size: .5em
-                margin-top: .3em
-      .messages
-        width: 85%
-        word-spacing: 0
-        .error-message
-          padding: .5em 0 0
-          opacity: .5
-    .phenomenaList
-      width: 85%
-      margin: 0 auto
-      margin-top: 1em
-      ul
-        li
-          +row-flex
-          justify-content: space-between
-          font-size: .8em
-          margin-bottom: .7em
-          padding-bottom: .7em
-          opacity: .5
-          border-bottom: 1.5px solid #fff
-          &:last-child
-            margin-bottom: 0
-            border-bottom: 0
-          span
-            &.text
-              width: 19em
-              white-space: nowrap
-              overflow: hidden
-              text-overflow: ellipsis
-          form
-            width: max-content
-            &.deleteFromRoute
+          .routeDescription
+            margin-top: 1em
+          textarea, input
+            border: 0
+            border: 1.5px solid $darkbg
+            padding: 1em
+            margin: 0
+            margin-top: .5em
+            width: 100%
+            text-transform: lowercase
+            color: $menubg
+            //text-align: center
+            &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus
+              -webkit-box-shadow: 0 0 0px 1000px $background inset
+          input, textarea
+            opacity: .5
+          textarea
+            height: 8em
+          ::-webkit-input-placeholder /* Chrome/Opera/Safari */
+            opacity: 1
+            color: $menubg
+          ::-moz-placeholder /* Firefox 19+ */
+            opacity: 1
+            color: $menubg
+          :-ms-input-placeholder /* IE 10+ */
+            opacity: 1
+            color: $menubg
+          :-moz-placeholder /* Firefox 18- */
+            opacity: 1
+            color: $menubg
+          .actions
+            position: absolute
+            bottom: 0
+            +row-flex
+            justify-content: space-between
+            width: 85%
+            font-size: 1.5em
+            .editRoute
               +row-flex
+              justify-content: space-between
+            button, a
+              +column-flex
               justify-content: center
-              button
-                width: max-content
+              &.saveBtn
                 border: 0
                 padding: 0
                 margin: 0
-                span
-                  &.active
-                    color: $secondarycolor
-                    &[class*='x-']
-                      -webkit-text-stroke: .3px $secondarycolor
+                margin-right: .5em
+                width: unset
+              span
+                &:active
+                  color: $secondarycolor
+                  &[class*='x-']
+                    -webkit-text-stroke: .3px $secondarycolor
+                &.text
+                  color: $menubg
+                  font-size: .5em
+                  margin-top: .3em
+        .messages
+          width: 85%
+          word-spacing: 0
+          .error-message
+            padding: .5em 0 0
+            opacity: .5
+      .phenomenaList
+        width: 85%
+        min-height: 12em
+        margin: 0 auto
+        margin-top: 1em
+        ul
+          li
+            +row-flex
+            justify-content: space-between
+            font-size: .8em
+            margin-bottom: .7em
+            padding-bottom: .7em
+            border-bottom: 1px solid $darkbg
+            &:last-child
+              margin-bottom: 0
+              border-bottom: 0
+            &.noPhenom
+              opacity: .5
+            span
+              width: 24em
+              white-space: nowrap
+              overflow: hidden
+              text-overflow: ellipsis
+              .text
+                opacity: .5
+            img
+              width: 1.5em
+              //margin-right: .5em
+            form
+              width: max-content
+              &.deleteFromRoute
+                +row-flex
+                justify-content: center
+                button
+                  width: max-content
+                  border: 0
+                  padding: 0
+                  margin: 0
+                  span
+                    &.active
+                      color: $secondarycolor
+                      &[class*='x-']
+                        -webkit-text-stroke: .3px $secondarycolor
