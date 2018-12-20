@@ -4289,7 +4289,7 @@ form {
         -webkit-text-stroke: 0.3px #39FF14; }
   .container.cont_routeEdit_page .editingRoutePage {
     position: relative;
-    padding-bottom: 3em; }
+    height: 100%; }
     .container.cont_routeEdit_page .editingRoutePage .routesEditTitle {
       margin-top: 0;
       font-size: 1.8em;
@@ -4369,7 +4369,6 @@ form {
         opacity: .5; }
     .container.cont_routeEdit_page .editingRoutePage .phenomenaList {
       width: 85%;
-      min-height: 12em;
       margin: 0 auto;
       margin-top: 1em; }
       .container.cont_routeEdit_page .editingRoutePage .phenomenaList ul li {
