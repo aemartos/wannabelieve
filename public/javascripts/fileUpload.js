@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-
 var inputs = document.querySelectorAll( '.inputfile' );
 Array.prototype.forEach.call( inputs, function( input )
 {
@@ -19,7 +18,6 @@ Array.prototype.forEach.call( inputs, function( input )
 });
 
 
-
 function readURL(input) {
 
   if (input.files && input.files[0]) {
@@ -33,17 +31,53 @@ function readURL(input) {
   }
 }
 
-$("#file1").change(function() {
-	readURL(this);
-
-$("#file2").change(function() {
-		readURL(this);
-
-$("#file3").change(function() {
-			readURL(this);
-			
-$("#file4").change(function() {
-				readURL(this);
+$("#file").change(function() {
+  readURL(this);
 });
 
+
+$(function() {
+	// Multiple images preview in browser
+	var imagesPreview = function(input, idPic) {
+
+			if (input.files) {
+					
+
+					
+							var reader = new FileReader();
+
+							reader.onload = function(event) {
+									$(`${idPic}`).attr('src', event.target.result)
+							}
+
+							reader.readAsDataURL(input.files[0]);
+					
+			}
+
+	};
+
+	$('#file1').on('change', function() {
+			imagesPreview(this,"#imgUpl1");
+	});
+
+	$('#file2').on('change', function() {
+		imagesPreview(this,"#imgUpl2");
+});
+
+$('#file3').on('change', function() {
+	imagesPreview(this,"#imgUpl3");
+});
+
+$('#file4').on('change', function() {
+	imagesPreview(this,"#imgUpl4");
+});
+
+});
+
+
+{/* <input type="file" multiple id="gallery-photo-add">
+<div class="gallery"></div> */}
+
+
 })
+
