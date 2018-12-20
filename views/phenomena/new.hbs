@@ -1,14 +1,33 @@
-
 <div class="">
   <h1 class="addPhenomTitle">add phenomenon</h1>
   <form class="addForm" action="/addPhenomenon" method="post" enctype="multipart/form-data">
-    <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
+
+    <div class="imgsContainer">
+      
+        <input class="inputfile" type="file" accept="image/*;capture=camera" name="file" id="file1">
+        <label class="phenomPicture" for="file"><img id="imgUpl1" src="/images/avatars/addimg.png" alt=""></label>
+
+        <input class="inputfile" type="file" accept="image/*;capture=camera" name="file" id="file2">
+        <label class="phenomPicture" for="file"><img id="imgUpl2" src="/images/avatars/addimg.png" alt=""></label>
+
+      
+        <input class="inputfile" type="file" accept="image/*;capture=camera" name="file" id="file3">
+        <label class="phenomPicture" for="file"><img id="imgUpl3" src="/images/avatars/addimg.png" alt=""></label>
+
+        <input class="inputfile" type="file" accept="image/*;capture=camera" name="file" id="file4">
+        <label class="phenomPicture" for="file"><img id="imgUpl4" src="/images/avatars/addimg.png" alt=""></label>
+      
+    </div>
+
+
+    {{!-- <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected"
+      multiple />
     <label class="addFileLabel " for="file"><img id="imgUpl" src="/images/avatars/addimg.png" alt="addImgIcon"></img>
-    </label>
+    </label> --}}
 
     <div class="messages">
       {{#each messages}}
-        <div class="error-message">{{this}}</div>
+      <div class="error-message">{{this}}</div>
       {{/each}}
     </div>
 
