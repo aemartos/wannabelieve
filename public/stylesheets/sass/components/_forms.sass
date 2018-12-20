@@ -81,6 +81,8 @@ form
     font-size: .8em
     text-align: center
   .account-message
+    +column-flex
+    justify-content: center
     margin-top: 2em
     opacity: .5
     a
@@ -89,3 +91,17 @@ form
     margin-bottom: 2em
     text-transform: lowercase
     color: $red
+
+
+@media (orientation: landscape)
+  .container
+    &.cont_login, &.cont_signup
+      form
+        margin-top: 0
+        label
+          margin-top: .5em
+        .account-message
+          flex-flow: row nowrap
+          span
+            &:first-child
+              margin-right: 1em
