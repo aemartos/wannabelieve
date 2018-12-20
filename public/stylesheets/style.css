@@ -3318,6 +3318,10 @@ form {
       color: #fff;
       opacity: .5; }
 
+@media (orientation: landscape) {
+  .container.cont_addPhenom_page form.addForm label {
+    width: 23%; } }
+
 .container.cont_phenomena_detailPage {
   color: #010f0c;
   word-spacing: -.3em; }

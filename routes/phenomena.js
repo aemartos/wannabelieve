@@ -15,7 +15,7 @@ router.get("/phenomena/new", isLoggedIn("/auth/login"), (req, res) => {
   res.render("phenomena/new", { actual_page: "addPhenom_page" });
 });
 
-router.post("/addPhenomenon", uploadPhenomPicture.array("file"), (req, res) => {
+router.post("/addPhenomenon", uploadPhenomPicture.array("file",4), (req, res) => {
   //load of images
   var imgPhenomUrls = [];
 
