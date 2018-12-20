@@ -46,11 +46,12 @@ let routes = [
 
 Route.collection.drop();
 
-const createRoutes = (idUser) => {
-  const routesModified = routes.map(e => ({...e, creatorId: idUser}));
+const createRoutes = (idUser, phenoms) => {
+  const routesModified = routes.map(e => ({...e, creatorId: idUser, phenomenoId: phenoms.sort(() => .5 - Math.random()).slice(0,5)}));
   return Route.create(routesModified)
     .then(routes => {
       console.log(`Created routes!`);
+      return routes;
     })
 }
 

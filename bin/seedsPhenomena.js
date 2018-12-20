@@ -466,6 +466,7 @@ const createPhenomena = (idUser) => {
   return Phenomenon.create(phenom)
     .then(phenoms => {
       console.log(`Created phenomena!`);
+      return phenoms;
     });
 }
 

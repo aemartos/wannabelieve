@@ -54,23 +54,42 @@ let users = [
 
 User.collection.drop();
 
+// User.create(users)
+//   .then(users => {
+//     console.log(`Created users!`);
+//     users.map(e => {
+//       if(e.username === "wannabelieve") {
+//         Promise.all([
+//           createPhenomena(e._id),
+//           createRoutes(e._id)
+//         ])
+//         .then(() => {
+//           mongoose.disconnect();
+//         });
+//       }
+//       return e;
+//     });
+//   }).catch(() => {
+//     mongoose.disconnect();
+// });
+
+
 User.create(users)
   .then(users => {
     console.log(`Created users!`);
     users.map(e => {
       if(e.username === "wannabelieve") {
-        Promise.all([
-          createPhenomena(e._id),
-          createRoutes(e._id)
-        ])
-        .then(() => {
-          mongoose.disconnect();
-        });
+        createPhenomena(e._id)
+        .then((phenoms) => {
+          const phenomsIds = phenoms.map(e => e._id.toString());
+          return createRoutes(e._id, phenomsIds)
+          .then((routes) => {
+            return;
+          })
+        })
       }
       return e;
     });
   }).catch(() => {
     mongoose.disconnect();
-
-    console.log('purpurina');
   });
