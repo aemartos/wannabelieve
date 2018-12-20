@@ -2781,6 +2781,10 @@ form {
     font-size: .8em;
     text-align: center; }
   form .account-message {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
     margin-top: 2em;
     opacity: .5; }
     form .account-message a {
@@ -2789,6 +2793,16 @@ form {
     margin-bottom: 2em;
     text-transform: lowercase;
     color: #F25652; }
+
+@media (orientation: landscape) {
+  .container.cont_login form, .container.cont_signup form {
+    margin-top: 0; }
+    .container.cont_login form label, .container.cont_signup form label {
+      margin-top: .5em; }
+    .container.cont_login form .account-message, .container.cont_signup form .account-message {
+      flex-flow: row nowrap; }
+      .container.cont_login form .account-message span:first-child, .container.cont_signup form .account-message span:first-child {
+        margin-right: 1em; } }
 
 .container.cont_initial_page, .container.cont_signup, .container.cont_login, .container.cont_signupOK {
   display: flex;
@@ -2881,6 +2895,9 @@ form {
   .container.cont_info_page .index p {
     color: #fff;
     opacity: .5; }
+@media (orientation: landscape) {
+  .container.cont_login, .container.cont_signup {
+    padding: 1.5em; } }
 
 .container.cont_map_page, .container.cont_routeDetail_page {
   position: relative; }
