@@ -75,6 +75,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     } else {
       console.log('Directions request failed due to ' + status);
     }
+    if (map.getZoom() === 0) map.setCenter({lat: 0, lng: 0});
   });
 };
 
