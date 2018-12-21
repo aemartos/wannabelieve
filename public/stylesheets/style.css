@@ -3425,13 +3425,13 @@ form {
       flex-flow: row nowrap;
       align-items: center;
       justify-content: center;
+      font-size: .7em;
       background-color: #8f8f8f; }
       .container.cont_phenomena_detailPage .section.sectionBtn p, .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom, .container.cont_phenomena_detailPage .section.sectionBtn .registerPhenom {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
         justify-content: center;
-        font-size: .8em;
         width: 50%;
         padding: .8em 0; }
         .container.cont_phenomena_detailPage .section.sectionBtn p:first-child, .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom:first-child, .container.cont_phenomena_detailPage .section.sectionBtn .registerPhenom:first-child {
@@ -3513,7 +3513,7 @@ form {
       align-items: center;
       justify-content: space-between;
       padding: 0;
-      font-size: .8em;
+      font-size: .7em;
       background-color: #8f8f8f; }
       .container.cont_phenomena_detailPage .section.sectionOtherBtns .ATR, .container.cont_phenomena_detailPage .section.sectionOtherBtns .VIM {
         display: flex;
@@ -3524,7 +3524,7 @@ form {
         .container.cont_phenomena_detailPage .section.sectionOtherBtns .ATR:first-child, .container.cont_phenomena_detailPage .section.sectionOtherBtns .VIM:first-child {
           border-right: 4px solid #fff; }
       .container.cont_phenomena_detailPage .section.sectionOtherBtns .addToRouteBtn, .container.cont_phenomena_detailPage .section.sectionOtherBtns .viewInMapBtn {
-        padding: .8em;
+        padding: .8em 0;
         width: 100%;
         display: flex;
         flex-flow: row nowrap;
