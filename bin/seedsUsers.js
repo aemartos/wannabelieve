@@ -65,12 +65,13 @@ User.create(users)
           const phenomsIds = phenoms.map(e => e._id.toString());
           return createRoutes(e._id, phenomsIds)
           .then((routes) => {
-            return;
+            mongoose.disconnect();
+            return routes;
           })
         })
       }
       return e;
     });
-  }).catch(() => {
-    mongoose.disconnect();
+  }).catch((e) => {
+    console.log(e, "Error, can't create seeds");
   });
