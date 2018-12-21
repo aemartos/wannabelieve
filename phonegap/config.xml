@@ -7,7 +7,7 @@
 
 <!-- versionCode is optional and Android only -->
 
-    <name>Wannabelieve</name>
+    <name>wannabelieve</name>
     <icon src="icon.png" />
     <description>
         Paranormal social network
@@ -23,6 +23,10 @@
     <allow-intent href="http://*/*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="geo:*" />
+    <feature name="http://api.phonegap.com/1.0/network"/>
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+    <feature name="http://api.phonegap.com/1.0/camera" />
+    <feature name="http://api.phonegap.com/1.0/file" />
     <platform name="android">
       <allow-intent href="market:*" />
     </platform>
