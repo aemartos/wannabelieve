@@ -30,6 +30,7 @@ const realTimeLocation = () => {
         if (meMarker) meMarker.setMap(null);
         meMarker = newMeMarker(location);
         loadData(map);
+        return location;
       }
     })
     .catch(e => {

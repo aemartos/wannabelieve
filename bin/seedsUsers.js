@@ -54,25 +54,6 @@ let users = [
 
 User.collection.drop();
 
-// User.create(users)
-//   .then(users => {
-//     console.log(`Created users!`);
-//     users.map(e => {
-//       if(e.username === "wannabelieve") {
-//         Promise.all([
-//           createPhenomena(e._id),
-//           createRoutes(e._id)
-//         ])
-//         .then(() => {
-//           mongoose.disconnect();
-//         });
-//       }
-//       return e;
-//     });
-//   }).catch(() => {
-//     mongoose.disconnect();
-// });
-
 
 User.create(users)
   .then(users => {

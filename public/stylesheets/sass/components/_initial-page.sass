@@ -1,11 +1,22 @@
 .container
-  &.cont_initial_page, &.cont_signup, &.cont_login, &.cont_signupOK
+  &.cont_initial_page, &.cont_signup, &.cont_login, &.cont_signupOK, &.cont_error
     +column-flex
     min-height: 100%
     padding: 4em 0
     background-color: $menubg
     border-top: 4px solid $maincolor
     border-bottom: 4px solid $maincolor
+  &.cont_error
+    justify-content: center
+    background-image: url("../../images/signupOK_bg.png")
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+    word-spacing: -.5em
+    font-size: .9em
+    line-height: 2em
+    .errorBox
+      width: 85%
   &.cont_signupOK
     +column-flex
     justify-content: center
@@ -15,8 +26,9 @@
     background-repeat: no-repeat
     .confirmOk
       width: 80%
-      font-size: 2em
+      font-size: 1.7em
       line-height: 1.3em
+      word-spacing: -.5em
       a
         color: $secondarycolor
   &.cont_initial_page

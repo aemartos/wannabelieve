@@ -1,9 +1,10 @@
+var directionsService = new google.maps.DirectionsService;
+var directionsDisplay = new google.maps.DirectionsRenderer({
+  suppressMarkers: true,
+  polylineOptions: {strokeColor: "#39FF14"}
+});
+
 const createMap = (map, {lat,lng}) => {
-  var directionsService = new google.maps.DirectionsService;
-  var directionsDisplay = new google.maps.DirectionsRenderer({
-    suppressMarkers: true,
-    polylineOptions: {strokeColor: "#39FF14"}
-  });
   map = new google.maps.Map(
     document.getElementById(map), {
       zoom: 14,
@@ -36,12 +37,12 @@ if (window.phenomena.length > 1) {
 
 /*------------------ CALCULATE ROUTE ---------------*/
 
-function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+function calculateAndDisplayRoute(directionsService, directionsDisplay, currentPosition) {
   var waypoints = window.phenomena.map(phenom => {
     let coords = phenom.location.coordinates;
     return {location: new google.maps.LatLng(coords[1], coords[0]), stopover: true};
   });
-  let origin = waypoints.shift().location;
+  let origin = currentPosition || waypoints.shift().location;
   let destination = waypoints.pop().location;
   directionsService.route({
     origin,
@@ -75,7 +76,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     } else {
       console.log('Directions request failed due to ' + status);
     }
-    if (map.getZoom() === 0) map.setCenter({lat: 0, lng: 0});
+    if (map.getZoom() < 1) map.setCenter({lat: 0, lng: 0});
   });
 };
 
@@ -95,15 +96,24 @@ const sections = [...document.getElementsByClassName('section')];
 
 document.getElementById('startRoute').onclick = (el) => {
   isGeolocating = true;
-  RTLinterval = setInterval(realTimeLocation, 1000);
-  map.setZoom(12);
-  markersFunction(true);
   document.getElementById('mainMap').style.height = "100%";
   document.getElementById('finishRoute').style.display = "inline-block";
   document.getElementById('mapZoom').style.display = "flex";
   document.getElementById('mapOptions').style.display = "flex";
   sections.forEach(e => {
     e.style.display = "none";
+  });
+  geolocateMe().then((location)=>{
+    let originMarker = new google.maps.Marker({
+      position: location,
+      map,
+      icon: '/images/markers/small/markerFlag.png'
+    });
+    calculateAndDisplayRoute(directionsService, directionsDisplay, location);
+  }).finally(() => {
+    RTLinterval = setInterval(realTimeLocation, 1000);
+    map.setZoom(12);
+    markersFunction(true);
   });
 };
 

@@ -2804,7 +2804,7 @@ form {
       .container.cont_login form .account-message span:first-child, .container.cont_signup form .account-message span:first-child {
         margin-right: 1em; } }
 
-.container.cont_initial_page, .container.cont_signup, .container.cont_login, .container.cont_signupOK {
+.container.cont_initial_page, .container.cont_signup, .container.cont_login, .container.cont_signupOK, .container.cont_error {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -2813,6 +2813,18 @@ form {
   background-color: #010f0c;
   border-top: 4px solid #fff;
   border-bottom: 4px solid #fff; }
+
+.container.cont_error {
+  justify-content: center;
+  background-image: url("../../images/signupOK_bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  word-spacing: -.5em;
+  font-size: .9em;
+  line-height: 2em; }
+  .container.cont_error .errorBox {
+    width: 85%; }
 
 .container.cont_signupOK {
   display: flex;
@@ -2825,8 +2837,9 @@ form {
   background-repeat: no-repeat; }
   .container.cont_signupOK .confirmOk {
     width: 80%;
-    font-size: 2em;
-    line-height: 1.3em; }
+    font-size: 1.7em;
+    line-height: 1.3em;
+    word-spacing: -.5em; }
     .container.cont_signupOK .confirmOk a {
       color: #39FF14; }
 
@@ -4525,3 +4538,17 @@ form {
 @media (orientation: landscape) {
   .container.cont_routeEdit_page .editingRoutePage {
     padding-bottom: 3em; } }
+
+@-moz-document url-prefix() {
+  .container.cont_phenomena_page .phsFeed {
+    margin-bottom: 4em; }
+  .container.cont_routes_page .routestList {
+    margin-bottom: 4em; }
+  .container.cont_routeEdit_page, .container.cont_editUserProfile_page {
+    min-height: unset;
+    padding: 3em 0;
+    margin-bottom: 3em; }
+    .container.cont_routeEdit_page form, .container.cont_editUserProfile_page form {
+      width: auto; }
+  .container.cont_routeDetail_page .section.addCommentSection form.addComment .commentBox, .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .commentBox {
+    width: 87%; } }
