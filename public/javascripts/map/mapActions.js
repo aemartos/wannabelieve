@@ -92,7 +92,6 @@ document.addEventListener("DOMContentLoaded", function() {
       .then(res => res.json()).then(searchPhenomena => {
         //retrive results and substitute window variable
         window.phenomena = searchPhenomena.phenomena;
-        console.log(searchPhenomena.phenomena);
         //remove all previous markers
         removeMarkers(markers);
         //if there're results
