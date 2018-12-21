@@ -638,6 +638,17 @@ let phenomena = [
     },
 
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545415491/phenomena-pictures/laguna_negra.jpg"]
+  },
+  {
+    name:"Elsa Parser" ,
+    description: "Be careful with Elsa as she can leave you frozen with her super powers",
+    type: "halfHuman",
+    location: {
+      type: "Point",
+      coordinates: [-0.5165586,42.8244611]
+    },
+
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545416216/phenomena-pictures/IMG_2864.jpg"]
   }
 ];
 
