@@ -4544,11 +4544,13 @@ form {
     margin-bottom: 4em; }
   .container.cont_routes_page .routestList {
     margin-bottom: 4em; }
-  .container.cont_routeEdit_page, .container.cont_editUserProfile_page {
+  .container.cont_routeEdit_page, .container.cont_editUserProfile_page, .container.cont_addPhenom_page {
     min-height: unset;
     padding: 3em 0;
     margin-bottom: 3em; }
-    .container.cont_routeEdit_page form, .container.cont_editUserProfile_page form {
+    .container.cont_routeEdit_page form, .container.cont_editUserProfile_page form, .container.cont_addPhenom_page form {
       width: auto; }
+    .container.cont_routeEdit_page .editingRoutePage, .container.cont_editUserProfile_page .editingRoutePage, .container.cont_addPhenom_page .editingRoutePage {
+      padding-bottom: 3em; }
   .container.cont_routeDetail_page .section.addCommentSection form.addComment .commentBox, .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .commentBox {
     width: 87%; } }
