@@ -2918,6 +2918,8 @@ form {
   .container.cont_info_page .sectionCredits a {
     opacity: 0.9;
     text-decoration: underline; }
+  .container.cont_info_page .sectionAPI p {
+    padding: 0.6em 0em; }
 
 .container.cont_map_page, .container.cont_routeDetail_page {
   position: relative; }
