@@ -1,8 +1,7 @@
 .container
   &.cont_info_page
-    min-height: 100%
-    padding: 4em 0
-    word-spacing: -.3em
+    width: 85%
+    margin: 0 auto
     color: $menubg
     text-transform: lowercase
     span[class*='x-']
@@ -10,6 +9,7 @@
       font-size: 1.5em
       -webkit-text-stroke: .3px $menubg
       text-transform: uppercase
+      padding: 0em .6em
       &:active
         color: $secondarycolor
         &[class*='x-']
@@ -17,14 +17,21 @@
     .infoTitle
       margin-top: 0
       font-size: 1.6em
-      padding-bottom: .6em
+      padding: .6em 0em
       width: 100%
       text-align: center
       border-bottom: 4px solid $maincolor
-    .index
-      li,p,span
-        padding: 0.5em 1em
-      p 
-        color: $maincolor
-        opacity: .5
+    .infoSections
+      .section 
+        padding: 1em 0em
+        .sectionTitle
+          padding: 0.6em 0em
+        p 
+          opacity: 0.5
+    .sectionCredits
+      span 
+        padding: 0 0.6em
+      a 
+        opacity: 0.9
+        text-decoration: underline
         
