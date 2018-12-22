@@ -91,7 +91,7 @@ router.get("/phenomena/:id/edit/", (req, res) => {
   });
 });
 
-router.post("/phenomena/:id/edit/", uploadPhenomPicture.array("file",4),(req, res) => {
+router.post("/phenomena/:id/edit/",(req, res) => {
 
   const { name, type, description } = req.body;
   const id = req.params.id;

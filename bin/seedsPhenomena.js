@@ -480,7 +480,7 @@ let phenomena = [
     type: "religiousApparitions",
     location: {
       type: "Point",
-      coordinates: [-0.9100895,41.6410247] 
+      coordinates: [-0.8785192,41.656771]
     },
 
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414515/phenomena-pictures/3a8c84371809bfbffe8c68bcc8b3bc64.jpg"]
