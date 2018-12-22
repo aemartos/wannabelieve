@@ -3298,7 +3298,7 @@ form {
       opacity: .5; }
 
 .container.cont_addPhenom_page {
-  min-height: 100%;
+  min-height: 100vh;
   padding: 4em 0;
   word-spacing: -.3em;
   color: #010f0c;
