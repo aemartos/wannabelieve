@@ -10,6 +10,7 @@
       font-size: 1.5em
       -webkit-text-stroke: .3px $menubg
       text-transform: uppercase
+      padding: 0em .6em
       &:active
         color: $secondarycolor
         &[class*='x-']
@@ -17,14 +18,24 @@
     .infoTitle
       margin-top: 0
       font-size: 1.6em
-      padding-bottom: .6em
+      padding: .6em 0em
       width: 100%
       text-align: center
       border-bottom: 4px solid $maincolor
-    .index
-      li,p,span
-        padding: 0.5em 1em
+    .infoSections
+      .section 
+        padding: 1em 0em
+        .sectionTitle
+          padding: 0.6em 0em
+        p 
+          opacity: 0.5
+    .sectionCredits
+      span 
+        padding: 0 0.6em
+      a 
+        opacity: 0.9
+        text-decoration: underline
+    .sectionAPI
       p 
-        color: $maincolor
-        opacity: .5
+        padding: 0.6em 0em
         

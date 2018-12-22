@@ -2886,16 +2886,16 @@ form {
     padding: 1.5em; } }
 
 .container.cont_info_page {
-  min-height: 100%;
-  padding: 4em 0;
-  word-spacing: -.3em;
+  width: 85%;
+  margin: 0 auto;
   color: #010f0c;
   text-transform: lowercase; }
   .container.cont_info_page span[class*='x-'] {
     color: #010f0c;
     font-size: 1.5em;
     -webkit-text-stroke: 0.3px #010f0c;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    padding: 0em .6em; }
     .container.cont_info_page span[class*='x-']:active {
       color: #39FF14; }
       .container.cont_info_page span[class*='x-']:active[class*='x-'] {
@@ -2903,15 +2903,23 @@ form {
   .container.cont_info_page .infoTitle {
     margin-top: 0;
     font-size: 1.6em;
-    padding-bottom: .6em;
+    padding: .6em 0em;
     width: 100%;
     text-align: center;
     border-bottom: 4px solid #fff; }
-  .container.cont_info_page .index li, .container.cont_info_page .index p, .container.cont_info_page .index span {
-    padding: 0.5em 1em; }
-  .container.cont_info_page .index p {
-    color: #fff;
-    opacity: .5; }
+  .container.cont_info_page .infoSections .section {
+    padding: 1em 0em; }
+    .container.cont_info_page .infoSections .section .sectionTitle {
+      padding: 0.6em 0em; }
+    .container.cont_info_page .infoSections .section p {
+      opacity: 0.5; }
+  .container.cont_info_page .sectionCredits span {
+    padding: 0 0.6em; }
+  .container.cont_info_page .sectionCredits a {
+    opacity: 0.9;
+    text-decoration: underline; }
+  .container.cont_info_page .sectionAPI p {
+    padding: 0.6em 0em; }
 
 .container.cont_map_page, .container.cont_routeDetail_page {
   position: relative; }
@@ -3223,15 +3231,22 @@ form {
       margin: 0 auto;
       min-height: 83%;
       padding-bottom: 3em; }
+      .container.cont_phenomena_editPage form.editForm .imgsContainer {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        flex-flow: row wrap;
+        justify-content: space-between; }
       .container.cont_phenomena_editPage form.editForm label {
         background-color: transparent;
         margin-top: .5em;
-        opacity: 1; }
-        .container.cont_phenomena_editPage form.editForm label.profilePicture {
-          margin-bottom: 1.5em;
+        opacity: 1;
+        width: 48%; }
+        .container.cont_phenomena_editPage form.editForm label #imgUpl, .container.cont_phenomena_editPage form.editForm label #imgUpl1, .container.cont_phenomena_editPage form.editForm label #imgUpl2, .container.cont_phenomena_editPage form.editForm label #imgUpl3, .container.cont_phenomena_editPage form.editForm label #imgUpl4 {
+          width: 100%;
+          height: 6em;
+          object-fit: cover;
           opacity: .5; }
-        .container.cont_phenomena_editPage form.editForm label #imgUpl {
-          width: 100%; }
       .container.cont_phenomena_editPage form.editForm input, .container.cont_phenomena_editPage form.editForm textarea, .container.cont_phenomena_editPage form.editForm select {
         border: 2px solid #8f8f8f;
         color: #010f0c;

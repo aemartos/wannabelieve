@@ -30,15 +30,20 @@
         //min-height: 100%
         min-height: 83%
         padding-bottom: 3em
+        .imgsContainer
+          +row-flex
+          flex-flow: row wrap
+          justify-content: space-between
         label
           background-color: transparent
           margin-top: .5em
           opacity: 1
-          &.profilePicture
-            margin-bottom: 1.5em
-            opacity: .5
-          #imgUpl
+          width: 48%
+          #imgUpl,#imgUpl1,#imgUpl2,#imgUpl3, #imgUpl4
             width: 100%
+            height: 6em
+            object-fit: cover
+            opacity: .5
         input, textarea, select
           border: 2px solid $darkbg
           color: $menubg

@@ -91,7 +91,8 @@ router.get("/phenomena/:id/edit/", (req, res) => {
   });
 });
 
-router.post("/phenomena/:id/edit/", (req, res) => {
+router.post("/phenomena/:id/edit/",(req, res) => {
+
   const { name, type, description } = req.body;
   const id = req.params.id;
   Phenomenon.findByIdAndUpdate(id, { name, type, description }).then(() =>
