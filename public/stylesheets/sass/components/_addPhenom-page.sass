@@ -30,12 +30,19 @@
         padding-bottom: 3em
         .error-message
           opacity: .5
+        .imgsContainer
+          +row-flex
+          flex-flow: row wrap
+          justify-content: space-between
         label
           background-color: transparent
           margin-top: .5em
           opacity: 1
-          #imgUpl
+          width: 48%
+          #imgUpl,#imgUpl1,#imgUpl2,#imgUpl3, #imgUpl4
             width: 100%
+            height: 6em
+            object-fit: cover
             opacity: .5
         input, textarea, select
           border: 2px solid $darkbg
@@ -89,3 +96,12 @@
       :-moz-placeholder /* Firefox 18- */
         color: $maincolor
         opacity: .5
+
+
+@media(orientation: landscape)
+  .container
+    &.cont_addPhenom_page 
+      form
+        &.addForm 
+          label
+            width: 23%
