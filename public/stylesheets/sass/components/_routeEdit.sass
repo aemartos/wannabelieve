@@ -1,8 +1,7 @@
 .container
   &.cont_routeEdit_page
-    min-height: 100vh
+    min-height: 100%
     padding: 4em 0
-    padding-bottom: 6em
     word-spacing: -.3em
     color: $menubg
     text-transform: lowercase
@@ -17,7 +16,7 @@
           -webkit-text-stroke: .3px $secondarycolor
     .editingRoutePage
       position: relative
-      min-height: 100%
+      padding-bottom: 3em
       .routesEditTitle
         margin-top: 0
         font-size: 1.8em
@@ -62,7 +61,7 @@
             color: $menubg
           .actions
             position: absolute
-            bottom: -2.5em
+            bottom: 0
             +row-flex
             justify-content: space-between
             width: 85%
@@ -96,7 +95,7 @@
             opacity: .5
       .phenomenaList
         width: 85%
-        //min-height: 12em
+        min-height: 12em
         margin: 0 auto
         margin-top: 1em
         ul
@@ -137,10 +136,3 @@
                       color: $secondarycolor
                       &[class*='x-']
                         -webkit-text-stroke: .3px $secondarycolor
-
-
-@media (orientation: landscape)
-  .container
-    &.cont_routeEdit_page
-      .editingRoutePage
-        padding-bottom: 3em

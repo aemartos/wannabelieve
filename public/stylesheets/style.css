@@ -2483,15 +2483,18 @@ html, body {
   margin: 0; }
 
 body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
   border: 4px solid #fff;
   border-top: 0;
   border-bottom: 0; }
 
 .container {
   width: 100%;
-  overflow-y: scroll;
-  padding-bottom: 6em !important;
-  margin-top: 2.5em; }
+  height: calc(100% - 5.5em);
+  overflow-y: scroll; }
   .container .content {
     width: 80%; }
 
@@ -2801,28 +2804,15 @@ form {
       .container.cont_login form .account-message span:first-child, .container.cont_signup form .account-message span:first-child {
         margin-right: 1em; } }
 
-.container.cont_initial_page, .container.cont_signup, .container.cont_login, .container.cont_signupOK, .container.cont_error {
+.container.cont_initial_page, .container.cont_signup, .container.cont_login, .container.cont_signupOK {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100%;
   padding: 4em 0;
   background-color: #010f0c;
   border-top: 4px solid #fff;
-  border-bottom: 4px solid #fff;
-  margin-top: 0; }
-
-.container.cont_error {
-  justify-content: center;
-  background-image: url("../../images/signupOK_bg.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  word-spacing: -.5em;
-  font-size: .9em;
-  line-height: 2em; }
-  .container.cont_error .errorBox {
-    width: 85%; }
+  border-bottom: 4px solid #fff; }
 
 .container.cont_signupOK {
   display: flex;
@@ -2835,9 +2825,8 @@ form {
   background-repeat: no-repeat; }
   .container.cont_signupOK .confirmOk {
     width: 80%;
-    font-size: 1.7em;
-    line-height: 1.3em;
-    word-spacing: -.5em; }
+    font-size: 2em;
+    line-height: 1.3em; }
     .container.cont_signupOK .confirmOk a {
       color: #39FF14; }
 
@@ -2878,10 +2867,6 @@ form {
     min-width: 100%;
     min-height: 100%;
     z-index: 0; }
-
-@media (orientation: landscape) {
-  .container.cont_login, .container.cont_signup {
-    padding: 1.5em; } }
 
 .container.cont_info_page {
   width: 100%;
@@ -2925,15 +2910,11 @@ form {
     padding: 0.6em 0em; }
 
 .container.cont_map_page, .container.cont_routeDetail_page {
-  position: relative;
-  height: 101%;
-  padding-bottom: 0 !important;
-  overflow: hidden; }
+  position: relative; }
   .container.cont_map_page .mainMap, .container.cont_map_page .routeMap, .container.cont_routeDetail_page .mainMap, .container.cont_routeDetail_page .routeMap {
     background-color: #8f8f8f;
-    height: calc();
-    width: 100%;
-    overflow: hidden; }
+    height: 100%;
+    width: 100%; }
     .container.cont_map_page .mainMap a[rel='noopener'], .container.cont_map_page .routeMap a[rel='noopener'], .container.cont_routeDetail_page .mainMap a[rel='noopener'], .container.cont_routeDetail_page .routeMap a[rel='noopener'] {
       display: none !important; }
     .container.cont_map_page .mainMap .gmnoprint, .container.cont_map_page .mainMap .gm-style-cc, .container.cont_map_page .routeMap .gmnoprint, .container.cont_map_page .routeMap .gm-style-cc, .container.cont_routeDetail_page .mainMap .gmnoprint, .container.cont_routeDetail_page .mainMap .gm-style-cc, .container.cont_routeDetail_page .routeMap .gmnoprint, .container.cont_routeDetail_page .routeMap .gm-style-cc {
@@ -3041,7 +3022,7 @@ form {
     .container.cont_map_page .mapOptions #findMeBtn.active, .container.cont_map_page .mapOptions #layersBtn.active, .container.cont_routeDetail_page .mapOptions #findMeBtn.active, .container.cont_routeDetail_page .mapOptions #layersBtn.active {
       color: #39FF14; }
   .container.cont_map_page .mapZoom, .container.cont_routeDetail_page .mapZoom {
-    bottom: 7em;
+    bottom: 1em;
     right: 1em;
     display: flex;
     flex-flow: row nowrap;
@@ -3057,7 +3038,7 @@ form {
     justify-content: center;
     width: .92em;
     height: .92em;
-    bottom: 2.3em;
+    bottom: .36em;
     left: 0.4em;
     border-radius: 5em;
     border: none;
@@ -3088,8 +3069,8 @@ form {
     background-color: red; }
 
 .container.cont_phenomena_page {
-  min-height: 100vh;
-  padding: 2em 0;
+  min-height: 100%;
+  padding: 4em 0;
   word-spacing: -.3em; }
   .container.cont_phenomena_page .phenomenaListTitle {
     margin-top: 0;
@@ -3138,7 +3119,7 @@ form {
           font-family: 'Press Start 2P';
           text-transform: lowercase;
           margin: .5em 0 0 0;
-          width: 13.5em;
+          width: 12.5em;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis; }
@@ -3180,35 +3161,10 @@ form {
           .container.cont_phenomena_page .phsFeed .phenomCard a.goPhenom span:active[class*='x-'] {
             -webkit-text-stroke: 0.3px #39FF14; }
 
-@media (min-width: 360px) {
-  .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails h4.phenomTitle {
-    width: 11.5em; } }
-
-@media (min-width: 414px) {
-  .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails h4.phenomTitle {
-    width: 13.5em; } }
-
-@media (min-width: 640px) {
-  .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails h4.phenomTitle {
-    width: 22.5em; } }
-
-@media (min-width: 731px) {
-  .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails h4.phenomTitle {
-    width: 28em; } }
-
-@media (min-width: 812px) {
-  .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails h4.phenomTitle {
-    width: 30em; } }
-
-@media (min-width: 960px) {
-  .container.cont_phenomena_page .phsFeed .phenomCard .phenomInfoDetails h4.phenomTitle {
-    width: 37em; } }
-
 .container.cont_phenomena_editPage {
-  min-height: 100vh;
+  min-height: 100%;
   width: 100%;
   padding: 4em 0;
-  padding-bottom: 6em;
   word-spacing: -.3em;
   color: #010f0c;
   text-transform: lowercase; }
@@ -3239,22 +3195,15 @@ form {
       margin: 0 auto;
       min-height: 83%;
       padding-bottom: 3em; }
-      .container.cont_phenomena_editPage form.editForm .imgsContainer {
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        flex-flow: row wrap;
-        justify-content: space-between; }
       .container.cont_phenomena_editPage form.editForm label {
         background-color: transparent;
         margin-top: .5em;
-        opacity: 1;
-        width: 48%; }
-        .container.cont_phenomena_editPage form.editForm label #imgUpl, .container.cont_phenomena_editPage form.editForm label #imgUpl1, .container.cont_phenomena_editPage form.editForm label #imgUpl2, .container.cont_phenomena_editPage form.editForm label #imgUpl3, .container.cont_phenomena_editPage form.editForm label #imgUpl4 {
-          width: 100%;
-          height: 6em;
-          object-fit: cover;
+        opacity: 1; }
+        .container.cont_phenomena_editPage form.editForm label.profilePicture {
+          margin-bottom: 1.5em;
           opacity: .5; }
+        .container.cont_phenomena_editPage form.editForm label #imgUpl {
+          width: 100%; }
       .container.cont_phenomena_editPage form.editForm input, .container.cont_phenomena_editPage form.editForm textarea, .container.cont_phenomena_editPage form.editForm select {
         border: 2px solid #8f8f8f;
         color: #010f0c;
@@ -3304,9 +3253,8 @@ form {
       opacity: .5; }
 
 .container.cont_addPhenom_page {
-  min-height: 100vh;
+  min-height: 100%;
   padding: 4em 0;
-  padding-bottom: 6em;
   word-spacing: -.3em;
   color: #010f0c;
   text-transform: lowercase; }
@@ -3339,21 +3287,12 @@ form {
       padding-bottom: 3em; }
       .container.cont_addPhenom_page form.addForm .error-message {
         opacity: .5; }
-      .container.cont_addPhenom_page form.addForm .imgsContainer {
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        flex-flow: row wrap;
-        justify-content: space-between; }
       .container.cont_addPhenom_page form.addForm label {
         background-color: transparent;
         margin-top: .5em;
-        opacity: 1;
-        width: 48%; }
-        .container.cont_addPhenom_page form.addForm label #imgUpl, .container.cont_addPhenom_page form.addForm label #imgUpl1, .container.cont_addPhenom_page form.addForm label #imgUpl2, .container.cont_addPhenom_page form.addForm label #imgUpl3, .container.cont_addPhenom_page form.addForm label #imgUpl4 {
+        opacity: 1; }
+        .container.cont_addPhenom_page form.addForm label #imgUpl {
           width: 100%;
-          height: 6em;
-          object-fit: cover;
           opacity: .5; }
       .container.cont_addPhenom_page form.addForm input, .container.cont_addPhenom_page form.addForm textarea, .container.cont_addPhenom_page form.addForm select {
         border: 2px solid #8f8f8f;
@@ -3403,10 +3342,6 @@ form {
       color: #fff;
       opacity: .5; }
 
-@media (orientation: landscape) {
-  .container.cont_addPhenom_page form.addForm label {
-    width: 23%; } }
-
 .container.cont_phenomena_detailPage {
   color: #010f0c;
   word-spacing: -.3em; }
@@ -3449,13 +3384,13 @@ form {
       flex-flow: row nowrap;
       align-items: center;
       justify-content: center;
-      font-size: .7em;
       background-color: #8f8f8f; }
       .container.cont_phenomena_detailPage .section.sectionBtn p, .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom, .container.cont_phenomena_detailPage .section.sectionBtn .registerPhenom {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
         justify-content: center;
+        font-size: .8em;
         width: 50%;
         padding: .8em 0; }
         .container.cont_phenomena_detailPage .section.sectionBtn p:first-child, .container.cont_phenomena_detailPage .section.sectionBtn .favouritePhenom:first-child, .container.cont_phenomena_detailPage .section.sectionBtn .registerPhenom:first-child {
@@ -3537,7 +3472,7 @@ form {
       align-items: center;
       justify-content: space-between;
       padding: 0;
-      font-size: .7em;
+      font-size: .8em;
       background-color: #8f8f8f; }
       .container.cont_phenomena_detailPage .section.sectionOtherBtns .ATR, .container.cont_phenomena_detailPage .section.sectionOtherBtns .VIM {
         display: flex;
@@ -3548,7 +3483,7 @@ form {
         .container.cont_phenomena_detailPage .section.sectionOtherBtns .ATR:first-child, .container.cont_phenomena_detailPage .section.sectionOtherBtns .VIM:first-child {
           border-right: 4px solid #fff; }
       .container.cont_phenomena_detailPage .section.sectionOtherBtns .addToRouteBtn, .container.cont_phenomena_detailPage .section.sectionOtherBtns .viewInMapBtn {
-        padding: .8em 0;
+        padding: .8em;
         width: 100%;
         display: flex;
         flex-flow: row nowrap;
@@ -3702,12 +3637,7 @@ form {
               .container.cont_phenomena_detailPage .section.addCommentSection form.addComment .commentBox button.addCommentBtn span:active {
                 color: #39FF14; }
 
-@media (orientation: landscape) {
-  .container.cont_phenomena_detailPage .slider.owl-carousel.owl-theme .owl-item img {
-    height: 12em; } }
-
 .container.cont_userProfile_page {
-  padding-bottom: 3em !important;
   color: #010f0c;
   word-spacing: -.3em; }
   .container.cont_userProfile_page p {
@@ -3899,10 +3829,9 @@ form {
       font-size: 1.5em; }
 
 .container.cont_editUserProfile_page {
-  min-height: 100vh;
+  min-height: 100%;
   width: 85%;
   padding: 4em 0;
-  padding-bottom: 6em;
   margin: 0 auto;
   word-spacing: -.3em;
   color: #010f0c;
@@ -3963,7 +3892,7 @@ form {
       opacity: .5; }
 
 .container.cont_routes_page {
-  min-height: 100vh;
+  min-height: 100%;
   padding: 4em 0;
   word-spacing: -.3em; }
   .container.cont_routes_page .routesListTitle {
@@ -4109,26 +4038,6 @@ form {
               color: #39FF14; }
               .container.cont_routes_page .routestList .routeCard .addPhenomenonToRoute form button span:active[class*='x-'], .container.cont_routes_page .routestList .routeCard .addPhenomenonToRoute form button span.active[class*='x-'] {
                 -webkit-text-stroke: 0.3px #39FF14; }
-
-@media (min-width: 360px) {
-  .container.cont_routes_page .routestList .routeCard .infoRouteDetails h4.routeTitle {
-    width: 11.5em; } }
-
-@media (min-width: 640px) {
-  .container.cont_routes_page .routestList .routeCard .infoRouteDetails h4.routeTitle {
-    width: 22.5em; } }
-
-@media (min-width: 731px) {
-  .container.cont_routes_page .routestList .routeCard .infoRouteDetails h4.routeTitle {
-    width: 28em; } }
-
-@media (min-width: 812px) {
-  .container.cont_routes_page .routestList .routeCard .infoRouteDetails h4.routeTitle {
-    width: 30em; } }
-
-@media (min-width: 960px) {
-  .container.cont_routes_page .routestList .routeCard .infoRouteDetails h4.routeTitle {
-    width: 37em; } }
 
 .container.cont_routeDetail_page {
   color: #010f0c;
@@ -4418,14 +4327,9 @@ form {
             padding: .5em 0 0;
             opacity: .5; }
 
-@media (orientation: landscape) {
-  .container.cont_routeDetail_page .mainMap {
-    height: 75%; } }
-
 .container.cont_routeEdit_page {
-  min-height: 100vh;
+  min-height: 100%;
   padding: 4em 0;
-  padding-bottom: 6em;
   word-spacing: -.3em;
   color: #010f0c;
   text-transform: lowercase; }
@@ -4440,7 +4344,7 @@ form {
         -webkit-text-stroke: 0.3px #39FF14; }
   .container.cont_routeEdit_page .editingRoutePage {
     position: relative;
-    min-height: 100%; }
+    padding-bottom: 3em; }
     .container.cont_routeEdit_page .editingRoutePage .routesEditTitle {
       margin-top: 0;
       font-size: 1.8em;
@@ -4481,7 +4385,7 @@ form {
         color: #010f0c; }
       .container.cont_routeEdit_page .editingRoutePage form.editRoute .actions {
         position: absolute;
-        bottom: -2.5em;
+        bottom: 0;
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
@@ -4520,6 +4424,7 @@ form {
         opacity: .5; }
     .container.cont_routeEdit_page .editingRoutePage .phenomenaList {
       width: 85%;
+      min-height: 12em;
       margin: 0 auto;
       margin-top: 1em; }
       .container.cont_routeEdit_page .editingRoutePage .phenomenaList ul li {
@@ -4561,10 +4466,6 @@ form {
                 color: #39FF14; }
                 .container.cont_routeEdit_page .editingRoutePage .phenomenaList ul li form.deleteFromRoute button span.active[class*='x-'] {
                   -webkit-text-stroke: 0.3px #39FF14; }
-
-@media (orientation: landscape) {
-  .container.cont_routeEdit_page .editingRoutePage {
-    padding-bottom: 3em; } }
 
 @-moz-document url-prefix() {
   .container.cont_phenomena_page .phsFeed {

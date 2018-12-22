@@ -1,9 +1,8 @@
 .container
   &.cont_phenomena_editPage
-    min-height: 100vh
+    min-height: 100%
     width: 100%
     padding: 4em 0
-    padding-bottom: 6em
     word-spacing: -.3em
     color: $menubg
     text-transform: lowercase
@@ -31,20 +30,15 @@
         //min-height: 100%
         min-height: 83%
         padding-bottom: 3em
-        .imgsContainer
-          +row-flex
-          flex-flow: row wrap
-          justify-content: space-between
         label
           background-color: transparent
           margin-top: .5em
           opacity: 1
-          width: 48%
-          #imgUpl,#imgUpl1,#imgUpl2,#imgUpl3, #imgUpl4
-            width: 100%
-            height: 6em
-            object-fit: cover
+          &.profilePicture
+            margin-bottom: 1.5em
             opacity: .5
+          #imgUpl
+            width: 100%
         input, textarea, select
           border: 2px solid $darkbg
           color: $menubg

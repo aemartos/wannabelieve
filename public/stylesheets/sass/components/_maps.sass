@@ -1,14 +1,10 @@
 .container
   &.cont_map_page, &.cont_routeDetail_page
     position: relative
-    height: 101%
-    padding-bottom: 0 !important
-    overflow: hidden
     .mainMap, .routeMap
       background-color: $darkbg
-      height: calc()
+      height: 100%
       width: 100%
-      overflow: hidden
       //color: $menubg
       a[rel='noopener']
         display: none !important
@@ -108,7 +104,7 @@
         &.active
           color: $secondarycolor
     .mapZoom
-      bottom: 7em
+      bottom: 1em
       right: 1em
       +row-flex
       justify-content: space-between
@@ -121,7 +117,7 @@
       justify-content: center
       width: .92em
       height: .92em
-      bottom: 2.3em
+      bottom: .36em
       left: 0.4em
       border-radius: 5em
       border: none
