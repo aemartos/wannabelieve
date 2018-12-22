@@ -2886,7 +2886,7 @@ form {
     padding: 1.5em; } }
 
 .container.cont_info_page {
-  width: 85%;
+  width: 100%;
   margin: 0 auto;
   color: #010f0c;
   text-transform: lowercase; }
@@ -2908,7 +2908,9 @@ form {
     text-align: center;
     border-bottom: 4px solid #fff; }
   .container.cont_info_page .infoSections .section {
-    padding: 1em 0em; }
+    padding: 1em 0em;
+    width: 85%;
+    margin: 0 auto; }
     .container.cont_info_page .infoSections .section .sectionTitle {
       padding: 0.6em 0em; }
     .container.cont_info_page .infoSections .section p {
