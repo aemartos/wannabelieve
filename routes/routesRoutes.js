@@ -107,11 +107,11 @@ router.post('/addRoute', isLoggedIn("/auth/login"), (req, res, next) => {
     return;
   } else {
     Route.findOne({routetitle}, "routetitle", (err, title) => {
-      if (routetitle !== null) {
-        req.flash("error", "the route title already exists");
-        res.redirect(backURL);
-        return;
-      }
+      // if (routetitle !== null) {
+      //   req.flash("error", "the route title already exists");
+      //   res.redirect(backURL);
+      //   return;
+      // }
       Route.create({routetitle, creatorId})
       .then(() => {
         res.redirect(backURL);
