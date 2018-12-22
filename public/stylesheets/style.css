@@ -2483,18 +2483,15 @@ html, body {
   margin: 0; }
 
 body {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
   border: 4px solid #fff;
   border-top: 0;
   border-bottom: 0; }
 
 .container {
   width: 100%;
-  height: calc(100% - 5.5em);
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  padding-bottom: 6em !important;
+  margin-top: 2.5em; }
   .container .content {
     width: 80%; }
 
@@ -2812,7 +2809,8 @@ form {
   padding: 4em 0;
   background-color: #010f0c;
   border-top: 4px solid #fff;
-  border-bottom: 4px solid #fff; }
+  border-bottom: 4px solid #fff;
+  margin-top: 0; }
 
 .container.cont_error {
   justify-content: center;
@@ -2927,7 +2925,8 @@ form {
     padding: 0.6em 0em; }
 
 .container.cont_map_page, .container.cont_routeDetail_page {
-  position: relative; }
+  position: relative;
+  height: 101%; }
   .container.cont_map_page .mainMap, .container.cont_map_page .routeMap, .container.cont_routeDetail_page .mainMap, .container.cont_routeDetail_page .routeMap {
     background-color: #8f8f8f;
     height: 100%;
@@ -3039,7 +3038,7 @@ form {
     .container.cont_map_page .mapOptions #findMeBtn.active, .container.cont_map_page .mapOptions #layersBtn.active, .container.cont_routeDetail_page .mapOptions #findMeBtn.active, .container.cont_routeDetail_page .mapOptions #layersBtn.active {
       color: #39FF14; }
   .container.cont_map_page .mapZoom, .container.cont_routeDetail_page .mapZoom {
-    bottom: 1em;
+    bottom: 7em;
     right: 1em;
     display: flex;
     flex-flow: row nowrap;
@@ -3055,7 +3054,7 @@ form {
     justify-content: center;
     width: .92em;
     height: .92em;
-    bottom: .36em;
+    bottom: 2.3em;
     left: 0.4em;
     border-radius: 5em;
     border: none;
@@ -3087,7 +3086,7 @@ form {
 
 .container.cont_phenomena_page {
   min-height: 100vh;
-  padding: 4em 0;
+  padding: 2em 0;
   word-spacing: -.3em; }
   .container.cont_phenomena_page .phenomenaListTitle {
     margin-top: 0;
@@ -3304,6 +3303,7 @@ form {
 .container.cont_addPhenom_page {
   min-height: 100vh;
   padding: 4em 0;
+  padding-bottom: 6em;
   word-spacing: -.3em;
   color: #010f0c;
   text-transform: lowercase; }
@@ -3704,6 +3704,7 @@ form {
     height: 12em; } }
 
 .container.cont_userProfile_page {
+  padding-bottom: 3em !important;
   color: #010f0c;
   word-spacing: -.3em; }
   .container.cont_userProfile_page p {
@@ -3898,6 +3899,7 @@ form {
   min-height: 100vh;
   width: 85%;
   padding: 4em 0;
+  padding-bottom: 6em;
   margin: 0 auto;
   word-spacing: -.3em;
   color: #010f0c;
@@ -4420,6 +4422,7 @@ form {
 .container.cont_routeEdit_page {
   min-height: 100vh;
   padding: 4em 0;
+  padding-bottom: 6em;
   word-spacing: -.3em;
   color: #010f0c;
   text-transform: lowercase; }
@@ -4475,7 +4478,7 @@ form {
         color: #010f0c; }
       .container.cont_routeEdit_page .editingRoutePage form.editRoute .actions {
         position: absolute;
-        bottom: 0;
+        bottom: -2.5em;
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
