@@ -2,10 +2,13 @@
   &.cont_map_page, &.cont_routeDetail_page
     position: relative
     height: 101%
+    padding-bottom: 0 !important
+    overflow: hidden
     .mainMap, .routeMap
       background-color: $darkbg
-      height: 100%
+      height: calc()
       width: 100%
+      overflow: hidden
       //color: $menubg
       a[rel='noopener']
         display: none !important

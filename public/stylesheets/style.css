@@ -2926,11 +2926,14 @@ form {
 
 .container.cont_map_page, .container.cont_routeDetail_page {
   position: relative;
-  height: 101%; }
+  height: 101%;
+  padding-bottom: 0 !important;
+  overflow: hidden; }
   .container.cont_map_page .mainMap, .container.cont_map_page .routeMap, .container.cont_routeDetail_page .mainMap, .container.cont_routeDetail_page .routeMap {
     background-color: #8f8f8f;
-    height: 100%;
-    width: 100%; }
+    height: calc();
+    width: 100%;
+    overflow: hidden; }
     .container.cont_map_page .mainMap a[rel='noopener'], .container.cont_map_page .routeMap a[rel='noopener'], .container.cont_routeDetail_page .mainMap a[rel='noopener'], .container.cont_routeDetail_page .routeMap a[rel='noopener'] {
       display: none !important; }
     .container.cont_map_page .mainMap .gmnoprint, .container.cont_map_page .mainMap .gm-style-cc, .container.cont_map_page .routeMap .gmnoprint, .container.cont_map_page .routeMap .gm-style-cc, .container.cont_routeDetail_page .mainMap .gmnoprint, .container.cont_routeDetail_page .mainMap .gm-style-cc, .container.cont_routeDetail_page .routeMap .gmnoprint, .container.cont_routeDetail_page .routeMap .gm-style-cc {
