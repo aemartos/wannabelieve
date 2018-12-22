@@ -2494,7 +2494,8 @@ body {
 .container {
   width: 100%;
   height: calc(100% - 5.5em);
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  padding-bottom: 7em !important; }
   .container .content {
     width: 80%; }
 
@@ -2808,7 +2809,7 @@ form {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  min-height: 100%;
+  min-height: 100vh;
   padding: 4em 0;
   background-color: #010f0c;
   border-top: 4px solid #fff;
@@ -2888,6 +2889,9 @@ form {
 .container.cont_info_page {
   width: 100%;
   margin: 0 auto;
+  min-height: 100vh;
+  padding: 4em 0;
+  word-spacing: -.3em;
   color: #010f0c;
   text-transform: lowercase; }
   .container.cont_info_page span[class*='x-'] {
@@ -3083,7 +3087,7 @@ form {
     background-color: red; }
 
 .container.cont_phenomena_page {
-  min-height: 100%;
+  min-height: 100vh;
   padding: 4em 0;
   word-spacing: -.3em; }
   .container.cont_phenomena_page .phenomenaListTitle {
@@ -3200,7 +3204,7 @@ form {
     width: 37em; } }
 
 .container.cont_phenomena_editPage {
-  min-height: 100%;
+  min-height: 100vh;
   width: 100%;
   padding: 4em 0;
   word-spacing: -.3em;
@@ -3891,7 +3895,7 @@ form {
       font-size: 1.5em; }
 
 .container.cont_editUserProfile_page {
-  min-height: 100%;
+  min-height: 100vh;
   width: 85%;
   padding: 4em 0;
   margin: 0 auto;
@@ -3954,7 +3958,7 @@ form {
       opacity: .5; }
 
 .container.cont_routes_page {
-  min-height: 100%;
+  min-height: 100vh;
   padding: 4em 0;
   word-spacing: -.3em; }
   .container.cont_routes_page .routesListTitle {
@@ -4414,7 +4418,7 @@ form {
     height: 75%; } }
 
 .container.cont_routeEdit_page {
-  min-height: 100%;
+  min-height: 100vh;
   padding: 4em 0;
   word-spacing: -.3em;
   color: #010f0c;
