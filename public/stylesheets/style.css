@@ -2494,8 +2494,7 @@ body {
 .container {
   width: 100%;
   height: calc(100% - 5.5em);
-  overflow-y: scroll;
-  padding-bottom: 7em !important; }
+  overflow-y: scroll; }
   .container .content {
     width: 80%; }
 
@@ -3207,6 +3206,7 @@ form {
   min-height: 100vh;
   width: 100%;
   padding: 4em 0;
+  padding-bottom: 6em;
   word-spacing: -.3em;
   color: #010f0c;
   text-transform: lowercase; }
