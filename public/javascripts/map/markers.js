@@ -11,10 +11,10 @@ const singleMarker = (title, position, map, type, sighted) => {
   return marker;
 };
 
-const addMarker = (title, description, position, map, type, id, sighted) => {
+const addMarker = (title, description, position, map, type, id, sighted, phenom) => {
   let marker = singleMarker(title, position, map, type, sighted);
   //console.log(title, description, map, type, marker, id);
-  addWindow(title, description, map, type, marker, id, sighted);
+  addWindow(title, description, map, type, marker, id, sighted, phenom);
   return marker;
 };
 
@@ -27,25 +27,28 @@ const newMeMarker = (position) => {
 };
 
 let infoWindows = [];
-const addWindow = (title, description, map, type, marker, id, sighted) => {
+const addWindow = (title, description, map, type, marker, id, sighted, phenom) => {
   let infowindow = null;
-  let sightedBox = sighted ? '<p class="sighted"><span class="x-sighting"></span><span class="text"> sighted</span></p>' : '';
+  let date = new Date(phenom.createdAt);
+  let creationDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+  let sightedBox = sighted ? `<p class="sighted"><span class="x-sighting eye"></span><span class="text"> ${phenom.visitorsId.length}<!--sighted--></span></p>` : '';
   let content = `<div class="infoPhenom">
                   <div class="infoPhenomDetails">
                     <div class="phenomText">
                       <p class="phenomId">${id}</p>
-                      <p class="favorites"><span class="x-favorite heart"></span><span class="favNum"> 14</span></p>
+                      <p class="favorites"><span class="x-favorite heart"></span><span class="favNum"> ${phenom.whoseFavId.length}</span></p>
                       ${sightedBox}
                     </div>
                     <div class="phenomTitle">
                       <h1>${title}</h1>
                     </div>
                     <div class="phenomDetails">
-                      <p class="distance">100m</p>
+                      <p class="creationDate">${creationDate}</p>
                       <p> | </p>
-                      <p class="cat">${type}</p>
+                      <p class="cat">category: ${type}</p>
+                      <!-- <p class="distance">100m</p>
                       <p> | </p>
-                      <p class="difficulty">hard</p>
+                      <p class="difficulty">hard</p> -->
                     </div>
                   </div>
                   <a class="goPhenom" href="/phenomena/${id}"><span class="x-back"></span></a>

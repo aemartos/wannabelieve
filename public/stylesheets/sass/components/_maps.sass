@@ -54,13 +54,24 @@
                 +row-flex
                 display: inline-flex
                 justify-content: center
-                margin-left: 1em
+                margin-left: 1.5em
                 span
                   color: $maincolor
                   &[class*='x-']
                     -webkit-text-stroke: .3px $maincolor
                 .heart
                   margin-right: .3em
+              .sighted
+                +row-flex
+                display: inline-flex
+                justify-content: center
+                font-size: 1.6em
+                span
+                  &.eye
+                    color: $secondarycolor
+                    margin-right: .3em
+                    &[class*='x-']
+                      -webkit-text-stroke: .3px $secondarycolor
           a.goPhenom
             font-size: 4em
             color: $maincolor
