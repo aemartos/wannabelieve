@@ -7,39 +7,51 @@
     word-spacing: -.3em
     color: $menubg
     text-transform: lowercase
-    span[class*='x-']
-      color: $menubg
-      font-size: 1.5em
-      -webkit-text-stroke: .3px $menubg
-      text-transform: uppercase
-      padding: 0em .6em
-      &:active
-        color: $secondarycolor
-        &[class*='x-']
-          -webkit-text-stroke: .3px $secondarycolor
     .infoTitle
       margin-top: 0
-      font-size: 1.6em
-      padding: .6em 0em
+      font-size: 1.8em
+      padding-bottom: .6em
       width: 100%
       text-align: center
       border-bottom: 4px solid $maincolor
     .infoSections
-      .section 
-        padding: 1em 0em
+      .section
         width: 85%
         margin: 0 auto
+        margin-top: 1em
         .sectionTitle
           padding: 0.6em 0em
-        p 
+        p
           opacity: 0.5
-    .sectionCredits
-      span 
-        padding: 0 0.6em
-      a 
-        opacity: 0.9
-        text-decoration: underline
-    .sectionAPI
-      p 
-        padding: 0.6em 0em
-        
+          font-size: .9em
+          line-height: 1.2em
+        h1
+          padding: 0
+        h3
+          +row-flex
+          justify-content: flex-start
+          margin: 0
+        a
+          border-bottom: 1px solid $maincolor
+        span[class*='x-']
+          color: $menubg
+          font-size: 1.5em
+          -webkit-text-stroke: .3px $menubg
+          text-transform: uppercase
+          padding-right: .6em
+          &:active
+            color: $secondarycolor
+            &[class*='x-']
+              -webkit-text-stroke: .3px $secondarycolor
+        &.sectionCredits, &.sectionAPI
+          span
+            padding-right: 0.6em
+          a
+            opacity: 0.9
+            text-decoration: underline
+          img
+            width: 100%
+            border-radius: 50%
+            margin: 1.5em 0
+          p
+            padding-top: .5em
