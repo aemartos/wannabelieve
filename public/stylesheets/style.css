@@ -2983,7 +2983,8 @@ form {
             align-items: center;
             display: inline-flex;
             justify-content: center;
-            margin-left: 1.5em; }
+            margin-left: 1.5em;
+            font-size: 1.4em; }
             .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites span, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites span, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites span, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites span {
               color: #fff; }
               .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites span[class*='x-'], .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites span[class*='x-'], .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites span[class*='x-'], .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .favorites span[class*='x-'] {
@@ -2996,9 +2997,12 @@ form {
             align-items: center;
             display: inline-flex;
             justify-content: center;
-            font-size: 1.6em; }
+            font-size: 1.4em; }
             .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .sighted span.eye, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .sighted span.eye, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .sighted span.eye, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .sighted span.eye {
-              margin-right: .3em; }
+              margin-right: .3em;
+              font-size: 1.4em; }
+              .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .sighted span.eye[class*='x-'], .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .sighted span.eye[class*='x-'], .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .sighted span.eye[class*='x-'], .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .sighted span.eye[class*='x-'] {
+                -webkit-text-stroke: 0.15px #fff; }
               .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .sighted span.eye.active, .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .sighted span.eye.active, .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .sighted span.eye.active, .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .sighted span.eye.active {
                 color: #39FF14; }
                 .container.cont_map_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .sighted span.eye.active[class*='x-'], .container.cont_map_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .sighted span.eye.active[class*='x-'], .container.cont_routeDetail_page .mainMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .sighted span.eye.active[class*='x-'], .container.cont_routeDetail_page .routeMap .gm-style-iw .infoPhenom .infoPhenomDetails .phenomText .sighted span.eye.active[class*='x-'] {

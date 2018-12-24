@@ -55,6 +55,7 @@
                 display: inline-flex
                 justify-content: center
                 margin-left: 1.5em
+                font-size: 1.4em
                 span
                   color: $maincolor
                   &[class*='x-']
@@ -65,10 +66,13 @@
                 +row-flex
                 display: inline-flex
                 justify-content: center
-                font-size: 1.6em
+                font-size: 1.4em
                 span
                   &.eye
                     margin-right: .3em
+                    font-size: 1.4em
+                    &[class*='x-']
+                      -webkit-text-stroke: .15px $maincolor
                     &.active
                       color: $secondarycolor
                       &[class*='x-']
