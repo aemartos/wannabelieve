@@ -31,13 +31,13 @@ const addWindow = (title, description, map, type, marker, id, sighted, phenom) =
   let infowindow = null;
   let date = new Date(phenom.createdAt);
   let creationDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
-  let sightedBox = sighted ? `<p class="sighted"><span class="x-sighting eye"></span><span class="text"> ${phenom.visitorsId.length}<!--sighted--></span></p>` : '';
+  let sightedClass = sighted ? 'active' : '';
   let content = `<div class="infoPhenom">
                   <div class="infoPhenomDetails">
                     <div class="phenomText">
                       <p class="phenomId">${id}</p>
                       <p class="favorites"><span class="x-favorite heart"></span><span class="favNum"> ${phenom.whoseFavId.length}</span></p>
-                      ${sightedBox}
+                      <p class="sighted"><span class="x-sighting eye ${sightedClass}"></span><span class="text"> ${phenom.visitorsId.length}</span></p>
                     </div>
                     <div class="phenomTitle">
                       <h1>${title}</h1>

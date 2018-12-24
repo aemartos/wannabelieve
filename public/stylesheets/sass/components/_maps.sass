@@ -68,10 +68,11 @@
                 font-size: 1.6em
                 span
                   &.eye
-                    color: $secondarycolor
                     margin-right: .3em
-                    &[class*='x-']
-                      -webkit-text-stroke: .3px $secondarycolor
+                    &.active
+                      color: $secondarycolor
+                      &[class*='x-']
+                        -webkit-text-stroke: .3px $secondarycolor
           a.goPhenom
             font-size: 4em
             color: $maincolor
