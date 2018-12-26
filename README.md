@@ -1,6 +1,8 @@
 # wannabelieve APP
 
-wannabelieveAPP its a place for discovering amazing paranormal and supernatural phenomena, create routes for visiting them and report new sightnings
+Wannabelieve is a web app to discover amazing paranormal and supernatural phenomena, creating routes for visiting them and report new sightings.
+
+- Technologies: MongoDB, Express, Node.js, HTML5, CSS3 and SASS.
 
 ## Features
 
