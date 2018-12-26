@@ -82,4 +82,4 @@ Access our database directly from our API
 
 ##
 
-Coded with love ♥️ and unicorn magic ✨ by:  🦄 [anæstrada](https://www.linkedin.com/in/aemartos/) &  🧝 [Teresa Romero](https://www.linkedin.com/in/tromerolozano/)
+Coded with love ♥️ and unicorn magic ✨ by:  🦄 [anæstrada](https://www.linkedin.com/in/aemartos/) &  🧝[Teresa Romero](https://www.linkedin.com/in/tromerolozano/)
