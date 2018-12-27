@@ -2,7 +2,7 @@
 
 Wannabelieve is a web app to discover amazing paranormal and supernatural phenomena and creating routes for visiting them and report new sightings.
 
-- Technologies: MongoDB, Express, Node.js, HTML5, CSS3 and SASS.
+- Technologies: MongoDB, Express, Node.js, JavaScript, ES6, HTML5, CSS3 and SASS.
 
 ## Features
 
