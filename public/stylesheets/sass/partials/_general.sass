@@ -10,7 +10,6 @@ input, textarea, select, button
 
 html, body
 	height: 100%
-	overflow-x: scroll
 	width: 100%
 	color: white
 	background-color: $background
@@ -32,7 +31,9 @@ body
 	width: 100%
 	//height: max-content
 	height: calc(100% - 5.5em)
-	overflow-y: scroll
+	//overflow-y: scroll
+	overflow-y: auto
+  overflow-x: hidden
 	.content
 		width: 80%
 
@@ -115,5 +116,5 @@ p
 // 	outline: 1px solid slategrey
 // 	border-radius: 5em
 
-::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb
-	display: none
+// ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb
+// 	display: none
