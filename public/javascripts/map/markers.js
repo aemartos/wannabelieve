@@ -53,16 +53,17 @@ const addWindow = (title, description, map, type, marker, id, sighted, phenom) =
                   </div>
                   <a class="goPhenom" href="/phenomena/${id}"><span class="x-back"></span></a>
                 </div>`;
-  marker.addListener('click', function() {
+  marker.addListener('click', function () {
     infoWindows.forEach(e => e.close());
     infowindow.open(map, marker);
-    google.maps.event.addListener(infowindow,'domready',()=>{
-      [...document.getElementsByClassName('gm-style-iw')].forEach(el=>{
-        el.previousElementSibling.style.display = "none";
-      });
-    });
+    // TODO: commented because I can not remember why I did this and it's throwing an error
+    // google.maps.event.addListener(infowindow, 'domready', () => {
+    //   [...document.getElementsByClassName('gm-style-iw')].forEach(el => {
+    //     el.previousElementSibling.style.display = "none";
+    //   });
+    // });
   });
-  infowindow = new google.maps.InfoWindow({content, maxWidth: 200});
+  infowindow = new google.maps.InfoWindow({ content });
   infoWindows.push(infowindow);
   return infowindow;
 };
@@ -71,7 +72,7 @@ const addWindow = (title, description, map, type, marker, id, sighted, phenom) =
 //Close infoWindow and filtersBox when clicking the map
 const closeInfoWindow = () => {
   document.getElementById('mainMap').onclick = e => {
-    if (e.target && e.target.tagName === 'DIV' && !e.target.getAttribute('id')&& !e.target.getAttribute('class')) {
+    if (e.target && e.target.tagName === 'DIV' && !e.target.getAttribute('id') && !e.target.getAttribute('class')) {
       if (infoWindows.length > 0) {
         infoWindows.forEach(e => e.close());
       }
