@@ -1,11 +1,11 @@
-const passport = require('passport');
+import passport from 'passport';
 
-require('./serializers');
-require('./strategies/localStrategy');
-require('./strategies/facebook');
-require('./strategies/google');
+import './serializers.js';
+import './strategies/localStrategy.js';
+import './strategies/facebook.js';
+import './strategies/google.js';
 
-module.exports = (app) => {
+export default (app) => {
   app.use(passport.initialize());
   app.use(passport.session());
 }

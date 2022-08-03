@@ -1,9 +1,5 @@
-const mongoose = require('mongoose');
-const Route = require('../models/Route');
-
-const path = require('path');
-const dotenv = require('dotenv');
-dotenv.config({path: path.join(__dirname, '../.private.env')});
+import mongoose from "mongoose";
+import Route from '../models/Route.js';
 
 // mongoose.connect(process.env.DBURL, {useNewUrlParser: true})
 //   .then(x => {console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)})
@@ -47,7 +43,7 @@ let routes = [
 Route.collection.drop();
 
 const createRoutes = (idUser, phenoms) => {
-  const routesModified = routes.map(e => ({...e, creatorId: idUser, phenomenoId: phenoms.sort(() => .5 - Math.random()).slice(0,5)}));
+  const routesModified = routes.map(e => ({ ...e, creatorId: idUser, phenomenoId: phenoms.sort(() => .5 - Math.random()).slice(0, 5) }));
   return Route.create(routesModified)
     .then(routes => {
       console.log(`Created routes!`);
@@ -55,4 +51,4 @@ const createRoutes = (idUser, phenoms) => {
     })
 }
 
-module.exports = createRoutes;
+export default createRoutes;

@@ -1,11 +1,11 @@
-const mongoose = require('mongoose');
-const Schema   = mongoose.Schema;
+import mongoose from "mongoose";
+const Schema = mongoose.Schema;
 
 const reviewSchema = Schema({
-  title:String,
+  title: String,
   content: String,
-  authorId: {type: Schema.Types.ObjectId, ref:'User'},
-  phenomId: {type: Schema.Types.ObjectId, ref:'Phenomenon'},
+  authorId: { type: Schema.Types.ObjectId, ref: 'User' },
+  phenomId: { type: Schema.Types.ObjectId, ref: 'Phenomenon' },
   imgReviewUrl: String,
 }, {
   timestamps: { createdAt: "createdAt", updatedAt: "updatedAt" }
@@ -13,4 +13,4 @@ const reviewSchema = Schema({
 
 const Review = mongoose.model('Review', reviewSchema);
 
-module.exports = Review;
+export default Review;
