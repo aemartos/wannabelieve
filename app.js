@@ -1,32 +1,41 @@
-const path = require('path');
-const dotenv = require('dotenv');
+import path from "path";
+import dotenv from 'dotenv';
+
+import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
+import express from 'express';
+import favicon from 'serve-favicon';
+import hbs from 'hbs';
+import mongoose from 'mongoose';
+import logger from 'morgan';
+import cors from 'cors';
+import passport from './passport/index.js';
+import nodeSaas from 'node-sass-middleware';
+
+import session from "express-session";
+import MongoStore from 'connect-mongo';
+import flash from "connect-flash";
+
+import debug from 'debug';
+
+// Routes imports
+import index from './routes/index.js';
+import authRoutes from './routes/auth.js';
+import userRoutes from './routes/userProfile.js';
+import phenomRoutes from './routes/phenomena.js';
+import mapRoutes from './routes/mapRoutes.js';
+import apiRoutes from './routes/apiRoutes.js';
+import routesRoutes from './routes/routesRoutes.js';
+
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
+
 dotenv.config();
-dotenv.config({
-  path: path.join(__dirname, '.private.env')
-});
-dotenv.config({
-  path: path.join(__dirname, '.public.env')
-});
 
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const express = require('express');
-const favicon = require('serve-favicon');
-const hbs = require('hbs');
-const mongoose = require('mongoose');
-const logger = require('morgan');
-const cors = require('cors');
-
-const session = require("express-session");
-const MongoStore = require('connect-mongo')(session);
-const flash = require("connect-flash");
-
-const app_name = require('./package.json').name;
-const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
+// debug(`wannabelieve: ${path.basename(__filename).split('.')[0]}`);
 
 mongoose.connect(process.env.DBURL, {
-    useNewUrlParser: true
-  })
+  useNewUrlParser: true
+})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -51,7 +60,7 @@ app.use(cookieParser());
 
 // Express View engine setup
 
-app.use(require('node-sass-middleware')({
+app.use(nodeSaas({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
   indentedSyntax: true,
@@ -80,10 +89,10 @@ hbs.registerHelper('ifUndefined', (value, options) => {
   }
 });
 
-hbs.registerHelper('select', function(selected, options) {
+hbs.registerHelper('select', function (selected, options) {
   return options.fn(this).replace(
-      new RegExp(' value=\"' + selected + '\"'),
-      '$& selected="selected"');
+    new RegExp(' value=\"' + selected + '\"'),
+    '$& selected="selected"');
 });
 
 
@@ -96,13 +105,13 @@ app.use(session({
   secret: process.env.SECRET,
   resave: true,
   saveUninitialized: true,
-  store: new MongoStore({
-    mongooseConnection: mongoose.connection,
+  store: MongoStore.create({
+    mongoUrl: process.env.DBURL,
     ttl: 24 * 60 * 60 // 1 day
   })
 }))
 app.use(flash());
-require('./passport')(app);
+passport(app);
 
 app.use((req, res, next) => {
   res.locals.user = req.user;
@@ -112,25 +121,12 @@ app.use((req, res, next) => {
   next();
 });
 
-const index = require('./routes/index');
 app.use('/', index);
-
-const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
-
-const userRoutes = require('./routes/userProfile');
 app.use('/', userRoutes);
-
-const phenomRoutes = require('./routes/phenomena');
 app.use('/', phenomRoutes);
-
-const mapRoutes = require('./routes/mapRoutes');
 app.use('/map', mapRoutes);
-
-const apiRoutes = require('./routes/apiRoutes');
 app.use('/api', apiRoutes);
-
-const routesRoutes = require('./routes/routesRoutes');
 app.use('/routes', routesRoutes);
 
-module.exports = app;
+export default app;

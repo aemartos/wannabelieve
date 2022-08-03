@@ -1,21 +1,18 @@
-const express = require("express");
+import express from 'express';
+import { isLoggedIn } from "../middlewares/isLogged.js";
+import { distanceCheck } from "../middlewares/distanceCheck.js";
+
+import Phenomenon from "../models/Phenomenon.js";
+import Review from "../models/Review.js";
+import { uploadPhenomPicture } from "../config/cloudinary.js";
+
 const router = express.Router();
-const { isLoggedOut, isLoggedIn } = require("../middlewares/isLogged");
-const { distanceCheck } = require("../middlewares/distanceCheck");
-
-const Phenomenon = require("../models/Phenomenon");
-const User = require("../models/User");
-const Review = require("../models/Review");
-const ObjectId = require("mongoose").Types.ObjectId;
-
-const uploadMethods = require("../config/cloudinary.js");
-const uploadPhenomPicture = uploadMethods.uploadPhenomPicture;
 
 router.get("/phenomena/new", isLoggedIn("/auth/login"), (req, res) => {
   res.render("phenomena/new", { actual_page: "addPhenom_page" });
 });
 
-router.post("/addPhenomenon", uploadPhenomPicture.array("file",4), (req, res) => {
+router.post("/addPhenomenon", uploadPhenomPicture.array("file", 4), (req, res) => {
   //load of images
   var imgPhenomUrls = [];
 
@@ -91,7 +88,7 @@ router.get("/phenomena/:id/edit/", (req, res) => {
   });
 });
 
-router.post("/phenomena/:id/edit/",(req, res) => {
+router.post("/phenomena/:id/edit/", (req, res) => {
 
   const { name, type, description } = req.body;
   const id = req.params.id;
@@ -217,7 +214,7 @@ router.post(
 
 router.post("/phenomena/:id/postReview", (req, res) => {
   let content = req.body.content;
-  let authorId = new ObjectId(req.user._id);
+  let authorId = new mongoose.Types.ObjectId(req.user._id);
 
   Review.create({ content, authorId }).then(review => {
     Phenomenon.findByIdAndUpdate(req.params.id, {
@@ -226,4 +223,4 @@ router.post("/phenomena/:id/postReview", (req, res) => {
   });
 });
 
-module.exports = router;
+export default router;

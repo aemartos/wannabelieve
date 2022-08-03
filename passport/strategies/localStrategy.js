@@ -1,16 +1,16 @@
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const User = require('../../models/User');
-const bcrypt = require('bcryptjs');
+import passport from 'passport';
+import bcrypt from 'bcryptjs';
+import { Strategy } from 'passport-local';
+import User from '../../models/User.js';
 
-passport.use(new LocalStrategy({
-    usernameField: 'username',
-    passwordField: 'password'
-  },
+passport.use(new Strategy({
+  usernameField: 'username',
+  passwordField: 'password'
+},
   (username, password, done) => {
     User.findOne({
-        username
-      })
+      username
+    })
       .then(foundUser => {
         if (!foundUser) {
           done(null, false, {

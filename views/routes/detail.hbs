@@ -1,7 +1,7 @@
 <script>
   window.phenomena = {{{phenomena}}};
   window.searchBoxActive = false;
-  </script>
+</script>
 
 <div class="mainMap" id="mainMap"></div>
 <p class="finishRoute" id="finishRoute">{{!--<span class="x-sighting"></span>--}} <span class="text">finish</span></p>
@@ -19,19 +19,19 @@
 <div class="section firstSection">
   <div class="routeMainInfo">
     {{#if canEdit}}
-      <h4 class="mainTitle">{{route.routetitle}}</h4>
-      <div class="actions">
-        <a href="/routes/{{route._id}}/edit"><span class="x-update"></span></a>
-        <a href="/routes/{{route._id}}/delete"><span class="x-delete"></span></a>
-      </div>
+    <h4 class="mainTitle">{{route.routetitle}}</h4>
+    <div class="actions">
+      <a href="/routes/{{route._id}}/edit"><span class="x-update"></span></a>
+      <a href="/routes/{{route._id}}/delete"><span class="x-delete"></span></a>
+    </div>
     {{else}}
-      <h4 class="mainTitle alone">{{route.routetitle}}</h4>
+    <h4 class="mainTitle alone">{{route.routetitle}}</h4>
     {{/if}}
   </div>
   {{#if canEdit}}
-    <p class="createdOn">create on: {{creationDate}}</p>
+  <p class="createdOn">create on: {{creationDate}}</p>
   {{else}}
-    <p class="createdOn alone">create on: {{creationDate}}</p>
+  <p class="createdOn alone">create on: {{creationDate}}</p>
   {{/if}}
 </div>
 
@@ -39,7 +39,8 @@
   <p class="startRoute" id="startRoute"><span class="x-sighting"></span> <span class="text">start</span></p>
   <div class="favoriteRoute">
     <form method="POST" action="/routes/{{route._id}}/toggleFav">
-      <button type="submit"><span class="x-favorite{{#if fav}}-fill active{{/if}}"></span></button><span class="text {{!--{{#if fav}}active{{/if}}--}}">favorite</span>
+      <button type="submit"><span class="x-favorite{{#if fav}}-fill active{{/if}}"></span></button><span
+        class="text {{!--{{#if fav}}active{{/if}}--}}">favorite</span>
     </form>
   </div>
 </div>
@@ -57,15 +58,15 @@
   <p class="phenomena"><span class="text">phenomena:</span> <span class="x-back" id="expandPhenomena"></span></p>
   <ul class="phenomsList" id="phenomsAccordion">
     {{#unless route.phenomenoId}}
-      <li class="phenom noPhenom">There is no phenomena in this route yet</li>
+    <li class="phenom noPhenom">There is no phenomena in this route yet</li>
     {{/unless}}
     {{#each route.phenomenoId}}
-      <li class="phenom">
-        <a href="/phenomena/{{this._id}}">
-          <img src="/images/markers/big/{{this.type}}.png" alt="">
-          <span>{{this.name}}</span>
-        </a>
-      </li>
+    <li class="phenom">
+      <a href="/phenomena/{{this._id}}">
+        <img src="/images/markers/big/{{this.type}}.png" alt="">
+        <span>{{this.name}}</span>
+      </a>
+    </li>
     {{/each}}
   </ul>
 </div>
@@ -74,40 +75,40 @@
   <p class="comments"><span class="text">comments:</span> <span class="x-back" id="expandComments"></span></p>
   <ul class="commentsList" id="commentsAccordion">
     {{#unless comments}}
-      <li class="comment noComment">There are no comments in this route yet</li>
+    <li class="comment noComment">There are no comments in this route yet</li>
     {{/unless}}
     {{#each comments}}
-      <li class="comment">
-        <p class="metaData">
-          <span>
-            <span>{{this.formatTime}}</span><span> | </span><span>{{this.formatDate}}</span>
-          </span>
-          <span class="author">author: {{this.authorId.username}}</span>
-        </p>
-        <p class="commentContent">{{this.content}}</p>
-        {{#if canDelete}}
-          <p class="deleteBtn"><span class="x-delete"></span></p>
-        {{/if}}
-      </li>
+    <li class="comment">
+      <p class="metaData">
+        <span>
+          <span>{{this.formatTime}}</span><span> | </span><span>{{this.formatDate}}</span>
+        </span>
+        <span class="author">author: {{this.authorId.username}}</span>
+      </p>
+      <p class="commentContent">{{this.content}}</p>
+      {{#if canDelete}}
+      <p class="deleteBtn"><span class="x-delete"></span></p>
+      {{/if}}
+    </li>
     {{/each}}
   </ul>
 </div>
 
 <div class="section addCommentSection">
-  <form class="addComment"  method="POST" action="/routes/{{route._id}}/postComment">
+  <form class="addComment" method="POST" action="/routes/{{route._id}}/postComment">
     <div class="commentBox">
       <textarea type="text" name="content" placeholder="write your comment here"></textarea>
       <button type="submit" class="addCommentBtn"><span class="x-plus"></span></button>
     </div>
     <div class="messages">
       {{#each messages}}
-        <div class="error-message">{{this}}</div>
+      <div class="error-message">{{this}}</div>
       {{/each}}
     </div>
   </form>
 </div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDALLA4IgWrHmR_9IiIAhCE6-keEuJks34"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{{googleApiKey}}}"></script>
 <script src="/javascripts/map/mapHelpers.js"></script>
 <script src="/javascripts/map/markers.js"></script>
 <script src="/javascripts/map/mapActions.js"></script>

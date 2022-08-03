@@ -1,9 +1,5 @@
-const mongoose = require("mongoose");
-const Phenomenon = require("../models/Phenomenon");
-
-const path = require('path');
-const dotenv = require('dotenv');
-dotenv.config({path: path.join(__dirname, '../.private.env')});
+// import mongoose from "mongoose";
+import Phenomenon from "../models/Phenomenon.js";
 
 // mongoose.connect(process.env.DBURL, {useNewUrlParser: true})
 //   .then(x => {console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)})
@@ -31,7 +27,7 @@ let phenomena = [
       coordinates: [162.2491575, -77.7166662]
     },
     //creatorId: "5c17d333e29a2fdbba269dd1",
-    imgPhenomUrls:["https://thumbor.forbes.com/thumbor/1280x868/https%3A%2F%2Fblogs-images.forbes.com%2Ftrevornace%2Ffiles%2F2017%2F04%2Fblood-falls-1200x585.jpg"]
+    imgPhenomUrls: ["https://thumbor.forbes.com/thumbor/1280x868/https%3A%2F%2Fblogs-images.forbes.com%2Ftrevornace%2Ffiles%2F2017%2F04%2Fblood-falls-1200x585.jpg"]
   },
   {
     name: "Hidden Beachs",
@@ -452,200 +448,200 @@ let phenomena = [
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545086077/phenomena-pictures/MeteorCrater.png"]
   },
   {
-    name:"Our Lady of Lourdes" ,
+    name: "Our Lady of Lourdes",
     description: "In 1858 Saint Bernadette Soubirous was a 14-year-old shepherd girl who lived near the town of Lourdes in France. Bernadette Soubirous was out gathering firewood in the countryside. She reported a vision of a miraculous Lady who identified Herself as the Immaculate Conception in subsequent visions. In the third vision she was asked to return again and she had 18 visions overall. According to Saint Bernadette, the Lady held a string of Rosary beads and led Saint Bernadette to the discovery of a buried spring, also requesting that the local priests build a chapel at the site of the visions and lead holy processions there. Eventually, a number of chapels and churches were built at Lourdes as the Sanctuary of Our Lady of Lourdes—which is now a major Catholic pilgrimage site.",
     type: "religiousApparitions",
     location: {
       type: "Point",
-      coordinates: [-0.0583093,43.0975484]
+      coordinates: [-0.0583093, 43.0975484]
     },
 
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414309/phenomena-pictures/VirgendeLourdes.jpg"]
   },
 
-{
-    name:"Our Lady of Fátima" ,
+  {
+    name: "Our Lady of Fátima",
     description: "The visions of the Virgin Mary appearing to three shepherd children at Cova da Iria, in Fátima, Portugal, in 1917 were declared worthy of belief by the Catholic Church in 1930. Seven popes — Pius XII, John XXIII, Paul VI, John Paul I, John Paul II, Benedict XVI and Francis — have supported the Fátima messages as supernatural. John Paul II credited Our Lady of Fátima with saving his life after he was shot in Rome on the Feast Day of Our Lady of Fátima in May 1981. He donated the bullet that wounded him on that day to the Sanctuary of Our Lady of Fátima.[51] Pope Paul VI sent a Golden Rose to the shrine in 1964,[52] and Benedict XVI, on May 13, 2010, prayed in the Chapel of the Apparitions at the shrine and gave a second Golden Rose to Our Lady of Fátima. Before a gathering of more than 500,000 pilgrims, he spoke of the Fátima prophecy about the triumph of the Immaculate Heart of Mary.",
     type: "religiousApparitions",
     location: {
       type: "Point",
-      coordinates: [-8.6753458,39.6312638] 
+      coordinates: [-8.6753458, 39.6312638]
     },
 
-    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414425/phenomena-pictures/Pastorcitos.jpg","https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414427/phenomena-pictures/Santuario-de-Fatima.jpg"]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414425/phenomena-pictures/Pastorcitos.jpg", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414427/phenomena-pictures/Santuario-de-Fatima.jpg"]
   },
-{
-    name:"Our Lady of the Pillar" ,
+  {
+    name: "Our Lady of the Pillar",
     description: "Our Lady of the Pillar (Spanish: Nuestra Señora del Pilar) is the name given to the Blessed Virgin Mary associated with the claim of Marian apparition to Apostle James the Greater as he was praying by the banks of the Ebro at Caesaraugusta (Zaragoza), Hispania, in AD 40. The celebrated wooden image is enshrined at the Basilica of Our Lady of the Pillar in Saragossa (Zaragoza).",
     type: "religiousApparitions",
     location: {
       type: "Point",
-      coordinates: [-0.8785192,41.656771]
+      coordinates: [-0.8785192, 41.656771]
     },
 
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414515/phenomena-pictures/3a8c84371809bfbffe8c68bcc8b3bc64.jpg"]
   },
-{
-    name:"Old Town of Belchite" ,
+  {
+    name: "Old Town of Belchite",
     description: "Between August 24 and September 7, 1937, loyalist Spanish Republican and rebel General Franco's forces in the Spanish Civil War fought the Battle of Belchite in and around the town. After 1939 a new village of Belchite was built adjacent to the ruins of the old, which remain a ghost town as a memorial to the war. The remains of the old village have been used as filming locations in films including Terry Gilliam/'s 1988 film The Adventures of Baron Munchausen and Guillermo del Toro's Pan's Labyrinth. The ruins of the town were also used in the opening scene of the 1983 ITV documentary The Spanish Civil War",
     type: "abandonedPlaces",
     location: {
       type: "Point",
-      coordinates: [-0.7495305,41.3012809]
+      coordinates: [-0.7495305, 41.3012809]
     },
 
-    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414573/phenomena-pictures/foto158316.jpg","https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414574/phenomena-pictures/42003_g.jpg"]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414573/phenomena-pictures/foto158316.jpg", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414574/phenomena-pictures/42003_g.jpg"]
   },
-{
-    name:"The Tuberculosis Sanctuary of Agramonte" ,
+  {
+    name: "The Tuberculosis Sanctuary of Agramonte",
     description: "close to the town of Tarazona is this building that was also full of suffering and pain, because there the tuberculosis patients came. Since the 70s, the building has been totally abandoned. Inside you can still see remains of the beds where the patients rested. There are people who say they have heard door noises open and close, cries for help and have even observed ghostly presences. What is certain is that the passage of time has made this sanctuary a magnet for vandalism.",
     type: "abandonedPlaces",
     location: {
       type: "Point",
-      coordinates: [-1.8236667,41.8191173]
+      coordinates: [-1.8236667, 41.8191173]
     },
 
-    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414649/phenomena-pictures/images.jpg","https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414646/phenomena-pictures/Sanatorio_de_Agramonte22.jpg"]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414649/phenomena-pictures/images.jpg", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414646/phenomena-pictures/Sanatorio_de_Agramonte22.jpg"]
   },
-{
-    name:"Laspaules Witches" ,
+  {
+    name: "Laspaules Witches",
     description: "In the middle of the mountain and through an easy access road, the park offers information panels and scenes of what happened there. At the end of the 14th century, about 30 women were executed there accused of witchcraft. With imagination and reinforced by historical data, geological formations reminiscent of the concentration point of the covens can be observed",
     type: "halfHuman",
     location: {
       type: "Point",
-      coordinates: [0.6174402,42.4501152] 
+      coordinates: [0.6174402, 42.4501152]
     },
 
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414706/phenomena-pictures/laspaules-800x600.jpg"]
   },
-{
-    name:"Hotel Corona - room 510" ,
+  {
+    name: "Hotel Corona - room 510",
     description: "In 1979, a fire in this hotel claimed the lives of 78 people. Since then, many testimonies assure that the building feels a sense of suffocation. Many are the witnesses who claim to listen to footsteps and races in the corridors, even to feel pushed by someone fleeing the fire. But in particular, room 510 is the most mysterious of all. Guests who stayed there and many curious of the paranormal indicate that there the lights are turned on and off at night, that someone calls the phone but when picking up nobody answers, knocks on the door. There are even those who say that a mysterious orange light sneaks under the door, as if there was fire in the corridor. A stay only suitable for the bravest.",
     type: "paranormal",
     location: {
       type: "Point",
-      coordinates: [-0.8866025,41.6513774]
+      coordinates: [-0.8866025, 41.6513774]
     },
 
-    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414757/phenomena-pictures/bemow.jpg","https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414760/phenomena-pictures/_corona_09f7986d.jpg"]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414757/phenomena-pictures/bemow.jpg", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414760/phenomena-pictures/_corona_09f7986d.jpg"]
   },
-{
-    name:"The elf of Zaragoza" ,
+  {
+    name: "The elf of Zaragoza",
     description: "In the Zaragoza of 1934 things happened that escaped the understanding. In a building located on the street of Gascon de Gotor in the capital of Aragon several witnesses said that voices could be heard coming from a gas stove. The police authorities and bricklayers inspected the house and the voices persisted. According to the press of the time they even got to establish conversations with the voice, an issue that became a media phenomenon. In the face of possible public disorder, the servant of the home was blamed. Years later the building was demolished and on the site the current goblin building was built.",
     type: "psychophonies",
     location: {
       type: "Point",
-      coordinates: [-0.8872041,41.6399292] 
+      coordinates: [-0.8872041, 41.6399292]
     },
 
-    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414824/phenomena-pictures/10995663_926514004037892_7426957481919788308_n.jpg","https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414827/phenomena-pictures/19709494442_1218f9006e_b.jpg"]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414824/phenomena-pictures/10995663_926514004037892_7426957481919788308_n.jpg", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414827/phenomena-pictures/19709494442_1218f9006e_b.jpg"]
   },
-{
-    name:"Aunt Casca" ,
+  {
+    name: "Aunt Casca",
     description: "The covens that the witches of the Moncayo celebrated in the castle of the Lord of Trasmoz are just the beginning. Bécquer, ambassador of the legend in this land, picked up in one of his narrations the story of 'La Tía Casca'. It tells how one day walking on one of the roads that lead to Trasmoz, a pastor warned him that he will not continue on that path as Aunt Casca, who died after being thrown down a ravine years ago, wandered in search of new souls. Apparently, the character existed and was overthrown in 1850 for attributing bad witchcraft to him.",
     type: "ghosts",
     location: {
       type: "Point",
-      coordinates: [-1.7257682,41.8265584] 
+      coordinates: [-1.7257682, 41.8265584]
     },
 
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545414907/phenomena-pictures/images_1.jpg"]
   },
-{
-    name:"Otxate Tower" ,
+  {
+    name: "Otxate Tower",
     description: "In the heart of Treviño County a long time ago the roads were lost in Ochate. Walking on foot through the countryside, you come to an abandoned village in which the many claim to have experienced different paranormal phenomena. The tower of San Miguel is the little that remains in this population in which history was spawned by epidemics, disappearances and unexplained deaths. After its abandonment, it has been the subject of numerous psychophonies and stories worthy of a horror movie.",
     type: "psychophonies",
     location: {
       type: "Point",
-      coordinates: [-2.6608863,42.7492683] 
+      coordinates: [-2.6608863, 42.7492683]
     },
 
-    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545415049/phenomena-pictures/ochate.jpg","https://res.cloudinary.com/ironhackproject2018/image/upload/v1545415050/phenomena-pictures/otxate.jpg"]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545415049/phenomena-pictures/ochate.jpg", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545415050/phenomena-pictures/otxate.jpg"]
   },
-{
-    name:"Belmez faces" ,
+  {
+    name: "Belmez faces",
     description: "In the home of the deceased María Gómez Cámara in Bélmez de la Moraleda (Jaen) is what for many is the most enchanted place in Spain. For others it is a great fraud, but still nobody has found the key to the different faces that have been reflected in the floors and walls of the house on Calle Real No. 5 that has been studied by scientists and parapsychologists from around the world. Whether they are mysterious reflections of people who no longer exist or teleplasties, the story of Bélmez's faces is really unsettling. For decades, including periods in which it was sealed and locked, faces did not stop appearing again and again.",
     type: "paranormal",
     location: {
       type: "Point",
-      coordinates: [-3.3836948,37.7233763]
+      coordinates: [-3.3836948, 37.7233763]
     },
 
-    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545415150/phenomena-pictures/lapava-kfLH-U203722513250TcB-490x490_Diario_Sur.jpg","https://res.cloudinary.com/ironhackproject2018/image/upload/v1545415152/phenomena-pictures/nin%CC%83os.jpg"]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545415150/phenomena-pictures/lapava-kfLH-U203722513250TcB-490x490_Diario_Sur.jpg", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545415152/phenomena-pictures/nin%CC%83os.jpg"]
   },
-{
-    name:"Cardona Hostel - room 712" ,
+  {
+    name: "Cardona Hostel - room 712",
     description: "It is strange that people do not want to stay in room 712 of the Parador de Cardona, an old castle that functions as a hotel. Perhaps it is because the apparitions have been constant in this room of which the spirits of ancient inhabitants of a fort that serves as a jail and torture center in the Middle Ages are said to wander. Unless someone specifically asks to stay in this mysterious room, hotel managers never offer it.",
     type: "ghosts",
     location: {
       type: "Point",
-      coordinates: [1.6834613,41.914318]
+      coordinates: [1.6834613, 41.914318]
     },
 
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545415218/phenomena-pictures/hqdefault.jpg"]
   },
-{
-    name:"The Hospital of Tórax de Terrassa" ,
+  {
+    name: "The Hospital of Tórax de Terrassa",
     description: "An old hospital in the Barcelona town of Terrassa that served to receive patients with respiratory diseases between 1952 and 1997 counts not only with apparitions and unexplained phenomena but with devastating data. And it is that the press of the time already spoke of one of the hospitals with higher index of suicides of all the country, with patients who underwent an incurable psychosis that made them throw itself to the emptiness from the last plant.",
     type: "unclassified",
     location: {
       type: "Point",
-      coordinates: [2.0058764,41.5936546] 
+      coordinates: [2.0058764, 41.5936546]
     },
 
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545415261/phenomena-pictures/maxresdefault.jpg"]
   },
-{
-    name:"Mount of Souls in Soria" ,
+  {
+    name: "Mount of Souls in Soria",
     description: "Gustavo Adolfo Bécquer gave us one of the best legends of ghosts and apparitions that went from mouth to mouth to the most precious literature of the nineteenth century. The one of the mount of the Souls is a history of templarios and spirits that are allowed to see each night of deceased and that surround of mystery and blood the deaths of the young Alonso and Beatriz. Bécquer's narrative makes us imagine that place surrounded by fog and fleeting lights. Of course it really exists, and I'm convinced that many would not even go in painting alone to this place to please anyone. And less on the nights of the dead ...",
     type: "ghosts",
     location: {
       type: "Point",
-      coordinates: [-2.4484945,41.7499575]
+      coordinates: [-2.4484945, 41.7499575]
     },
 
-    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545415319/phenomena-pictures/claustro_soria_san_juan_de_duero.jpg","https://res.cloudinary.com/ironhackproject2018/image/upload/v1545415322/phenomena-pictures/noche-de-las-animas-17web.jpg"]
+    imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545415319/phenomena-pictures/claustro_soria_san_juan_de_duero.jpg", "https://res.cloudinary.com/ironhackproject2018/image/upload/v1545415322/phenomena-pictures/noche-de-las-animas-17web.jpg"]
   },
-{
-    name:"Reina Sofia Museum ghosts" ,
+  {
+    name: "Reina Sofia Museum ghosts",
     description: "Before the museum, the Reina Sofía served as the General Hospital. Many people perished in their dependencies and, those who did not have loved ones who claimed the bodies, were buried under the subsoil. Few places in the capital of Spain have collected so many comments from witnesses that they have been frightened by the passage of the ghostly figures of three nuns, who later learned their bones lay under the main entrance of the current museum. One of its ghosts has a name, Ataulfo, which has left its mark on countless occasions, including séances that, according to its participants, attracted the attention of numerous spirits that are said to roam the galleries of the Reina Sofía.",
     type: "ghosts",
     location: {
       type: "Point",
-      coordinates: [-3.6962326,40.4085188]
+      coordinates: [-3.6962326, 40.4085188]
     },
 
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545415396/phenomena-pictures/Museo_Reina_Sofia-Ministerio_de_Cultura-Madrid-Grandes_Historias_157495601_17065452_1706x960.jpg"]
   },
-{
-    name:"Busot Water Preventory" ,
+  {
+    name: "Busot Water Preventory",
     description: "They say that what was a luxurious spa hotel was lost by its owner in the 30s playing poker. It thus became a building for tuberculosis that became crowded during the civil war. It has been abandoned for decades, being a magnet for friends of the inexplicable. Because there are people who say they have seen strange things or heard voices. It was discovered much later the presence of underground tunnels that were used in the war. And there have also been occurrences of those who put the hair on end.",
     type: "psychophonies",
     location: {
       type: "Point",
-      coordinates: [-0.36992,38.5064833] 
+      coordinates: [-0.36992, 38.5064833]
     },
 
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545415450/phenomena-pictures/Preventorio_busot_lateral.jpg"]
   },
-{
-    name:"The Black Lagoon of Urbión" ,
+  {
+    name: "The Black Lagoon of Urbión",
     description: "Antonio Machado, in The land of Alvargonzález speaks of the Black Lagoon, located in the Sierra de los Picos de Urbion. Legend has it that there is no bottom, and that from it arise caves and underground currents that will hit the distant sea. Machado recounted the murder of a father by his two sons, who tied his feet to his feet after giving him stabs and axes in order to obtain a blood-stained inheritance. In the end, after being executed an innocent and losing everything they had won, the children end up perishing in its waters. Still laments are heard in the Black Lagoon of that Soria legendarily terrifying.",
     type: "psychophonies",
     location: {
       type: "Point",
-      coordinates: [-2.8492676,41.9988024]
+      coordinates: [-2.8492676, 41.9988024]
     },
 
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545415491/phenomena-pictures/laguna_negra.jpg"]
   },
   {
-    name:"Elsa Parser" ,
+    name: "Elsa Parser",
     description: "Be careful with Elsa as she can leave you frozen with her super powers",
     type: "halfHuman",
     location: {
       type: "Point",
-      coordinates: [-0.5165586,42.8244611]
+      coordinates: [-0.5165586, 42.8244611]
     },
 
     imgPhenomUrls: ["https://res.cloudinary.com/ironhackproject2018/image/upload/v1545416216/phenomena-pictures/IMG_2864.jpg"]
@@ -661,7 +657,7 @@ let phenomena = [
 Phenomenon.collection.drop();
 
 const createPhenomena = (idUser) => {
-  const phenom = phenomena.map(e => ({...e, creatorId: idUser}));
+  const phenom = phenomena.map(e => ({ ...e, creatorId: idUser }));
   return Phenomenon.create(phenom)
     .then(phenoms => {
       console.log(`Created phenomena!`);
@@ -670,4 +666,4 @@ const createPhenomena = (idUser) => {
 }
 
 
-module.exports = createPhenomena;
+export default createPhenomena;

@@ -1,13 +1,9 @@
-const mongoose = require("mongoose");
-const Review = require("../models/Review");
+import mongoose from "mongoose";
+import Review from "../models/Review.js";
 
-const path = require('path');
-const dotenv = require('dotenv');
-dotenv.config({path: path.join(__dirname, '../.private.env')});
-
-mongoose.connect(process.env.DBURL, {useNewUrlParser: true})
-  .then(x => {console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)})
-  .catch(err => {console.error("Error connecting to mongo", err)});
+mongoose.connect(process.env.DBURL, { useNewUrlParser: true })
+  .then(x => { console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`) })
+  .catch(err => { console.error("Error connecting to mongo", err) });
 
 
 let reviews = [

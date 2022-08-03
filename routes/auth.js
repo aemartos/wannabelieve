@@ -1,31 +1,33 @@
-const express = require("express");
-const passport = require('passport');
+import express from 'express';
+import passport from 'passport';
+import bcrypt from "bcryptjs";
+import User from "../models/User.js";
+
+import { isLoggedOut, isLoggedIn } from '../middlewares/isLogged.js';
+
 const router = express.Router();
-const User = require("../models/User");
-const {isLoggedOut, isLoggedIn} = require('../middlewares/isLogged');
 
 // Bcrypt to encrypt passwords
-const bcrypt = require("bcryptjs");
 const bcryptSalt = 10;
 
 
 router.get("/login", isLoggedOut('/map'), (req, res, next) => {
   req.flash("error");
-  res.render("auth/login", {actual_page: 'login'});
+  res.render("auth/login", { actual_page: 'login' });
 });
 
-router.post("/login",  isLoggedOut('/map'), passport.authenticate("local", {
+router.post("/login", isLoggedOut('/map'), passport.authenticate("local", {
   successRedirect: "/map",
   failureRedirect: "/auth/login",
   failureFlash: true,
   passReqToCallback: true
 }));
 
-router.get("/signup",  isLoggedOut('/map'), (req, res, next) => {
-  res.render("auth/signup", {actual_page: 'signup'});
+router.get("/signup", isLoggedOut('/map'), (req, res, next) => {
+  res.render("auth/signup", { actual_page: 'signup' });
 });
 
-router.post("/signup",  isLoggedOut('/map'), (req, res, next) => {
+router.post("/signup", isLoggedOut('/map'), (req, res, next) => {
   const username = req.body.username;
   const email = req.body.email;
   const password = req.body.password;
@@ -35,13 +37,13 @@ router.post("/signup",  isLoggedOut('/map'), (req, res, next) => {
     return;
   }
 
-  User.findOne({username}, "username", (err, user) => {
+  User.findOne({ username }, "username", (err, user) => {
     if (user !== null) {
       req.flash("error", "the username already exists");
       res.redirect("signup");
       return;
     } else {
-      User.findOne({email}, "email", (err, user) => {
+      User.findOne({ email }, "email", (err, user) => {
         if (user !== null) {
           req.flash("error", "the email already exists");
           res.redirect("signup");
@@ -58,7 +60,7 @@ router.post("/signup",  isLoggedOut('/map'), (req, res, next) => {
         });
 
         newUser.save()
-          .then(() => {res.redirect("signupOK")})
+          .then(() => { res.redirect("signupOK") })
           .catch(err => {
             req.flash("error", "something went wrong");
             res.redirect("signup");
@@ -68,11 +70,11 @@ router.post("/signup",  isLoggedOut('/map'), (req, res, next) => {
   });
 });
 
-router.get("/signupOK",  isLoggedOut('/map'), (req, res, next) => {
-  res.render("auth/signupOK", {actual_page: 'signupOK'});
+router.get("/signupOK", isLoggedOut('/map'), (req, res, next) => {
+  res.render("auth/signupOK", { actual_page: 'signupOK' });
 });
 
-router.get("/facebook",  isLoggedOut('/map'), passport.authenticate("facebook"));
+router.get("/facebook", isLoggedOut('/map'), passport.authenticate("facebook"));
 router.get("/facebook/callback",
   passport.authenticate("facebook", {
     successRedirect: "/map",
@@ -82,7 +84,7 @@ router.get("/facebook/callback",
 
 router.get("/google", passport.authenticate("google", {
   scope: ["https://www.googleapis.com/auth/plus.login",
-          "https://www.googleapis.com/auth/plus.profile.emails.read"]
+    "https://www.googleapis.com/auth/plus.profile.emails.read"]
 }));
 router.get("/google/callback", passport.authenticate("google", {
   successRedirect: "/map",
@@ -94,4 +96,4 @@ router.get("/logout", isLoggedIn('/auth/login'), (req, res) => {
   res.redirect("/");
 });
 
-module.exports = router;
+export default router;

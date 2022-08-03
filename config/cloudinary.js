@@ -1,8 +1,6 @@
-const cloudinary = require('cloudinary');
-const cloudinaryStorage = require('multer-storage-cloudinary');
-const multer = require('multer');
-
-
+import { v2 as cloudinary } from 'cloudinary';
+import multer from 'multer';
+import { CloudinaryStorage } from 'multer-storage-cloudinary';
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
@@ -10,39 +8,39 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_SECRET
 });
 
-var storageProfilePictures = cloudinaryStorage({
+// FIXME: review cloudinary account
+var storageProfilePictures = new CloudinaryStorage({
   cloudinary,
-  folder: 'profile-pictures',
-  allowedFormats: ['jpg', 'png'],
-  filename: function (req, file, cb) {
-    cb(null, req.file);
+  params: {
+    folder: 'profile-pictures',
+    allowed_formats: ['jpg', 'png'],
+    public_id: (req, _) => req.file,
   }
 });
 
-var storagePhenomPictures = cloudinaryStorage({
+var storagePhenomPictures = new CloudinaryStorage({
   cloudinary,
-  folder: 'phenomena-pictures',
-  allowedFormats: ['jpg', 'png'],
-  filename: function (req, file, cb) {
-    cb(null, req.file);
+  paramds: {
+    folder: 'phenomena-pictures',
+    allowed_formats: ['jpg', 'png'],
+    public_id: (req, _) => req.file,
   }
 });
 
-var storageReviewPictures = cloudinaryStorage({
+var storageReviewPictures = new CloudinaryStorage({
   cloudinary,
-  folder: 'review-pictures',
-  allowedFormats: ['jpg', 'png'],
-  filename: function (req, file, cb) {
-    cb(null, req.file);
+  params: {
+    folder: 'review-pictures',
+    allowed_formats: ['jpg', 'png'],
+    public_id: (req, _) => req.file,
   }
 });
 
 const uploadProfilePicture = multer({ storage: storageProfilePictures });
-const uploadPhenomPicture = multer({storage: storagePhenomPictures});
-const uploadReviewPicture = multer({storage: storageReviewPictures})
+const uploadPhenomPicture = multer({ storage: storagePhenomPictures });
+const uploadReviewPicture = multer({ storage: storageReviewPictures })
 
-
-module.exports = {
+export {
   uploadProfilePicture,
   uploadPhenomPicture,
   uploadReviewPicture
