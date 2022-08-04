@@ -1,6 +1,6 @@
 let filters = false;
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
   /*---------------- REAL TIME LOCATION ---------------*/
 
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let RTLinterval = null;
   document.getElementById('findMeBtn').onclick = (e) => {
     document.getElementById('findMeBtn').classList.toggle("active");
-    if(RTL && RTLinterval) {
+    if (RTL && RTLinterval) {
       if (meMarker) meMarker.setMap(null);
       isGeolocating = false;
       clearInterval(RTLinterval);
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let satellite = false;
   document.getElementById('layersBtn').onclick = (e) => {
     document.getElementById('layersBtn').classList.toggle("active");
-    if(!satellite) {
+    if (!satellite) {
       map.setMapTypeId('satellite');
     } else {
       map.setMapTypeId('roadmap');
@@ -38,14 +38,14 @@ document.addEventListener("DOMContentLoaded", function() {
   /*---------------- ZOOM IN ---------------*/
 
   document.getElementById('zoomInBtn').onclick = (e) => {
-    map.setZoom(map.getZoom()+1);
+    map.setZoom(map.getZoom() + 1);
   };
 
 
   /*---------------- ZOOM OUT ---------------*/
 
   document.getElementById('zoomOutBtn').onclick = (e) => {
-    map.setZoom(map.getZoom()-1);
+    map.setZoom(map.getZoom() - 1);
   };
 
 
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   //convert serarch input in a searchBox to find places with this library
   let searchBox = null;
-  if(window.searchBoxActive) {searchBox = new google.maps.places.SearchBox(searchInput);}
+  if (window.searchBoxActive) { searchBox = new google.maps.places.SearchBox(searchInput); }
 
   //let searchBox = new google.maps.places.SearchBox(searchInput);
 
@@ -64,23 +64,32 @@ document.addEventListener("DOMContentLoaded", function() {
     let searchVal = searchInput.value;
     //get all suggested places with my input search
     let places = searchBox.getPlaces();
-    let lat,lng,l,t,r,b;
+    let lat, lng, l, t, r, b;
     //if there are suggested places I retrieve the most similar place to my query
-    if (places && places.length > 0 ) {
+    if (places && places.length > 0) {
       //the first one is the most similar
       let geom = places[0].geometry.location;
       let vw = places[0].geometry.viewport;
-      //console.log(places[0]);
       //get coordinates rounded to 5 decimals
       lat = geom.lat();
       lng = geom.lng();
 
       // the name of the keys changes and if you specify them, it fails
       const keys = Object.keys(vw);
-      l = vw[keys[0]].j;
-      r = vw[keys[0]].l;
-      t = vw[keys[1]].l;
-      b = vw[keys[1]].j;
+      // TODO: review viewport, not working at the moment
+      l = vw[keys[0]].hi;
+      r = vw[keys[0]].lo;
+      t = vw[keys[1]].lo;
+      b = vw[keys[1]].hi;
+
+      // console.log('-------->', { places: places[0], geom, vw, lat, lng });
+
+      // FIXME: old config
+      // l = vw[keys[0]].j;
+      // r = vw[keys[0]].l;
+      // t = vw[keys[1]].l;
+      // b = vw[keys[1]].j;
+
       // l = vw.fa.j; vw.ea.j;
       // r = vw.fa.l;
       // t = vw.ma.l;  vw.la.l;
@@ -88,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     //remote request to server passing my search query and coordinates of the closest place name
-    fetch(encodeURI("/map/mapsearch?query=" + searchVal + ((lat && lng) ? ("&t=" + t + "&l=" + l + "&b=" + b  + "&r=" + r) : "")))
+    fetch(encodeURI("/map/mapsearch?query=" + searchVal + ((lat && lng) ? ("&t=" + t + "&l=" + l + "&b=" + b + "&r=" + r) : "")))
       .then(res => res.json()).then(searchPhenomena => {
         //retrive results and substitute window variable
         window.phenomena = searchPhenomena.phenomena;
@@ -99,14 +108,14 @@ document.addEventListener("DOMContentLoaded", function() {
           //I load them into the map
           loadData(map);
           //if there's no result from Places API
-          if(!lat && !lng) {
+          if (!lat && !lng) {
             //calculate bounds to fit all markers in the map
             map.fitBounds(calculateBoundsToFitAllMarkers(searchPhenomena.phenomena));
           } else {
             //if there're results from Places API
-                //map.setCenter({lat,lng});
+            //map.setCenter({lat,lng});
             //the viewport adjust center and zoom to fit all geography area
-                  //geometry.viewport --> appropriate viewport size to fit the place
+            //geometry.viewport --> appropriate viewport size to fit the place
             map.fitBounds(places[0].geometry.viewport);
           }
           //if there're no results, at least, center the map in the place searched
@@ -119,10 +128,10 @@ document.addEventListener("DOMContentLoaded", function() {
       .catch(e => console.error('Error:', e));
   };
 
-  if(document.getElementById('mGlass')) {
+  if (document.getElementById('mGlass')) {
     document.getElementById('mGlass').onclick = searchReq;
     searchInput.onkeydown = (event) => {
-      if(event.keyCode == 13) {
+      if (event.key == 'Enter') {
         event.preventDefault();
         searchReq(event);
         return false;
@@ -132,10 +141,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
   /*---------------- FILTERS ---------------*/
 
-  if(document.getElementById('filtersBtn')) {
+  if (document.getElementById('filtersBtn')) {
     document.getElementById('filtersBtn').onclick = (e) => {
       document.getElementById('filtersBtn').classList.toggle("active");
-      if(!filters) {
+      if (!filters) {
         document.getElementById('filtersBox').style.display = 'block';
       } else {
         document.getElementById('filtersBox').style.display = 'none';
@@ -143,15 +152,15 @@ document.addEventListener("DOMContentLoaded", function() {
       filters = !filters;
     };
 
-    [...document.getElementsByClassName('checkboxCat')].forEach((el)=>{
+    [...document.getElementsByClassName('checkboxCat')].forEach((el) => {
       el.onchange = (e) => {
         document.getElementById('showAll').checked = false;
         let activeFilters = [...document.getElementsByClassName('checkboxCat')]
-          .filter(el=>el.checked)
-          .map(filter=>filter.value);
+          .filter(el => el.checked)
+          .map(filter => filter.value);
         removeMarkers(markers);
         filteredPhenomena = window.phenomena.filter(ph => activeFilters.includes(ph.type));
-        loadData(map,{phenomena: filteredPhenomena});
+        loadData(map, { phenomena: filteredPhenomena });
         if ([...document.getElementsByClassName('checkboxCat')].every(val => val.checked === true)) {
           document.getElementById('showAll').checked = true;
         };
@@ -160,8 +169,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById('showAll').onchange = (e) => {
       removeMarkers(markers);
-      loadData(map,{phenomena: e.target.checked ? window.phenomena : []});
-      [...document.getElementsByClassName('checkboxCat')].forEach(el=>{
+      loadData(map, { phenomena: e.target.checked ? window.phenomena : [] });
+      [...document.getElementsByClassName('checkboxCat')].forEach(el => {
         el.checked = e.target.checked;
       });
     };
