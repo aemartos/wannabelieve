@@ -33,7 +33,7 @@ router.post("/addPhenomenon", uploadPhenomPicture.array("file", 4), (req, res) =
   } else {
     if (req.files.length > 0) {
       for (let i = 0; i < req.files.length; i++) {
-        imgPhenomUrls.push(req.files[i].url);
+        imgPhenomUrls.push(req.files[i].path);
       }
     }
 

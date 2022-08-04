@@ -20,7 +20,7 @@ var storageProfilePictures = new CloudinaryStorage({
 
 var storagePhenomPictures = new CloudinaryStorage({
   cloudinary,
-  paramds: {
+  params: {
     folder: 'phenomena-pictures',
     allowed_formats: ['jpg', 'png'],
     public_id: (req, _) => req.file,
