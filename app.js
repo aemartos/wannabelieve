@@ -66,34 +66,36 @@ app.use(cookieParser());
 
 // Express View engine setup
 
-// SASS compilation middleware
-app.use((req, res, next) => {
-  if (req.path.endsWith('.css')) {
-    const sassPath = req.path.replace('.css', '.sass');
-    const fullSassPath = path.join(__dirname, 'public', sassPath);
-    const fullCssPath = path.join(__dirname, 'public', req.path);
-    
-    try {
-      if (fs.existsSync(fullSassPath)) {
-        const result = sass.compile(fullSassPath, {
-          style: 'expanded',
-          loadPaths: [path.join(__dirname, 'public', 'stylesheets', 'sass')]
-        });
-        
-        // Ensure CSS directory exists
-        const cssDir = path.dirname(fullCssPath);
-        if (!fs.existsSync(cssDir)) {
-          fs.mkdirSync(cssDir, { recursive: true });
+// SASS compilation middleware (development only)
+if (process.env.NODE_ENV !== 'production') {
+  app.use((req, res, next) => {
+    if (req.path.endsWith('.css')) {
+      const sassPath = req.path.replace('.css', '.sass');
+      const fullSassPath = path.join(__dirname, 'public', sassPath);
+      const fullCssPath = path.join(__dirname, 'public', req.path);
+      
+      try {
+        if (fs.existsSync(fullSassPath)) {
+          const result = sass.compile(fullSassPath, {
+            style: 'expanded',
+            loadPaths: [path.join(__dirname, 'public', 'stylesheets', 'sass')]
+          });
+          
+          // Ensure CSS directory exists
+          const cssDir = path.dirname(fullCssPath);
+          if (!fs.existsSync(cssDir)) {
+            fs.mkdirSync(cssDir, { recursive: true });
+          }
+          
+          fs.writeFileSync(fullCssPath, result.css);
         }
-        
-        fs.writeFileSync(fullCssPath, result.css);
+      } catch (error) {
+        console.error('SASS compilation error:', error);
       }
-    } catch (error) {
-      console.error('SASS compilation error:', error);
     }
-  }
-  next();
-});
+    next();
+  });
+}
 
 
 app.set('views', path.join(__dirname, 'views'));
