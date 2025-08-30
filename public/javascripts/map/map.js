@@ -57,7 +57,6 @@ try {
         </div>
       `;
     }
-    return;
   }
   
   // For other errors, show generic error message
