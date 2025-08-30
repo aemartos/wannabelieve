@@ -8,7 +8,7 @@ const geolocateMe = () => {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         });
-      }, () => reject('Error in the geolocation service.'), {timeout: 4000});
+      }, (e) => reject(`Error in the geolocation service - ${e.message}`), {timeout: 4000});
     } else {
       reject('Browser does not support geolocation.');
     }
@@ -24,19 +24,28 @@ const realTimeLocation = () => {
         console.log('Position updated');
         console.log(location);
         if (!window.realTimeLocation) {
-          map.setCenter(location);
+          if (map && map.setCenter) {
+            map.setCenter(location);
+          }
           window.realTimeLocation = true;
         }
         if (meMarker) meMarker.setMap(null);
-        meMarker = newMeMarker(location);
-        loadData(map);
+        
+        // Wait for Google Maps to load before creating marker
+        waitForGoogleMaps().then(() => {
+          meMarker = newMeMarker(location);
+          if (map) {
+            loadData(map);
+          }
+        });
+        
         return location;
       }
     })
     .catch(e => {
       console.log(e);
       if (!window.alerted) {
-        window.alert('Error in the geolocation service.');
+        window.alert(`Error in the geolocation service - ${e.message}`);
         window.alerted = true;
       };
     });

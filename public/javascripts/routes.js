@@ -1,8 +1,5 @@
-var directionsService = new google.maps.DirectionsService;
-var directionsDisplay = new google.maps.DirectionsRenderer({
-  suppressMarkers: true,
-  polylineOptions: {strokeColor: "#39FF14"}
-});
+var directionsService;
+var directionsDisplay;
 
 const createMap = (map, {lat,lng}) => {
   map = new google.maps.Map(
@@ -10,7 +7,7 @@ const createMap = (map, {lat,lng}) => {
       zoom: 14,
       center: {
         lat: lat || 40.4169473,
-        lng: lng || -3.7035285
+        lng: lng || -3.7035285
       },
       disableDefaultUI: true,
       clickableIcons: false,
@@ -23,17 +20,33 @@ const createMap = (map, {lat,lng}) => {
   return map;
 }
 
-let map = createMap('mainMap', {});
-//console.log(window.phenomena) ;
-loadData(map);
-if (window.phenomena.length > 1) {
-  map.fitBounds(calculateBoundsToFitAllMarkers(window.phenomena));
-  fixZoom();
-} else if (window.phenomena.length == 1) {
-  map.setCenter({lat: window.phenomena[0].location.coordinates[1], lng: window.phenomena[0].location.coordinates[0]});
-  //map.setZoom(5);
-}
+let map;
 
+// Initialize map after Google Maps API is loaded
+const initializeMap = () => {
+  // Initialize Google Maps services
+  directionsService = new google.maps.DirectionsService;
+  directionsDisplay = new google.maps.DirectionsRenderer({
+    suppressMarkers: true,
+    polylineOptions: {strokeColor: "#39FF14"}
+  });
+  
+  map = createMap('mainMap', {});
+  //console.log(window.phenomena) ;
+  loadData(map);
+  if (window.phenomena.length > 1) {
+    map.fitBounds(calculateBoundsToFitAllMarkers(window.phenomena));
+    fixZoom();
+  } else if (window.phenomena.length == 1) {
+    map.setCenter({lat: window.phenomena[0].location.coordinates[1], lng: window.phenomena[0].location.coordinates[0]});
+    //map.setZoom(5);
+  }
+};
+
+// Wait for Google Maps to load, then initialize
+waitForGoogleMaps().then(() => {
+  initializeMap();
+});
 
 /*------------------ CALCULATE ROUTE ---------------*/
 
@@ -89,7 +102,13 @@ const markersFunction = (boolean) => {
     e.setClickable(boolean);
   });
 };
-markersFunction(false);
+
+// Wait for map to be initialized before setting up markers
+waitForGoogleMaps().then(() => {
+  if (map) {
+    markersFunction(false);
+  }
+});
 
 //hide and show map
 const sections = [...document.getElementsByClassName('section')];

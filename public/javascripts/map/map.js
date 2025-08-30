@@ -5,7 +5,7 @@ const createMap = (map, {lat,lng}) => {
       zoom: 14,
       center: {
         lat: lat || 40.4169473,
-        lng: lng || -3.7035285
+        lng: lng || -3.7035285
       },
       disableDefaultUI: true,
       clickableIcons: false,
@@ -16,18 +16,28 @@ const createMap = (map, {lat,lng}) => {
 }
 
 let map;
-const {lat,lng} = geolocateMe().then(({lat,lng})=>{
-  map = createMap('mainMap', {lat,lng});
-  meMarker = newMeMarker({lat,lng});
-  map.setCenter({lat,lng});
-  loadData(map);
-  centerMapInPhenom();
-  //console.log('geolocate');
-}).catch(err=>{
-  map = createMap('mainMap', {});
-  loadData(map);
-  centerMapInPhenom();
-  //console.log('no geolocate');
+
+// Initialize map after Google Maps API is loaded
+const initializeMap = async () => {
+  try {
+    const {lat,lng} = await geolocateMe();
+    map = createMap('mainMap', {lat,lng});
+    meMarker = newMeMarker({lat,lng});
+    map.setCenter({lat,lng});
+    loadData(map);
+    centerMapInPhenom();
+  } catch(err) {
+    map = createMap('mainMap', {});
+    loadData(map);
+    centerMapInPhenom();
+    console.log(err);
+    // window.alert(err);
+  }
+};
+
+// Wait for Google Maps to load, then initialize
+waitForGoogleMaps().then(() => {
+  initializeMap();
 });
 
 //center map in phenom with url params

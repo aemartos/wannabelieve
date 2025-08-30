@@ -3784,8 +3784,14 @@ form .error-message {
 .container.cont_map_page .mainMap .gmnoprint, .container.cont_map_page .mainMap .gm-style-cc, .container.cont_map_page .routeMap .gmnoprint, .container.cont_map_page .routeMap .gm-style-cc, .container.cont_routeDetail_page .mainMap .gmnoprint, .container.cont_routeDetail_page .mainMap .gm-style-cc, .container.cont_routeDetail_page .routeMap .gmnoprint, .container.cont_routeDetail_page .routeMap .gm-style-cc {
   display: none;
 }
-.container.cont_map_page .mainMap .gm-style .gm-style-iw-t::after, .container.cont_map_page .routeMap .gm-style .gm-style-iw-t::after, .container.cont_routeDetail_page .mainMap .gm-style .gm-style-iw-t::after, .container.cont_routeDetail_page .routeMap .gm-style .gm-style-iw-t::after {
+.container.cont_map_page .mainMap .gm-style .gm-style-iw-tc::after, .container.cont_map_page .routeMap .gm-style .gm-style-iw-tc::after, .container.cont_routeDetail_page .mainMap .gm-style .gm-style-iw-tc::after, .container.cont_routeDetail_page .routeMap .gm-style .gm-style-iw-tc::after {
   display: none;
+}
+.container.cont_map_page .mainMap .gm-style .gm-style-iw-d, .container.cont_map_page .routeMap .gm-style .gm-style-iw-d, .container.cont_routeDetail_page .mainMap .gm-style .gm-style-iw-d, .container.cont_routeDetail_page .routeMap .gm-style .gm-style-iw-d {
+  overflow: hidden;
+}
+.container.cont_map_page .mainMap .gm-style .gm-style-iw-ch, .container.cont_map_page .routeMap .gm-style .gm-style-iw-ch, .container.cont_routeDetail_page .mainMap .gm-style .gm-style-iw-ch, .container.cont_routeDetail_page .routeMap .gm-style .gm-style-iw-ch {
+  padding-top: 0px;
 }
 .container.cont_map_page .mainMap .gm-style-iw, .container.cont_map_page .routeMap .gm-style-iw, .container.cont_routeDetail_page .mainMap .gm-style-iw, .container.cont_routeDetail_page .routeMap .gm-style-iw {
   background-image: url("../../images/windows/infowbox.png");

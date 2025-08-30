@@ -55,13 +55,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //convert serarch input in a searchBox to find places with this library
   let searchBox = null;
-  if (window.searchBoxActive) { searchBox = new google.maps.places.SearchBox(searchInput); }
+  
+  // Initialize search box after Google Maps loads
+  const initializeSearchBox = () => {
+    if (window.searchBoxActive && searchInput) { 
+      try {
+        searchBox = new google.maps.places.SearchBox(searchInput);
+      } catch (error) {
+        console.error('Failed to initialize SearchBox:', error);
+        searchBox = null;
+      }
+    }
+  };
+
+  // Wait for Google Maps Places library to load, then initialize search box
+  waitForGoogleMaps().then(() => {
+    initializeSearchBox();
+  }).catch((error) => {
+    console.error('Failed to load Google Maps Places library:', error);
+    // Disable search functionality if Places library fails to load
+    window.searchBoxActive = false;
+  });
 
   //let searchBox = new google.maps.places.SearchBox(searchInput);
 
   const searchReq = (e) => {
     e.preventDefault();
     let searchVal = searchInput.value;
+    
+    // Check if searchBox is available
+    if (!searchBox) {
+      console.warn('SearchBox not initialized yet');
+      return;
+    }
+    
     //get all suggested places with my input search
     let places = searchBox.getPlaces();
     let lat, lng, l, t, r, b;
