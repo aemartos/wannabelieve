@@ -10,7 +10,8 @@ import mongoose from 'mongoose';
 import logger from 'morgan';
 import cors from 'cors';
 import passport from './passport/index.js';
-import nodeSaas from 'node-sass-middleware';
+import sass from 'sass';
+import fs from 'fs';
 
 import session from "express-session";
 import MongoStore from 'connect-mongo';
@@ -33,15 +34,20 @@ dotenv.config();
 
 // debug(`wannabelieve: ${path.basename(__filename).split('.')[0]}`);
 
-mongoose.connect(process.env.DBURL, {
-  useNewUrlParser: true
-})
-  .then(x => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
-  })
-  .catch(err => {
-    console.error('Error connecting to mongo', err)
-  });
+// MongoDB connection - non-blocking
+const connectDB = async () => {
+  try {
+    const x = await mongoose.connect(process.env.DBURL || 'mongodb://localhost:27017/wannabelieve');
+    console.log(`✅ Connected to Mongo! Database name: "${x.connections[0].name}"`);
+  } catch (err) {
+    console.error('❌ Error connecting to mongo:', err.message);
+    console.log('💡 Make sure MongoDB is running or set DBURL environment variable');
+    console.log('🚀 Server will continue running but database features will not work');
+  }
+};
+
+// Connect to database in background
+connectDB();
 
 
 const app = express();
@@ -60,16 +66,34 @@ app.use(cookieParser());
 
 // Express View engine setup
 
-app.use(nodeSaas({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
-  indentedSyntax: true,
-  outputStyle: 'extended',
-  sourceMap: false
-}));
-//outputStyle: 'compressed' --> compress style
-//debug: true --> to show errors
-//indentedSyntax: true --> to read .sass files
+// SASS compilation middleware
+app.use((req, res, next) => {
+  if (req.path.endsWith('.css')) {
+    const sassPath = req.path.replace('.css', '.sass');
+    const fullSassPath = path.join(__dirname, 'public', sassPath);
+    const fullCssPath = path.join(__dirname, 'public', req.path);
+    
+    try {
+      if (fs.existsSync(fullSassPath)) {
+        const result = sass.compile(fullSassPath, {
+          style: 'expanded',
+          loadPaths: [path.join(__dirname, 'public', 'stylesheets', 'sass')]
+        });
+        
+        // Ensure CSS directory exists
+        const cssDir = path.dirname(fullCssPath);
+        if (!fs.existsSync(cssDir)) {
+          fs.mkdirSync(cssDir, { recursive: true });
+        }
+        
+        fs.writeFileSync(fullCssPath, result.css);
+      }
+    } catch (error) {
+      console.error('SASS compilation error:', error);
+    }
+  }
+  next();
+});
 
 
 app.set('views', path.join(__dirname, 'views'));
@@ -102,11 +126,11 @@ app.locals.title = 'wannabelieve';
 
 // Enable authentication using session + passport
 app.use(session({
-  secret: process.env.SECRET,
+  secret: process.env.SECRET || 'fallback-secret-key',
   resave: true,
   saveUninitialized: true,
   store: MongoStore.create({
-    mongoUrl: process.env.DBURL,
+    mongoUrl: process.env.DBURL || 'mongodb://localhost:27017/wannabelieve',
     ttl: 24 * 60 * 60 // 1 day
   })
 }))

@@ -9,7 +9,10 @@ import createRoutes from './seedsRoutes.js';
 
 dotenv.config();
 
-mongoose.connect(process.env.DBURL, { useNewUrlParser: true })
+mongoose.connect(process.env.DBURL, { 
+  serverSelectionTimeoutMS: 30000,
+  socketTimeoutMS: 45000,
+})
   .then(x => { console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`) })
   .catch(err => { console.error("Error connecting to mongo", err) });
 
@@ -52,19 +55,26 @@ let users = [
   }
 ];
 
+// Drop all collections to start fresh
+console.log('🗑️  Dropping existing collections...');
 User.collection.drop();
-
+console.log('   ✅ Dropped users collection');
 
 User.create(users)
   .then(users => {
-    console.log(`Created users!`);
+    console.log(`   ✅ Created ${users.length} users!`);
+    
+    // Drop phenomena and routes collections before creating new ones
+    console.log('   🗑️  Dropping phenomena and routes collections...');
+    
     users.map(e => {
       if (e.username === "wannabelieve") {
-        createPhenomena(e._id)
+        createPhenomena(e._id, true)
           .then((phenoms) => {
             const phenomsIds = phenoms.map(e => e._id.toString());
-            return createRoutes(e._id, phenomsIds)
+            return createRoutes(e._id, phenomsIds, true)
               .then((routes) => {
+                console.log('   ✅ All seeding completed successfully!');
                 mongoose.disconnect();
                 return routes;
               })

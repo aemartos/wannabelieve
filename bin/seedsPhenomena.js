@@ -1,7 +1,7 @@
 // import mongoose from "mongoose";
 import Phenomenon from "../models/Phenomenon.js";
 
-// mongoose.connect(process.env.DBURL, {useNewUrlParser: true})
+// mongoose.connect(process.env.DBURL)
 //   .then(x => {console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)})
 //   .catch(err => {console.error("Error connecting to mongo", err)});
 
@@ -654,13 +654,16 @@ let phenomena = [
 //   email: 'wannabelieve@iwtb.com'
 // }
 
-Phenomenon.collection.drop();
-
-const createPhenomena = (idUser) => {
+const createPhenomena = (idUser, shouldDrop = false) => {
+  if (shouldDrop) {
+    Phenomenon.collection.drop();
+    console.log('   ✅ Dropped phenomena collection');
+  }
+  
   const phenom = phenomena.map(e => ({ ...e, creatorId: idUser }));
   return Phenomenon.create(phenom)
     .then(phenoms => {
-      console.log(`Created phenomena!`);
+      console.log(`   ✅ Created ${phenoms.length} phenomena!`);
       return phenoms;
     });
 }

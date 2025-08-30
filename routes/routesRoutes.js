@@ -106,19 +106,18 @@ router.post('/addRoute', isLoggedIn("/auth/login"), (req, res, next) => {
     res.redirect(backURL);
     return;
   } else {
-    Route.findOne({ routetitle }, "routetitle", (err, title) => {
-      // if (routetitle !== null) {
-      //   req.flash("error", "the route title already exists");
-      //   res.redirect(backURL);
-      //   return;
-      // }
-      Route.create({ routetitle, creatorId })
-        .then(() => {
-          res.redirect(backURL);
-        }).catch(err => {
-          console.error(err, `Can't create route`);
-        });
-    });
+    Route.findOne({ routetitle }).select("routetitle")
+      .then(() => {
+        return Route.create({ routetitle, creatorId });
+      })
+      .then(() => {
+        res.redirect(backURL);
+      })
+      .catch(err => {
+        console.error(err, `Can't create route`);
+        req.flash("error", "something went wrong");
+        res.redirect(backURL);
+      });
   }
 });
 

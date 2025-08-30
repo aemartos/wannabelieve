@@ -20,6 +20,8 @@ app.use((err, req, res, next) => {
   }
 });
 
+const port = process.env.PORT || 3000;
+
 let server = http.createServer(app);
 
 server.on('error', error => {
@@ -30,11 +32,11 @@ server.on('error', error => {
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
-      console.error(`Port ${process.env.PORT} requires elevated privileges`);
+      console.error(`Port ${port} requires elevated privileges`);
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      console.error(`Port ${process.env.PORT} is already in use`);
+      console.error(`Port ${port} is already in use`);
       process.exit(1);
       break;
     default:
@@ -42,9 +44,7 @@ server.on('error', error => {
   }
 });
 
-const port = process.env.PORT;
-app.listen(port, () => console.log(`Listening on http://localhost:${port}`))
-  .on('error', (e) => {
-    console.log('Error', e);
-    app.listen(Number(port) + 1, () => console.log(`Listening on http://localhost:${Number(port) + 1}`));
-  });
+server.listen(port, () => {
+  console.log(`🚀 wannabelieve server listening on port ${port}`);
+  console.log(`🌐 Open http://localhost:${port} in your browser`);
+});

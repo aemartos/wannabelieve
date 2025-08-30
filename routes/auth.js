@@ -27,7 +27,7 @@ router.get("/signup", isLoggedOut('/map'), (req, res, next) => {
   res.render("auth/signup", { actual_page: 'signup' });
 });
 
-router.post("/signup", isLoggedOut('/map'), (req, res, next) => {
+router.post("/signup", isLoggedOut('/map'), async (req, res, next) => {
   const username = req.body.username;
   const email = req.body.email;
   const password = req.body.password;
@@ -37,37 +37,36 @@ router.post("/signup", isLoggedOut('/map'), (req, res, next) => {
     return;
   }
 
-  User.findOne({ username }, "username", (err, user) => {
-    if (user !== null) {
+  try {
+    const existingUsername = await User.findOne({ username }).select("username");
+    if (existingUsername) {
       req.flash("error", "the username already exists");
       res.redirect("signup");
       return;
-    } else {
-      User.findOne({ email }, "email", (err, user) => {
-        if (user !== null) {
-          req.flash("error", "the email already exists");
-          res.redirect("signup");
-          return;
-        }
-
-        const salt = bcrypt.genSaltSync(bcryptSalt);
-        const hashPass = bcrypt.hashSync(password, salt);
-
-        const newUser = new User({
-          username,
-          email,
-          password: hashPass
-        });
-
-        newUser.save()
-          .then(() => { res.redirect("signupOK") })
-          .catch(err => {
-            req.flash("error", "something went wrong");
-            res.redirect("signup");
-          });
-      });
     }
-  });
+
+    const existingEmail = await User.findOne({ email }).select("email");
+    if (existingEmail) {
+      req.flash("error", "the email already exists");
+      res.redirect("signup");
+      return;
+    }
+
+    const salt = bcrypt.genSaltSync(bcryptSalt);
+    const hashPass = bcrypt.hashSync(password, salt);
+
+    const newUser = new User({
+      username,
+      email,
+      password: hashPass
+    });
+
+    await newUser.save();
+    res.redirect("signupOK");
+  } catch (err) {
+    req.flash("error", "something went wrong");
+    res.redirect("signup");
+  }
 });
 
 router.get("/signupOK", isLoggedOut('/map'), (req, res, next) => {

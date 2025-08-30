@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import Route from '../models/Route.js';
 
-// mongoose.connect(process.env.DBURL, {useNewUrlParser: true})
+// mongoose.connect(process.env.DBURL)
 //   .then(x => {console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)})
 //   .catch(err => {console.error("Error connecting to mongo", err)});
 
@@ -40,13 +40,16 @@ let routes = [
   }
 ];
 
-Route.collection.drop();
-
-const createRoutes = (idUser, phenoms) => {
-  const routesModified = routes.map(e => ({ ...e, creatorId: idUser, phenomenoId: phenoms.sort(() => .5 - Math.random()).slice(0, 5) }));
+const createRoutes = (idUser, phenoms, shouldDrop = false) => {
+  if (shouldDrop) {
+    Route.collection.drop();
+    console.log('   ✅ Dropped routes collection');
+  }
+  
+  const routesModified = routes.map(e => ({ ...e, creatorId: idUser, phenomenoId: phenoms.sort(() => 0.5 - Math.random()).slice(0, 5) }));
   return Route.create(routesModified)
     .then(routes => {
-      console.log(`Created routes!`);
+      console.log(`   ✅ Created ${routes.length} routes!`);
       return routes;
     })
 }

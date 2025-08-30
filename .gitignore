@@ -8,8 +8,10 @@ npm-debug.log
 
 # Environment Variables should NEVER be published
 .env
-.private.env
-.pass.env
+
+# Logs
+logs/
+*.log
 
 #MACOS Files
 .DS_Store
