@@ -1,6 +1,6 @@
 {
   "name": "wannabelieve",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Wannabelieve is a web app to discover amazing paranormal and supernatural phenomena and creating routes for visiting them and report new sightings.",
   "main": "./bin/www.js",
   "type": "module",
