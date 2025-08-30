@@ -1,12 +1,9 @@
 {
   "name": "wannabelieve",
-  "version": "1.0.7",
+  "version": "1.0.10",
   "description": "Wannabelieve is a web app to discover amazing paranormal and supernatural phenomena and creating routes for visiting them and report new sightings.",
   "main": "./bin/www.js",
   "type": "module",
-  "bin": {
-    "wannabelieve": "seedsPhenomena.js"
-  },
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=8.0.0"
@@ -43,9 +40,8 @@
     "start": "node ./bin/www.js",
     "dev": "cat alien && DEBUG=project-02:* nodemon -e hbs,js ./bin/www.js",
     "dev-windows": "nodemon ./bin/www.js",
-    "build": "npm run build:sass",
     "build:sass": "sass public/stylesheets/sass:public/stylesheets --style=compressed",
-    "vercel-build": "npm install && npm run build",
+    "build": "npm install && npm run build:sass",
     "seed": "node ./bin/seedsUsers.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
