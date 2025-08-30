@@ -4,14 +4,20 @@ on:
   push:
     tags:
       - 'v*'
-  release:
-    types: [published, created]
+    branches-ignore:
+      - '**'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    
+    - name: Debug Info
+      run: |
+        echo "Tag: ${{ github.ref_name }}"
+        echo "Event: ${{ github.event_name }}"
+        echo "SHA: ${{ github.sha }}"
     
     - name: Setup Node.js
       uses: actions/setup-node@v4
