@@ -68,14 +68,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // Wait for Google Maps Places library to load, then initialize search box
-  waitForGoogleMaps().then(() => {
+  try {
     initializeSearchBox();
-  }).catch((error) => {
+  } catch (error) {
     console.error('Failed to load Google Maps Places library:', error);
-    // Disable search functionality if Places library fails to load
     window.searchBoxActive = false;
-  });
+  }
 
   //let searchBox = new google.maps.places.SearchBox(searchInput);
 

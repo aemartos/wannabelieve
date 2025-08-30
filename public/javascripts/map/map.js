@@ -35,10 +35,37 @@ const initializeMap = async () => {
   }
 };
 
-// Wait for Google Maps to load, then initialize
-waitForGoogleMaps().then(() => {
+// Initialize map directly since Google Maps loads synchronously
+try {
   initializeMap();
-});
+} catch (error) {
+  console.error('Failed to initialize map:', error);
+  
+  // Check if it's an API key issue
+  if (error.message.includes('API key') || error.message.includes('InvalidKeyMapError')) {
+    console.error('Google Maps API key issue detected');
+    
+    // Show error message in the map container
+    const mapContainer = document.getElementById('mainMap');
+    if (mapContainer) {
+      mapContainer.innerHTML = `
+        <div style="text-align: center; padding: 40px; color: #666; background: #f5f5f5; border-radius: 8px; margin: 20px;">
+          <h3>⚠️ Google Maps Configuration Error</h3>
+          <p>The Google Maps API key is missing or invalid.</p>
+          <p>Please contact the administrator to configure the Google Maps API key.</p>
+          <p><small>Error: ${error.message}</small></p>
+        </div>
+      `;
+    }
+    return;
+  }
+  
+  // For other errors, show generic error message
+  const mapContainer = document.getElementById('mainMap');
+  if (mapContainer) {
+    mapContainer.innerHTML = '<div style="text-align: center; padding: 20px; color: #666;">Map loading failed. Please refresh the page or check your internet connection.</div>';
+  }
+}
 
 //center map in phenom with url params
 const centerMapInPhenom = () => {

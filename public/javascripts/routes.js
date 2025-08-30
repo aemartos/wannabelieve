@@ -43,10 +43,17 @@ const initializeMap = () => {
   }
 };
 
-// Wait for Google Maps to load, then initialize
-waitForGoogleMaps().then(() => {
+// Initialize map directly since Google Maps loads synchronously
+try {
   initializeMap();
-});
+} catch (error) {
+  console.error('Failed to initialize map in routes:', error);
+  // Show user-friendly error message
+  const mapContainer = document.getElementById('mainMap');
+  if (mapContainer) {
+    mapContainer.innerHTML = '<div style="text-align: center; padding: 20px; color: #666;">Map loading failed. Please refresh the page or check your internet connection.</div>';
+  }
+}
 
 /*------------------ CALCULATE ROUTE ---------------*/
 
@@ -103,12 +110,14 @@ const markersFunction = (boolean) => {
   });
 };
 
-// Wait for map to be initialized before setting up markers
-waitForGoogleMaps().then(() => {
+// Setup markers directly since Google Maps loads synchronously
+try {
   if (map) {
     markersFunction(false);
   }
-});
+} catch (error) {
+  console.error('Failed to setup markers:', error);
+}
 
 //hide and show map
 const sections = [...document.getElementsByClassName('section')];

@@ -86,10 +86,8 @@ const closeInfoWindow = () => {
   }
 };
 
-// Wait for Google Maps to load, then set up event listeners
-waitForGoogleMaps().then(() => {
-  closeInfoWindow();
-});
+// Set up event listeners directly since Google Maps loads synchronously
+closeInfoWindow();
 
 const removeMarkers = (markers) => {
   markers.forEach(m => {

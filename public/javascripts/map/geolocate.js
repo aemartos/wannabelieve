@@ -31,13 +31,11 @@ const realTimeLocation = () => {
         }
         if (meMarker) meMarker.setMap(null);
         
-        // Wait for Google Maps to load before creating marker
-        waitForGoogleMaps().then(() => {
-          meMarker = newMeMarker(location);
-          if (map) {
-            loadData(map);
-          }
-        });
+        // Create marker directly since Google Maps loads synchronously
+        meMarker = newMeMarker(location);
+        if (map) {
+          loadData(map);
+        }
         
         return location;
       }

@@ -13,7 +13,7 @@ const fixZoom = () => {
 };
 
 const calculateBoundsToFitAllMarkers = (phenomena) => {
-  return safeGoogleMapsOperation(() => {
+  try {
     let bounds = new google.maps.LatLngBounds();
     //I need to iterate over all the places in my search to fit the bounds
     for (let i = 0; i < phenomena.length; i++) {
@@ -26,7 +26,10 @@ const calculateBoundsToFitAllMarkers = (phenomena) => {
       });
     }
     return bounds;
-  }, null);
+  } catch (error) {
+    console.warn('Google Maps operation failed:', error);
+    return null;
+  }
 };
 
 const markers = [];
@@ -52,43 +55,17 @@ const loadData = (map, extra = {}) => {
   })
 };
 
-
-const waitForGoogleMaps = () => {
-  return new Promise((resolve, reject) => {
-    if (window.google && window.google.maps && window.google.maps.places) {
-      resolve();
-    } else {
-      let attempts = 0;
-      const maxAttempts = 100; // 10 seconds timeout
-      
-      // Check every 100ms if Google Maps Places is loaded
-      const checkInterval = setInterval(() => {
-        attempts++;
-        if (window.google && window.google.maps && window.google.maps.places) {
-          clearInterval(checkInterval);
-          resolve();
-        } else if (attempts >= maxAttempts) {
-          clearInterval(checkInterval);
-          reject(new Error('Google Maps Places library failed to load within timeout'));
-        }
-      }, 100);
-    }
-  });
-};
-
-const safeGoogleMapsOperation = (operation, fallback = null) => {
-  if (!!(window.google && window.google.maps && window.google.maps.places)) {
-    try {
-      return operation();
-    } catch (error) {
-      console.warn('Google Maps operation failed:', error);
-      return fallback;
-    }
-  } else {
-    console.warn('Google Maps not loaded yet');
-    return fallback;
+// Global error handler for Google Maps runtime issues
+window.addEventListener('error', (event) => {
+  if (event.message && event.message.includes('Google Maps')) {
+    console.error('Google Maps error detected:', event);
   }
-};
+});
 
-window.waitForGoogleMaps = waitForGoogleMaps;
-window.safeGoogleMapsOperation = safeGoogleMapsOperation;
+// Global unhandled promise rejection handler
+window.addEventListener('unhandledrejection', (event) => {
+  if (event.reason && event.reason.message && event.reason.message.includes('Google Maps')) {
+    console.error('Unhandled Google Maps promise rejection:', event.reason);
+    event.preventDefault(); // Prevent the default error handling
+  }
+});
