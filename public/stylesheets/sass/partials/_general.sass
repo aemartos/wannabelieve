@@ -1,18 +1,21 @@
+@use "colors"
+@use "mixins"
+
 //----------- GENERAL ------------
 
 *
-	+box-sizing(border-box)
+	+mixins.box-sizing(border-box)
 	outline: none
-	+no_select_text
+	+mixins.no_select_text
 
 input, textarea, select, button
-	+select_text(initial)
+	+mixins.select_text(initial)
 
 html, body
 	height: 100%
 	width: 100%
 	color: white
-	background-color: $background
+	background-color: colors.$background
 	font-family: 'Press Start 2P'
 	//font-family: helvetica, monospace
 	//font-weight: bold
@@ -21,9 +24,9 @@ html, body
 	//overflow: hidden
 
 body
-	+column-flex
+	+mixins.column-flex
 	justify-content: center
-	border: 4px solid $maincolor
+	border: 4px solid colors.$maincolor
 	border-top: 0
 	border-bottom: 0
 
@@ -38,38 +41,38 @@ body
 		width: 80%
 
 .btn
-	border: 2px solid $secondarycolor
+	border: 2px solid colors.$secondarycolor
 	padding: .6em
 	//border-radius: 3em
 	&.btnLogin
-		color: $secondarycolor
+		color: colors.$secondarycolor
 	&.btnSignup
-		color: $darkgreenn
-		background-color: $secondarycolor
+		color: colors.$darkgreenn
+		background-color: colors.$secondarycolor
 	&.btnFcb
-		color: $darkgreenn
-		border: 2px solid $facebook
-		background-color: $facebook
+		color: colors.$darkgreenn
+		border: 2px solid colors.$facebook
+		background-color: colors.$facebook
 	&.btnGgl
-		color: $darkgreenn
-		border: 2px solid $google
-		background-color: $google
+		color: colors.$darkgreenn
+		border: 2px solid colors.$google
+		background-color: colors.$google
 
 a
 	display: inline-block
 	text-decoration: none
 	//color: $secondarycolor
-	color: $maincolor
+	color: colors.$maincolor
 	cursor: pointer
-	+transition_default
+	+mixins.transition_default
 	[class*='x-']
-		-webkit-text-stroke: .3px $maincolor
+		-webkit-text-stroke: .3px colors.$maincolor
 	&:hover
 		//+hover_opacity
 	&:active
-		color: $secondarycolor
+		color: colors.$secondarycolor
 		[class*='x-']
-			-webkit-text-stroke: .5px $secondarycolor
+			-webkit-text-stroke: .5px colors.$secondarycolor
 
 ul
 	padding: 0

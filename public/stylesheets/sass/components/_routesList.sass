@@ -1,3 +1,6 @@
+@use "../partials/colors"
+@use "../partials/mixins"
+
 .container
   &.cont_routes_page
     min-height: 100%
@@ -9,35 +12,35 @@
       padding-bottom: .6em
       width: 100%
       text-align: center
-      border-bottom: 4px solid $maincolor
-      color: $menubg
+      border-bottom: 4px solid colors.$maincolor
+      color: colors.$menubg
     form
       width: 85%
       margin: 0 auto
       margin-top: .5em
       &.addRoute
         .inputBox
-          +row-flex
+          +mixins.row-flex
           justify-content: space-between
         input
           border: 0
-          border-bottom: 2px solid $maincolor
+          border-bottom: 2px solid colors.$maincolor
           padding: 0 .5em .5em .5em
           margin: 0
           margin-top: .5em
           width: 85%
-          color: $menubg
+          color: colors.$menubg
           //text-align: center
           &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus
-            -webkit-box-shadow: 0 0 0px 1000px $background inset
+            -webkit-box-shadow: 0 0 0px 1000px colors.$background inset
         ::-webkit-input-placeholder /* Chrome/Opera/Safari */
-          color: $maincolor
+          color: colors.$maincolor
         ::-moz-placeholder /* Firefox 19+ */
-          color: $maincolor
+          color: colors.$maincolor
         :-ms-input-placeholder /* IE 10+ */
-          color: $maincolor
+          color: colors.$maincolor
         :-moz-placeholder /* Firefox 18- */
-          color: $maincolor
+          color: colors.$maincolor
         button
           border: 0
           padding: 0
@@ -45,13 +48,13 @@
           width: unset
           span
             font-size: 2em
-            color: $menubg
+            color: colors.$menubg
             &[class*='x-']
-              -webkit-text-stroke: .3px $menubg
+              -webkit-text-stroke: .3px colors.$menubg
             &:active
-              color: $secondarycolor
+              color: colors.$secondarycolor
               &[class*='x-']
-                -webkit-text-stroke: .3px $secondarycolor
+                -webkit-text-stroke: .3px colors.$secondarycolor
         .messages
           width: 85%
           word-spacing: 0
@@ -68,12 +71,12 @@
       margin: 0 auto
       margin-top: 1em
       .routeCard
-        +row-flex
+        +mixins.row-flex
         justify-content: space-between
-        border-bottom: 2px solid $maincolor
+        border-bottom: 2px solid colors.$maincolor
         padding-bottom: 1em
         margin: 1em 0
-        color: $menubg
+        color: colors.$menubg
         &:last-child
           border-bottom: 0
         .imgPrev
@@ -101,11 +104,11 @@
               font-family: 'Share Tech Mono'
               font-size: .6em
           .routeText
-            +row-flex
+            +mixins.row-flex
             justify-content: flex-start
             line-height: 0
             .favorites, .comments
-              +row-flex
+              +mixins.row-flex
               display: inline-flex
               justify-content: center
               margin-left: 1em
@@ -116,16 +119,16 @@
               margin: 0 .5em
         a.goRoute
           font-size: 2em
-          color: $menubg
+          color: colors.$menubg
           span
             &[class*='x-']
-              -webkit-text-stroke: .3px $menubg
+              -webkit-text-stroke: .3px colors.$menubg
             &:before
-              +transform(rotate(180deg))
+              +mixins.transform(rotate(180deg))
             &:active
-              color: $secondarycolor
+              color: colors.$secondarycolor
               &[class*='x-']
-                -webkit-text-stroke: .3px $secondarycolor
+                -webkit-text-stroke: .3px colors.$secondarycolor
         .addPhenomenonToRoute
           form
             margin: 0
@@ -136,10 +139,10 @@
               width: unset
               span
                 font-size: 2em
-                color: $menubg
+                color: colors.$menubg
                 &[class*='x-']
-                  -webkit-text-stroke: .3px $menubg
+                  -webkit-text-stroke: .3px colors.$menubg
                 &:active, &.active
-                  color: $secondarycolor
+                  color: colors.$secondarycolor
                   &[class*='x-']
-                    -webkit-text-stroke: .3px $secondarycolor
+                    -webkit-text-stroke: .3px colors.$secondarycolor

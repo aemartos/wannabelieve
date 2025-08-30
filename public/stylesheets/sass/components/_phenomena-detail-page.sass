@@ -1,16 +1,19 @@
+@use "../partials/colors"
+@use "../partials/mixins"
+
 .container
   &.cont_phenomena_detailPage
-    color: $menubg
+    color: colors.$menubg
     word-spacing: -.3em
     span[class*='x-']
-      color: $menubg
+      color: colors.$menubg
       font-size: 1.5em
-      -webkit-text-stroke: .3px $menubg
+      -webkit-text-stroke: .3px colors.$menubg
       text-transform: uppercase
       &:active
-        color: $secondarycolor
+        color: colors.$secondarycolor
         &[class*='x-']
-          -webkit-text-stroke: .3px $secondarycolor
+          -webkit-text-stroke: .3px colors.$secondarycolor
     .slider
       //+row-flex
       border-bottom: 4px solid white
@@ -31,35 +34,35 @@
             position: absolute
             bottom: .5em
             left: 50%
-            +transform(translateX(-50%))
+            +mixins.transform(translateX(-50%))
     .section
       width: 100%
       padding: 1.2em 0
-      border-bottom: 4px solid $maincolor
+      border-bottom: 4px solid colors.$maincolor
       text-transform: lowercase
       p
         width: 85%
         margin: 0 auto
       &.sectionBtn
         padding: 0
-        +row-flex
+        +mixins.row-flex
         justify-content: center
-        background-color: $darkbg
+        background-color: colors.$darkbg
         p, .favouritePhenom, .registerPhenom
-          +row-flex
+          +mixins.row-flex
           justify-content: center
           font-size: .7em
           width: 50%
           padding: .8em 0
           &:first-child
-            border-right: 4px solid $maincolor
+            border-right: 4px solid colors.$maincolor
           span
             margin-right: .5em
             &.active
-              color: $secondarycolor
+              color: colors.$secondarycolor
         .favouritePhenom,.registerPhenom
           form
-            +row-flex
+            +mixins.row-flex
             justify-content: center
             button
               width: auto
@@ -68,21 +71,21 @@
               margin: 0
               span
                 &.active
-                  color: $secondarycolor
+                  color: colors.$secondarycolor
                   &[class*='x-']
-                    -webkit-text-stroke: .3px $secondarycolor
+                    -webkit-text-stroke: .3px colors.$secondarycolor
         p.favourite
           span[class*='x-']
             &.active
-              color: $secondarycolor
-              -webkit-text-stroke: .3px $secondarycolor
+              color: colors.$secondarycolor
+              -webkit-text-stroke: .3px colors.$secondarycolor
       &.firstSection
         .mainTitle
           line-height: 1.2em
         .phenomMainInfo
           width: 85%
           text-align: left
-          +row-flex
+          +mixins.row-flex
           justify-content: center
           margin: 0 auto
           h4
@@ -95,15 +98,15 @@
               text-align: center
               margin-right: 0
           .actions
-            +row-flex
+            +mixins.row-flex
             justify-content: space-between
             width: 17%
             text-transform: uppercase
             font-size: 1.5em
             a
-              color: $menubg
+              color: colors.$menubg
               i
-                -webkit-text-stroke: .3px $menubg
+                -webkit-text-stroke: .3px colors.$menubg
             //width: 4em
         .typePhenomenon
           margin-top: .5em
@@ -127,30 +130,30 @@
           text-transform: lowercase
           color: #F25652
       &.sectionOtherBtns
-        +row-flex
+        +mixins.row-flex
         justify-content: space-between
         padding: 0
         font-size: .7em
-        background-color: $darkbg
+        background-color: colors.$darkbg
         .ATR, .VIM
-          +row-flex
+          +mixins.row-flex
           justify-content: center
           width: 50%
           &:first-child
-            border-right: 4px solid $maincolor
+            border-right: 4px solid colors.$maincolor
         .addToRouteBtn, .viewInMapBtn
           padding: .8em 0
           width: 100%
-          +row-flex
+          +mixins.row-flex
           justify-content: center
-          color: $menubg
+          color: colors.$menubg
           span
             &.routesBtn, &.mapBtn
               margin-right: .5em
 
       &.secondSection
         .discoveredBy
-          +row-flex
+          +mixins.row-flex
           flex-flow: row wrap
           justify-content: flex-start
           //text-align: center
@@ -166,21 +169,21 @@
           line-height: 1.4em
       &.fourthSection, &.fifthSection
         p
-          +row-flex
+          +mixins.row-flex
           justify-content: space-between
           span
             &[class='x-back']:before
-              +transform(rotate(-90deg))
+              +mixins.transform(rotate(-90deg))
             &:active
-              color: $menubg
+              color: colors.$menubg
               &[class*='x-']
-                -webkit-text-stroke: .3px $menubg
+                -webkit-text-stroke: .3px colors.$menubg
       &.fourthSection
         .routes
           //margin-bottom: 1em
           #expandRoutes
             &.rotate
-              +transform(rotate(90deg))
+              +mixins.transform(rotate(90deg))
         ul
           &#routesAccordion
             width: 85%
@@ -195,9 +198,9 @@
                 &:last-child
                   margin-bottom: 0
                 a
-                  +row-flex
+                  +mixins.row-flex
                   justify-content: flex-start
-                  color: $menubg
+                  color: colors.$menubg
                   span
                     opacity: .5
                     &.routesIcon
@@ -208,24 +211,24 @@
         .comments
           #expandComments
             &.rotate
-              +transform(rotate(90deg))
+              +mixins.transform(rotate(90deg))
         #commentsAccordion
           width: 85%
           margin: 0 auto
           .comment, .route
-            +row-flex
+            +mixins.row-flex
             align-items: flex-start
             justify-content: space-between
             margin-bottom: .8em
             padding-bottom: .8em
-            border-bottom: .5px solid $darkbg
+            border-bottom: .5px solid colors.$darkbg
             &.noComment, &.noRoute
               opacity: .5
               font-size: .8em
             &:last-child
               border-bottom: 0
             .metaData
-              +column-flex
+              +mixins.column-flex
               align-items: flex-start
               width: 17em
               padding-top: .2em
@@ -251,32 +254,32 @@
             margin: 0 auto
             margin-top: 1em
             .commentBox
-              +row-flex
+              +mixins.row-flex
               justify-content: space-between
               textarea
                 border: 0
-                border: 1.5px solid $menubg
+                border: 1.5px solid colors.$menubg
                 padding: 1em
                 margin: 0
                 margin-top: .5em
                 margin-right: 1em
                 //width: 85%
                 height: 6em
-                color: $menubg
+                color: colors.$menubg
                 //text-align: center
                 &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus
-                  -webkit-box-shadow: 0 0 0px 1000px $background inset
+                  -webkit-box-shadow: 0 0 0px 1000px colors.$background inset
               ::-webkit-input-placeholder /* Chrome/Opera/Safari */
-                color: $menubg
+                color: colors.$menubg
                 opacity: .5
               ::-moz-placeholder /* Firefox 19+ */
-                color: $menubg
+                color: colors.$menubg
                 opacity: .5
               :-ms-input-placeholder /* IE 10+ */
-                color: $menubg
+                color: colors.$menubg
                 opacity: .5
               :-moz-placeholder /* Firefox 18- */
-                color: $menubg
+                color: colors.$menubg
                 opacity: .5
               button
                 &.addCommentBtn
@@ -287,5 +290,5 @@
                   span
                     font-size: 2em
                     &:active
-                      color: $secondarycolor
+                      color: colors.$secondarycolor
         

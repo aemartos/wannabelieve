@@ -10,7 +10,7 @@ import mongoose from 'mongoose';
 import logger from 'morgan';
 import cors from 'cors';
 import passport from './passport/index.js';
-import sass from 'sass';
+import * as sass from 'sass';
 import fs from 'fs';
 
 import session from "express-session";

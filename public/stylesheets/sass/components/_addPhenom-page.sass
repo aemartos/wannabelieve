@@ -1,26 +1,29 @@
+@use "../partials/colors"
+@use "../partials/mixins"
+
 .container
   &.cont_addPhenom_page
     min-height: 100%
     padding: 4em 0
     word-spacing: -.3em
-    color: $menubg
+    color: colors.$menubg
     text-transform: lowercase
     span[class*='x-']
-      color: $menubg
+      color: colors.$menubg
       font-size: 1.5em
-      -webkit-text-stroke: .3px $menubg
+      -webkit-text-stroke: .3px colors.$menubg
       text-transform: uppercase
       &:active
-        color: $secondarycolor
+        color: colors.$secondarycolor
         &[class*='x-']
-          -webkit-text-stroke: .3px $secondarycolor
+          -webkit-text-stroke: .3px colors.$secondarycolor
     .addPhenomTitle
       margin-top: 0
       font-size: 1.6em
       padding-bottom: .6em
       width: 100%
       text-align: center
-      border-bottom: 4px solid $maincolor
+      border-bottom: 4px solid colors.$maincolor
     form
       &.addForm
         position: relative
@@ -31,7 +34,7 @@
         .error-message
           opacity: .5
         .imgsContainer
-          +row-flex
+          +mixins.row-flex
           flex-flow: row wrap
           justify-content: space-between
         label
@@ -45,14 +48,14 @@
             object-fit: cover
             opacity: .5
         input, textarea, select
-          border: 2px solid $darkbg
-          color: $menubg
+          border: 2px solid colors.$darkbg
+          color: colors.$menubg
           text-transform: lowercase
           line-height: 1.4em
           opacity: .5
           &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus
-            -webkit-text-fill-color: $menubg
-            -webkit-box-shadow: 0 0 0px 1000px $background inset
+            -webkit-text-fill-color: colors.$menubg
+            -webkit-box-shadow: 0 0 0px 1000px colors.$background inset
         select
           padding: 0 .8em
           height: 3em
@@ -71,7 +74,7 @@
           position: absolute
           bottom: 0
           left: 0
-          +row-flex
+          +mixins.row-flex
           justify-content: space-between
           font-size: 1.5em
         .usernameBox
@@ -83,18 +86,18 @@
             position: absolute
             top: .8em
             right: 1em
-            color: $darkbg
+            color: colors.$darkbg
       ::-webkit-input-placeholder /* Chrome/Opera/Safari */
-        color: $maincolor
+        color: colors.$maincolor
         opacity: .5
       ::-moz-placeholder /* Firefox 19+ */
-        color: $maincolor
+        color: colors.$maincolor
         opacity: .5
       :-ms-input-placeholder /* IE 10+ */
-        color: $maincolor
+        color: colors.$maincolor
         opacity: .5
       :-moz-placeholder /* Firefox 18- */
-        color: $maincolor
+        color: colors.$maincolor
         opacity: .5
 
 

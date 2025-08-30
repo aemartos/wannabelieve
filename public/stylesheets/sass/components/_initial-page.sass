@@ -1,13 +1,16 @@
+@use "../partials/colors"
+@use "../partials/mixins"
+
 .container
   &.cont_initial_page, &.cont_signup, &.cont_login, &.cont_signupOK
-    +column-flex
+    +mixins.column-flex
     min-height: 100%
     padding: 4em 0
-    background-color: $menubg
-    border-top: 4px solid $maincolor
-    border-bottom: 4px solid $maincolor
+    background-color: colors.$menubg
+    border-top: 4px solid colors.$maincolor
+    border-bottom: 4px solid colors.$maincolor
   &.cont_signupOK
-    +column-flex
+    +mixins.column-flex
     justify-content: center
     background-image: url("../../images/signupOK_bg.png")
     background-position: center
@@ -18,7 +21,7 @@
       font-size: 2em
       line-height: 1.3em
       a
-        color: $secondarycolor
+        color: colors.$secondarycolor
   &.cont_initial_page
     position: relative
     justify-content: space-between
@@ -35,7 +38,7 @@
         display: block
         margin-top: .5em
       .groupMenu
-        +row-flex
+        +mixins.row-flex
         justify-content: space-between
         margin-top: .1em
         a

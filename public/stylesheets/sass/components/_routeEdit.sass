@@ -1,19 +1,22 @@
+@use "../partials/colors"
+@use "../partials/mixins"
+
 .container
   &.cont_routeEdit_page
     min-height: 100%
     padding: 4em 0
     word-spacing: -.3em
-    color: $menubg
+    color: colors.$menubg
     text-transform: lowercase
     span[class*='x-']
-      color: $menubg
+      color: colors.$menubg
       font-size: 1.5em
-      -webkit-text-stroke: .3px $menubg
+      -webkit-text-stroke: .3px colors.$menubg
       text-transform: uppercase
       &:active
-        color: $secondarycolor
+        color: colors.$secondarycolor
         &[class*='x-']
-          -webkit-text-stroke: .3px $secondarycolor
+          -webkit-text-stroke: .3px colors.$secondarycolor
     .editingRoutePage
       position: relative
       padding-bottom: 3em
@@ -23,7 +26,7 @@
         padding-bottom: .6em
         width: 100%
         text-align: center
-        border-bottom: 4px solid $maincolor
+        border-bottom: 4px solid colors.$maincolor
       form
         &.editRoute
           width: 85%
@@ -33,44 +36,44 @@
             margin-top: 1em
           textarea, input
             border: 0
-            border: 1.5px solid $darkbg
+            border: 1.5px solid colors.$darkbg
             padding: 1em
             margin: 0
             margin-top: .5em
             width: 100%
             text-transform: lowercase
-            color: $menubg
+            color: colors.$menubg
             //text-align: center
             &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus
-              -webkit-box-shadow: 0 0 0px 1000px $background inset
+              -webkit-box-shadow: 0 0 0px 1000px colors.$background inset
           input, textarea
             opacity: .5
           textarea
             height: 8em
           ::-webkit-input-placeholder /* Chrome/Opera/Safari */
             opacity: 1
-            color: $menubg
+            color: colors.$menubg
           ::-moz-placeholder /* Firefox 19+ */
             opacity: 1
-            color: $menubg
+            color: colors.$menubg
           :-ms-input-placeholder /* IE 10+ */
             opacity: 1
-            color: $menubg
+            color: colors.$menubg
           :-moz-placeholder /* Firefox 18- */
             opacity: 1
-            color: $menubg
+            color: colors.$menubg
           .actions
             position: absolute
             bottom: 0
-            +row-flex
+            +mixins.row-flex
             justify-content: space-between
             width: 85%
             font-size: 1.5em
             .editRoute
-              +row-flex
+              +mixins.row-flex
               justify-content: space-between
             button, a
-              +column-flex
+              +mixins.column-flex
               justify-content: center
               &.saveBtn
                 border: 0
@@ -80,11 +83,11 @@
                 width: unset
               span
                 &:active
-                  color: $secondarycolor
+                  color: colors.$secondarycolor
                   &[class*='x-']
-                    -webkit-text-stroke: .3px $secondarycolor
+                    -webkit-text-stroke: .3px colors.$secondarycolor
                 &.text
-                  color: $menubg
+                  color: colors.$menubg
                   font-size: .5em
                   margin-top: .3em
         .messages
@@ -100,12 +103,12 @@
         margin-top: 1em
         ul
           li
-            +row-flex
+            +mixins.row-flex
             justify-content: space-between
             font-size: .8em
             margin-bottom: .7em
             padding-bottom: .7em
-            border-bottom: 1px solid $darkbg
+            border-bottom: 1px solid colors.$darkbg
             &:last-child
               margin-bottom: 0
               border-bottom: 0
@@ -124,7 +127,7 @@
             form
               width: max-content
               &.deleteFromRoute
-                +row-flex
+                +mixins.row-flex
                 justify-content: center
                 button
                   width: max-content
@@ -133,6 +136,6 @@
                   margin: 0
                   span
                     &.active
-                      color: $secondarycolor
+                      color: colors.$secondarycolor
                       &[class*='x-']
-                        -webkit-text-stroke: .3px $secondarycolor
+                        -webkit-text-stroke: .3px colors.$secondarycolor

@@ -1,8 +1,11 @@
+@use "../partials/colors"
+@use "../partials/mixins"
+
 .container
   &.cont_map_page, &.cont_routeDetail_page
     position: relative
     .mainMap, .routeMap
-      background-color: $darkbg
+      background-color: colors.$darkbg
       height: 100%
       width: 100%
       //color: $menubg
@@ -34,12 +37,12 @@
           max-width: 50em !important
           overflow: unset !important
         .infoPhenom
-          +row-flex
+          +mixins.row-flex
           justify-content: space-between
           width: 50em
           height: 12.5em
           padding: 1em 4em 3.5em 3em
-          color: $maincolor
+          color: colors.$maincolor
           .infoPhenomDetails
             .phenomTitle
               h1
@@ -58,23 +61,23 @@
                 font-family: 'Share Tech Mono'
                 font-size: 1.4em
             .phenomText
-              +row-flex
+              +mixins.row-flex
               justify-content: flex-start
               line-height: 0
               .favorites
-                +row-flex
+                +mixins.row-flex
                 display: inline-flex
                 justify-content: center
                 margin-left: 1.5em
                 font-size: 1.4em
                 span
-                  color: $maincolor
+                  color: colors.$maincolor
                   &[class*='x-']
-                    -webkit-text-stroke: .3px $maincolor
+                    -webkit-text-stroke: .3px colors.$maincolor
                 .heart
                   margin-right: .3em
               .sighted
-                +row-flex
+                +mixins.row-flex
                 display: inline-flex
                 justify-content: center
                 font-size: 1.4em
@@ -83,20 +86,20 @@
                     margin-right: .3em
                     font-size: 1.4em
                     &[class*='x-']
-                      -webkit-text-stroke: .15px $maincolor
+                      -webkit-text-stroke: .15px colors.$maincolor
                     &.active
-                      color: $secondarycolor
+                      color: colors.$secondarycolor
                       &[class*='x-']
-                        -webkit-text-stroke: .3px $secondarycolor
+                        -webkit-text-stroke: .3px colors.$secondarycolor
           a.goPhenom
             font-size: 4em
-            color: $maincolor
+            color: colors.$maincolor
             span
-              color: $maincolor
+              color: colors.$maincolor
               &:before
-                +transform(rotate(180deg))
+                +mixins.transform(rotate(180deg))
               &:active
-                color: $secondarycolor
+                color: colors.$secondarycolor
       .gm-ui-hover-effect
         display: none !important
         top: 3em !important
@@ -107,12 +110,12 @@
           opacity: 1
     .mapOptions, .mapZoom, .addPhenom
       position: absolute
-      background: $menubg
-      border: 4px solid $maincolor
+      background: colors.$menubg
+      border: 4px solid colors.$maincolor
       padding: .5em
       button
         background: transparent
-        color: $maincolor
+        color: colors.$maincolor
         font-size: 1.5em
         outline: 0
         border: 0
@@ -125,22 +128,22 @@
     .mapOptions
       top: 1em
       left: 1em
-      +column-flex
+      +mixins.column-flex
       justify-content: space-between
       #findMeBtn, #layersBtn
         &.active
-          color: $secondarycolor
+          color: colors.$secondarycolor
     .mapZoom
       bottom: 1em
       right: 1em
-      +row-flex
+      +mixins.row-flex
       justify-content: space-between
       padding-bottom: .3em
       #zoomInBtn, #zoomOutBtn
         &:active
-          color: $secondarycolor
+          color: colors.$secondarycolor
     .addPhenom
-      +column-flex
+      +mixins.column-flex
       justify-content: center
       width: .92em
       height: .92em
@@ -151,7 +154,7 @@
       padding: 0
       font-size: 3.1em
       a
-        color: $maincolor
+        color: colors.$maincolor
         &:active
-          color: $secondarycolor
+          color: colors.$secondarycolor
           opacity: 1

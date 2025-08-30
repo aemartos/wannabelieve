@@ -1,3 +1,6 @@
+@use "../partials/colors"
+@use "../partials/mixins"
+
 .container
   &.cont_phenomena_page
     min-height: 100%
@@ -9,8 +12,8 @@
       padding-bottom: .6em
       width: 100%
       text-align: center
-      border-bottom: 4px solid $maincolor
-      color: $menubg
+      border-bottom: 4px solid colors.$maincolor
+      color: colors.$menubg
     .noPhenomena
       width: 85%
       margin: 0 auto
@@ -21,16 +24,16 @@
       margin: 0 auto
       margin-top: 1em
       .phenomCard
-        +row-flex
+        +mixins.row-flex
         justify-content: space-between
-        border-bottom: 2px solid $maincolor
+        border-bottom: 2px solid colors.$maincolor
         padding-bottom: 1em
         margin: 1em 0
-        color: $menubg
+        color: colors.$menubg
         &:last-child
           border-bottom: 0
         .phType
-          +row-flex
+          +mixins.row-flex
           padding: 0.3em 0.3em
           img
             width: 3.5em
@@ -38,7 +41,7 @@
             //background-color: grey
             border-radius: 5em
             padding: 0.3em 0.3em
-            border: 3px solid $maincolor
+            border: 3px solid colors.$maincolor
             margin-right: .5em
         .phenomInfoDetails
           width: 70%
@@ -58,11 +61,11 @@
               font-family: 'Share Tech Mono'
               font-size: .6em
           .phenomText
-            +row-flex
+            +mixins.row-flex
             justify-content: flex-start
             line-height: 0
             .favorites
-              +row-flex
+              +mixins.row-flex
               display: inline-flex
               justify-content: center
               margin-left: 1em
@@ -74,13 +77,13 @@
               margin: 0 .5em
         a.goPhenom
           font-size: 2em
-          color: $menubg
+          color: colors.$menubg
           span
             &[class*='x-']
-              -webkit-text-stroke: .3px $menubg
+              -webkit-text-stroke: .3px colors.$menubg
             &:before
-              +transform(rotate(180deg))
+              +mixins.transform(rotate(180deg))
             &:active
-              color: $secondarycolor
+              color: colors.$secondarycolor
               &[class*='x-']
-                -webkit-text-stroke: .3px $secondarycolor
+                -webkit-text-stroke: .3px colors.$secondarycolor

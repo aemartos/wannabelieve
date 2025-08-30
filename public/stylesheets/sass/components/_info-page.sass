@@ -1,3 +1,6 @@
+@use "../partials/colors"
+@use "../partials/mixins"
+
 .container
   &.cont_info_page
     width: 100%
@@ -5,7 +8,7 @@
     min-height: 100vh
     padding: 4em 0
     word-spacing: -.3em
-    color: $menubg
+    color: colors.$menubg
     text-transform: lowercase
     .infoTitle
       margin-top: 0
@@ -13,7 +16,7 @@
       padding-bottom: .6em
       width: 100%
       text-align: center
-      border-bottom: 4px solid $maincolor
+      border-bottom: 4px solid colors.$maincolor
     .infoSections
       .section
         width: 85%
@@ -28,21 +31,21 @@
         h1
           padding: 0
         h3
-          +row-flex
+          +mixins.row-flex
           justify-content: flex-start
           margin: 0
         a
-          border-bottom: 1px solid $maincolor
+          border-bottom: 1px solid colors.$maincolor
         span[class*='x-']
-          color: $menubg
+          color: colors.$menubg
           font-size: 1.5em
-          -webkit-text-stroke: .3px $menubg
+          -webkit-text-stroke: .3px colors.$menubg
           text-transform: uppercase
           padding-right: .6em
           &:active
-            color: $secondarycolor
+            color: colors.$secondarycolor
             &[class*='x-']
-              -webkit-text-stroke: .3px $secondarycolor
+              -webkit-text-stroke: .3px colors.$secondarycolor
         &.sectionCredits, &.sectionAPI
           span
             padding-right: 0.6em

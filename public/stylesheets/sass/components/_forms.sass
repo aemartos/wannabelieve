@@ -1,3 +1,6 @@
+@use "../partials/colors"
+@use "../partials/mixins"
+
 form
   width: 80%
   &.loginF, &.signupF
@@ -19,7 +22,7 @@ form
     font-family: 'Press Start 2P'
     //font-family: Courier New, Courier, monospace
     //font-weight: bold
-    color: $maincolor
+    color: colors.$maincolor
     background: transparent
     font-size: .9em
     outline: 0
@@ -28,26 +31,26 @@ form
     //padding: .5em 1.2em
     margin-bottom: 1em
     width: 100%
-    border: 2px solid $maincolor
+    border: 2px solid colors.$maincolor
     &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus
-      -webkit-text-fill-color: $maincolor
-      -webkit-box-shadow: 0 0 0px 1000px $menubg inset
+      -webkit-text-fill-color: colors.$maincolor
+      -webkit-box-shadow: 0 0 0px 1000px colors.$menubg inset
   ::-webkit-input-placeholder /* Chrome/Opera/Safari */
-    color: $maincolor
+    color: colors.$maincolor
     opacity: .5
   ::-moz-placeholder /* Firefox 19+ */
-    color: $maincolor
+    color: colors.$maincolor
     opacity: .5
   :-ms-input-placeholder /* IE 10+ */
-    color: $maincolor
+    color: colors.$maincolor
     opacity: .5
   :-moz-placeholder /* Firefox 18- */
-    color: $maincolor
+    color: colors.$maincolor
     opacity: .5
 
   button
     //border-radius: 2em
-    color: $maincolor
+    color: colors.$maincolor
     cursor: pointer
     display: block
     font-size: 1em
@@ -57,21 +60,21 @@ form
     margin-top: .5em
     //width: 9em
     width: 100%
-    +transition_default
+    +mixins.transition_default
     &:hover
-      +hover_scale
-      +transition_default
+      +mixins.hover_scale
+      +mixins.transition_default
     &.loginBtn, &.signupBtn
-      background: $maincolor
-      color: $menubg
-      border: 2px solid $maincolor
-      box-shadow: 0 0 0 $secondarycolor
+      background: colors.$maincolor
+      color: colors.$menubg
+      border: 2px solid colors.$maincolor
+      box-shadow: 0 0 0 colors.$secondarycolor
       &:hover
-        background: $secondarycolor
-        border: 2px solid $secondarycolor
-        box-shadow: 0 0 30px $secondarycolor
+        background: colors.$secondarycolor
+        border: 2px solid colors.$secondarycolor
+        box-shadow: 0 0 30px colors.$secondarycolor
     &.addBtn
-      background-color: $green
+      background-color: colors.$green
 
   .messages
     height: 1.5em
@@ -81,16 +84,16 @@ form
     font-size: .8em
     text-align: center
   .account-message
-    +column-flex
+    +mixins.column-flex
     justify-content: center
     margin-top: 2em
     opacity: .5
     a
-      color: $secondarycolor
+      color: colors.$secondarycolor
   .error-message
     margin-bottom: 2em
     text-transform: lowercase
-    color: $red
+    color: colors.$red
 
 
 @media (orientation: landscape)

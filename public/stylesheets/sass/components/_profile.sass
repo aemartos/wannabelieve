@@ -1,56 +1,59 @@
+@use "../partials/colors"
+@use "../partials/mixins"
+
 .container
   &.cont_userProfile_page
-    color: $menubg
+    color: colors.$menubg
     word-spacing: -.3em
     p
       line-height: 1.4em
     span[class*='x-']
-      color: $menubg
+      color: colors.$menubg
       font-size: 1.5em
-      -webkit-text-stroke: .3px $menubg
+      -webkit-text-stroke: .3px colors.$menubg
       text-transform: uppercase
       &:active
-        color: $secondarycolor
+        color: colors.$secondarycolor
         &[class*='x-']
-          -webkit-text-stroke: .3px $secondarycolor
+          -webkit-text-stroke: .3px colors.$secondarycolor
     .proHeader
-      +row-flex
+      +mixins.row-flex
       justify-content: flex-end
       width: 100%
       font-size: 2em
       padding: .8em .5em 0 0
       a
         i
-          color: $menubg
-          -webkit-text-stroke: .3px $menubg
+          color: colors.$menubg
+          -webkit-text-stroke: .3px colors.$menubg
           &:active
-            color: $secondarycolor
-            -webkit-text-stroke: .3px $secondarycolor
+            color: colors.$secondarycolor
+            -webkit-text-stroke: .3px colors.$secondarycolor
     .proPicture
-      +row-flex
+      +mixins.row-flex
       justify-content: center
       width: 85%
       margin: 0 auto
       img
         width: 65%
     .proUserInfo
-      +column-flex
+      +mixins.column-flex
       justify-content: center
       width: 85%
       margin: 0 auto
       h2
-        +row-flex
+        +mixins.row-flex
         justify-content: center
         margin: 1.5em 0 .5em 0
       .proEmailDate
-        +row-flex
+        +mixins.row-flex
         word-spacing: 0
         text-transform: lowercase
         font-size: 0.8em
         font-family: 'Share Tech Mono', monospace
         opacity: .5
     .proCaption
-      +column-flex
+      +mixins.column-flex
       align-items: flex-start
       width: 85%
       margin: 0 auto
@@ -62,7 +65,7 @@
         font-weight: 100
         opacity: .5
     .proDescr
-      +column-flex
+      +mixins.column-flex
       align-items: flex-start
       width: 85%
       margin: 0 auto
@@ -81,7 +84,7 @@
         width: 85%
         margin: 0 auto
       .iconNum
-        +row-flex
+        +mixins.row-flex
         justify-content: flex-start
         span
           &:first-child
@@ -92,9 +95,9 @@
             margin-right: 0
       &.sectionBtn
         padding: 0
-        +row-flex
+        +mixins.row-flex
         justify-content: center
-        background-color: $darkbg
+        background-color: colors.$darkbg
         p,
           +row-flex
           justify-content: center
@@ -102,30 +105,30 @@
           width: 50%
           padding: .8em 0
           &:first-child
-            border-right: 4px solid $maincolor
+            border-right: 4px solid colors.$maincolor
           span
             margin-right: .5em
             &.active
-              color: $secondarycolor
+              color: colors.$secondarycolor
       &.fourthSection
         p
-          +row-flex
+          +mixins.row-flex
           justify-content: space-between
           span
             &[class='x-back']:before
-              +transform(rotate(-90deg))
+              +mixins.transform(rotate(-90deg))
             &:active
-              color: $menubg
+              color: colors.$menubg
               &[class*='x-']
-                -webkit-text-stroke: .3px $menubg
+                -webkit-text-stroke: .3px colors.$menubg
       &.fourthSection
-        border-top: 4px solid $maincolor
+        border-top: 4px solid colors.$maincolor
         .titles
           justify-content: space-between
           //margin-bottom: 1em
           #sightSection,#regSection,#favSection
             &.rotate
-              +transform(rotate(90deg))
+              +mixins.transform(rotate(90deg))
         ul
           &#sightAccordion,&#regAccordion,&#favAccordion
             width: 85%
@@ -140,16 +143,16 @@
                 &:last-child
                   margin-bottom: 0
                 a
-                  +row-flex
+                  +mixins.row-flex
                   justify-content: flex-start
-                  color: $menubg
+                  color: colors.$menubg
                   span
                     opacity: .5
                   img
                     width: 1.5em
                     margin-right: .5em
     .proMetrics
-      +row-flex
+      +mixins.row-flex
       width: 100%
       padding: 5% 20%
       justify-content: center
