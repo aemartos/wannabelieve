@@ -21,8 +21,8 @@ const realTimeLocation = () => {
   geolocateMe()
     .then(location => {
       if (isGeolocating) {
-        console.log('Position updated');
-        console.log(location);
+        // console.log('Position updated');
+        // console.log(location);
         if (!window.realTimeLocation) {
           if (map && map.setCenter) {
             map.setCenter(location);

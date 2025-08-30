@@ -43,7 +43,6 @@
     "start": "node ./bin/www.js",
     "dev": "cat alien && DEBUG=project-02:* nodemon -e hbs,js ./bin/www.js",
     "dev-windows": "nodemon ./bin/www.js",
-    "build": "npm install",
     "vercel-build": "npm install",
     "seed": "node ./bin/seedsUsers.js",
     "test": "echo \"Error: no test specified\" && exit 1"

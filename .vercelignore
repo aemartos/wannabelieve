@@ -1,0 +1,15 @@
+node_modules
+.git
+.github
+logs
+*.log
+.env
+.env.local
+.env.production
+phonegap
+wannabelieve.apk
+alien
+README.md
+LICENSE
+deploy.sh
+ecosystem.config.cjs
