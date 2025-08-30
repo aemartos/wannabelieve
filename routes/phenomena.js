@@ -214,7 +214,7 @@ router.post(
 
 router.post("/phenomena/:id/postReview", (req, res) => {
   let content = req.body.content;
-  let authorId = new mongoose.Types.ObjectId(req.user._id);
+  let authorId = req.user._id;
 
   Review.create({ content, authorId }).then(review => {
     Phenomenon.findByIdAndUpdate(req.params.id, {
