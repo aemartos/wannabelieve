@@ -81,6 +81,36 @@ Set these in your Vercel project settings:
 - `GOOGLE_MAPS_API_KEY`: Your Google Maps API Key
 - Any other environment variables your app needs
 
+## 📦 Version Management
+
+### **Release Workflow:**
+1. **Update version** in `package.json`
+2. **Commit and push** the version change
+3. **Create and push tag** that matches the version
+4. **Automatic deployment** to Vercel
+
+### **Example Release:**
+```bash
+# 1. Update package.json version
+# Change "version": "1.0.2" to "version": "1.0.3"
+
+# 2. Commit version change
+git add package.json
+git commit -m "release: v1.0.3"
+git push origin master
+
+# 3. Create and push tag
+git tag v1.0.3
+git push origin v1.0.3
+
+# 4. GitHub Actions automatically deploys to Vercel! 🚀
+```
+
+### **Version Naming Convention:**
+- Use semantic versioning: `MAJOR.MINOR.PATCH`
+- Examples: `v1.0.0`, `v1.2.3`, `v2.0.0`
+- Tag must start with `v` to trigger deployment
+
 ## 🔧 Environment Variables
 
 Create a `.env` file in your project root duplicating the `.example.env` file.

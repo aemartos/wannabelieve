@@ -16,3 +16,4 @@ logs/
 #MACOS Files
 .DS_Store
 phonegap.zip
+.vercel
